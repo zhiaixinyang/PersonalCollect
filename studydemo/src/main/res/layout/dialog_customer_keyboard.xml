@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#f7f7f7"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:padding="10dp"
+            android:id="@+id/delete_dialog"
+            android:layout_width="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/delete_expression"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:padding="15dp"
+            android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="20sp"
+            android:textColor="#444a59"
+            android:text="输入密码"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.6dp"
+        android:background="#d1d2d6"
+        />
+
+    <com.example.mbenben.studydemo.view.passwordedittext.view.PasswordEditText
+        android:id="@+id/password_edit_text"
+        android:layout_width="match_parent"
+        android:layout_marginTop="23dp"
+        android:layout_marginRight="45dp"
+        android:background="@null"
+        android:padding="10dp"
+        app:passwordBgCorner="3dp"
+        android:layout_marginLeft="45dp"
+        android:layout_height="wrap_content" />
+
+
+    <com.example.mbenben.studydemo.view.passwordedittext.view.CustomerKeyboard
+        android:id="@+id/custom_key_board"
+        android:layout_marginTop="23dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

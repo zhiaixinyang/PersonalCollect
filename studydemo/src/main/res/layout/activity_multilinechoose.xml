@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/activity_main"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="12dp"
+    android:paddingRight="12dp"
+    android:paddingTop="12dp"
+    >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="多行单选"
+                android:textColor="#7289ff"
+                android:textSize="14sp"/>
+
+            <com.example.mbenben.studydemo.layout.multilinechoose.MultiLineChooseLayout
+                android:id="@+id/singleChoose"
+                style="@style/MultiLineChooseLayoutTags.SingleChoose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textSingleLine"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/singleChooseTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="单选结果"
+                android:textColor="#7289ff"
+                android:textSize="14sp"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="多行多选"
+                android:textColor="#49C120"
+                android:textSize="14sp"/>
+
+            <com.example.mbenben.studydemo.layout.multilinechoose.MultiLineChooseLayout
+                android:id="@+id/multiChoose"
+                style="@style/MultiLineChooseLayoutTags.MultiChoose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textSingleLine"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/multiChooseTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="多选结果"
+                android:textColor="#49C120"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="流式布局"
+                android:textColor="#FF4081"
+                android:textSize="14sp"/>
+
+            <com.example.mbenben.studydemo.layout.multilinechoose.MultiLineChooseLayout
+                android:id="@+id/flowLayout"
+                style="@style/MultiLineChooseLayoutTags.FlowLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textSingleLine"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/flowLayoutTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="流式布局结果"
+                android:textColor="#FF4081"
+                android:textSize="14sp"/>
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="50dp"
+                android:text="清除所有选中项"/>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

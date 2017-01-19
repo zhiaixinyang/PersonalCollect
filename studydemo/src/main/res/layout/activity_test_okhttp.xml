@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <EditText
+        android:id="@+id/et_username"
+        android:hint="账号"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+    <EditText
+        android:id="@+id/et_password"
+        android:hint="密码"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_marginTop="40dp"
+        android:text="显示服务器传递的数据"
+        android:textSize="16sp"
+        android:textColor="@color/gray"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btn_post_string"
+        android:text="发送String"
+        android:textAllCaps="false"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:onClick="postString"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+    <Button
+        android:id="@+id/btn_post_form"
+        android:text="postForm"
+        android:textAllCaps="false"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:onClick="postForm"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+    <Button
+        android:id="@+id/btn_post_file"
+        android:text="上传文件"
+        android:textAllCaps="false"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:onClick="postFile"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+    <Button
+        android:id="@+id/btn_open"
+        android:text="选择图片"
+        android:textAllCaps="false"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:onClick="openImage"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+    <Button
+        android:text="加载服务器图片"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:onClick="getImage"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_load_sum"
+        android:layout_width="match_parent"
+        android:textSize="16sp"
+        android:layout_height="wrap_content" />
+</LinearLayout>

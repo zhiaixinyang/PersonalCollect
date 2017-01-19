@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <EditText
+        android:id="@+id/username"
+        android:hint="账号"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+    <EditText
+        android:id="@+id/password"
+        android:hint="密码"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+    <EditText
+        android:id="@+id/buidingname"
+        android:hint="楼号"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+    <EditText
+        android:id="@+id/usernick"
+        android:hint="昵称"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+    <Button
+        android:text="向服务器post数据"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:onClick="postForm"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+    <Button
+        android:text="加载图片"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:onClick="getImage"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+    <Button
+        android:text="读取服务器txt文件"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:onClick="getTxt"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+    <Button
+        android:text="读取JSON"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:onClick="getJson"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+    <Button
+        android:text="注册账号"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:onClick="postAccount"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+    <Button
+        android:text="POST_RecyclerView"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:onClick="postRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/content"
+            android:text="显示服务器相应数据"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </ScrollView>
+</LinearLayout>

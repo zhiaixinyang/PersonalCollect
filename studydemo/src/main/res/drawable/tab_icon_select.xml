@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- btn_ok就是一个图片 -->
+    <item android:state_focused="true" android:drawable="@drawable/btn_ok"/>
+    <item android:state_selected="true" android:drawable="@drawable/btn_ok"/>
+    <item  android:drawable="@drawable/ic_launcher"/>
+</selector>

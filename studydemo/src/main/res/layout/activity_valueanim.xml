@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <Button
+            android:text="综合动画"
+            android:onClick="allAnim"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"/>
+        <Button
+            android:text="估值器：抛物线"
+            android:onClick="evaluator"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"/>
+        <Button
+            android:text="估值器"
+            android:onClick="interpolator"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_above="@+id/iv_image"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/black"
+            android:layout_width="40dp"
+            android:background="@color/black"
+            android:layout_height="40dp" />
+        <TextView
+            android:id="@+id/red"
+            android:layout_width="40dp"
+            android:background="@color/red"
+            android:layout_height="40dp" />
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/iv_image"
+        android:src="@drawable/pintu"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <Button
+            android:text="翻转动画"
+            android:onClick="rotation"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp" />
+        <Button
+            android:text="平移动画"
+            android:onClick="translation"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp" />
+        <Button
+            android:text="透明度动画"
+            android:onClick="alpha"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp" />
+        <Button
+            android:text="尺寸动画"
+            android:onClick="scale"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp" />
+    </LinearLayout>
+</RelativeLayout>

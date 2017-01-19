@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    >
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:background="#f1f1f1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="com.example.mbenben.studydemo.view.ele.ZoomHeaderBehavior"
+        />
+
+
+    <RelativeLayout
+        android:layout_gravity="bottom"
+        android:id="@+id/rv_bottom"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <ImageView
+            android:alpha="5"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/cart" />
+
+        <View
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="#88000000" />
+    </RelativeLayout>
+
+    <com.example.mbenben.studydemo.layout.ele.ZoomHeaderView
+        android:id="@+id/zoomHeader"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:clipChildren="false"
+        android:gravity="center"
+        android:orientation="vertical"
+        >
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            >
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                />
+            <TextView
+                android:alpha="0"
+                android:id="@+id/tv_close"
+                android:layout_marginBottom="10dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:text = "下滑关闭"
+                android:textColor="#fff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+        </RelativeLayout>
+        <com.example.mbenben.studydemo.layout.ele.ZoomHeaderViewPager
+            android:id="@+id/vp_one"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:clipChildren="false"
+            />
+    </com.example.mbenben.studydemo.layout.ele.ZoomHeaderView>
+
+
+</android.support.design.widget.CoordinatorLayout>

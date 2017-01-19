@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/btn_rxjava"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:textSize="22sp"
+        android:text="RxJava"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:layout_margin="12dp"
+        android:background="@color/black"/>
+    <ImageView
+        android:id="@+id/iv_rxjava"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_launcher"
+        android:layout_width="200dp"
+        android:layout_height="200dp" />
+</LinearLayout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_marginTop="@dimen/main_margin"
+    android:layout_marginRight="@dimen/main_margin"
+    android:layout_marginLeft="@dimen/main_margin"
+    android:layout_height="80dp">
+    <TextView
+        android:id="@+id/id_info"
+        android:padding="@dimen/main_margin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:textColor="@color/black"
+        android:gravity="center">
+    </TextView>
+</FrameLayout>
+
+

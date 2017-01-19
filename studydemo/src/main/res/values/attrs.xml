@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ViewPager轮播 -->
+    <declare-styleable name="BannerView">
+        <!-- 点的选中的颜色值 -->
+        <attr name="dotIndicatorFocus"  format="color|reference"/>
+        <!-- 点的默认的颜色值 -->
+        <attr name="dotIndicatorNormal"  format="color|reference"/>
+        <!-- 点的大小 -->
+        <attr name="dotSize" format="dimension"/>
+        <!-- 点的间距 -->
+        <attr name="dotDistance" format="dimension"/>
+        <!-- 点的位置 -->
+        <attr name="dotGravity" format="enum">
+            <enum name="center" value="0"/>
+            <enum name="right" value="1"/>
+            <enum name="left" value="-1"/>
+        </attr>
+        <!-- 底部的颜色 -->
+        <attr name="bottomColor" format="color"/>
+        <!-- 定义宽高比 -->
+        <attr name="withProportion" format="float"/>
+        <attr name="heightProportion" format="float"/>
+    </declare-styleable>
+
+    <!-- 滑动变色的Title-->
+    <declare-styleable name="MaterialIndicator">
+        <attr name="mi_indicatorRadius" format="dimension|reference" />
+        <attr name="mi_indicatorPadding" format="dimension|reference" />
+        <attr name="mi_indicatorColor" format="color|reference" />
+    </declare-styleable>
+    <!-- 折叠式TextView -->
+    <declare-styleable name="ExpandableTextView">
+        <attr name="maxCollapsedLines" format="integer" />
+        <attr name="animDuration" format="integer" />
+        <attr name="contentTextSize" format="dimension" />
+        <attr name="contentTextColor" format="color" />
+        <attr name="expandDrawable" format="reference" />
+        <attr name="expandText" format="string" />
+        <attr name="collapseDrawable" format="reference" />
+        <attr name="collapseText" format="string" />
+        <attr name="expandCollapseTextColor" format="color" />
+        <attr name="DrawableAndTextGravity">
+            <enum name="left" value="0" />
+            <enum name="center" value="1" />
+            <enum name="right" value="2" />
+        </attr>
+    </declare-styleable>
+    <!-- 头部图片移动+弧形Layout -->
+    <declare-styleable name="ArcHeader">
+        <attr name="arc_height" format="dimension" />
+        <attr name="arc_cropDirection" format="enum">
+            <enum name="cropInside" value="0" />
+            <enum name="cropOutside" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="CircleImageView">
+        <attr name="borderRadius" format="dimension" />
+        <attr name="type">
+            <enum name="circle" value="0" />
+            <enum name="round" value="1" />
+        </attr>
+        <attr name="circle_src" format="reference"></attr>
+    </declare-styleable>
+
+    <declare-styleable name="SwipeFlingAdapterView">
+        <attr name="SwipeFlingStyle" format="reference" />
+        <attr name="rotation_degrees" format="float" />
+        <attr name="min_adapter_stack" format="integer" />
+        <attr name="max_visible" format="integer" />
+    </declare-styleable>
+
+    <!-- 折线图自定义属性 -->
+    <declare-styleable name="HealthyTableView">
+        <!--坐标轴线条出息-->
+        <attr name="coordinatesLineWidth" format="dimension" />
+        <!--坐标轴字体大小-->
+        <attr name="coordinatesTextSize" format="dimension" />
+        <!--坐标轴轴字体颜色-->
+        <attr name="coordinatesTextColor" format="color" />
+        <!--折线颜色-->
+        <attr name="lineColor" format="color" />
+        <!--折线粗细-->
+        <attr name="lineWidth" format="dimension" />
+        <!--小圆点半径-->
+        <attr name="averageCircleradius" format="dimension" />
+        <!--表格的数据类型-->
+        <attr name="tableType" format="string" />
+        <!--大圆点的颜色-->
+        <attr name="maxcircleColor" format="color" />
+        <!--小圆点的颜色-->
+        <attr name="mincircleColor" format="color" />
+        <!--背景色-->
+        <attr name="bgColor" format="color" />
+    </declare-styleable>
+
+
+    <!--QQ步数的自定义属性-->
+    <declare-styleable name="QQHealthView">
+        <attr name="qqtitleColor" format="color" />
+        <attr name="qqlineColor" format="color" />
+        <attr name="qqtitleSize" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="MyBesselView">
+        <attr name="besseltitleColor" format="color"></attr>
+    </declare-styleable>
+
+    <!--微博步数（圆形进度条）-->
+    <declare-styleable name="WeiBoSportView">
+        <attr name="weibotitleSize" format="dimension" />
+        <attr name="weibotitleColor" format="color" />
+        <attr name="weibooutCircleColor" format="color" />
+        <attr name="weiboinCircleColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="SelectView">
+        <attr name="selecttextColor" format="color"></attr>
+        <attr name="selectlineColor" format="color"></attr>
+        <attr name="selecttextSize" format="dimension"></attr>
+    </declare-styleable>
+
+    <!-- 柱状图效果自定义属性 -->
+    <declare-styleable name="ChartView">
+        <attr name="chartleftColor" format="color"></attr>
+        <attr name="chartrightColor" format="color"></attr>
+        <attr name="chartxyColor" format="color"></attr>
+    </declare-styleable>
+
+    <!-- 多选，单选的Layout -->
+    <declare-styleable name="MultiLineChooseItemTags">
+        <attr name="item_backgroundColor" format="reference|color" />
+        <attr name="item_selectedBackgroundColor" format="reference|color" />
+
+        <attr name="item_horizontalSpacing" format="dimension" />
+        <attr name="item_verticalSpacing" format="dimension" />
+        <attr name="item_horizontalPadding" format="dimension" />
+        <attr name="item_verticalPadding" format="dimension" />
+
+        <attr name="item_textColor" format="color" />
+        <attr name="item_selectedTextColor" format="reference|color" />
+        <attr name="item_textSize" format="dimension" />
+
+        <!-- 边框圆角半径-->
+        <attr name="item_radius" format="dimension" />
+        <attr name="item_bottomLeftRadius" format="dimension" />
+        <attr name="item_bottomRightRadius" format="dimension" />
+        <attr name="item_topLeftRadius" format="dimension" />
+        <attr name="item_topRightRadius" format="dimension" />
+        <!-- 边框颜色-->
+        <attr name="item_strokeColor" format="reference|color" />
+        <attr name="item_selectedStrokeColor" format="reference|color" />
+        <!-- 边框宽度-->
+        <attr name="item_strokeWidth" format="dimension" />
+        <!-- 是否多选-->
+        <attr name="item_multiChooseable" format="boolean" />
+        <attr name="item_singleLine" format="boolean" />
+
+        <!--单位dp,为了适应wrap_content用integer-->
+        <attr name="item_width" format="integer|enum">
+            <enum name="wrap_content" value="-2"/>
+            <enum name="match_parent" value="-1"/>
+        </attr>
+        <attr name="item_height" format="integer|enum">
+            <enum name="wrap_content" value="-2"/>
+            <enum name="match_parent" value="-1"/>
+        </attr>
+        <attr name="item_maxEms" format="integer" />
+    </declare-styleable>
+    <!-- 和上面的为一体 -->
+    <declare-styleable name="Themes">
+        <attr name="MultiLineChooseLayoutTagsStyle" format="reference" />
+    </declare-styleable>
+
+    <!-- 特殊动画 -->
+    <declare-styleable name="refresh">
+        <attr name="refresh_line_color" format="color" />
+        <attr name="refresh_line_width" format="integer" />
+    </declare-styleable>
+    <!-- 特殊动画 -->
+    <declare-styleable name="download">
+        <attr name="download_line_color" format="color" />
+        <attr name="download_bg_line_color" format="color" />
+        <attr name="download_text_color" format="color" />
+        <attr name="download_line_width" format="integer" />
+        <attr name="download_bg_line_width" format="integer" />
+        <attr name="download_text_size" format="integer" />
+    </declare-styleable>
+    <!-- 特殊动画 -->
+    <declare-styleable name="play">
+        <attr name="play_line_color" format="color" />
+        <attr name="play_bg_line_color" format="color" />
+        <attr name="play_line_width" format="integer" />
+        <attr name="play_bg_line_width" format="integer" />
+    </declare-styleable>
+    <!-- 特殊动画 -->
+    <declare-styleable name="scroll">
+        <attr name="scroll_line_color" format="color" />
+        <attr name="scroll_line_width" format="integer" />
+        <attr name="scroll_bg_line_color" format="color" />
+        <attr name="scroll_bg_line_width" format="integer" />
+        <attr name="scroll_is_selected" format="boolean" />
+        <attr name="scroll_view_translation_x" format="integer" />
+    </declare-styleable>
+    <!-- 特殊动画 -->
+    <declare-styleable name="search">
+        <attr name="search_line_color" format="color" />
+        <attr name="search_line_width" format="integer" />
+        <attr name="search_dot_size" format="integer" />
+    </declare-styleable>
+    <!-- 特殊动画 -->
+    <declare-styleable name="volume">
+        <attr name="volume_line_color" format="color" />
+        <attr name="volume_line_width" format="integer" />
+        <attr name="volume_bg_line_color" format="color" />
+        <attr name="volume_bg_line_width" format="integer" />
+    </declare-styleable>
+
+    <!-- 自定义进度条 -->
+    <declare-styleable name="FlikerProgressBar">
+        <attr name="progressbar_textSize" format="dimension"/>
+        <attr name="progressbar_loadingColor" format="color"/>
+        <attr name="progressbar_stopColor" format="color"/>
+        <attr name="progressbar_radius" format="dimension"/>
+        <attr name="progressbar_borderWidth" format="dimension"/>
+    </declare-styleable>
+    <!-- 另一个自定义进度条 -->
+    <declare-styleable name="ProgressPieView">
+        <attr name="android:text"/>
+        <attr name="android:textSize"/>
+        <attr name="android:textColor"/>
+        <attr name="ppvProgress" format="integer"/>
+        <attr name="ppvMax" format="integer"/>
+        <attr name="ppvStartAngle" format="integer"/>
+        <attr name="ppvInverted" format="boolean"/>
+        <attr name="ppvCounterclockwise" format="boolean"/>
+        <attr name="ppvStrokeWidth" format="dimension"/>
+        <attr name="ppvBackgroundColor" format="reference|color"/>
+        <attr name="ppvProgressColor" format="reference|color"/>
+        <attr name="ppvStrokeColor" format="reference|color"/>
+        <attr name="ppvShowStroke" format="boolean"/>
+        <attr name="ppvShowText" format="boolean"/>
+        <attr name="ppvTypeface" format="string"/>
+        <attr name="ppvImage" format="reference"/>
+        <attr name="ppvProgressFillType" format="enum" >
+            <enum name="radial" value="0"/>
+            <enum name="center" value="1"/>
+        </attr>
+    </declare-styleable>
+
+    <!-- 大照片操作 -->
+    <declare-styleable name="BigImageView">
+        <attr format="enum" name="initScaleType">
+            <enum name="centerInside" value="1"/>
+            <enum name="centerCrop" value="2"/>
+            <enum name="auto" value="3"/>
+        </attr>
+    </declare-styleable>
+
+    <!-- 自定义密码EditText -->
+    <declare-styleable name="PasswordEditText">
+        <!-- 密码的个数 -->
+        <attr name="passwordNumber" format="integer"/>
+        <!-- 密码圆点的半径 -->
+        <attr name="passwordRadius" format="dimension" />
+        <!-- 密码圆点的颜色 -->
+        <attr name="passwordColor" format="color" />
+        <!-- 分割线的颜色 -->
+        <attr name="divisionLineColor" format="color" />
+        <!-- 分割线的大小 -->
+        <attr name="divisionLineSize" format="color" />
+        <!-- 背景边框的颜色 -->
+        <attr name="passwordBgColor" format="color" />
+        <!-- 背景边框的大小 -->
+        <attr name="passwordBgSize" format="dimension" />
+        <!-- 背景边框的圆角大小 -->
+        <attr name="passwordBgCorner" format="dimension"/>
+    </declare-styleable>
+</resources>

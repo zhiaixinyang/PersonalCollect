@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:myQQ="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/divider"
+    android:orientation="vertical">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.example.mbenben.studydemo.view.qqhealth.QQHealthView
+                android:id="@+id/myQQView"
+                android:layout_width="match_parent"
+                android:layout_height="530dp"
+                android:layout_margin="15dp"
+                myQQ:qqlineColor="@color/font_tips"
+                myQQ:qqtitleColor="@color/textcolor"
+                myQQ:qqtitleSize="10dp" />
+
+            <Button
+                android:id="@+id/set_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="设置" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

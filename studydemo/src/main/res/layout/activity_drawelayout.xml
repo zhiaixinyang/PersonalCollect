@@ -1,0 +1,59 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        >
+
+        <ImageView
+            android:id="@+id/drawer_indicator"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="centerInside"
+            android:background="@drawable/drawer_selector"
+            android:layout_gravity="start"
+            />
+
+        <TextView
+            android:id="@+id/indicator_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DrawerLayout"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:layout_gravity="center_vertical|end"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            />
+
+    </FrameLayout>
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!-- 作为主要内容视图，下面的视图消耗整个
+             空间可用在两个维度中使用match_parent。 -->
+        <fragment
+            android:id="@+id/content_frame"
+            android:name="com.example.mbenben.studydemo.layout.nav.TabFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <!-- android：layout_gravity =“start”
+        告诉DrawerLayout将它当作左侧（从左到右）的滑动抽屉，
+        右侧（从右到左）的语言。 抽屉以dp给定固定宽度并且延伸容器的整个高度。
+        实体背景用于与内容视图形成对比。 -->
+        <fragment
+            android:id="@+id/left_drawer"
+            android:layout_width="240dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:name="com.example.mbenben.studydemo.layout.nav.TabFragment"
+            android:choiceMode="singleChoice"
+            android:background="@color/white"/>
+    </android.support.v4.widget.DrawerLayout>
+</LinearLayout>
+

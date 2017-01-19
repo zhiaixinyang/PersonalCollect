@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <EditText
+        android:id="@+id/et_username"
+        android:hint="UserName"
+        android:textSize="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+    <EditText
+        android:id="@+id/et_password"
+        android:hint="PassWord"
+        android:textSize="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+    <TextView
+        android:id="@+id/tv_content"
+        android:textColor="@color/black"
+        android:layout_width="match_parent"
+        android:textSize="16sp"
+        android:layout_height="40dp" />
+    <Button
+        android:onClick="postRetrofit"
+        android:textSize="18sp"
+        android:text="Retrofit_POST"
+        android:textAllCaps="false"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+</LinearLayout>

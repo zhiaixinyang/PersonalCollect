@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_material_dark">
+
+
+    <com.example.mbenben.studydemo.layout.ricktext.emoji.view.EditTextEmoji
+        android:id="@+id/emoji_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_margin="10dp"
+        android:background="@null"
+        android:gravity="left"
+        android:hint="请输入贴子内容"
+        android:maxLength="2000"
+        android:maxLines="7"
+        android:textColor="@color/white"
+        android:textColorHint="@color/gray" />
+
+    <ImageView
+        android:id="@+id/emoji_show_bottom"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/emoji_edit_text"
+        android:layout_margin="10dp"
+        android:src="@drawable/publish_face_n3x" />
+
+    <ImageView
+        android:id="@+id/emoji_show_at"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/emoji_edit_text"
+        android:layout_margin="10dp"
+        android:src="@drawable/publish_at_d3x" />
+
+    <Button
+        android:id="@+id/insert_text_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@+id/emoji_show_at"
+        android:layout_margin="10dp"
+        android:text="插入文本" />
+
+    <Button
+        android:id="@+id/jump_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@+id/emoji_show_at"
+        android:layout_margin="10dp"
+        android:layout_toRightOf="@+id/insert_text_btn"
+        android:text="自定义表情" />
+
+
+    <TextView
+        android:id="@+id/rich_text_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/insert_text_btn"
+        android:layout_margin="10dp"
+        android:text="Textview模式"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/rich_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rich_text_title"
+        android:layout_margin="10dp"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp" />
+
+
+    <com.example.mbenben.studydemo.layout.ricktext.emoji.view.EmojiLayout
+        android:id="@+id/emojiLayout"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone" />
+</RelativeLayout>

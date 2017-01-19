@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.example.mbenben.studydemo.view.bezier.GiftBezierView
+        android:id="@+id/view_gift"
+        android:background="@color/trans_gray"
+        android:layout_width="150dp"
+        android:layout_alignParentRight="true"
+        android:layout_height="match_parent"/>
+    <com.example.mbenben.studydemo.view.bezier.GiftBezierViewTwo
+        android:layout_width="150dp"
+        android:background="@color/trans_gray"
+        android:layout_alignParentLeft="true"
+        android:layout_height="match_parent"/>
+</RelativeLayout>

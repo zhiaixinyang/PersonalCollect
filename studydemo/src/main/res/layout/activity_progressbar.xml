@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
+    android:orientation="vertical">
+
+    <com.example.mbenben.studydemo.view.progressbar.FlikerProgressBar
+        android:id="@+id/flikerbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:progressbar_textSize="12sp"
+        app:progressbar_loadingColor="#40c4ff"
+        app:progressbar_stopColor="#ff9800"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="重新下载"
+        android:onClick="reLoad"/>
+
+    <com.example.mbenben.studydemo.view.progressbar.FlikerProgressBar
+        android:id="@+id/round_flikerbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:progressbar_textSize="12sp"
+        app:progressbar_loadingColor="#40c4ff"
+        app:progressbar_stopColor="#ff9800"
+        app:progressbar_radius="20dp"
+        />
+
+</LinearLayout>

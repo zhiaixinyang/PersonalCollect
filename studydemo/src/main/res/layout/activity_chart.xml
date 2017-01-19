@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:chart="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <com.example.mbenben.studydemo.view.chart.ChartView
+            android:id="@+id/my_chart_view"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="@color/white"
+            chart:chartleftColor="@color/left"
+            chart:chartrightColor="@color/right"
+            chart:chartxyColor="@color/font_text"/>
+    </RelativeLayout>
+</LinearLayout>

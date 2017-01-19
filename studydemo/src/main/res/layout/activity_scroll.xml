@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.mbenben.studydemo.layout.nav.scroller.MyScorllLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:text="Hahahahaha..."
+            android:gravity="center"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:layout_height="200dp" />
+
+        <TextView
+            android:id="@+id/two"
+            android:text="我是来卖萌的..."
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:background="@color/black"
+            android:layout_height="40dp" />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rlv_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+</com.example.mbenben.studydemo.layout.nav.scroller.MyScorllLayout>
