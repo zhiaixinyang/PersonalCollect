@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.example.mbenben.studydemo.view.gradationtitle.view.GradationScrollView
+    <com.example.mbenben.studydemo.layout.gradationtitle.view.GradationScrollView
         android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -18,12 +18,12 @@
                 android:src="@drawable/pintu"
                 android:layout_width="match_parent"
                 android:layout_height="200dp" />
-            <com.example.mbenben.studydemo.view.gradationtitle.view.NoScrollListview
+            <com.example.mbenben.studydemo.layout.gradationtitle.view.NoScrollListview
                 android:id="@+id/listview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
-    </com.example.mbenben.studydemo.view.gradationtitle.view.GradationScrollView>
+    </com.example.mbenben.studydemo.layout.gradationtitle.view.GradationScrollView>
     <TextView
         android:paddingBottom="10dp"
         android:id="@+id/textview"

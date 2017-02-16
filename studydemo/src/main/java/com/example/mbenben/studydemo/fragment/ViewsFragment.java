@@ -19,17 +19,24 @@ import com.example.mbenben.studydemo.base.ViewHolder;
 import com.example.mbenben.studydemo.view.behavior.BehaviorActivity;
 import com.example.mbenben.studydemo.view.bezier.ClearBezierActivity;
 import com.example.mbenben.studydemo.view.bezier.GiftBezierActivity;
+import com.example.mbenben.studydemo.view.bigimage.GlideLoaderActivity;
+import com.example.mbenben.studydemo.view.canvasapi.CanvasApiActivity;
 import com.example.mbenben.studydemo.view.chart.ChartActivity;
+import com.example.mbenben.studydemo.view.circle.CircleActivity;
 import com.example.mbenben.studydemo.view.credit.CreditActivity;
 import com.example.mbenben.studydemo.view.enviews.ENViewsActivity;
 import com.example.mbenben.studydemo.view.expandabletextview.ExpandableActivity;
-import com.example.mbenben.studydemo.view.gradationtitle.QQTitleActivity;
+import com.example.mbenben.studydemo.layout.gradationtitle.QQTitleActivity;
 import com.example.mbenben.studydemo.view.healthytables.HealthyTablesActivity;
 import com.example.mbenben.studydemo.view.htmltext.HtmlTextActivity;
+import com.example.mbenben.studydemo.view.justify.JustifyTextActivity;
+import com.example.mbenben.studydemo.view.loading.LoadingTextViewActivity;
 import com.example.mbenben.studydemo.view.lol.LoLActivity;
 import com.example.mbenben.studydemo.view.passwordedittext.PassWordActivity;
 import com.example.mbenben.studydemo.view.progressbar.ProgressBarActivity;
 import com.example.mbenben.studydemo.view.qqhealth.QQHealthActivity;
+import com.example.mbenben.studydemo.view.timelytext.TimelyTextActivity;
+import com.example.mbenben.studydemo.view.toast.NewToastActivity;
 import com.example.mbenben.studydemo.view.viscosity.ViscosityActivity;
 import com.example.mbenben.studydemo.view.wave.WaveActivity;
 import com.example.mbenben.studydemo.view.weibosport.WeiBoSportActivity;
@@ -152,6 +159,34 @@ public class ViewsFragment extends Fragment{
                         Intent intentBehavior=new Intent(App.getInstance().getContext(), BehaviorActivity.class);
                         startActivity(intentBehavior);
                         break;
+                    case "GlideLoaderActivity":
+                        Intent intentGlideLoader = new Intent(App.getInstance().getContext(), GlideLoaderActivity.class);
+                        startActivity(intentGlideLoader);
+                        break;
+                    case "CircleActivity":
+                        Intent intentCircle = new Intent(App.getInstance().getContext(), CircleActivity.class);
+                        startActivity(intentCircle);
+                        break;
+                    case "CanvasApiActivity":
+                        Intent intentCanvasApi = new Intent(App.getInstance().getContext(), CanvasApiActivity.class);
+                        startActivity(intentCanvasApi);
+                        break;
+                    case "LoadingTextViewActivity":
+                        Intent intentLoadingTextView = new Intent(App.getInstance().getContext(), LoadingTextViewActivity.class);
+                        startActivity(intentLoadingTextView);
+                        break;
+                    case "JustifyTextActivity":
+                        Intent intentJustifyText = new Intent(App.getInstance().getContext(), JustifyTextActivity.class);
+                        startActivity(intentJustifyText);
+                        break;
+                    case "NewToastActivity":
+                        Intent intentNewToast = new Intent(App.getInstance().getContext(), NewToastActivity.class);
+                        startActivity(intentNewToast);
+                        break;
+                    case "TimelyTextActivity":
+                        Intent intentTimelyText= new Intent(App.getInstance().getContext(), TimelyTextActivity.class);
+                        startActivity(intentTimelyText);
+                        break;
                 }
             }
 
@@ -171,6 +206,9 @@ public class ViewsFragment extends Fragment{
         Bundle bundle = getArguments();
         String string = bundle.getString(KEY);
         tvDesc.setText(string);
+
+        datas.add("CanvasApiActivity");
+        map.put("CanvasApiActivity","Canvas基本API展示");
 
         datas.add("ClearBezierActivity");
         map.put("ClearBezierActivity","贝塞尔曲线实现发生火箭的效果");
@@ -220,7 +258,23 @@ public class ViewsFragment extends Fragment{
         datas.add("PassWordActivity");
         map.put("PassWordActivity","仿安全登录EditText");
 
+        datas.add("GlideLoaderActivity");
+        map.put("GlideLoaderActivity","操作图片（双击扩大，移动查看等）");
 
+        datas.add("CircleActivity");
+        map.put("CircleActivity","圆角图片");
+
+        datas.add("LoadingTextViewActivity");
+        map.put("LoadingTextViewActivity","自定义Loading");
+
+        datas.add("JustifyTextActivity");
+        map.put("JustifyTextActivity","文字对齐");
+
+        datas.add("NewToastActivity");
+        map.put("NewToastActivity","自定义Toast");
+
+        datas.add("TimelyTextActivity");
+        map.put("TimelyTextActivity","数字Path变化");
 
     }
 }

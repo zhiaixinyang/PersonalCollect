@@ -103,6 +103,9 @@ public abstract class CommonAdapter<T> extends RecyclerView.Adapter<ViewHolder>
         return mDatas.size();
     }
 
-
+    public void addData(List<T> mDatas){
+        this.mDatas=mDatas;
+        notifyDataSetChanged();
+    }
 }
 

@@ -47,8 +47,8 @@ public class FragmentThree extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.frag_viewpager, container, false);
-        ButterKnife.bind(this,view);
-        initDatas();
+
+        initDatas(view);
         viewPager.setAdapter(new PagerAdapter() {
 
             @Override
@@ -85,7 +85,17 @@ public class FragmentThree extends Fragment{
 
         return  view;
     }
-    private void initDatas() {
+    private void initDatas(View view) {
+        ButterKnife.bind(this,view);
+
+        datas = new ArrayList<>();
+        for (int i = 0; i < 3; i++){
+            ImageView imageView = new ImageView(App.getInstance().getContext());
+            imageView.setImageBitmap(BitmapFactory.decodeResource(
+                    App.getInstance().getContext().getResources(),R.drawable.pintu));
+            datas.add(imageView);
+        }
+
         Bundle bundle = getArguments();
         tvText.setText(bundle.getString("name"));
         pagerWidth= (int) (getResources().getDisplayMetrics().widthPixels*4.0f/5.0f);
@@ -97,12 +107,5 @@ public class FragmentThree extends Fragment{
         }
         viewPager.setLayoutParams(lp);
 
-        datas = new ArrayList<>();
-        for (int i = 0; i < 3; i++){
-            ImageView imageView = new ImageView(App.getInstance().getContext());
-            imageView.setImageBitmap(BitmapFactory.decodeResource(
-                    App.getInstance().getContext().getResources(),R.drawable.pintu));
-            datas.add(imageView);
-        }
     }
 }

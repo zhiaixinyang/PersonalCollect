@@ -10,9 +10,31 @@
     <dimen name="behavior_fab_margin">16dp</dimen>
     <dimen name="behavior_app_bar_height">180dp</dimen>
     <dimen name="behavior_text_margin">16dp</dimen>
-    <dimen name="behavior_collapsed_header_height">50dp</dimen>
+    <dimen name="behavior_collapsed_header_height">75dp</dimen>
+
     <dimen name="behavior_init_float_offset_y">130dp</dimen>
     <dimen name="behavior_collapsed_float_offset_y">5dp</dimen>
-    <dimen name="behavior_init_float_margin">20dp</dimen>
+    <dimen name="behavior_init_float_margin">10dp</dimen>
     <dimen name="behavior_collapsed_float_margin">5dp</dimen>
+
+    <dimen name="text_inactive">10dp</dimen>
+    <dimen name="text_active">12dp</dimen>
+    <dimen name="bottom_navigation_elevation">8dp</dimen>
+    <dimen name="bottom_navigation_shadow_height">8dp</dimen>
+    <dimen name="bottom_navigation_shadow_height_without_colored_background">4dp</dimen>
+    <dimen name="bottom_navigation_min_width">104dp</dimen>
+    <dimen name="bottom_navigation_max_width">168dp</dimen>
+    <dimen name="bottom_navigation_height">56dp</dimen>
+    <dimen name="bottom_navigation_line_width">1dp</dimen>
+    <dimen name="bottom_navigation_icon">24dp</dimen>
+    <dimen name="bottom_navigation_padding_top_active">5dp</dimen>
+    <dimen name="bottom_navigation_padding_top_inactive">9dp</dimen>
+    <dimen name="bottom_navigation_padding_top_inactive_without_text">16dp</dimen>
+    <dimen name="bottom_navigation_padding_bottom">7dp</dimen>
+    <dimen name="bottom_navigation_padding_left">12dp</dimen>
+    <dimen name="bottom_navigation_padding_right">12dp</dimen>
+    <dimen name="bottom_navigation_text_size_active">14sp</dimen>
+    <dimen name="bottom_navigation_text_size_inactive">12sp</dimen>
+    <dimen name="fab_margin">8dp</dimen>
+    <dimen name="fab_padding">12dp</dimen>
 </resources>

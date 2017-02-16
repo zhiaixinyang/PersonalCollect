@@ -4,7 +4,9 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Path;
 import android.graphics.Rect;
+import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
@@ -25,6 +27,7 @@ public class CanvasApiView extends View{
 
     @Override
     protected void onDraw(Canvas canvas) {
+        canvas.drawColor(Color.BLUE);
         //初始化一个画笔对象。
         Paint paint=new Paint(Color.BLACK);
         //设置画笔实线宽度为2dp
@@ -63,6 +66,21 @@ public class CanvasApiView extends View{
         //new Rect(100,500,300,600)的意思就是生成一个起点（100,500）终点（300,600）的区域
         //此方法和canvas.drawRect(100,500,300,600,paint)效果一样
         canvas.drawRect(new Rect(100,500,300,600),paint);
+        canvas.translate(800,500);
+        canvas.drawCircle(0,0,100,paint);
+
+        canvas.restore();
+        canvas.save();
+        canvas.translate(getWidth()/2,getHeight()/2);
+        for (int i=0;i<19;i++){
+            canvas.drawLine(-100,0,-120,0,paint);
+            canvas.rotate(10);
+        }
+        canvas.restore();
+        Path path = new Path();
+        path.addArc(new RectF(0,0,500,500), 0, 360);
+        canvas.drawTextOnPath("https://github.com/zhiaixinyang/MyFirstApp", path, 0, 0, paint);
+
     }
 
     public int dp2px(float dp) {

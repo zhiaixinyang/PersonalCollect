@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:textColor="@color/black"
+        android:text="获得通讯录信息"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:onClick="contentProvider"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:textColor="@color/black"
+        android:text="往通讯录插入(仅在代码中展示)"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:onClick="insertContentProvider"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rlv_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

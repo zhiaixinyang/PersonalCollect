@@ -1,34 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="16dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="16dp">
 
-    <com.example.mbenben.studydemo.view.progressbar.FlikerProgressBar
+    <com.example.mbenben.studydemo.view.progressbar.view.FlikerProgressBar
         android:id="@+id/flikerbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:progressbar_textSize="12sp"
         app:progressbar_loadingColor="#40c4ff"
         app:progressbar_stopColor="#ff9800"
-        />
+        app:progressbar_textSize="12sp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="重新下载"
-        android:onClick="reLoad"/>
+        android:onClick="reLoad"
+        android:text="重新下载" />
 
-    <com.example.mbenben.studydemo.view.progressbar.FlikerProgressBar
+    <com.example.mbenben.studydemo.view.progressbar.view.FlikerProgressBar
         android:id="@+id/round_flikerbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:progressbar_textSize="12sp"
         app:progressbar_loadingColor="#40c4ff"
-        app:progressbar_stopColor="#ff9800"
         app:progressbar_radius="20dp"
-        />
+        app:progressbar_stopColor="#ff9800"
+        app:progressbar_textSize="12sp" />
+
+    <com.example.mbenben.studydemo.view.progressbar.myview.MyHorinzontalProgressBarView
+        android:id="@+id/my_progressbaar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:progress="0"
+        android:padding="20dp" />
+
+    <com.example.mbenben.studydemo.view.progressbar.myview.MyRoundProgressBarView
+        android:id="@+id/my_round_progressbar"
+        android:layout_width="120dp"
+        android:progress="0"
+        android:layout_height="120dp" />
 
 </LinearLayout>

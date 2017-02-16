@@ -18,6 +18,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    sourceSets { main { assets.srcDirs = ['src/main/assets', 'src/main/assets/'] } }
 }
 
 dependencies {
@@ -41,4 +42,5 @@ dependencies {
     compile 'com.github.bumptech.glide:okhttp3-integration:1.4.0@aar'
     compile 'org.greenrobot:eventbus:3.0.0'
     compile 'com.davemorrissey.labs:subsampling-scale-image-view:3.6.0'
+    compile 'com.nineoldandroids:library:2.4.0'
 }

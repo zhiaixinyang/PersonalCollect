@@ -16,173 +16,179 @@
         <item name="textAllCaps">false</item>
     </style>
 
-<style name="healthyview_style">
-<item name="android:paddingBottom">32dp</item>
-<item name="android:paddingLeft">60dp</item>
-<item name="android:paddingTop">8dp</item>
-<item name="android:paddingRight">32dp</item>
-<item name="android:layout_width">match_parent</item>
-<item name="android:layout_height">260dp</item>
-<item name="lineWidth">2dp</item>
-<item name="android:background">#FFFFFF</item>
-<item name="coordinatesLineWidth">2px</item>
-<item name="lineColor">#6acfed</item>
-<item name="maxcircleColor">#6acfed</item>
-<item name="coordinatesTextSize">11sp</item>
-<item name="coordinatesTextColor">#808080</item>
-</style>
+    <style name="healthyview_style">
+        <item name="android:paddingBottom">32dp</item>
+        <item name="android:paddingLeft">60dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingRight">32dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">260dp</item>
+        <item name="lineWidth">2dp</item>
+        <item name="android:background">#FFFFFF</item>
+        <item name="coordinatesLineWidth">2px</item>
+        <item name="lineColor">#6acfed</item>
+        <item name="maxcircleColor">#6acfed</item>
+        <item name="coordinatesTextSize">11sp</item>
+        <item name="coordinatesTextColor">#808080</item>
+    </style>
 
-<style name="healthy_notify_texstyle">
-<item name="android:textStyle">normal</item>
-<item name="android:textSize">16sp</item>
-<item name="android:paddingLeft">32dp</item>
-<item name="android:paddingBottom">16dp</item>
-<item name="android:paddingRight">16dp</item>
-<item name="android:background">@color/white</item>
-<item name="android:textColor">#808080</item>
-</style><style name="healthy_report_textstyle">
-<item name="android:textColor">#3d97da</item>
-<item name="android:textSize">20sp</item>
-<item name="android:textStyle">bold</item>
-<item name="android:layout_gravity">center</item>
-<item name="android:gravity">center</item>
-<item name="android:layout_marginLeft">16dp</item>
-</style>
+    <style name="healthy_notify_texstyle">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:paddingLeft">32dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:textColor">#808080</item>
+    </style>
 
-    <!-- 可选择的Layout --><style name="MultiLineChooseItemTags">
-<item name="android:layout_width">match_parent</item>
-<item name="android:layout_height">wrap_content</item>
-<item name="item_backgroundColor">#FFFFFF</item>
-<item name="item_selectedTextColor">#FFFFFF</item>
-<item name="item_selectedBackgroundColor">#49C120</item>
-<item name="item_textSize">13sp</item>
-<item name="item_horizontalSpacing">5dp</item>
-<item name="item_verticalSpacing">5dp</item>
-<item name="item_horizontalPadding">12dp</item>
-<item name="item_verticalPadding">3dp</item>
-<item name="item_radius">5dp</item>
-<item name="item_selectedStrokeColor">#49C120</item>
-<item name="item_strokeWidth">1px</item>
-<item name="item_multiChooseable">true</item>
-<item name="item_singleLine">true</item>
-<item name="item_width">85</item>
-<item name="item_height">30</item>
-</style><style name="MultiLineChooseLayoutTags">
-<item name="android:layout_width">match_parent</item>
-<item name="android:layout_height">wrap_content</item>
-<item name="item_textColor">#49C120</item>
-<item name="item_backgroundColor">#FFFFFF</item>
-<item name="item_selectedTextColor">#FFFFFF</item>
-<item name="item_selectedBackgroundColor">#49C120</item>
-<item name="item_textSize">13sp</item>
-<item name="item_horizontalSpacing">5dp</item>
-<item name="item_verticalSpacing">5dp</item>
-<item name="item_horizontalPadding">12dp</item>
-<item name="item_verticalPadding">3dp</item>
-<item name="item_radius">5dp</item>
-<item name="item_selectedStrokeColor">#49C120</item>
-<item name="item_strokeWidth">1px</item>
-<item name="item_multiChooseable">true</item>
-<item name="item_singleLine">true</item>
-<item name="item_width">wrap_content</item>
-<item name="item_height">wrap_content</item>
-</style><style name="MultiLineChooseLayoutTags.SingleChoose" parent="MultiLineChooseLayoutTags">
-<item name="android:layout_width">match_parent</item>
-<item name="android:layout_height">wrap_content</item>
-<item name="android:layout_marginTop">5dp</item>
-<item name="item_textColor">#666666</item>
-<item name="item_backgroundColor">#ffffff</item>
-<item name="item_selectedTextColor">#ffffff</item>
-<item name="item_selectedBackgroundColor">#7289ff</item>
-<item name="item_radius">0dp</item>
-<item name="item_strokeColor">#939393</item>
-<item name="item_selectedStrokeColor">#939393</item>
-<item name="item_strokeWidth">1px</item>
-<item name="item_horizontalSpacing">10dp</item>
-<!--这里设置固定大小,padding为0-->
-<item name="item_horizontalPadding">10dp</item>
-<item name="item_verticalPadding">5dp</item>
-<!--单位dp-->
-<item name="item_width">80</item>
-<item name="item_height">40</item>
-<!--限制tag显示长度,规则查看Textview-->
-<item name="item_maxEms">5</item>
-<!--单选-->
-<item name="item_multiChooseable">false</item>
-</style>
+    <style name="healthy_report_textstyle">
+        <item name="android:textColor">#3d97da</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginLeft">16dp</item>
+    </style>
 
-<style name="MultiLineChooseLayoutTags.FlowLayout" parent="MultiLineChooseLayoutTags">
-<item name="android:layout_width">match_parent</item>
-<item name="android:layout_height">wrap_content</item>
-<item name="android:layout_marginTop">5dp</item>
-<item name="item_textColor">#666666</item>
-<item name="item_backgroundColor">#ffffff</item>
-<item name="item_selectedTextColor">#ffffff</item>
-<item name="item_selectedBackgroundColor">#7289ff</item>
-<item name="item_radius">0dp</item>
-<item name="item_strokeColor">#939393</item>
-<item name="item_selectedStrokeColor">#939393</item>
-<item name="item_strokeWidth">1px</item>
-<item name="item_horizontalSpacing">10dp</item>
-<!--这里设置固定大小,padding为0-->
-<item name="item_horizontalPadding">10dp</item>
-<item name="item_verticalPadding">5dp</item>
-<!--单位dp-->
-<item name="item_width">wrap_content</item>
-<item name="item_height">wrap_content</item>
-<!--限制tag显示长度,规则查看Textview-->
-<item name="item_maxEms">5</item>
-<!--多选-->
-<item name="item_multiChooseable">true</item>
-</style>
+    <!-- 可选择的Layout -->
+    <style name="MultiLineChooseItemTags">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="item_backgroundColor">#FFFFFF</item>
+        <item name="item_selectedTextColor">#FFFFFF</item>
+        <item name="item_selectedBackgroundColor">#49C120</item>
+        <item name="item_textSize">13sp</item>
+        <item name="item_horizontalSpacing">5dp</item>
+        <item name="item_verticalSpacing">5dp</item>
+        <item name="item_horizontalPadding">12dp</item>
+        <item name="item_verticalPadding">3dp</item>
+        <item name="item_radius">5dp</item>
+        <item name="item_selectedStrokeColor">#49C120</item>
+        <item name="item_strokeWidth">1px</item>
+        <item name="item_multiChooseable">true</item>
+        <item name="item_singleLine">true</item>
+        <item name="item_width">85</item>
+        <item name="item_height">30</item>
+    </style>
 
-<style name="MultiLineChooseLayoutTags.MultiChoose" parent="MultiLineChooseLayoutTags">
-<item name="android:layout_width">match_parent</item>
-<item name="android:layout_height">wrap_content</item>
-<item name="android:layout_marginTop">5dp</item>
-<item name="item_textColor">#666666</item>
-<item name="item_backgroundColor">#ffffff</item>
-<item name="item_selectedTextColor">#ffffff</item>
-<item name="item_selectedBackgroundColor">#7289ff</item>
-<item name="item_radius">0dp</item>
-<item name="item_strokeColor">#939393</item>
-<item name="item_selectedStrokeColor">#939393</item>
-<item name="item_strokeWidth">1px</item>
-<item name="item_horizontalSpacing">10dp</item>
-<!--这里设置固定大小,padding为0-->
-<item name="item_horizontalPadding">10dp</item>
-<item name="item_verticalPadding">5dp</item>
-<!--单位dp-->
-<item name="item_width">80</item>
-<item name="item_height">40</item>
-<!--限制tag显示长度,规则查看Textview-->
-<item name="item_maxEms">5</item>
-<!--多选-->
-<item name="item_multiChooseable">true</item>
-</style>
+    <style name="MultiLineChooseLayoutTags">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="item_textColor">#49C120</item>
+        <item name="item_backgroundColor">#FFFFFF</item>
+        <item name="item_selectedTextColor">#FFFFFF</item>
+        <item name="item_selectedBackgroundColor">#49C120</item>
+        <item name="item_textSize">13sp</item>
+        <item name="item_horizontalSpacing">5dp</item>
+        <item name="item_verticalSpacing">5dp</item>
+        <item name="item_horizontalPadding">12dp</item>
+        <item name="item_verticalPadding">3dp</item>
+        <item name="item_radius">5dp</item>
+        <item name="item_selectedStrokeColor">#49C120</item>
+        <item name="item_strokeWidth">1px</item>
+        <item name="item_multiChooseable">true</item>
+        <item name="item_singleLine">true</item>
+        <item name="item_width">wrap_content</item>
+        <item name="item_height">wrap_content</item>
+    </style>
 
-<style name="dialog_scale_animstyle">
-<item name="android:windowEnterAnimation">@anim/scale_dialog_in_anim</item>
-<item name="android:windowExitAnimation">@anim/scale_dialog_out_anim</item>
-</style>
+    <style name="MultiLineChooseLayoutTags.SingleChoose" parent="MultiLineChooseLayoutTags">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="item_textColor">#666666</item>
+        <item name="item_backgroundColor">#ffffff</item>
+        <item name="item_selectedTextColor">#ffffff</item>
+        <item name="item_selectedBackgroundColor">#7289ff</item>
+        <item name="item_radius">0dp</item>
+        <item name="item_strokeColor">#939393</item>
+        <item name="item_selectedStrokeColor">#939393</item>
+        <item name="item_strokeWidth">1px</item>
+        <item name="item_horizontalSpacing">10dp</item>
+        <!--这里设置固定大小,padding为0-->
+        <item name="item_horizontalPadding">10dp</item>
+        <item name="item_verticalPadding">5dp</item>
+        <!--单位dp-->
+        <item name="item_width">80</item>
+        <item name="item_height">40</item>
+        <!--限制tag显示长度,规则查看Textview-->
+        <item name="item_maxEms">5</item>
+        <!--单选-->
+        <item name="item_multiChooseable">false</item>
+    </style>
 
-<style name="main_menu_animstyle">
-<item name="android:windowEnterAnimation">@anim/photo_dialog_in_anim</item>
-<item name="android:windowExitAnimation">@anim/photo_dialog_out_anim</item>
-</style>
+    <style name="MultiLineChooseLayoutTags.FlowLayout" parent="MultiLineChooseLayoutTags">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="item_textColor">#666666</item>
+        <item name="item_backgroundColor">#ffffff</item>
+        <item name="item_selectedTextColor">#ffffff</item>
+        <item name="item_selectedBackgroundColor">#7289ff</item>
+        <item name="item_radius">0dp</item>
+        <item name="item_strokeColor">#939393</item>
+        <item name="item_selectedStrokeColor">#939393</item>
+        <item name="item_strokeWidth">1px</item>
+        <item name="item_horizontalSpacing">10dp</item>
+        <!--这里设置固定大小,padding为0-->
+        <item name="item_horizontalPadding">10dp</item>
+        <item name="item_verticalPadding">5dp</item>
+        <!--单位dp-->
+        <item name="item_width">wrap_content</item>
+        <item name="item_height">wrap_content</item>
+        <!--限制tag显示长度,规则查看Textview-->
+        <item name="item_maxEms">5</item>
+        <!--多选-->
+        <item name="item_multiChooseable">true</item>
+    </style>
 
-<style name="dialog" parent="@android:style/Theme.Dialog">
-<item name="android:windowFrame">@null</item>
-<!-- 边框 -->
-<item name="android:windowIsFloating">true</item>
-<!-- 是否浮现在activity之上 -->
-<item name="android:windowIsTranslucent">false</item>
-<!-- 无标题 -->
-<item name="android:windowBackground">@android:color/transparent</item>
-<!-- 背景透明 -->
-<item name="android:backgroundDimEnabled">true</item>
-<!-- 模糊 -->
-</style>
+    <style name="MultiLineChooseLayoutTags.MultiChoose" parent="MultiLineChooseLayoutTags">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="item_textColor">#666666</item>
+        <item name="item_backgroundColor">#ffffff</item>
+        <item name="item_selectedTextColor">#ffffff</item>
+        <item name="item_selectedBackgroundColor">#7289ff</item>
+        <item name="item_radius">0dp</item>
+        <item name="item_strokeColor">#939393</item>
+        <item name="item_selectedStrokeColor">#939393</item>
+        <item name="item_strokeWidth">1px</item>
+        <item name="item_horizontalSpacing">10dp</item>
+        <!--这里设置固定大小,padding为0-->
+        <item name="item_horizontalPadding">10dp</item>
+        <item name="item_verticalPadding">5dp</item>
+        <!--单位dp-->
+        <item name="item_width">80</item>
+        <item name="item_height">40</item>
+        <!--限制tag显示长度,规则查看Textview-->
+        <item name="item_maxEms">5</item>
+        <!--多选-->
+        <item name="item_multiChooseable">true</item>
+    </style>
 
+    <style name="dialog_scale_animstyle">
+        <item name="android:windowEnterAnimation">@anim/scale_dialog_in_anim</item>
+        <item name="android:windowExitAnimation">@anim/scale_dialog_out_anim</item>
+    </style>
 
-    </resources>
+    <style name="main_menu_animstyle">
+        <item name="android:windowEnterAnimation">@anim/photo_dialog_in_anim</item>
+        <item name="android:windowExitAnimation">@anim/photo_dialog_out_anim</item>
+    </style>
+
+    <style name="dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <!-- 边框 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsTranslucent">false</item>
+        <!-- 无标题 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 背景透明 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 模糊 -->
+    </style>
+
+</resources>

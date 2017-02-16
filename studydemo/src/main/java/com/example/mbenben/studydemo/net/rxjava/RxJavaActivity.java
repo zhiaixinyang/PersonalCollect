@@ -143,6 +143,7 @@ public class RxJavaActivity extends AppCompatActivity{
                     if (conn.getResponseCode()==200){
                         is=conn.getInputStream();
                         bitmap= BitmapFactory.decodeStream(is);
+                        //完成业务逻辑，通知观察者
                         subscriber.onNext(bitmap);
                     }
                 } catch (MalformedURLException e) {
@@ -150,14 +151,14 @@ public class RxJavaActivity extends AppCompatActivity{
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-            }})
-                .subscribeOn(Schedulers.newThread())//子线程
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Action1<Bitmap>() {
-                    @Override
-                    public void call(Bitmap bitmap) {
-                        ivImage.setImageBitmap(bitmap);
-                    }
-                });
+            }
+        }).subscribeOn(Schedulers.newThread())//子线程
+          .observeOn(AndroidSchedulers.mainThread())
+          .subscribe(new Action1<Bitmap>() {
+              @Override
+              public void call(Bitmap bitmap) {
+                  ivImage.setImageBitmap(bitmap);
+              }
+          });
     }
 }

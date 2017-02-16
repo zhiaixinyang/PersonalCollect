@@ -8,12 +8,14 @@
     <color name="white">#ffffff</color>
     <color name="red">#fb4447</color>
     <color name="gray">#8a8a8a</color>
-    <color name="trans_gray">#519f9e9e</color>
 
     <color name="blue_light">#6acfed</color>
     <color name="blue_dark">#008fff</color>
-    <color name="trans_blue_dark">#7d008fff</color>
     <color name="red_226">#E25E5E</color>
+
+    <color name="trans_white">#7dffffff</color>
+    <color name="trans_gray">#519f9e9e</color>
+    <color name="trans_blue_dark">#7d008fff</color>
 
     <color name="strong">#FF5B26</color>
     <color name="font_text">#666</color>
@@ -45,6 +47,19 @@
     <color name="bg_color_pink">#FF90A2</color>
     <color name="bg_color_blue">#43D5FF</color>
     <color name="bg_color_blue_light">#84B5CA</color>
+
+    <color name="itemActiveColorWithoutColoredBackground">#2196F3</color>
+    <color name="colorActive">#FFFFFF</color>
+    <color name="colorInactive">#e7e6e7</color>
+    <color name="withoutColoredBackground">#757575</color>
+    <color name="firstColor">#00BCD4</color>
+    <color name="secondColor">#E91E63</color>
+    <color name="thirdColor">#FF5722</color>
+    <color name="fourthColor">#4CAF50</color>
+
+    <color name="toast_color_accent">#7c4dff</color>
+    <color name="toast_color_success">#3CCD88</color>
+    <color name="toast_color_error">#f44336</color>
 
     <color name="color_item_press">#ffff0000</color>
     <color name="color_item_normal">#44ff0000</color>

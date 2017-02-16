@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/recents"
+        android:icon="@drawable/ic_launcher"
+        android:title="One" />
+
+    <item
+        android:id="@+id/favourites"
+        android:icon="@drawable/ic_launcher"
+        android:title="Two" />
+
+    <item
+        android:id="@+id/nearby"
+        android:icon="@drawable/ic_launcher"
+        android:title="Three" />
+</menu>

@@ -17,7 +17,12 @@ import com.example.mbenben.studydemo.base.CommonAdapter;
 import com.example.mbenben.studydemo.base.OnItemClickListener;
 import com.example.mbenben.studydemo.base.ViewHolder;
 import com.example.mbenben.studydemo.layout.arclayout.ArcLayoutActivity;
-import com.example.mbenben.studydemo.layout.bigimage.GlideLoaderActivity;
+import com.example.mbenben.studydemo.layout.bottomnavigationview.BottomNavigationViewActivity;
+import com.example.mbenben.studydemo.layout.fragmenttabhost.TabActivity;
+import com.example.mbenben.studydemo.layout.intercepttouchevent.InterceptActivity;
+import com.example.mbenben.studydemo.layout.newbottomnav.BottomNavMainActivity;
+import com.example.mbenben.studydemo.layout.materialdesign.MaterialDesignActivity;
+import com.example.mbenben.studydemo.layout.videoplayer.VideoPlayerActivity;
 import com.example.mbenben.studydemo.layout.drawerlayout.DrawerLayoutActivity;
 import com.example.mbenben.studydemo.layout.ele.EleMainActivity;
 import com.example.mbenben.studydemo.layout.indicator.IndicatorActivity;
@@ -29,7 +34,7 @@ import com.example.mbenben.studydemo.layout.recyclerview.RecyclerActivity;
 import com.example.mbenben.studydemo.layout.ricktext.RickTextActivity;
 import com.example.mbenben.studydemo.layout.swipecards.SwipeCardsActivity;
 import com.example.mbenben.studydemo.layout.viewpager.ViewPagerActivity;
-import com.example.mbenben.studydemo.view.gradationtitle.QQTitleActivity;
+import com.example.mbenben.studydemo.layout.gradationtitle.QQTitleActivity;
 import com.example.mbenben.studydemo.view.pintu.PinTuActivity;
 import com.example.mbenben.studydemo.view.select.SelectActivity;
 import java.util.ArrayList;
@@ -132,18 +137,38 @@ public class LayoutFragment extends Fragment{
                     case "RickTextActivity":
                         Intent intentRickText=new Intent(App.getInstance().getContext(), RickTextActivity.class);
                         startActivity(intentRickText);
-                    break;
+                        break;
                     case "RadarScanActivity":
                         Intent intentRadarScan = new Intent(App.getInstance().getContext(), RadarScanActivity.class);
                         startActivity(intentRadarScan);
                         break;
-                    case "GlideLoaderActivity":
-                        Intent intentGlideLoader = new Intent(App.getInstance().getContext(), GlideLoaderActivity.class);
-                        startActivity(intentGlideLoader);
-                        break;
                     case "QQTitleActivity":
                         Intent intentQQTitle = new Intent(App.getInstance().getContext(), QQTitleActivity.class);
                         startActivity(intentQQTitle);
+                        break;
+                    case "VideoPlayerActivity":
+                        Intent intentVideoPlayer = new Intent(App.getInstance().getContext(), VideoPlayerActivity.class);
+                        startActivity(intentVideoPlayer);
+                        break;
+                    case "TabActivity":
+                        Intent intentVideoTab = new Intent(App.getInstance().getContext(), TabActivity.class);
+                        startActivity(intentVideoTab);
+                        break;
+                    case "BottomNavigationViewActivity":
+                        Intent intentBottomNavigationView = new Intent(App.getInstance().getContext(), BottomNavigationViewActivity.class);
+                        startActivity(intentBottomNavigationView);
+                        break;
+                    case "BottomNavMainActivity":
+                        Intent intentBottomNav= new Intent(App.getInstance().getContext(), BottomNavMainActivity.class);
+                        startActivity(intentBottomNav);
+                        break;
+                    case "MaterialDesignActivity":
+                        Intent intentMaterialDesign= new Intent(App.getInstance().getContext(), MaterialDesignActivity.class);
+                        startActivity(intentMaterialDesign);
+                        break;
+                    case "InterceptActivity":
+                        Intent intentIntercept= new Intent(App.getInstance().getContext(), InterceptActivity.class);
+                        startActivity(intentIntercept);
                         break;
 
                 }
@@ -178,14 +203,14 @@ public class LayoutFragment extends Fragment{
         datas.add("IndicatorActivity");
         map.put("IndicatorActivity","ViewPager指示器");
 
+        datas.add("ViewPagerActivity");
+        map.put("ViewPagerActivity","ViewPager不同的转换效果");
+
         datas.add("DrawerLayoutActivity");
         map.put("DrawerLayoutActivity","DrawerLayout抽屉菜单");
 
         datas.add("RecyclerActivity");
         map.put("RecyclerActivity","RecyclerView各种使用");
-
-        datas.add("ViewPagerActivity");
-        map.put("ViewPagerActivity","ViewPager不同的转换效果");
 
         datas.add("SwipeCardsActivity");
         map.put("SwipeCardsActivity","仿天天美剧拖动卡片的效果");
@@ -205,13 +230,29 @@ public class LayoutFragment extends Fragment{
         datas.add("RickTextActivity");
         map.put("RickTextActivity","类似微博的emoji表情与@某人的EdiText");
 
-        datas.add("GlideLoaderActivity");
-        map.put("GlideLoaderActivity","操作图片（双击扩大，移动查看等）");
-
         datas.add("RadarScanActivity");
         map.put("RadarScanActivity","雷达式附近的人");
 
         datas.add("QQTitleActivity");
         map.put("QQTitleActivity","随页面滑动渐变的Title");
+
+        datas.add("VideoPlayerActivity");
+        map.put("VideoPlayerActivity","原始视频播放器VideoPlayer");
+
+        datas.add("TabActivity");
+        map.put("TabActivity","基本的TabHost的使用");
+
+        datas.add("BottomNavigationViewActivity");
+        map.put("BottomNavigationViewActivity","官方design:25.0.0新推出的BottomNavigationView");
+
+        datas.add("BottomNavMainActivity");
+        map.put("BottomNavMainActivity","GitHub上底部导航");
+
+        datas.add("MaterialDesignActivity");
+        map.put("MaterialDesignActivity","MaterialDesign");
+
+        datas.add("InterceptActivity");
+        map.put("InterceptActivity","滑动冲突解析");
+
     }
 }

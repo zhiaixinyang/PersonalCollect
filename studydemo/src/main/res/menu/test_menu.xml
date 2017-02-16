@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/action_one"
+        android:orderInCategory="100"
+        android:title="Haha"/>
+    <item
+        android:id="@+id/action_two"
+        android:orderInCategory="100"
+        android:title="Hehe"/>
+    <item
+        android:id="@+id/action_three"
+        android:orderInCategory="100"
+        android:title="Heihei"/>
+
+</menu>

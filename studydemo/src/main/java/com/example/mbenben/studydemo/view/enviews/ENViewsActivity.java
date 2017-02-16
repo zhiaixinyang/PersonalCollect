@@ -35,7 +35,7 @@ public class ENViewsActivity extends AppCompatActivity {
     private RefreshFragment refreshFragment;
     private ScrollFragment scrollFragment;
     private SearchFragment searchFragment;
-    private String[] titles={"Download","Loading","Play","Refresh","Scroll","Search"};
+    private String[] titles={"Download","Loading","play","Refresh","Scroll","Search"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -1,0 +1,51 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+
+    <Button
+        android:id="@+id/network"
+        android:onClick="doClick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="判断网络是否连接" />
+
+    <Button
+        android:id="@+id/enableOrDisable_WIFI"
+        android:layout_width="wrap_content"
+         android:onClick="doClick"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/network"
+        android:layout_alignRight="@+id/network"
+        android:layout_below="@+id/network"
+        android:text="开关WIFI" />
+
+    <Button
+        android:id="@+id/getvoice"
+         android:onClick="doClick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/enableOrDisable_WIFI"
+        android:layout_alignRight="@+id/enableOrDisable_WIFI"
+        android:layout_below="@+id/enableOrDisable_WIFI"
+        android:text="获取系统的音量" />
+
+    <Button
+        android:id="@+id/getPackagename"
+                 android:onClick="doClick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/getvoice"
+        android:layout_alignRight="@+id/getvoice"
+        android:layout_below="@+id/getvoice"
+        android:text="获取当前进程包名" />
+
+</RelativeLayout>

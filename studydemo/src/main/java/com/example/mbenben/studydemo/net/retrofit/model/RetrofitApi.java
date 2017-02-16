@@ -3,6 +3,7 @@ package com.example.mbenben.studydemo.net.retrofit.model;
 
 import android.graphics.Bitmap;
 
+import com.example.mbenben.studydemo.net.retrofit.model.bean.GrammarMain;
 import com.example.mbenben.studydemo.net.retrofit.model.bean.RetrofitBean;
 import java.util.List;
 import okhttp3.MultipartBody;
@@ -22,6 +23,9 @@ import retrofit2.http.GET;
  */
 public interface RetrofitApi {
     String URL = "http://www.ohonor.xyz/";
+
+    @GET("EnglishGrammar/getGrammarMainIndex")
+    Observable<List<GrammarMain>> getGrammarMainList();
 
     @GET("retrofit")
     Observable<List<RetrofitBean>> getRetrofitDatas();

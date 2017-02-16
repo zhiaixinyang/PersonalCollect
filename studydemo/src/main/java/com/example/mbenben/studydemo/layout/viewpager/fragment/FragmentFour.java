@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,7 @@ import com.example.mbenben.studydemo.App;
 import com.example.mbenben.studydemo.R;
 import com.example.mbenben.studydemo.layout.viewpager.transformation.DepthTransformation;
 import com.example.mbenben.studydemo.layout.viewpager.transformation.ZoomTransformation;
+import com.example.mbenben.studydemo.utils.DpUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -109,10 +111,10 @@ public class FragmentFour extends Fragment implements ViewPager.OnPageChangeList
             dotView = new View(App.getInstance().getContext());
             dotView.setBackgroundResource(R.drawable.selector_dot);
             //设置小圆点的宽和高
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(15, 15);
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(DpUtils.dp2px(10), DpUtils.dp2px(10));
             //设置每个小圆点之间距离
             if (i != 0) {
-                params.leftMargin = 15;
+                params.leftMargin = DpUtils.dp2px(10);
             }
             dotView.setLayoutParams(params);
             //设置小圆点默认状态
@@ -120,6 +122,9 @@ public class FragmentFour extends Fragment implements ViewPager.OnPageChangeList
             //把dotview加入到线性布局中
             llDots.addView(dotView);
         }
+        LinearLayout.LayoutParams paramsllDots = new LinearLayout.LayoutParams(DpUtils.dp2px(10)*11, DpUtils.dp2px(18));
+        llDots.setLayoutParams(paramsllDots);
+        llDots.setGravity(Gravity.CENTER);
     }
 
 

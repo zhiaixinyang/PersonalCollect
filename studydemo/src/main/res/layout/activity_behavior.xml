@@ -21,9 +21,11 @@
         android:background="@color/trans_gray"
         app:layout_behavior="com.example.mbenben.studydemo.view.behavior.HeaderFloatBehavior">
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
+            android:background="@drawable/round_et_tran_gray"
+            android:textColorHint="@color/white"
+            android:padding="6dp"
             android:hint="搜索关键字" />
     </LinearLayout>
 

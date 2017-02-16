@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mbenben.studydemo">
+
+    <uses-sdk android:minSdkVersion="7" android:targetSdkVersion="19" />
+
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -90,7 +96,7 @@
             android:launchMode="singleTask"/>
         <activity android:name=".layout.recyclerview.RecyclerView3Activity"
             android:launchMode="singleTask"/>
-        <activity android:name=".view.gradationtitle.QQTitleActivity"
+        <activity android:name=".layout.gradationtitle.QQTitleActivity"
             android:launchMode="singleTask"/>
         <activity android:name=".view.viscosity.ViscosityActivity"
             android:launchMode="singleTask"/>
@@ -112,7 +118,7 @@
             android:launchMode="singleTask"/>
         <activity android:name=".view.htmltext.HtmlTextActivity"
             android:launchMode="singleTask"/>
-        <activity android:name=".layout.bigimage.GlideLoaderActivity"
+        <activity android:name=".view.bigimage.GlideLoaderActivity"
             android:launchMode="singleTask"/>
         <activity android:name=".layout.recyclerview.RecyclerView4Activity"
             android:launchMode="singleTask"/>
@@ -130,6 +136,48 @@
             android:launchMode="singleTask"/>
         <activity android:name=".view.behavior.BehaviorActivity"
             android:launchMode="singleTask"/>
+        <activity android:name=".layout.videoplayer.VideoPlayerActivity"
+            android:launchMode="singleTask"/>
+        <activity android:name=".view.circle.CircleActivity"
+            android:launchMode="singleTask"/>
+        <activity android:name=".layout.fragmenttabhost.TabActivity"
+            android:launchMode="singleTask"/>
+        <activity android:name=".basenote.contentprovider.ContentProviderActivity"
+            android:launchMode="singleTask"/>
+        <activity android:name=".basenote.broadcastreceiver.BroadcastReceiverActivity"
+            android:launchMode="singleTask"/>
+        <activity android:name=".layout.bottomnavigationview.BottomNavigationViewActivity"
+            android:launchMode="singleTask"/>
+        <activity android:name=".layout.newbottomnav.BottomNavMainActivity"
+            android:launchMode="singleTask"/>
+        <activity android:name=".layout.materialdesign.MaterialDesignActivity"
+            android:launchMode="singleTask"/>
+        <activity android:name=".view.loading.LoadingTextViewActivity"
+            android:launchMode="singleTask"/>
+        <activity android:name=".view.justify.JustifyTextActivity"
+            android:launchMode="singleTask"/>
+        <activity android:name=".view.toast.NewToastActivity"
+            android:launchMode="singleTask"/>
+        <activity android:name=".view.timelytext.TimelyTextActivity"
+            android:launchMode="singleTask"/>
+        <activity android:name=".layout.intercepttouchevent.InterceptActivity"
+            android:launchMode="singleTask"/>
+
+
+        <receiver android:name=".basenote.broadcastreceiver.BC1" >
+            <intent-filter
+                android:priority="100">
+                <action android:name="BC_One" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".basenote.broadcastreceiver.BC2" >
+            <intent-filter
+                android:priority="200">
+                <action android:name="BC_One" />
+            </intent-filter>
+        </receiver>
+        <service android:name=".basenote.service.MyStartService"/>
+        <service android:name=".basenote.service.MyBindService"/>
     </application>
 
 </manifest>

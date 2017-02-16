@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 自定义进度条3 -->
+    <attr name="myprogress_unreach_color" format="color"/>
+    <attr name="myprogress_unreach_height" format="dimension"/>
+    <attr name="myprogress_reach_color" format="color"/>
+    <attr name="myprogress_reach_height" format="dimension"/>
+
+    <attr name="myprogress_text_offset" format="dimension"/>
+    <attr name="myprogress_text_size" format="dimension"/>
+    <attr name="myprogress_text_color" format="color"/>
+    
+    <attr name="myprogress_round_radius" format="dimension"/>
+
+    <!-- 使用上边声明的属性 -->
+    <declare-styleable name="MyHorinzontalProgressBarView">
+        <attr name="myprogress_unreach_color"/>
+        <attr name="myprogress_unreach_height"/>
+        <attr name="myprogress_reach_color" />
+        <attr name="myprogress_reach_height"/>
+
+        <attr name="myprogress_text_offset" />
+        <attr name="myprogress_text_size"/>
+        <attr name="myprogress_text_color"/>
+    </declare-styleable>
+
+    <declare-styleable name="MyRoundProgressBarView">
+
+        <attr name="myprogress_round_radius"/>
+    </declare-styleable>
+
+    <declare-styleable name="MyCircleImageView">
+        <attr name="type">
+            <enum name="circle" value="0" />
+            <enum name="round" value="1" />
+        </attr>
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color"/>
+    </declare-styleable>
+</resources>

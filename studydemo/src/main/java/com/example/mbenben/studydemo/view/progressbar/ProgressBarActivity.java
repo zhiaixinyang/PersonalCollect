@@ -8,6 +8,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.example.mbenben.studydemo.R;
+import com.example.mbenben.studydemo.view.progressbar.myview.MyHorinzontalProgressBarView;
+import com.example.mbenben.studydemo.view.progressbar.myview.MyRoundProgressBarView;
+import com.example.mbenben.studydemo.view.progressbar.view.FlikerProgressBar;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -18,7 +21,12 @@ import butterknife.ButterKnife;
 
 public class ProgressBarActivity extends AppCompatActivity implements View.OnClickListener , Runnable{
     @BindView(R.id.flikerbar) FlikerProgressBar flikerProgressBar;
-    @BindView(R.id.round_flikerbar) FlikerProgressBar roundProgressbar;
+    @BindView(R.id.round_flikerbar)
+    FlikerProgressBar roundProgressbar;
+    @BindView(R.id.my_progressbaar)
+    MyHorinzontalProgressBarView myProgressBar;
+    @BindView(R.id.my_round_progressbar)
+    MyRoundProgressBarView myRoundProgressBarView;
 
     Thread downLoadThread;
 
@@ -28,6 +36,8 @@ public class ProgressBarActivity extends AppCompatActivity implements View.OnCli
             super.handleMessage(msg);
             flikerProgressBar.setProgress(msg.arg1);
             roundProgressbar.setProgress(msg.arg1);
+            myProgressBar.setProgress(msg.arg1);
+            myRoundProgressBarView.setProgress(msg.arg1);
             if(msg.arg1 == 100){
                 flikerProgressBar.finishLoad();
                 roundProgressbar.finishLoad();

@@ -10,9 +10,9 @@
         android:layout_marginTop="8dp"
         app:DrawableAndTextGravity="right"
         app:collapseDrawable="@drawable/icon_collapsed"
+        app:expandDrawable="@drawable/icon_expand"
         app:contentTextColor="@color/colorPrimaryDark"
         app:expandCollapseTextColor="@color/colorAccent"
-        app:expandDrawable="@drawable/icon_expand"
         app:expandText="更多"
         app:maxCollapsedLines="6"/>
 </ScrollView>
