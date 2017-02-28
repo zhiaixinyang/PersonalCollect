@@ -12,6 +12,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
     <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -104,7 +105,7 @@
             android:launchMode="singleTask"/>
         <activity android:name=".layout.arclayout.ArcLayoutActivity"
             android:launchMode="singleTask"/>
-        <activity android:name=".layout.multilinechoose.MultiLineChooseActivity"
+        <activity android:name=".layout.flowlayout.MultiLineChooseActivity"
             android:launchMode="singleTask"/>
         <activity android:name=".layout.ricktext.NewEmojiActivity"
             android:launchMode="singleTask"/>
@@ -162,6 +163,14 @@
             android:launchMode="singleTask"/>
         <activity android:name=".layout.intercepttouchevent.InterceptActivity"
             android:launchMode="singleTask"/>
+        <activity android:name=".basenote.service.ServiceActivity"
+            android:launchMode="singleTask"/>
+        <activity android:name=".basenote.service.download.DownLoadServiceActivity"
+            android:launchMode="singleTask"/>
+        <activity android:name=".layout.expandableviewpager.ExpandableViewPagerActivity"
+            android:launchMode="singleTask"/>
+        <activity android:name=".layout.graffiti.DrawingBoardActvity"
+            android:launchMode="singleTask"/>
 
 
         <receiver android:name=".basenote.broadcastreceiver.BC1" >
@@ -178,6 +187,8 @@
         </receiver>
         <service android:name=".basenote.service.MyStartService"/>
         <service android:name=".basenote.service.MyBindService"/>
+        
+        <service android:name=".basenote.service.download.DownLoadService"/>
     </application>
 
 </manifest>

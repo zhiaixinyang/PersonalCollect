@@ -26,7 +26,7 @@
                 android:textColor="#7289ff"
                 android:textSize="14sp"/>
 
-            <com.example.mbenben.studydemo.layout.multilinechoose.MultiLineChooseLayout
+            <com.example.mbenben.studydemo.layout.flowlayout.view.MultiLineChooseLayout
                 android:id="@+id/singleChoose"
                 style="@style/MultiLineChooseLayoutTags.SingleChoose"
                 android:layout_width="match_parent"
@@ -52,7 +52,7 @@
                 android:textColor="#49C120"
                 android:textSize="14sp"/>
 
-            <com.example.mbenben.studydemo.layout.multilinechoose.MultiLineChooseLayout
+            <com.example.mbenben.studydemo.layout.flowlayout.view.MultiLineChooseLayout
                 android:id="@+id/multiChoose"
                 style="@style/MultiLineChooseLayoutTags.MultiChoose"
                 android:layout_width="match_parent"
@@ -77,7 +77,7 @@
                 android:textColor="#FF4081"
                 android:textSize="14sp"/>
 
-            <com.example.mbenben.studydemo.layout.multilinechoose.MultiLineChooseLayout
+            <com.example.mbenben.studydemo.layout.flowlayout.view.MultiLineChooseLayout
                 android:id="@+id/flowLayout"
                 style="@style/MultiLineChooseLayoutTags.FlowLayout"
                 android:layout_width="match_parent"

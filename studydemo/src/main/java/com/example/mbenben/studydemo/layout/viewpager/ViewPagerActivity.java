@@ -13,7 +13,6 @@ import com.example.mbenben.studydemo.layout.viewpager.fragment.FragmentFour;
 import com.example.mbenben.studydemo.layout.viewpager.fragment.FragmentOne;
 import com.example.mbenben.studydemo.layout.viewpager.fragment.FragmentThree;
 import com.example.mbenben.studydemo.layout.viewpager.fragment.FragmentTwo;
-import com.example.mbenben.studydemo.layout.viewpager.fragment.IndicatorFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -29,6 +28,7 @@ public class ViewPagerActivity extends AppCompatActivity {
     private FragmentTwo fragmentTwo;
     private FragmentThree fragmentThree;
     private FragmentFour fragmentFour;
+
     private String[] titles={"转场效果1","转场效果2",
             "转场效果3","轮播广告条"};
 

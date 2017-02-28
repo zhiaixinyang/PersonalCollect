@@ -18,6 +18,8 @@ import com.example.mbenben.studydemo.base.OnItemClickListener;
 import com.example.mbenben.studydemo.base.ViewHolder;
 import com.example.mbenben.studydemo.basenote.broadcastreceiver.BroadcastReceiverActivity;
 import com.example.mbenben.studydemo.basenote.contentprovider.ContentProviderActivity;
+import com.example.mbenben.studydemo.basenote.service.ServiceActivity;
+import com.example.mbenben.studydemo.basenote.service.download.DownLoadServiceActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -79,6 +81,14 @@ public class AndroidBaseFragment extends Fragment{
                         Intent intentBroadcastReceiver=new Intent(App.getInstance().getContext(), BroadcastReceiverActivity.class);
                         startActivity(intentBroadcastReceiver);
                         break;
+                    case "ServiceActivity":
+                        Intent intentServiceActivity=new Intent(App.getInstance().getContext(), ServiceActivity.class);
+                        startActivity(intentServiceActivity);
+                        break;
+                    case "DownLoadServiceActivity":
+                        Intent intentDowdLoadActivity=new Intent(App.getInstance().getContext(), DownLoadServiceActivity.class);
+                        startActivity(intentDowdLoadActivity);
+                        break;
 
                 }
             }
@@ -108,6 +118,9 @@ public class AndroidBaseFragment extends Fragment{
 
         datas.add("ServiceActivity");
         map.put("ServiceActivity","Service服务的基本应用");
+
+        datas.add("DownLoadServiceActivity");
+        map.put("DownLoadServiceActivity","断点续传效果");
 
     }
 }

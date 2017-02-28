@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/tv_name"
+        android:text="Name"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="match_parent"
+        style="?android:progressBarStyleHorizontal"
+        android:layout_height="wrap_content" />
+    <Button
+        android:onClick="startDown"
+        android:text="开始下载"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+    <Button
+        android:onClick="stopDown"
+        android:text="停止下载"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+</LinearLayout>

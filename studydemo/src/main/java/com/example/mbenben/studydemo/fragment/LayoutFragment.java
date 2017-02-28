@@ -18,7 +18,9 @@ import com.example.mbenben.studydemo.base.OnItemClickListener;
 import com.example.mbenben.studydemo.base.ViewHolder;
 import com.example.mbenben.studydemo.layout.arclayout.ArcLayoutActivity;
 import com.example.mbenben.studydemo.layout.bottomnavigationview.BottomNavigationViewActivity;
+import com.example.mbenben.studydemo.layout.expandableviewpager.ExpandableViewPagerActivity;
 import com.example.mbenben.studydemo.layout.fragmenttabhost.TabActivity;
+import com.example.mbenben.studydemo.layout.graffiti.DrawingBoardActvity;
 import com.example.mbenben.studydemo.layout.intercepttouchevent.InterceptActivity;
 import com.example.mbenben.studydemo.layout.newbottomnav.BottomNavMainActivity;
 import com.example.mbenben.studydemo.layout.materialdesign.MaterialDesignActivity;
@@ -26,7 +28,7 @@ import com.example.mbenben.studydemo.layout.videoplayer.VideoPlayerActivity;
 import com.example.mbenben.studydemo.layout.drawerlayout.DrawerLayoutActivity;
 import com.example.mbenben.studydemo.layout.ele.EleMainActivity;
 import com.example.mbenben.studydemo.layout.indicator.IndicatorActivity;
-import com.example.mbenben.studydemo.layout.multilinechoose.MultiLineChooseActivity;
+import com.example.mbenben.studydemo.layout.flowlayout.MultiLineChooseActivity;
 import com.example.mbenben.studydemo.layout.nav.NavActivity;
 import com.example.mbenben.studydemo.layout.nestedscroll.NestedScrollActivity;
 import com.example.mbenben.studydemo.layout.radarscan.RadarScanActivity;
@@ -170,6 +172,14 @@ public class LayoutFragment extends Fragment{
                         Intent intentIntercept= new Intent(App.getInstance().getContext(), InterceptActivity.class);
                         startActivity(intentIntercept);
                         break;
+                    case "ExpandableViewPagerActivity":
+                        Intent intentExpandableViewPager= new Intent(App.getInstance().getContext(), ExpandableViewPagerActivity.class);
+                        startActivity(intentExpandableViewPager);
+                        break;
+                    case "DrawingBoardActvity":
+                        Intent intentDrawingBoard= new Intent(App.getInstance().getContext(), DrawingBoardActvity.class);
+                        startActivity(intentDrawingBoard);
+                        break;
 
                 }
             }
@@ -254,5 +264,10 @@ public class LayoutFragment extends Fragment{
         datas.add("InterceptActivity");
         map.put("InterceptActivity","滑动冲突解析");
 
+        datas.add("ExpandableViewPagerActivity");
+        map.put("ExpandableViewPagerActivity","可以缩放的ViewPager");
+
+        datas.add("DrawingBoardActvity");
+        map.put("DrawingBoardActvity","涂鸦效果+刮刮卡");
     }
 }
