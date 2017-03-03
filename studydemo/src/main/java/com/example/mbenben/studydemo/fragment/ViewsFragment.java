@@ -23,10 +23,12 @@ import com.example.mbenben.studydemo.view.bigimage.GlideLoaderActivity;
 import com.example.mbenben.studydemo.view.canvasapi.CanvasApiActivity;
 import com.example.mbenben.studydemo.view.chart.ChartActivity;
 import com.example.mbenben.studydemo.view.circle.CircleActivity;
+import com.example.mbenben.studydemo.view.couponview.CouponViewActivity;
 import com.example.mbenben.studydemo.view.credit.CreditActivity;
 import com.example.mbenben.studydemo.view.enviews.ENViewsActivity;
 import com.example.mbenben.studydemo.view.expandabletextview.ExpandableActivity;
 import com.example.mbenben.studydemo.layout.gradationtitle.QQTitleActivity;
+import com.example.mbenben.studydemo.view.floatingview.FloatViewActivity;
 import com.example.mbenben.studydemo.view.healthytables.HealthyTablesActivity;
 import com.example.mbenben.studydemo.view.htmltext.HtmlTextActivity;
 import com.example.mbenben.studydemo.view.justify.JustifyTextActivity;
@@ -58,8 +60,8 @@ public class ViewsFragment extends Fragment{
     @BindView(R.id.tv_desc) TextView tvDesc;
 
     private static final String KEY="views";
-    private List<String> datas=new ArrayList<>();
-    private Map<String,String> map=new HashMap<>();
+    private List<String> datas;
+    private Map<String,String> map;
 
     private CommonAdapter<String> adapter;
     public static ViewsFragment newInstance(String desc) {
@@ -187,6 +189,14 @@ public class ViewsFragment extends Fragment{
                         Intent intentTimelyText= new Intent(App.getInstance().getContext(), TimelyTextActivity.class);
                         startActivity(intentTimelyText);
                         break;
+                    case "CouponViewActivity":
+                        Intent intentCouponView= new Intent(App.getInstance().getContext(), CouponViewActivity.class);
+                        startActivity(intentCouponView);
+                        break;
+                    case "FloatViewActivity":
+                        Intent intentFloatView= new Intent(App.getInstance().getContext(), FloatViewActivity.class);
+                        startActivity(intentFloatView);
+                        break;
                 }
             }
 
@@ -206,6 +216,9 @@ public class ViewsFragment extends Fragment{
         Bundle bundle = getArguments();
         String string = bundle.getString(KEY);
         tvDesc.setText(string);
+
+        datas=new ArrayList<>();
+        map=new HashMap<>();
 
         datas.add("CanvasApiActivity");
         map.put("CanvasApiActivity","Canvas基本API展示");
@@ -275,6 +288,12 @@ public class ViewsFragment extends Fragment{
 
         datas.add("TimelyTextActivity");
         map.put("TimelyTextActivity","数字Path变化");
+
+        datas.add("CouponViewActivity");
+        map.put("CouponViewActivity","卡券View");
+
+        datas.add("FloatViewActivity");
+        map.put("FloatViewActivity","浮动的View + 点击特效");
 
     }
 }
