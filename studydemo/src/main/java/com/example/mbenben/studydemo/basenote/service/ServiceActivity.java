@@ -14,12 +14,7 @@ import android.view.Menu;
 import android.view.View;
 
 /**
- * 系统内置服务：
- * MountService监听SD卡
- * ClipboardService剪切板服务
- * ...
- * getSystemService(参数见官网)获取
- * 例如：WINDOW_SERVICE ("window")...
+ * 服务并非运行在后台线程
  */
 public class ServiceActivity extends Activity {
     Intent intent1;

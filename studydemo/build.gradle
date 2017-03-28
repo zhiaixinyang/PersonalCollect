@@ -43,4 +43,6 @@ dependencies {
     compile 'org.greenrobot:eventbus:3.0.0'
     compile 'com.davemorrissey.labs:subsampling-scale-image-view:3.6.0'
     compile 'com.nineoldandroids:library:2.4.0'
+    compile 'com.facebook.rebound:rebound:0.3.8'
+    compile files('libs/pinyin4j-2.5.0.jar')
 }

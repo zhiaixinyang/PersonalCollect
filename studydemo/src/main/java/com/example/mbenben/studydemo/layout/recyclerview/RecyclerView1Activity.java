@@ -3,6 +3,7 @@ package com.example.mbenben.studydemo.layout.recyclerview;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
@@ -35,7 +36,7 @@ public class RecyclerView1Activity extends AppCompatActivity {
         for (int i = 0; i <20; i++) {
             datas.add("我是普通的Item->"+i);
         }
-        rlvMain.setLayoutManager(new LinearLayoutManager(this));
+        rlvMain.setLayoutManager(new GridLayoutManager(this,2));
         rlvMain.setAdapter(new RecyclerView1Adapter(datas));
     }
 }

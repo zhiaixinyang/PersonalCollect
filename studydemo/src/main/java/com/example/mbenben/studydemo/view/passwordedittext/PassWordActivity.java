@@ -11,6 +11,9 @@ import com.example.mbenben.studydemo.view.passwordedittext.dialog.CommonDialog;
 import com.example.mbenben.studydemo.view.passwordedittext.view.CustomerKeyboard;
 import com.example.mbenben.studydemo.view.passwordedittext.view.PasswordEditText;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 /**
  * Created by MBENBEN on 2017/1/16.
  */
@@ -20,10 +23,14 @@ public class PassWordActivity extends AppCompatActivity implements CustomerKeybo
 
     private CustomerKeyboard customerKeyboard;
     private PasswordEditText passwordEditText;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_password);
+        ButterKnife.bind(this);
+
+
     }
 
     public void btnStart(View view){

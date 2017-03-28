@@ -21,14 +21,14 @@ import butterknife.ButterKnife;
  */
 
 public class TimelyTextActivity extends AppCompatActivity {
-    public static final int            DURATION       = 1000;
-    public static final int            NO_VALUE       = -1;
     @BindView(R.id.textView1)
     TimelyView timelyView     = null;
     @BindView(R.id.seekBar) SeekBar seekBar        = null;
     @BindView(R.id.fromSpinner) Spinner        fromSpinner    = null;
     @BindView(R.id.toSpinner) Spinner toSpinner      = null;
     private volatile ObjectAnimator objectAnimator = null;
+    public static final int            DURATION       = 1000;
+    public static final int            NO_VALUE       = -1;
 
     private volatile int from = NO_VALUE;
     private volatile int to   = NO_VALUE;

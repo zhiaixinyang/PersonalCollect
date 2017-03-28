@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- 浮动式View -->
+    <declare-styleable name="CouponView">
+        <attr name="cv_semicircle_gap" format="dimension|reference"/>
+        <attr name="cv_semicircle_radius" format="dimension|reference"/>
+        <attr name="cv_semicircle_color" format="color|reference"/>
+        <attr name="cv_dash_line_length" format="dimension|reference"/>
+        <attr name="cv_dash_line_gap" format="dimension|reference"/>
+        <attr name="cv_dash_line_height" format="dimension|reference"/>
+        <attr name="cv_dash_line_color" format="color|reference"/>
+        <attr name="cv_is_semicircle_top" format="boolean|reference"/>
+        <attr name="cv_is_semicircle_bottom" format="boolean|reference"/>
+        <attr name="cv_is_semicircle_left" format="boolean|reference"/>
+        <attr name="cv_is_semicircle_right" format="boolean|reference"/>
+        <attr name="cv_is_dash_line_top" format="boolean|reference"/>
+        <attr name="cv_is_dash_line_bottom" format="boolean|reference"/>
+        <attr name="cv_is_dash_line_left" format="boolean|reference"/>
+        <attr name="cv_is_dash_line_right" format="boolean|reference"/>
+        <attr name="cv_dash_line_margin_top" format="dimension|reference"/>
+        <attr name="cv_dash_line_margin_bottom" format="dimension|reference"/>
+        <attr name="cv_dash_line_margin_left" format="dimension|reference"/>
+        <attr name="cv_dash_line_margin_right" format="dimension|reference"/>
+    </declare-styleable>
+
+
     <!-- ViewPager轮播 -->
     <declare-styleable name="BannerView">
         <!-- 点的选中的颜色值 -->
@@ -294,5 +318,19 @@
         <attr name="passwordBgSize" format="dimension" />
         <!-- 背景边框的圆角大小 -->
         <attr name="passwordBgCorner" format="dimension"/>
+    </declare-styleable>
+
+    <!-- 三级联动 -->
+    <declare-styleable name="pickerview">
+        <attr name="pickerview_gravity">
+            <enum name="center" value="17"/>
+            <enum name="left" value="3"/>
+            <enum name="right" value="5"/>
+        </attr>
+        <attr name="pickerview_textSize" format="dimension"/>
+        <attr name="pickerview_textColorOut" format="color"/>
+        <attr name="pickerview_textColorCenter" format="color"/>
+        <attr name="pickerview_dividerColor" format="color"/>
+        <attr name="pickerview_lineSpacingMultiplier" format="float"/>
     </declare-styleable>
 </resources>

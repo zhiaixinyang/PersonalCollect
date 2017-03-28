@@ -18,12 +18,16 @@ import com.example.mbenben.studydemo.base.OnItemClickListener;
 import com.example.mbenben.studydemo.base.ViewHolder;
 import com.example.mbenben.studydemo.layout.arclayout.ArcLayoutActivity;
 import com.example.mbenben.studydemo.layout.bottomnavigationview.BottomNavigationViewActivity;
+import com.example.mbenben.studydemo.layout.esaysidebar.EasySideBarBuilder;
+import com.example.mbenben.studydemo.layout.esaysidebar.SortCityActivity;
 import com.example.mbenben.studydemo.layout.expandableviewpager.ExpandableViewPagerActivity;
 import com.example.mbenben.studydemo.layout.fragmenttabhost.TabActivity;
 import com.example.mbenben.studydemo.layout.graffiti.DrawingBoardActvity;
+import com.example.mbenben.studydemo.layout.horizontalscrollview.HorizontalScrollActivity;
 import com.example.mbenben.studydemo.layout.intercepttouchevent.InterceptActivity;
 import com.example.mbenben.studydemo.layout.newbottomnav.BottomNavMainActivity;
 import com.example.mbenben.studydemo.layout.materialdesign.MaterialDesignActivity;
+import com.example.mbenben.studydemo.layout.pickerview.PickerActivity;
 import com.example.mbenben.studydemo.layout.videoplayer.VideoPlayerActivity;
 import com.example.mbenben.studydemo.layout.drawerlayout.DrawerLayoutActivity;
 import com.example.mbenben.studydemo.layout.ele.EleMainActivity;
@@ -55,8 +59,8 @@ public class LayoutFragment extends Fragment{
     @BindView(R.id.tv_desc) TextView tvDesc;
 
     private static final String KEY="layout";
-    private List<String> datas=new ArrayList<>();
-    private Map<String,String> map=new HashMap<>();
+    private List<String> datas;
+    private Map<String,String> map;
 
     private CommonAdapter<String> adapter;
     public static LayoutFragment newInstance(String desc) {
@@ -180,7 +184,37 @@ public class LayoutFragment extends Fragment{
                         Intent intentDrawingBoard= new Intent(App.getInstance().getContext(), DrawingBoardActvity.class);
                         startActivity(intentDrawingBoard);
                         break;
+                    case "HorizontalScrollActivity":
+                        Intent intentHorizontalScroll= new Intent(App.getInstance().getContext(), HorizontalScrollActivity.class);
+                        startActivity(intentHorizontalScroll);
+                        break;
+                    case "SortCityActivity":
+                        ArrayList<String> hotCityList = new ArrayList<>();
+                        hotCityList.add("北京");
+                        hotCityList.add("上海");
+                        hotCityList.add("广州");
+                        hotCityList.add("深圳");
+                        hotCityList.add("杭州");
+                        hotCityList.add("成都");
+                        hotCityList.add("厦门");
+                        hotCityList.add("天津");
+                        hotCityList.add("武汉");
+                        hotCityList.add("长沙");
+                        String[] mIndexItems = {"定位","热门"};//头部额外的索引
 
+                        new EasySideBarBuilder(getActivity())
+                                .setTitle("城市选择")
+                                .setIndexColor(0xFF0095EE)
+                                .setHotCityList(hotCityList)//热门城市列表
+                                .setIndexItems(mIndexItems)//索引字母
+                                .setLocationCity("广州")//定位城市
+                                .setMaxOffset(60)//索引的最大偏移量
+                                .start();
+                        break;
+                    case "PickerActivity":
+                        Intent intentPicker= new Intent(App.getInstance().getContext(), PickerActivity.class);
+                        startActivity(intentPicker);
+                        break;
                 }
             }
 
@@ -200,6 +234,10 @@ public class LayoutFragment extends Fragment{
         Bundle bundle = getArguments();
         String string = bundle.getString(KEY);
         tvDesc.setText(string);
+
+
+        datas=new ArrayList<>();
+        map=new HashMap<>();
 
         datas.add("NavActivity");
         map.put("NavActivity","可收缩头View（嵌套机制实现）");
@@ -256,7 +294,7 @@ public class LayoutFragment extends Fragment{
         map.put("BottomNavigationViewActivity","官方design:25.0.0新推出的BottomNavigationView");
 
         datas.add("BottomNavMainActivity");
-        map.put("BottomNavMainActivity","GitHub上底部导航");
+        map.put("BottomNavMainActivity","GitHub上开源底部导航栏");
 
         datas.add("MaterialDesignActivity");
         map.put("MaterialDesignActivity","MaterialDesign");
@@ -269,5 +307,14 @@ public class LayoutFragment extends Fragment{
 
         datas.add("DrawingBoardActvity");
         map.put("DrawingBoardActvity","涂鸦效果+刮刮卡");
+
+        datas.add("HorizontalScrollActivity");
+        map.put("HorizontalScrollActivity","画廊效果");
+
+        datas.add("SortCityActivity");
+        map.put("SortCityActivity","3D式索引");
+
+        datas.add("PickerActivity");
+        map.put("PickerActivity","三级联动");
     }
 }

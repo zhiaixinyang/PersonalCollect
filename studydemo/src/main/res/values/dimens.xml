@@ -37,4 +37,21 @@
     <dimen name="bottom_navigation_text_size_inactive">12sp</dimen>
     <dimen name="fab_margin">8dp</dimen>
     <dimen name="fab_padding">12dp</dimen>
+
+    <dimen name="fv_activity_horizontal_margin">16dp</dimen>
+    <dimen name="fv_activity_vertical_margin">16dp</dimen>
+    <dimen name="fv_status_bar_height">0dp</dimen>
+    <dimen name="fv_tool_bar_height">48dp</dimen>
+    <dimen name="fv_bottom_op_item_w">28dp</dimen>
+    <dimen name="fv_bottom_op_item_h">28dp</dimen>
+
+    <!-- 顶部按钮栏高度 -->
+    <dimen name="pickerview_topbar_height">44dp</dimen>
+    <!-- 顶部按钮padding -->
+    <dimen name="pickerview_topbar_padding">20dp</dimen>
+    <!-- 顶部按钮文字大小 -->
+    <dimen name="pickerview_topbar_btn_textsize">17sp</dimen>
+    <dimen name="pickerview_topbar_title_textsize">18sp</dimen>
+    <!-- 选项文字大小 需要配合 bools.xml 的 pickerview_customTextSize 为 true 才有效果-->
+    <dimen name="pickerview_textsize">20sp</dimen>
 </resources>

@@ -64,9 +64,21 @@ public class MyFLowLayout extends ViewGroup {
 
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
+        int paddingLeft=getPaddingLeft();
+        int paddingTop=getPaddingTop();
+        int parentWidth=r-l-getPaddingRight();
+        int line=0;
         for (int i = 0; i < getChildCount(); i++) {
             View view = getChildAt(i);
-
+            int localLeft=paddingLeft+i*view.getMeasuredWidth();
+            int localRight=paddingLeft+(i+1)*view.getMeasuredWidth();
+            int localTop=paddingTop+line*view.getMeasuredHeight();
+            int localBottom=paddingTop+(line+1)*view.getMeasuredHeight();
+            if (localRight>parentWidth){
+                line++;
+                localTop=paddingTop+line*view.getHeight();
+            }
+            view.layout(localLeft,localRight,localTop,localBottom);
         }
     }
 }

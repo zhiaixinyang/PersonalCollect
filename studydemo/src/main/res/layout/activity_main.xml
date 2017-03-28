@@ -17,8 +17,8 @@
             app:title="整合GitHub开源项目"
             android:background="?attr/colorPrimary"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            app:layout_scrollFlags="scroll|enterAlways" />
-
+            app:layout_scrollFlags="scroll|enterAlways" >
+        </android.support.v7.widget.Toolbar>
         <android.support.design.widget.TabLayout
             android:id="@+id/tabLayout"
             app:tabTextColor="@color/gray"
@@ -29,10 +29,21 @@
             android:layout_height="40dp"/>
 
     </android.support.design.widget.AppBarLayout>
-
-    <android.support.v4.view.ViewPager
-        android:id="@+id/viewPager"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_height="wrap_content">
+        <com.example.mbenben.studydemo.view.adline.AdHeadline
+            android:id="@+id/ad_headline"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"/>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+    </LinearLayout>
+
 </android.support.design.widget.CoordinatorLayout>

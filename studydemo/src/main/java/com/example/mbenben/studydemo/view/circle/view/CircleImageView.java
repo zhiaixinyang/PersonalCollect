@@ -19,6 +19,7 @@ import android.support.annotation.ColorInt;
 import android.support.annotation.ColorRes;
 import android.support.annotation.DrawableRes;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.widget.ImageView;
 
 import com.example.mbenben.studydemo.R;
@@ -181,6 +182,8 @@ public class CircleImageView extends ImageView {
     public void setBorderColorResource(@ColorRes int borderColorRes) {
         setBorderColor(getContext().getResources().getColor(borderColorRes));
     }
+
+
 
     /**
      * Return the color drawn behind the circle-shaped drawable.

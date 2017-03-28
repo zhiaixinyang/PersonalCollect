@@ -8,6 +8,7 @@ import android.widget.MediaController;
 import android.widget.VideoView;
 
 import com.example.mbenben.studydemo.R;
+import com.example.mbenben.studydemo.utils.ToastUtil;
 
 import butterknife.BindView;
 
@@ -22,9 +23,14 @@ public class VideoPlayerActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_videoplayer);
 
-        videoView.setVideoURI(Uri.parse("http://www.ohonor.xyz/video_test.mp4"));
-        MediaController mediaController=new MediaController(this);
-        videoView.setMediaController(mediaController);
-        mediaController.setMediaPlayer(videoView);
+        Uri uri = Uri.parse("http://www.ohonor.xyz/video_test.mp4");
+        if (uri!=null) {
+            videoView.setVideoURI(uri);
+            MediaController mediaController=new MediaController(this);
+            videoView.setMediaController(mediaController);
+            mediaController.setMediaPlayer(videoView);
+        }else{
+            ToastUtil.toastShort("服务器视频资源暂时被删除");
+        }
     }
 }

@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.example.mbenben.studydemo.App;
 import com.example.mbenben.studydemo.R;
 import com.example.mbenben.studydemo.anim.ValueAnimActivity;
+import com.example.mbenben.studydemo.anim.circularanim.CircleAnimActivity;
 import com.example.mbenben.studydemo.base.CommonAdapter;
 import com.example.mbenben.studydemo.base.OnItemClickListener;
 import com.example.mbenben.studydemo.base.ViewHolder;
@@ -37,8 +38,8 @@ public class AnimsFragment extends Fragment{
     @BindView(R.id.tv_desc) TextView tvDesc;
 
     private static final String KEY="anims";
-    private List<String> datas=new ArrayList<>();
-    private Map<String,String> map=new HashMap<>();
+    private List<String> datas;
+    private Map<String,String> map;
 
     private CommonAdapter<String> adapter;
     public static AnimsFragment newInstance(String desc) {
@@ -82,6 +83,10 @@ public class AnimsFragment extends Fragment{
                         Intent intentNestedScroll=new Intent(App.getInstance().getContext(), SVGPathActivity.class);
                         startActivity(intentNestedScroll);
                         break;
+                    case "CircleAnimActivity":
+                        Intent intentCircleAnim=new Intent(App.getInstance().getContext(), CircleAnimActivity.class);
+                        startActivity(intentCircleAnim);
+                        break;
                 }
             }
 
@@ -102,6 +107,9 @@ public class AnimsFragment extends Fragment{
         String string = bundle.getString(KEY);
         tvDesc.setText(string);
 
+        datas=new ArrayList<>();
+        map=new HashMap<>();
+
         datas.add("PathViewActivity");
         map.put("PathViewActivity","PathView效果");
 
@@ -110,6 +118,9 @@ public class AnimsFragment extends Fragment{
 
         datas.add("SVGPathActivity");
         map.put("SVGPathActivity","SVG-Path动画实例");
+
+        datas.add("CircleAnimActivity");
+        map.put("CircleAnimActivity","圆形扩散是动画效果");
 
     }
 }

@@ -18,6 +18,8 @@ import com.example.mbenben.studydemo.base.OnItemClickListener;
 import com.example.mbenben.studydemo.base.ViewHolder;
 import com.example.mbenben.studydemo.basenote.broadcastreceiver.BroadcastReceiverActivity;
 import com.example.mbenben.studydemo.basenote.contentprovider.ContentProviderActivity;
+import com.example.mbenben.studydemo.basenote.intent.IntentActivity;
+import com.example.mbenben.studydemo.basenote.scaniamges.imageloader.ScanImageActivity;
 import com.example.mbenben.studydemo.basenote.service.ServiceActivity;
 import com.example.mbenben.studydemo.basenote.service.download.DownLoadServiceActivity;
 
@@ -40,8 +42,8 @@ public class AndroidBaseFragment extends Fragment{
     TextView tvDesc;
 
     private static final String KEY="androidbase";
-    private List<String> datas=new ArrayList<>();
-    private Map<String,String> map=new HashMap<>();
+    private List<String> datas;
+    private Map<String,String> map;
 
     private CommonAdapter<String> adapter;
     public static AndroidBaseFragment newInstance(String desc) {
@@ -89,6 +91,14 @@ public class AndroidBaseFragment extends Fragment{
                         Intent intentDowdLoadActivity=new Intent(App.getInstance().getContext(), DownLoadServiceActivity.class);
                         startActivity(intentDowdLoadActivity);
                         break;
+                    case "IntentActivity":
+                        Intent intentActivity=new Intent(App.getInstance().getContext(), IntentActivity.class);
+                        startActivity(intentActivity);
+                        break;
+                    case "ScanImageActivity":
+                        Intent intentScanImage=new Intent(App.getInstance().getContext(), ScanImageActivity.class);
+                        startActivity(intentScanImage);
+                        break;
 
                 }
             }
@@ -110,6 +120,9 @@ public class AndroidBaseFragment extends Fragment{
         String string = bundle.getString(KEY);
         tvDesc.setText(string);
 
+        datas=new ArrayList<>();
+        map=new HashMap<>();
+
         datas.add("ContentProviderActivity");
         map.put("ContentProviderActivity","ContentProvider获取手机通讯录");
 
@@ -121,6 +134,13 @@ public class AndroidBaseFragment extends Fragment{
 
         datas.add("DownLoadServiceActivity");
         map.put("DownLoadServiceActivity","断点续传效果");
+
+        datas.add("IntentActivity");
+        map.put("IntentActivity","Intent用法");
+
+        datas.add("ScanImageActivity");
+        map.put("ScanImageActivity","仿微信多图选择");
+
 
     }
 }

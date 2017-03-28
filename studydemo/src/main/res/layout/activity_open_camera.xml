@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_open_camera"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context="com.example.mbenben.studydemo.basenote.opencamera.OpenCameraActivity">
+    <ImageView
+        android:id="@+id/iv_photo"
+        android:src="@drawable/pintu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/btn_open_camera"
+        android:layout_width="match_parent"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:text="打开相机"
+        android:gravity="center"
+        android:layout_height="40dp" />
+    <Button
+        android:id="@+id/btn_open_album"
+        android:layout_width="match_parent"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:text="打开相册"
+        android:gravity="center"
+        android:layout_height="40dp"/>
+</LinearLayout>

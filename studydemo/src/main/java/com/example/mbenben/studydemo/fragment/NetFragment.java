@@ -38,8 +38,8 @@ public class NetFragment extends Fragment{
     @BindView(R.id.tv_desc) TextView tvDesc;
 
     private static final String KEY="net";
-    private List<String> datas=new ArrayList<>();
-    private Map<String,String> map=new HashMap<>();
+    private List<String> datas;
+    private Map<String,String> map;
 
     private CommonAdapter<String> adapter;
     public static NetFragment newInstance(String desc) {
@@ -106,6 +106,9 @@ public class NetFragment extends Fragment{
         Bundle bundle = getArguments();
         String string = bundle.getString(KEY);
         tvDesc.setText(string);
+
+        datas=new ArrayList<>();
+        map=new HashMap<>();
 
         datas.add("HttpUrlActivity");
         map.put("HttpUrlActivity","使用HttpUrlConnection实现上传下载");

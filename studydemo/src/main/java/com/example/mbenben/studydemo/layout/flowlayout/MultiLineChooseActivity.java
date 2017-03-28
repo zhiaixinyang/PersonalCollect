@@ -25,8 +25,7 @@ import butterknife.ButterKnife;
 public class MultiLineChooseActivity extends AppCompatActivity{
 
 
-    @BindView(R.id.singleChoose)
-    MultiLineChooseLayout singleChoose;
+    @BindView(R.id.singleChoose) MultiLineChooseLayout singleChoose;
     @BindView(R.id.multiChoose) MultiLineChooseLayout multiChoose;
     @BindView(R.id.flowLayout) MultiLineChooseLayout flowLayout;
     @BindView(R.id.singleChooseTv) TextView singleChooseTv;

@@ -1,7 +1,6 @@
 package com.example.mbenben.studydemo.view.pathview;
 
 
-
 import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
@@ -17,12 +16,11 @@ import android.view.View;
 
 /**
  * Created by MBENBEN on 2017/1/4.
- *
+ * <p>
  * 原作者项目GitHub：https://github.com/mcxtzhang/PathAnimView
  */
 
-public class PathView extends View
-{
+public class PathView extends View {
     Path path;
     Paint paint;
     float length;
@@ -55,7 +53,7 @@ public class PathView extends View
         path.lineTo(200, 500);
         path.lineTo(200, 300);
         path.lineTo(350, 300);
-        path.quadTo(360,100,400,310);
+        path.quadTo(360, 100, 400, 310);
 
         // Measure the path
         PathMeasure measure = new PathMeasure(path, false);
@@ -80,7 +78,7 @@ public class PathView extends View
     }
 
     private static PathEffect createPathEffect(float pathLength, float phase, float offset) {
-        return new DashPathEffect(new float[] { pathLength, pathLength },
+        return new DashPathEffect(new float[]{pathLength, pathLength},
                 pathLength - phase * pathLength);
 //        return new DashPathEffect(new float[] { phase*pathLength, pathLength },
 //               0);
