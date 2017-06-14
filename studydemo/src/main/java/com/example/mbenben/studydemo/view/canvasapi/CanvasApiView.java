@@ -27,7 +27,7 @@ public class CanvasApiView extends View{
 
     @Override
     protected void onDraw(Canvas canvas) {
-        canvas.drawColor(Color.BLUE);
+        canvas.drawColor(Color.WHITE);
         //初始化一个画笔对象。
         Paint paint=new Paint(Color.BLACK);
         //设置画笔实线宽度为2dp

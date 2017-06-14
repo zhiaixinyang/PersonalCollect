@@ -333,4 +333,43 @@
         <attr name="pickerview_dividerColor" format="color"/>
         <attr name="pickerview_lineSpacingMultiplier" format="float"/>
     </declare-styleable>
+
+    <!-- 雷达效果 -->
+    <declare-styleable name="radarview">
+        <attr name="startColor" format="color" />
+        <attr name="endColor" format="color" />
+        <attr name="radarbgColor" format="color" />
+        <attr name="circleCount" format="integer" />
+        <attr name="radarlineColor" format="color" />
+    </declare-styleable>
+
+    <!-- Item侧滑删除效果 -->
+    <declare-styleable name="SwipeMenuLayout">
+        <attr name="swipeEnable" format="boolean"/>
+        <attr name="ios" format="boolean"/>
+        <attr name="leftSwipe" format="boolean"/>
+    </declare-styleable>
+
+
+    <!-- Switch按钮 -->
+    <declare-styleable name="IconSwitch">
+        <attr name="isw_icon_left" format="reference" />
+        <attr name="isw_icon_right" format="reference" />
+
+        <attr name="isw_icon_size" format="dimension" />
+
+        <attr name="isw_background_color" format="color" />
+        <attr name="isw_thumb_color_left" format="color" />
+        <attr name="isw_thumb_color_right" format="color" />
+        <attr name="isw_inactive_tint_icon_left" format="color" />
+        <attr name="isw_inactive_tint_icon_right" format="color" />
+        <attr name="isw_active_tint_icon_left" format="color" />
+        <attr name="isw_active_tint_icon_right" format="color" />
+
+        <attr name="isw_default_selection" format="enum">
+            <enum name="left" value="0" />
+            <enum name="right" value="1" />
+        </attr>
+
+    </declare-styleable>
 </resources>

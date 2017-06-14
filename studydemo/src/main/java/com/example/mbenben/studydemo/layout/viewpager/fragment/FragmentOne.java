@@ -103,6 +103,6 @@ public class FragmentOne extends Fragment {
             lp.width=pagerWidth;
         }
         viewPager.setLayoutParams(lp);
-
+        viewPager.setPageMargin(-50);
     }
 }

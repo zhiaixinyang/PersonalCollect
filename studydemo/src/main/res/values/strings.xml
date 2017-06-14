@@ -13,6 +13,16 @@
     <string name="pickerview_minutes">分</string>
     <string name="pickerview_seconds">秒</string>
 
+    <string name="msg_no_browser">No app found to open the url</string>
+
+    <string name="credit_summary_prokhoda">Inspiration</string>
+    <string name="credit_title_prokhoda">Alex Prokhoda</string>
+    <string name="credit_title_yarolegovich">Yaroslav Shevchuk</string>
+    <string name="credit_summary_yarolegovich">Contributor</string>
+    <string name="credit_title_polyak">Yaroslav Polyakov</string>
+    <string name="credit_summary_polyak">Developer</string>
+
+
     <string name="picker_time">时间选择器</string>
     <string name="picker_province">条件选择器</string>
 

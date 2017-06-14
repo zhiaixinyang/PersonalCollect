@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="match_parent"
+                android:text="自定义View"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:layout_height="wrap_content" />
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+    <com.example.mbenben.studydemo.view.shader.view.BitmapPolygon
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
+
+
+    <com.example.mbenben.studydemo.view.shader.view.LinearGradientDemo
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
+
+    <com.example.mbenben.studydemo.view.shader.view.LinearGradientText
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="塞纳河畔 左岸的咖啡\n我手一杯 品尝你的美"
+        android:textColor="#ff0000"
+        android:textSize="40sp" />
+
+    <com.example.mbenben.studydemo.view.shader.view.LinearGradientPicture
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
+</LinearLayout>

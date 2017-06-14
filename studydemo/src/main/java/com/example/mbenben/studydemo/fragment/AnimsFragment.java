@@ -18,6 +18,10 @@ import com.example.mbenben.studydemo.anim.circularanim.CircleAnimActivity;
 import com.example.mbenben.studydemo.base.CommonAdapter;
 import com.example.mbenben.studydemo.base.OnItemClickListener;
 import com.example.mbenben.studydemo.base.ViewHolder;
+import com.example.mbenben.studydemo.basenote.scaniamges.imageloader.ScanImageActivity;
+import com.example.mbenben.studydemo.db.SearchBean;
+import com.example.mbenben.studydemo.db.SearchDBManager;
+import com.example.mbenben.studydemo.model.HashSetSearchBean;
 import com.example.mbenben.studydemo.view.pathview.PathViewActivity;
 import com.example.mbenben.studydemo.view.pathview.svgpath.SVGPathActivity;
 
@@ -39,7 +43,8 @@ public class AnimsFragment extends Fragment{
 
     private static final String KEY="anims";
     private List<String> datas;
-    private Map<String,String> map;
+    private Map<String,String> mapTitle;
+    private SearchDBManager manager;
 
     private CommonAdapter<String> adapter;
     public static AnimsFragment newInstance(String desc) {
@@ -55,8 +60,10 @@ public class AnimsFragment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.frag_main_layout,container,false);
+        manager=new SearchDBManager();
         initView(view);
         initRlv();
+        addDB();
         return view;
     }
 
@@ -64,7 +71,7 @@ public class AnimsFragment extends Fragment{
         adapter=new CommonAdapter<String>(App.getInstance().getContext(),R.layout.item_info,datas) {
             @Override
             public void convert(ViewHolder holder, String s) {
-                holder.setText(R.id.id_info,map.get(s));
+                holder.setText(R.id.id_info, mapTitle.get(s));
             }
         };
         adapter.setOnItemClickListener(new OnItemClickListener() {
@@ -108,19 +115,31 @@ public class AnimsFragment extends Fragment{
         tvDesc.setText(string);
 
         datas=new ArrayList<>();
-        map=new HashMap<>();
+        mapTitle =new HashMap<>();
 
         datas.add("PathViewActivity");
-        map.put("PathViewActivity","PathView效果");
+        mapTitle.put("PathViewActivity","PathView效果");
+        App.addData(new HashSetSearchBean("PathViewActivity",PathViewActivity.class));
 
         datas.add("ValueAnimActivity");
-        map.put("ValueAnimActivity","属性动画实例");
+        mapTitle.put("ValueAnimActivity","属性动画实例");
+        App.addData(new HashSetSearchBean("ValueAnimActivity",ValueAnimActivity.class));
 
         datas.add("SVGPathActivity");
-        map.put("SVGPathActivity","SVG-Path动画实例");
+        mapTitle.put("SVGPathActivity","SVG-Path动画实例");
+        App.addData(new HashSetSearchBean("SVGPathActivity",SVGPathActivity.class));
 
         datas.add("CircleAnimActivity");
-        map.put("CircleAnimActivity","圆形扩散是动画效果");
+        mapTitle.put("CircleAnimActivity","圆形扩散是动画效果");
+        App.addData(new HashSetSearchBean("CircleAnimActivity",CircleAnimActivity.class));
 
+    }
+    private void addDB() {
+        for (String name:datas){
+            SearchBean searchBean=new SearchBean();
+            searchBean.setActivity(name);
+            searchBean.setTitle(mapTitle.get(name));
+            manager.insert(searchBean);
+        }
     }
 }

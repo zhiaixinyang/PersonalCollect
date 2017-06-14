@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.zhy.utils.ImageLoader.Type;
 
 public class ViewHolder
 {
@@ -108,7 +107,6 @@ public class ViewHolder
 	 * 为ImageView设置图片
 	 * 
 	 * @param viewId
-	 * @param drawableId
 	 * @return
 	 */
 	public ViewHolder setImageBitmap(int viewId, Bitmap bm)
@@ -122,12 +120,11 @@ public class ViewHolder
 	 * 为ImageView设置图片
 	 * 
 	 * @param viewId
-	 * @param drawableId
 	 * @return
 	 */
 	public ViewHolder setImageByUrl(int viewId, String url)
 	{
-		ImageLoader.getInstance(3,Type.LIFO).loadImage(url, (ImageView) getView(viewId));
+		ImageLoader.getInstance(3, ImageLoader.Type.LIFO).loadImage(url, (ImageView) getView(viewId));
 		return this;
 	}
 

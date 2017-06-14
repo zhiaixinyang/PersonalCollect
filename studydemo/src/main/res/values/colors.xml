@@ -742,6 +742,25 @@
         <item>@color/colorDeepOrangePrimary</item>
         <item>@color/colorBlueGreyPrimary</item>
     </array>
+
+    <color name="color1984D1">#1984D1</color>
+    <color name="colorffffff">#FFFFFF</color>
+    <color name="color000000">#000000</color>
+
+    <color name="bg1">#42CFBE</color>
+    <color name="bg2">#57B1CC</color>
+    <color name="bg3">#B888E5</color>
+    <color name="bg4">#F695A8</color>
+    <color name="bg5">#F9D461</color>
+
+    <color name="isw_defaultBg">#302F31</color>
+
+    <color name="informationPrimary">#673AAA</color>
+    <color name="informationPrimaryDark">#63329B</color>
+
+    <color name="mapPrimary">#F34E4E</color>
+    <color name="mapPrimaryDark">#C0394F</color>
+
     <!--blue-->
     <color name="colorBluePrimary">#2196F3</color>
 
@@ -787,4 +806,8 @@
     <!--blueGrey-->
     <color name="colorBlueGreyPrimary">#607D8B</color>
 
+
+    <color name="simpletooltip_background">@color/colorAccent</color>
+    <color name="simpletooltip_text">@android:color/primary_text_light</color>
+    <color name="simpletooltip_arrow">@color/colorAccent</color>
 </resources>

@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,9 +20,13 @@ import com.example.mbenben.studydemo.base.ViewHolder;
 import com.example.mbenben.studydemo.basenote.broadcastreceiver.BroadcastReceiverActivity;
 import com.example.mbenben.studydemo.basenote.contentprovider.ContentProviderActivity;
 import com.example.mbenben.studydemo.basenote.intent.IntentActivity;
+import com.example.mbenben.studydemo.basenote.plugin.PluginActivity;
 import com.example.mbenben.studydemo.basenote.scaniamges.imageloader.ScanImageActivity;
 import com.example.mbenben.studydemo.basenote.service.ServiceActivity;
 import com.example.mbenben.studydemo.basenote.service.download.DownLoadServiceActivity;
+import com.example.mbenben.studydemo.db.SearchBean;
+import com.example.mbenben.studydemo.db.SearchDBManager;
+import com.example.mbenben.studydemo.model.HashSetSearchBean;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -43,10 +48,13 @@ public class AndroidBaseFragment extends Fragment{
 
     private static final String KEY="androidbase";
     private List<String> datas;
-    private Map<String,String> map;
+    private Map<String,String> mapTitle;
+
+    private SearchDBManager manager;
 
     private CommonAdapter<String> adapter;
     public static AndroidBaseFragment newInstance(String desc) {
+
 
         Bundle args = new Bundle();
         args.putString(KEY,desc);
@@ -59,8 +67,10 @@ public class AndroidBaseFragment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.frag_main_layout,container,false);
+        manager=new SearchDBManager();
         initView(view);
         initRlv();
+        addDB();
         return view;
     }
 
@@ -68,7 +78,7 @@ public class AndroidBaseFragment extends Fragment{
         adapter=new CommonAdapter<String>(App.getInstance().getContext(),R.layout.item_info,datas) {
             @Override
             public void convert(ViewHolder holder, String s) {
-                holder.setText(R.id.id_info,map.get(s));
+                holder.setText(R.id.id_info, mapTitle.get(s));
             }
         };
         adapter.setOnItemClickListener(new OnItemClickListener() {
@@ -100,6 +110,11 @@ public class AndroidBaseFragment extends Fragment{
                         startActivity(intentScanImage);
                         break;
 
+                    case "PluginActivity":
+                        Intent intentPlugin=new Intent(App.getInstance().getContext(), PluginActivity.class);
+                        startActivity(intentPlugin);
+                        break;
+
                 }
             }
 
@@ -121,26 +136,44 @@ public class AndroidBaseFragment extends Fragment{
         tvDesc.setText(string);
 
         datas=new ArrayList<>();
-        map=new HashMap<>();
+        mapTitle =new HashMap<>();
 
         datas.add("ContentProviderActivity");
-        map.put("ContentProviderActivity","ContentProvider获取手机通讯录");
+        mapTitle.put("ContentProviderActivity","ContentProvider获取手机通讯录");
+        App.addData(new HashSetSearchBean("ContentProviderActivity",ContentProviderActivity.class));
+
 
         datas.add("BroadcastReceiverActivity");
-        map.put("BroadcastReceiverActivity","BroadcastReceiver广播的基本应用");
+        mapTitle.put("BroadcastReceiverActivity","BroadcastReceiver广播的基本应用");
+        App.addData(new HashSetSearchBean("BroadcastReceiverActivity",BroadcastReceiverActivity.class));
 
         datas.add("ServiceActivity");
-        map.put("ServiceActivity","Service服务的基本应用");
+        mapTitle.put("ServiceActivity","Service服务的基本应用");
+        App.addData(new HashSetSearchBean("ServiceActivity",ServiceActivity.class));
 
         datas.add("DownLoadServiceActivity");
-        map.put("DownLoadServiceActivity","断点续传效果");
+        mapTitle.put("DownLoadServiceActivity","断点续传效果");
+        App.addData(new HashSetSearchBean("IntentActivity",DownLoadServiceActivity.class));
 
         datas.add("IntentActivity");
-        map.put("IntentActivity","Intent用法");
+        mapTitle.put("IntentActivity","Intent用法");
+        App.addData(new HashSetSearchBean("IntentActivity",IntentActivity.class));
 
         datas.add("ScanImageActivity");
-        map.put("ScanImageActivity","仿微信多图选择");
+        mapTitle.put("ScanImageActivity","仿微信多图选择");
+        App.addData(new HashSetSearchBean("ScanImageActivity",ScanImageActivity.class));
 
+        datas.add("PluginActivity");
+        mapTitle.put("PluginActivity","插件化加载资源");
+        App.addData(new HashSetSearchBean("PluginActivity",PluginActivity.class));
+    }
 
+    private void addDB() {
+        for (String name:datas){
+            SearchBean searchBean=new SearchBean();
+            searchBean.setActivity(name);
+            searchBean.setTitle(mapTitle.get(name));
+            manager.insert(searchBean);
+        }
     }
 }

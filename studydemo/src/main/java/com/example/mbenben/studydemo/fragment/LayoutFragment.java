@@ -12,22 +12,29 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.mbenben.studydemo.App;
+import com.example.mbenben.studydemo.MainActivity;
 import com.example.mbenben.studydemo.R;
+import com.example.mbenben.studydemo.anim.circularanim.CircleAnimActivity;
 import com.example.mbenben.studydemo.base.CommonAdapter;
 import com.example.mbenben.studydemo.base.OnItemClickListener;
 import com.example.mbenben.studydemo.base.ViewHolder;
+import com.example.mbenben.studydemo.db.SearchBean;
+import com.example.mbenben.studydemo.db.SearchDBManager;
 import com.example.mbenben.studydemo.layout.arclayout.ArcLayoutActivity;
 import com.example.mbenben.studydemo.layout.bottomnavigationview.BottomNavigationViewActivity;
+import com.example.mbenben.studydemo.layout.drawerlayout.my.SlidingActivity;
+import com.example.mbenben.studydemo.layout.ele.EleViewPagerActivity;
 import com.example.mbenben.studydemo.layout.esaysidebar.EasySideBarBuilder;
-import com.example.mbenben.studydemo.layout.esaysidebar.SortCityActivity;
 import com.example.mbenben.studydemo.layout.expandableviewpager.ExpandableViewPagerActivity;
 import com.example.mbenben.studydemo.layout.fragmenttabhost.TabActivity;
 import com.example.mbenben.studydemo.layout.graffiti.DrawingBoardActvity;
 import com.example.mbenben.studydemo.layout.horizontalscrollview.HorizontalScrollActivity;
 import com.example.mbenben.studydemo.layout.intercepttouchevent.InterceptActivity;
+import com.example.mbenben.studydemo.layout.materialdesign.coordinatorlayouttest.ScrollingActivity;
 import com.example.mbenben.studydemo.layout.newbottomnav.BottomNavMainActivity;
 import com.example.mbenben.studydemo.layout.materialdesign.MaterialDesignActivity;
 import com.example.mbenben.studydemo.layout.pickerview.PickerActivity;
+import com.example.mbenben.studydemo.layout.swipmenu.SwipMenuActivity;
 import com.example.mbenben.studydemo.layout.videoplayer.VideoPlayerActivity;
 import com.example.mbenben.studydemo.layout.drawerlayout.DrawerLayoutActivity;
 import com.example.mbenben.studydemo.layout.ele.EleMainActivity;
@@ -41,6 +48,7 @@ import com.example.mbenben.studydemo.layout.ricktext.RickTextActivity;
 import com.example.mbenben.studydemo.layout.swipecards.SwipeCardsActivity;
 import com.example.mbenben.studydemo.layout.viewpager.ViewPagerActivity;
 import com.example.mbenben.studydemo.layout.gradationtitle.QQTitleActivity;
+import com.example.mbenben.studydemo.model.HashSetSearchBean;
 import com.example.mbenben.studydemo.view.pintu.PinTuActivity;
 import com.example.mbenben.studydemo.view.select.SelectActivity;
 import java.util.ArrayList;
@@ -60,7 +68,9 @@ public class LayoutFragment extends Fragment{
 
     private static final String KEY="layout";
     private List<String> datas;
-    private Map<String,String> map;
+    private Map<String,String> mapTitle;
+
+    private SearchDBManager manager;
 
     private CommonAdapter<String> adapter;
     public static LayoutFragment newInstance(String desc) {
@@ -76,8 +86,10 @@ public class LayoutFragment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.frag_main_layout,container,false);
+        manager=new SearchDBManager();
         initView(view);
         initRlv();
+        addDB();
         return view;
     }
 
@@ -85,7 +97,7 @@ public class LayoutFragment extends Fragment{
         adapter=new CommonAdapter<String>(App.getInstance().getContext(),R.layout.item_info,datas) {
             @Override
             public void convert(ViewHolder holder, String s) {
-                holder.setText(R.id.id_info,map.get(s));
+                holder.setText(R.id.id_info, mapTitle.get(s));
             }
         };
         adapter.setOnItemClickListener(new OnItemClickListener() {
@@ -215,6 +227,18 @@ public class LayoutFragment extends Fragment{
                         Intent intentPicker= new Intent(App.getInstance().getContext(), PickerActivity.class);
                         startActivity(intentPicker);
                         break;
+                    case "SlidingActivity":
+                        Intent intentSlidingActivity= new Intent(App.getInstance().getContext(), SlidingActivity.class);
+                        startActivity(intentSlidingActivity);
+                        break;
+                    case "SwipMenuActivity":
+                        Intent intentSwipMenu= new Intent(App.getInstance().getContext(), SwipMenuActivity.class);
+                        startActivity(intentSwipMenu);
+                        break;
+                    case "ScrollingActivity":
+                        Intent intentScrolling= new Intent(App.getInstance().getContext(), ScrollingActivity.class);
+                        startActivity(intentScrolling);
+                        break;
                 }
             }
 
@@ -237,84 +261,132 @@ public class LayoutFragment extends Fragment{
 
 
         datas=new ArrayList<>();
-        map=new HashMap<>();
+        mapTitle =new HashMap<>();
 
         datas.add("NavActivity");
-        map.put("NavActivity","可收缩头View（嵌套机制实现）");
+        mapTitle.put("NavActivity","可收缩头View（嵌套机制实现）");
+        App.addData(new HashSetSearchBean("NavActivity",NavActivity.class));
 
         datas.add("NestedScrollActivity");
-        map.put("NestedScrollActivity","嵌套机制的布局实现");
+        mapTitle.put("NestedScrollActivity","嵌套机制的布局实现");
+        App.addData(new HashSetSearchBean("NestedScrollActivity",NestedScrollActivity.class));
 
         datas.add("Puzzle");
-        map.put("Puzzle","简单的拼图效果");
+        mapTitle.put("Puzzle","简单的拼图效果");
+        App.addData(new HashSetSearchBean("Puzzle",PinTuActivity.class));
 
         datas.add("IndicatorActivity");
-        map.put("IndicatorActivity","ViewPager指示器");
+        mapTitle.put("IndicatorActivity","ViewPager指示器");
+        App.addData(new HashSetSearchBean("IndicatorActivity",IndicatorActivity.class));
 
         datas.add("ViewPagerActivity");
-        map.put("ViewPagerActivity","ViewPager不同的转换效果");
+        mapTitle.put("ViewPagerActivity","ViewPager不同的转换效果");
+        App.addData(new HashSetSearchBean("ViewPagerActivity",ViewPagerActivity.class));
 
         datas.add("DrawerLayoutActivity");
-        map.put("DrawerLayoutActivity","DrawerLayout抽屉菜单");
+        mapTitle.put("DrawerLayoutActivity","DrawerLayout抽屉菜单");
+        App.addData(new HashSetSearchBean("DrawerLayoutActivity",DrawerLayoutActivity.class));
+
+        datas.add("SlidingActivity");
+        mapTitle.put("SlidingActivity","一个不实际的侧滑的效果");
+        App.addData(new HashSetSearchBean("SlidingActivity",SlidingActivity.class));
 
         datas.add("RecyclerActivity");
-        map.put("RecyclerActivity","RecyclerView各种使用");
+        mapTitle.put("RecyclerActivity","RecyclerView各种使用");
+        App.addData(new HashSetSearchBean("RecyclerActivity",RecyclerActivity.class));
 
         datas.add("SwipeCardsActivity");
-        map.put("SwipeCardsActivity","仿天天美剧拖动卡片的效果");
+        mapTitle.put("SwipeCardsActivity","仿天天美剧拖动卡片的效果");
+        App.addData(new HashSetSearchBean("SwipeCardsActivity",SwipeCardsActivity.class));
 
         datas.add("EleViewPagerActivity");
-        map.put("EleViewPagerActivity","饿了么选单交互效果");
+        mapTitle.put("EleViewPagerActivity","饿了么选单交互效果");
+        App.addData(new HashSetSearchBean("EleViewPagerActivity",EleMainActivity.class));
 
         datas.add("SelectActivity");
-        map.put("SelectActivity","滑动刻度尺效果");
+        mapTitle.put("SelectActivity","滑动刻度尺效果");
+        App.addData(new HashSetSearchBean("SelectActivity",SelectActivity.class));
 
         datas.add("ArcLayoutActivity");
-        map.put("ArcLayoutActivity","头部图片移动+弧形Layout");
+        mapTitle.put("ArcLayoutActivity","头部图片移动+弧形Layout");
+        App.addData(new HashSetSearchBean("ArcLayoutActivity",ArcLayoutActivity.class));
 
         datas.add("MultiLineChooseActivity");
-        map.put("MultiLineChooseActivity","可点击选择Layout（流式）");
+        mapTitle.put("MultiLineChooseActivity","可点击选择Layout（流式）");
+        App.addData(new HashSetSearchBean("MultiLineChooseActivity",MultiLineChooseActivity.class));
 
         datas.add("RickTextActivity");
-        map.put("RickTextActivity","类似微博的emoji表情与@某人的EdiText");
+        mapTitle.put("RickTextActivity","类似微博的emoji表情与@某人的EdiText");
+        App.addData(new HashSetSearchBean("RickTextActivity",RickTextActivity.class));
 
         datas.add("RadarScanActivity");
-        map.put("RadarScanActivity","雷达式附近的人");
+        mapTitle.put("RadarScanActivity","雷达式附近的人");
+        App.addData(new HashSetSearchBean("RadarScanActivity",RadarScanActivity.class));
 
         datas.add("QQTitleActivity");
-        map.put("QQTitleActivity","随页面滑动渐变的Title");
+        mapTitle.put("QQTitleActivity","随页面滑动渐变的Title");
+        App.addData(new HashSetSearchBean("QQTitleActivity",QQTitleActivity.class));
 
         datas.add("VideoPlayerActivity");
-        map.put("VideoPlayerActivity","原始视频播放器VideoPlayer");
+        mapTitle.put("VideoPlayerActivity","原始视频播放器VideoPlayer");
+        App.addData(new HashSetSearchBean("VideoPlayerActivity",VideoPlayerActivity.class));
 
         datas.add("TabActivity");
-        map.put("TabActivity","基本的TabHost的使用");
+        mapTitle.put("TabActivity","基本的TabHost的使用");
+        App.addData(new HashSetSearchBean("TabActivity",TabActivity.class));
 
         datas.add("BottomNavigationViewActivity");
-        map.put("BottomNavigationViewActivity","官方design:25.0.0新推出的BottomNavigationView");
+        mapTitle.put("BottomNavigationViewActivity","官方design:25.0.0新推出的BottomNavigationView");
+        App.addData(new HashSetSearchBean("BottomNavigationViewActivity",BottomNavigationViewActivity.class));
 
         datas.add("BottomNavMainActivity");
-        map.put("BottomNavMainActivity","GitHub上开源底部导航栏");
+        mapTitle.put("BottomNavMainActivity","GitHub上开源底部导航栏");
+        App.addData(new HashSetSearchBean("BottomNavMainActivity",BottomNavMainActivity.class));
 
         datas.add("MaterialDesignActivity");
-        map.put("MaterialDesignActivity","MaterialDesign");
+        mapTitle.put("MaterialDesignActivity","MaterialDesign");
+        App.addData(new HashSetSearchBean("MaterialDesignActivity",MaterialDesignActivity.class));
 
         datas.add("InterceptActivity");
-        map.put("InterceptActivity","滑动冲突解析");
+        mapTitle.put("InterceptActivity","滑动冲突解析");
+        App.addData(new HashSetSearchBean("InterceptActivity",InterceptActivity.class));
 
         datas.add("ExpandableViewPagerActivity");
-        map.put("ExpandableViewPagerActivity","可以缩放的ViewPager");
+        mapTitle.put("ExpandableViewPagerActivity","可以缩放的ViewPager");
+        App.addData(new HashSetSearchBean("ExpandableViewPagerActivity",ExpandableViewPagerActivity.class));
 
         datas.add("DrawingBoardActvity");
-        map.put("DrawingBoardActvity","涂鸦效果+刮刮卡");
+        mapTitle.put("DrawingBoardActvity","涂鸦效果+刮刮卡");
+        App.addData(new HashSetSearchBean("DrawingBoardActvity",DrawingBoardActvity.class));
 
         datas.add("HorizontalScrollActivity");
-        map.put("HorizontalScrollActivity","画廊效果");
+        mapTitle.put("HorizontalScrollActivity","画廊效果");
+        App.addData(new HashSetSearchBean("HorizontalScrollActivity",HorizontalScrollActivity.class));
 
         datas.add("SortCityActivity");
-        map.put("SortCityActivity","3D式索引");
+        mapTitle.put("SortCityActivity","3D式索引");
+        App.addData(new HashSetSearchBean("SortCityActivity",MainActivity.class));
 
         datas.add("PickerActivity");
-        map.put("PickerActivity","三级联动");
+        mapTitle.put("PickerActivity","三级联动");
+        App.addData(new HashSetSearchBean("PickerActivity",PickerActivity.class));
+
+        datas.add("SwipMenuActivity");
+        mapTitle.put("SwipMenuActivity","Item侧滑效果");
+        App.addData(new HashSetSearchBean("SwipMenuActivity",SwipMenuActivity.class));
+
+        datas.add("ScrollingActivity");
+        mapTitle.put("ScrollingActivity","MaterialDesign实践");
+        App.addData(new HashSetSearchBean("ScrollingActivity",ScrollingActivity.class));
+
+    }
+
+    private void addDB() {
+        for (String name:datas){
+            SearchBean searchBean=new SearchBean();
+            searchBean.setActivity(name);
+            searchBean.setTitle(mapTitle.get(name));
+            manager.insert(searchBean);
+        }
     }
 }

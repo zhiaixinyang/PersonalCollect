@@ -136,7 +136,7 @@ public class ScanImageActivity extends Activity implements ListImageDirPopupWind
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.activity_scan_images);
 
 		DisplayMetrics outMetrics = new DisplayMetrics();
 		getWindowManager().getDefaultDisplay().getMetrics(outMetrics);
@@ -257,7 +257,6 @@ public class ScanImageActivity extends Activity implements ListImageDirPopupWind
 		mImageCount = (TextView) findViewById(R.id.id_total_count);
 
 		mBottomLy = (RelativeLayout) findViewById(R.id.id_bottom_ly);
-
 	}
 
 	private void initEvent()

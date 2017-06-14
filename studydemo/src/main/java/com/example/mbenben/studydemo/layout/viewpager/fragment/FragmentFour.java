@@ -97,7 +97,7 @@ public class FragmentFour extends Fragment implements ViewPager.OnPageChangeList
         Bundle bundle = getArguments();
         tvText.setText(bundle.getString("name"));
         titles = new String[]{"广告描述1", "广告描述2", "广告描述3", "广告描述4", "广告描述5"};
-        imageViewList = new ArrayList<ImageView>();
+        imageViewList = new ArrayList<>();
         int imgIds[] = {R.drawable.pintu, R.drawable.pintu, R.drawable.pintu,
                 R.drawable.pintu, R.drawable.pintu};
         ImageView iv;

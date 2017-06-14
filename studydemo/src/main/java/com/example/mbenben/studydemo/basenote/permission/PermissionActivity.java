@@ -39,7 +39,6 @@ public class PermissionActivity extends AppCompatActivity {
                 }else{
                     call();
                 }
-
             }
         });
     }

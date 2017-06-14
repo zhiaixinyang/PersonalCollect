@@ -11,19 +11,21 @@ import com.example.mbenben.studydemo.R;
 import com.example.mbenben.studydemo.utils.ToastUtil;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /**
  * Created by MBENBEN on 2017/1/23.
  */
 
 public class VideoPlayerActivity extends AppCompatActivity{
-    @BindView(R.id.viewPager) VideoView videoView;
+    @BindView(R.id.videoView) VideoView videoView;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_videoplayer);
 
-        Uri uri = Uri.parse("http://www.ohonor.xyz/video_test.mp4");
+        ButterKnife.bind(this);
+        Uri uri = Uri.parse("http://www.ohonor.xyz/video/video_test.mp4");
         if (uri!=null) {
             videoView.setVideoURI(uri);
             MediaController mediaController=new MediaController(this);

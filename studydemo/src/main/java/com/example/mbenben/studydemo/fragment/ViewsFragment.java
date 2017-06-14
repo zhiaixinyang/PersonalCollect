@@ -16,6 +16,10 @@ import com.example.mbenben.studydemo.R;
 import com.example.mbenben.studydemo.base.CommonAdapter;
 import com.example.mbenben.studydemo.base.OnItemClickListener;
 import com.example.mbenben.studydemo.base.ViewHolder;
+import com.example.mbenben.studydemo.db.SearchBean;
+import com.example.mbenben.studydemo.db.SearchDBManager;
+import com.example.mbenben.studydemo.model.HashSetSearchBean;
+import com.example.mbenben.studydemo.net.httpurl.HttpUrlAcitvity;
 import com.example.mbenben.studydemo.view.behavior.BehaviorActivity;
 import com.example.mbenben.studydemo.view.bezier.ClearBezierActivity;
 import com.example.mbenben.studydemo.view.bezier.GiftBezierActivity;
@@ -37,6 +41,9 @@ import com.example.mbenben.studydemo.view.lol.LoLActivity;
 import com.example.mbenben.studydemo.view.passwordedittext.PassWordActivity;
 import com.example.mbenben.studydemo.view.progressbar.ProgressBarActivity;
 import com.example.mbenben.studydemo.view.qqhealth.QQHealthActivity;
+import com.example.mbenben.studydemo.view.radar.RadarViewActivity;
+import com.example.mbenben.studydemo.view.shader.ShaderActivity;
+import com.example.mbenben.studydemo.view.switchbutton.SwitchButtonActivity;
 import com.example.mbenben.studydemo.view.timelytext.TimelyTextActivity;
 import com.example.mbenben.studydemo.view.toast.NewToastActivity;
 import com.example.mbenben.studydemo.view.viscosity.ViscosityActivity;
@@ -59,9 +66,11 @@ public class ViewsFragment extends Fragment{
     @BindView(R.id.rlv_main) RecyclerView rlvMain;
     @BindView(R.id.tv_desc) TextView tvDesc;
 
+    private SearchDBManager manager;
+
     private static final String KEY="views";
     private List<String> datas;
-    private Map<String,String> map;
+    private Map<String,String> mapTitle;
 
     private CommonAdapter<String> adapter;
     public static ViewsFragment newInstance(String desc) {
@@ -77,8 +86,10 @@ public class ViewsFragment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.frag_main_layout,container,false);
+        manager=new SearchDBManager();
         initView(view);
         initRlv();
+        addDB();
         return view;
     }
 
@@ -86,7 +97,7 @@ public class ViewsFragment extends Fragment{
         adapter=new CommonAdapter<String>(App.getInstance().getContext(),R.layout.item_info,datas) {
             @Override
             public void convert(ViewHolder holder, String s) {
-                holder.setText(R.id.id_info,map.get(s));
+                holder.setText(R.id.id_info, mapTitle.get(s));
             }
         };
         adapter.setOnItemClickListener(new OnItemClickListener() {
@@ -197,6 +208,18 @@ public class ViewsFragment extends Fragment{
                         Intent intentFloatView= new Intent(App.getInstance().getContext(), FloatViewActivity.class);
                         startActivity(intentFloatView);
                         break;
+                    case "RadarViewActivity":
+                        Intent intentRadarView= new Intent(App.getInstance().getContext(), RadarViewActivity.class);
+                        startActivity(intentRadarView);
+                        break;
+                    case "ShaderActivity":
+                        Intent intentShader= new Intent(App.getInstance().getContext(), ShaderActivity.class);
+                        startActivity(intentShader);
+                        break;
+                    case "SwitchButtonActivity":
+                        Intent intentSwitchButton= new Intent(App.getInstance().getContext(), SwitchButtonActivity.class);
+                        startActivity(intentSwitchButton);
+                        break;
                 }
             }
 
@@ -218,82 +241,128 @@ public class ViewsFragment extends Fragment{
         tvDesc.setText(string);
 
         datas=new ArrayList<>();
-        map=new HashMap<>();
+        mapTitle =new HashMap<>();
 
         datas.add("CanvasApiActivity");
-        map.put("CanvasApiActivity","Canvas基本API展示");
+        mapTitle.put("CanvasApiActivity","Canvas基本API展示");
+        App.addData(new HashSetSearchBean("CanvasApiActivity",CanvasApiActivity.class));
 
         datas.add("ClearBezierActivity");
-        map.put("ClearBezierActivity","贝塞尔曲线实现发生火箭的效果");
+        mapTitle.put("ClearBezierActivity","贝塞尔曲线实现发生火箭的效果");
+        App.addData(new HashSetSearchBean("ClearBezierActivity",ClearBezierActivity.class));
 
         datas.add("GiftBezierActivity");
-        map.put("GiftBezierActivity","贝塞尔曲线实现发生直播平台送礼物的效果");
+        mapTitle.put("GiftBezierActivity","贝塞尔曲线实现发生直播平台送礼物的效果");
+        App.addData(new HashSetSearchBean("GiftBezierActivity",GiftBezierActivity.class));
 
         datas.add("HealthyTablesActivity");
-        map.put("HealthyTablesActivity","折线图效果");
+        mapTitle.put("HealthyTablesActivity","折线图效果");
+        App.addData(new HashSetSearchBean("HealthyTablesActivity",HealthyTablesActivity.class));
 
         datas.add("CreditActivity");
-        map.put("CreditActivity","支付宝信用效果");
+        mapTitle.put("CreditActivity","支付宝信用效果");
+        App.addData(new HashSetSearchBean("CreditActivity",CreditActivity.class));
 
         datas.add("WeiBoSportActivity");
-        map.put("WeiBoSportActivity","圆形评分进度效果");
+        mapTitle.put("WeiBoSportActivity","圆形评分进度效果");
+        App.addData(new HashSetSearchBean("WeiBoSportActivity",WeiBoSportActivity.class));
 
         datas.add("QQHealthActivity");
-        map.put("QQHealthActivity","QQ步数效果");
+        mapTitle.put("QQHealthActivity","QQ步数效果");
+        App.addData(new HashSetSearchBean("QQHealthActivity",QQHealthActivity.class));
 
         datas.add("ChartActivity");
-        map.put("ChartActivity","柱状图效果");
+        mapTitle.put("ChartActivity","柱状图效果");
+        App.addData(new HashSetSearchBean("ChartActivity",ChartActivity.class));
 
         datas.add("LoLActivity");
-        map.put("LoLActivity","LOL能力数值分析效果");
+        mapTitle.put("LoLActivity","LOL能力数值分析效果");
+        App.addData(new HashSetSearchBean("LoLActivity",LoLActivity.class));
 
         datas.add("WaveActivity");
-        map.put("WaveActivity","波浪动画实例");
+        mapTitle.put("WaveActivity","波浪动画实例");
+        App.addData(new HashSetSearchBean("WaveActivity",WaveActivity.class));
 
         datas.add("ViscosityActivity");
-        map.put("ViscosityActivity","仿QQ粘性消息拖拽效果");
+        mapTitle.put("ViscosityActivity","仿QQ粘性消息拖拽效果");
+        App.addData(new HashSetSearchBean("ViscosityActivity",ViscosityActivity.class));
 
         datas.add("ExpandableActivity");
-        map.put("ExpandableActivity","可折叠式TextView");
+        mapTitle.put("ExpandableActivity","可折叠式TextView");
+        App.addData(new HashSetSearchBean("ExpandableActivity",ExpandableActivity.class));
 
         datas.add("BehaviorActivity");
-        map.put("BehaviorActivity","Behavior实践：缩放式搜索框");
+        mapTitle.put("BehaviorActivity","Behavior实践：缩放式搜索框");
+        App.addData(new HashSetSearchBean("BehaviorActivity",BehaviorActivity.class));
 
         datas.add("ENViewsActivity");
-        map.put("ENViewsActivity","酷炫的小动画，如：加载..");
+        mapTitle.put("ENViewsActivity","酷炫的小动画，如：加载..");
+        App.addData(new HashSetSearchBean("ENViewsActivity",ENViewsActivity.class));
 
         datas.add("ProgressBarActivity");
-        map.put("ProgressBarActivity","自定义ProgressBar（下载进度条）");
+        mapTitle.put("ProgressBarActivity","自定义ProgressBar（下载进度条）");
+        App.addData(new HashSetSearchBean("ProgressBarActivity",ProgressBarActivity.class));
 
         datas.add("HtmlTextActivity");
-        map.put("HtmlTextActivity","可以解析Html的TextView");
+        mapTitle.put("HtmlTextActivity","可以解析Html的TextView");
+        App.addData(new HashSetSearchBean("HtmlTextActivity",HtmlTextActivity.class));
 
         datas.add("PassWordActivity");
-        map.put("PassWordActivity","仿安全登录EditText");
+        mapTitle.put("PassWordActivity","仿安全登录EditText");
+        App.addData(new HashSetSearchBean("PassWordActivity",PassWordActivity.class));
 
         datas.add("GlideLoaderActivity");
-        map.put("GlideLoaderActivity","操作图片（双击扩大，移动查看等）");
+        mapTitle.put("GlideLoaderActivity","操作图片（双击扩大，移动查看等）");
+        App.addData(new HashSetSearchBean("GlideLoaderActivity",GlideLoaderActivity.class));
 
         datas.add("CircleActivity");
-        map.put("CircleActivity","圆角图片");
+        mapTitle.put("CircleActivity","圆角图片");
+        App.addData(new HashSetSearchBean("CircleActivity",CircleActivity.class));
 
         datas.add("LoadingTextViewActivity");
-        map.put("LoadingTextViewActivity","自定义Loading");
+        mapTitle.put("LoadingTextViewActivity","自定义Loading");
+        App.addData(new HashSetSearchBean("LoadingTextViewActivity",LoadingTextViewActivity.class));
 
         datas.add("JustifyTextActivity");
-        map.put("JustifyTextActivity","文字对齐");
+        mapTitle.put("JustifyTextActivity","文字对齐");
+        App.addData(new HashSetSearchBean("JustifyTextActivity",JustifyTextActivity.class));
 
         datas.add("NewToastActivity");
-        map.put("NewToastActivity","自定义Toast");
+        mapTitle.put("NewToastActivity","自定义Toast");
+        App.addData(new HashSetSearchBean("NewToastActivity",NewToastActivity.class));
 
         datas.add("TimelyTextActivity");
-        map.put("TimelyTextActivity","数字Path变化");
+        mapTitle.put("TimelyTextActivity","数字Path变化");
+        App.addData(new HashSetSearchBean("TimelyTextActivity",TimelyTextActivity.class));
 
         datas.add("CouponViewActivity");
-        map.put("CouponViewActivity","卡券View");
+        mapTitle.put("CouponViewActivity","卡券View");
+        App.addData(new HashSetSearchBean("CouponViewActivity",CouponViewActivity.class));
 
         datas.add("FloatViewActivity");
-        map.put("FloatViewActivity","浮动的View + 点击特效");
+        mapTitle.put("FloatViewActivity","浮动的View + 点击特效");
+        App.addData(new HashSetSearchBean("FloatViewActivity",FloatViewActivity.class));
 
+        datas.add("RadarViewActivity");
+        mapTitle.put("RadarViewActivity","雷达效果");
+        App.addData(new HashSetSearchBean("RadarViewActivity",RadarViewActivity.class));
+
+        datas.add("ShaderActivity");
+        mapTitle.put("ShaderActivity","Shader效果使用");
+        App.addData(new HashSetSearchBean("ShaderActivity",ShaderActivity.class));
+
+        datas.add("SwitchButtonActivity");
+        mapTitle.put("SwitchButtonActivity","SwitchButton效果");
+        App.addData(new HashSetSearchBean("ShaderActivity",SwitchButtonActivity.class));
+
+    }
+
+    private void addDB() {
+        for (String name:datas){
+            SearchBean searchBean=new SearchBean();
+            searchBean.setActivity(name);
+            searchBean.setTitle(mapTitle.get(name));
+            manager.insert(searchBean);
+        }
     }
 }

@@ -60,7 +60,7 @@ public class DownLoadServiceActivity extends AppCompatActivity{
     }
 
     public void stopDown(View view){
-        //开启Service
+        //停止Service
         Intent stopDown=new Intent(this,DownLoadService.class);
         stopDown.setAction(DownLoadService.ACTION_STOP);
         stopDown.putExtra("intent_file",fileBean);

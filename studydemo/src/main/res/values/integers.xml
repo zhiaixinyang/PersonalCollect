@@ -2,4 +2,7 @@
 <resources>
 
   <integer name="animation_default_duration">300</integer>
+  <integer name="simpletooltip_overlay_alpha">120</integer>
+  <integer name="simpletooltip_animation_duration">800</integer>
+
 </resources>

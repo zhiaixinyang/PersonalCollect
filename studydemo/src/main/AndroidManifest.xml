@@ -16,6 +16,7 @@
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.WRITE_CONTACTS" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -54,9 +55,23 @@
         <activity
             android:name=".view.pintu.PinTuActivity"
             android:launchMode="singleTask" />
+
+        <activity android:name=".view.switchbutton.SwitchButtonActivity"
+            android:launchMode="singleTask"/>
+
+        <activity android:name=".basenote.plugin.PluginActivity"
+            android:launchMode="singleTask"/>
         <activity
             android:name=".layout.indicator.IndicatorActivity"
             android:launchMode="singleTask" />
+        <activity android:name=".layout.recyclerview.sticky.view.MainStickyActivity"
+            android:launchMode="singleTask"/>
+        <activity android:name=".layout.recyclerview.sticky.view.BeautifulRecyclerViewActivity"
+            android:launchMode="singleTask"/>
+        <activity android:name=".layout.recyclerview.sticky.view.PowerfulStickyRecyclerViewActivity"
+            android:launchMode="singleTask"/>
+        <activity android:name=".layout.recyclerview.sticky.view.StickyRecyclerViewActivity"
+            android:launchMode="singleTask"/>
         <activity
             android:name=".layout.drawerlayout.DrawerLayoutActivity"
             android:launchMode="singleTask" />
@@ -276,6 +291,18 @@
         <activity android:name=".layout.pickerview.JsonDataActivity"
             android:launchMode="singleTask"/>
         <activity android:name=".basenote.scaniamges.imageloader.ScanImageActivity"
+            android:launchMode="singleTask"/>
+        <activity android:name=".SearchRlvActivity"
+            android:launchMode="singleTask"/>
+        <activity android:name=".layout.drawerlayout.my.SlidingActivity"
+            android:launchMode="singleTask"/>
+        <activity android:name=".view.radar.RadarViewActivity"
+            android:launchMode="singleTask"/>
+        <activity android:name=".view.shader.ShaderActivity"
+            android:launchMode="singleTask"/>
+        <activity android:name=".layout.swipmenu.SwipMenuActivity"
+            android:launchMode="singleTask"/>
+        <activity android:name=".layout.materialdesign.coordinatorlayouttest.ScrollingActivity"
             android:launchMode="singleTask"/>
 
 

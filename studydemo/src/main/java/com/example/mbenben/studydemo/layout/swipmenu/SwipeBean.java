@@ -1,0 +1,13 @@
+package com.example.mbenben.studydemo.layout.swipmenu;
+
+/**
+ * Created by zhangxutong .
+ * Date: 16/04/24
+ */
+public class SwipeBean {
+    public String name;
+
+    public SwipeBean(String name) {
+        this.name = name;
+    }
+}

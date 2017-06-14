@@ -3,17 +3,32 @@ package com.example.mbenben.studydemo;
 import android.app.Application;
 import android.content.Context;
 
+import com.example.mbenben.studydemo.db.SearchBean;
+import com.example.mbenben.studydemo.model.HashSetSearchBean;
+
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Created by MBENBEN on 2016/3/10.
  */
 public class App extends Application{
     private static Context context;
+    private static Set<HashSetSearchBean> data;
     @Override
     public void onCreate() {
         super.onCreate();
 
         context =getApplicationContext();
+        data=new HashSet<>();
+    }
 
+    public static Set<HashSetSearchBean> getData() {
+        return data;
+    }
+
+    public static void addData(HashSetSearchBean searchBean) {
+        App.data.add(searchBean);
     }
 
     private static App instance;

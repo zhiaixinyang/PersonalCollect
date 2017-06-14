@@ -14,6 +14,7 @@ import com.example.mbenben.studydemo.layout.recyclerview.others.commonAdapterUse
 import com.example.mbenben.studydemo.layout.recyclerview.others.dragItemAnimatorUse.DragItemAnimatorActivity;
 import com.example.mbenben.studydemo.layout.recyclerview.others.headerFooterUse.HeaderFooterActivity;
 import com.example.mbenben.studydemo.layout.recyclerview.others.refreshLoad.RefreshLoadActivity;
+import com.example.mbenben.studydemo.layout.recyclerview.sticky.view.MainStickyActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,6 +51,7 @@ public class RecyclerActivity extends AppCompatActivity {
         data.add("可拖动的Item+动画");
         data.add("封装后的Footer和Header展示");
         data.add("下拉刷新+上拉加载");
+        data.add("悬浮固定头部Item");
 
         rlvMain.setLayoutManager(new LinearLayoutManager(this));
         adapter = new RecyclerAdapter(data);
@@ -89,6 +91,10 @@ public class RecyclerActivity extends AppCompatActivity {
                     case "下拉刷新+上拉加载":
                         Intent intentRefreshLoad = new Intent(RecyclerActivity.this, RefreshLoadActivity.class);
                         startActivity(intentRefreshLoad);
+                        break;
+                    case "悬浮固定头部Item":
+                        Intent intentSticky = new Intent(RecyclerActivity.this, MainStickyActivity.class);
+                        startActivity(intentSticky);
                         break;
                 }
             }

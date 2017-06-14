@@ -1,18 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     android:layout_height="match_parent">
-    <com.example.mbenben.studydemo.view.expandabletextview.ExpandableTextView
-        android:id="@+id/tv_expandable"
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        app:DrawableAndTextGravity="right"
-        app:collapseDrawable="@drawable/icon_collapsed"
-        app:expandDrawable="@drawable/icon_expand"
-        app:contentTextColor="@color/colorPrimaryDark"
-        app:expandCollapseTextColor="@color/colorAccent"
-        app:expandText="更多"
-        app:maxCollapsedLines="6"/>
-</ScrollView>
+        android:layout_height="wrap_content">
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="match_parent"
+                android:text="自定义View"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:layout_height="wrap_content" />
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.example.mbenben.studydemo.view.expandabletextview.ExpandableTextView
+            android:id="@+id/tv_expandable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:DrawableAndTextGravity="right"
+            app:collapseDrawable="@drawable/icon_collapsed"
+            app:expandDrawable="@drawable/icon_expand"
+            app:contentTextColor="@color/colorPrimaryDark"
+            app:expandCollapseTextColor="@color/colorAccent"
+            app:expandText="更多"
+            app:maxCollapsedLines="6"/>
+    </ScrollView>
+</LinearLayout>

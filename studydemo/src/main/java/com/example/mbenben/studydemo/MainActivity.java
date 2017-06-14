@@ -1,29 +1,42 @@
 package com.example.mbenben.studydemo;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
+import android.view.View;
+import android.view.ViewGroup;
 
+import com.example.mbenben.studydemo.base.CommonAdapter;
+import com.example.mbenben.studydemo.base.OnItemClickListener;
+import com.example.mbenben.studydemo.base.ViewHolder;
+import com.example.mbenben.studydemo.db.SearchBean;
+import com.example.mbenben.studydemo.db.SearchDBManager;
+import com.example.mbenben.studydemo.db.SearchListBean;
 import com.example.mbenben.studydemo.fragment.AndroidBaseFragment;
 import com.example.mbenben.studydemo.fragment.AnimsFragment;
 import com.example.mbenben.studydemo.fragment.LayoutFragment;
 import com.example.mbenben.studydemo.fragment.NetFragment;
 import com.example.mbenben.studydemo.fragment.ViewsFragment;
-import com.example.mbenben.studydemo.utils.ToastUtil;
+import com.example.mbenben.studydemo.view.MyBottomSheetDialog;
 import com.example.mbenben.studydemo.view.adline.AdHeadline;
 import com.example.mbenben.studydemo.view.adline.HeadlineBean;
 import com.example.mbenben.studydemo.view.searchbox.SearchFragment;
 import com.example.mbenben.studydemo.view.searchbox.custom.IOnSearchClickListener;
 
-import java.net.HttpURLConnection;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,6 +61,7 @@ public class MainActivity extends AppCompatActivity implements Toolbar.OnMenuIte
     private List<HeadlineBean> adHeadLineData =new ArrayList<>();
 
     private SearchFragment searchFragment;
+    private SearchDBManager manager;
 
     private String[] titles={"Layout","Net","Anim","Views","Base"};
 
@@ -60,6 +74,7 @@ public class MainActivity extends AppCompatActivity implements Toolbar.OnMenuIte
 
     private void initView() {
         ButterKnife.bind(this);
+        manager=new SearchDBManager();
 
         setSupportActionBar(toolbar);
 
@@ -125,6 +140,9 @@ public class MainActivity extends AppCompatActivity implements Toolbar.OnMenuIte
 
     @Override
     public void OnSearchClick(String keyword) {
-        ToastUtil.toastShort(keyword);
+        List<SearchBean> searchList = manager.query(keyword);
+        Intent toRlv=new Intent(MainActivity.this,SearchRlvActivity.class);
+        toRlv.putExtra("search_rlv", (Serializable) searchList);
+        startActivity(toRlv);
     }
 }

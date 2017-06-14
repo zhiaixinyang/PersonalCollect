@@ -16,6 +16,10 @@ import com.example.mbenben.studydemo.R;
 import com.example.mbenben.studydemo.base.CommonAdapter;
 import com.example.mbenben.studydemo.base.OnItemClickListener;
 import com.example.mbenben.studydemo.base.ViewHolder;
+import com.example.mbenben.studydemo.db.SearchBean;
+import com.example.mbenben.studydemo.db.SearchDBManager;
+import com.example.mbenben.studydemo.layout.nestedscroll.NestedScrollActivity;
+import com.example.mbenben.studydemo.model.HashSetSearchBean;
 import com.example.mbenben.studydemo.net.httpurl.HttpUrlAcitvity;
 import com.example.mbenben.studydemo.net.okhttp.OkHttpDemoActivity;
 import com.example.mbenben.studydemo.net.retrofit.RetrofitActivity;
@@ -39,7 +43,9 @@ public class NetFragment extends Fragment{
 
     private static final String KEY="net";
     private List<String> datas;
-    private Map<String,String> map;
+    private Map<String,String> mapTitle;
+
+    private SearchDBManager manager;
 
     private CommonAdapter<String> adapter;
     public static NetFragment newInstance(String desc) {
@@ -55,8 +61,10 @@ public class NetFragment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.frag_main_layout,container,false);
+        manager=new SearchDBManager();
         initView(view);
         initRlv();
+        addDB();
         return view;
     }
 
@@ -64,7 +72,7 @@ public class NetFragment extends Fragment{
         adapter=new CommonAdapter<String>(App.getInstance().getContext(),R.layout.item_info,datas) {
             @Override
             public void convert(ViewHolder holder, String s) {
-                holder.setText(R.id.id_info,map.get(s));
+                holder.setText(R.id.id_info, mapTitle.get(s));
             }
         };
         adapter.setOnItemClickListener(new OnItemClickListener() {
@@ -108,19 +116,32 @@ public class NetFragment extends Fragment{
         tvDesc.setText(string);
 
         datas=new ArrayList<>();
-        map=new HashMap<>();
+        mapTitle =new HashMap<>();
 
         datas.add("HttpUrlActivity");
-        map.put("HttpUrlActivity","使用HttpUrlConnection实现上传下载");
+        mapTitle.put("HttpUrlActivity","使用HttpUrlConnection实现上传下载");
+        App.addData(new HashSetSearchBean("HttpUrlActivity",HttpUrlAcitvity.class));
 
         datas.add("OkHttpDemoActivity");
-        map.put("OkHttpDemoActivity","使用OkHttp实现上传下载");
+        mapTitle.put("OkHttpDemoActivity","使用OkHttp实现上传下载");
+        App.addData(new HashSetSearchBean("OkHttpDemoActivity",OkHttpDemoActivity.class));
 
         datas.add("RetrofitActivity");
-        map.put("RetrofitActivity","使用Retrofit实现上传下载");
+        mapTitle.put("RetrofitActivity","使用Retrofit实现上传下载");
+        App.addData(new HashSetSearchBean("RetrofitActivity",RetrofitActivity.class));
 
         datas.add("RxJavaActivity");
-        map.put("RxJavaActivity","RxJava+Retrofit实例");
+        mapTitle.put("RxJavaActivity","RxJava+Retrofit实例");
+        App.addData(new HashSetSearchBean("RxJavaActivity",RxJavaActivity.class));
 
+    }
+
+    private void addDB() {
+        for (String name:datas){
+            SearchBean searchBean=new SearchBean();
+            searchBean.setActivity(name);
+            searchBean.setTitle(mapTitle.get(name));
+            manager.insert(searchBean);
+        }
     }
 }

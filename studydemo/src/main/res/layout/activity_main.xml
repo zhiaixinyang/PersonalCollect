@@ -36,6 +36,7 @@
         android:layout_height="wrap_content">
         <com.example.mbenben.studydemo.view.adline.AdHeadline
             android:id="@+id/ad_headline"
+            android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="40dp"/>
 

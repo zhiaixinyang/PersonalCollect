@@ -8,7 +8,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
-import com.aopa.R;
+
+import com.example.mbenben.studydemo.R;
 
 import java.util.ArrayList;
 import java.util.List;
