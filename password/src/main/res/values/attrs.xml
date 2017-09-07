@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PasswordView">
+        <attr name="passwordLength" format="integer" />
+        <attr name="passwordMode" format="integer" />
+        <attr name="passwordPadding" format="dimension" />
+        <attr name="passwordBorderColor" format="color" />
+        <attr name="passwordBorderWidth" format="dimension" />
+        <attr name="cursorFlashTime" format="integer" />
+        <attr name="isCursorEnable" format="boolean" />
+        <attr name="isCanLetter" format="boolean" />
+        <attr name="cipherEnable" format="boolean" />
+        <attr name="cipherText" format="string" />
+        <attr name="cursorColor" format="color" />
+        <attr name="mode" format="enum">
+            <enum name="underline" value="0" />
+            <enum name="rect" value="1" />
+        </attr>
+    </declare-styleable>
+</resources>
