@@ -4,7 +4,22 @@
     android:layout_height="match_parent"
     android:background="@android:color/white"
     android:orientation="vertical" >
-
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="match_parent"
+                android:text="自定义Layout"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:layout_height="wrap_content" />
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
     <FrameLayout
         android:layout_width="fill_parent"
         android:layout_height="0dp"

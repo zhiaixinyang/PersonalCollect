@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- animationOrder="normal"正常顺讯播放动画 -->
-<!-- delay="0.5"递推是延时，效果为子view动画持续时间乘0.5 -->
-<!-- animation="@anim/view_anim"设置使用子控件使用的动画文件，就是上文中的xml -->
-<layoutAnimation xmlns:android="http://schemas.android.com/apk/res/android"
-    android:animationOrder="normal"
-    android:delay="0.5"
-    android:animation="@anim/view_anim"/>

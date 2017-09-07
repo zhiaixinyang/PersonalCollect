@@ -95,7 +95,7 @@ public class FragmentOne extends Fragment {
 
         Bundle bundle = getArguments();
         tvText.setText(bundle.getString("name"));
-        pagerWidth= (int) (getResources().getDisplayMetrics().widthPixels*4.0f/5.0f);
+        pagerWidth= (int) (getResources().getDisplayMetrics().widthPixels*3.0f/5.0f);
         ViewGroup.LayoutParams lp= viewPager.getLayoutParams();
         if (lp==null){
             lp=new ViewGroup.LayoutParams(pagerWidth, ViewGroup.LayoutParams.MATCH_PARENT);

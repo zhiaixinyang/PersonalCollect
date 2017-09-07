@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <EditText
+        android:id="@+id/et_nick"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:hint="齐天大圣"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+    <TextView
+        android:id="@+id/tv_name"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:text="孙悟空"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+    <Button
+        android:id="@+id/btn_ok"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="点我"
+        android:gravity="center"/>
+</LinearLayout>

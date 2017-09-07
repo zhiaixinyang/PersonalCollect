@@ -24,7 +24,7 @@ public class LinearRegression {
         }
         N = x.length;
 
-        // first pass
+        //求平均值
         double sumx = 0.0, sumy = 0.0, sumx2 = 0.0;
         for (int i = 0; i < N; i++) sumx  += x[i];
         for (int i = 0; i < N; i++) sumx2 += x[i]*x[i];
@@ -32,7 +32,7 @@ public class LinearRegression {
         double xbar = sumx / N;
         double ybar = sumy / N;
 
-        // second pass: compute summary statistics
+        //求方差
         double xxbar = 0.0, yybar = 0.0, xybar = 0.0;
         for (int i = 0; i < N; i++) {
             xxbar += (x[i] - xbar) * (x[i] - xbar);
@@ -42,9 +42,9 @@ public class LinearRegression {
         beta  = xybar / xxbar;
         alpha = ybar - beta * xbar;
 
-        // more statistical analysis
-        double rss = 0.0;      // residual sum of squares
-        double ssr = 0.0;      // regression sum of squares
+        //一些计算公式
+        double rss = 0.0;
+        double ssr = 0.0;
         for (int i = 0; i < N; i++) {
             double fit = beta*x[i] + alpha;
             rss += (fit - y[i]) * (fit - y[i]);

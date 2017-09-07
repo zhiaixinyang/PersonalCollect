@@ -1,8 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:orientation="vertical"
+    xmlns:honor="http://schemas.android.com/apk/res-auto"
     android:layout_height="match_parent">
-
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="match_parent"
+                android:text="自定义Layout"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:layout_height="wrap_content" />
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
     <com.example.mbenben.studydemo.layout.indicator.MyViewPagerIndicator
         android:id="@+id/indicator"
         android:orientation="horizontal"
@@ -10,9 +27,45 @@
         android:background="#000000"
         android:layout_width="match_parent"
         android:layout_height="40dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal" >
+
+        <com.example.mbenben.studydemo.layout.indicator.ColorTrackView
+            android:id="@+id/id_tab_01"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            honor:colortrackview_progress="1"
+            honor:colortrackview_text="简介"
+            honor:colortrackview_text_change_color="#ffff0000"
+            honor:colortrackview_text_origin_color="#ff000000"
+            honor:colortrackview_text_size="18sp" />
+
+        <com.example.mbenben.studydemo.layout.indicator.ColorTrackView
+            android:id="@+id/id_tab_02"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            honor:colortrackview_text="评价"
+            honor:colortrackview_text_change_color="#ffff0000"
+            honor:colortrackview_text_origin_color="#ff000000"
+            honor:colortrackview_text_size="18sp" />
+
+        <com.example.mbenben.studydemo.layout.indicator.ColorTrackView
+            android:id="@+id/id_tab_03"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            honor:colortrackview_text="相关"
+            honor:colortrackview_text_change_color="#ffff0000"
+            honor:colortrackview_text_origin_color="#ff000000"
+            honor:colortrackview_text_size="18sp" />
+    </LinearLayout>
     <android.support.v4.view.ViewPager
         android:id="@+id/viewPager"
         android:layout_below="@+id/indicator"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-</RelativeLayout>
+</LinearLayout>

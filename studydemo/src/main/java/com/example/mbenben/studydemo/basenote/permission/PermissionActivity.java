@@ -11,9 +11,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.mbenben.studydemo.App;
 import com.example.mbenben.studydemo.R;
-import com.example.mbenben.studydemo.utils.ToastUtil;
+import com.example.mbenben.studydemo.utils.ToastUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -54,16 +53,4 @@ public class PermissionActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        switch (requestCode){
-            case 111:
-                if (grantResults.length>0&&grantResults[0]==PackageManager.PERMISSION_GRANTED){
-                    call();
-                }else{
-                    ToastUtil.toastShort("未授权");
-                }
-                break;
-        }
-    }
 }

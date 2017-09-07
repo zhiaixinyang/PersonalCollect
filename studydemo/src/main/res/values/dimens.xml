@@ -5,11 +5,6 @@
     <dimen name="main_margin">4dp</dimen>
     <dimen name="viewpager_margin">2dp</dimen>
 
-    <dimen name="behavior_activity_horizontal_margin">16dp</dimen>
-    <dimen name="behavior_activity_vertical_margin">16dp</dimen>
-    <dimen name="behavior_fab_margin">16dp</dimen>
-    <dimen name="behavior_app_bar_height">180dp</dimen>
-    <dimen name="behavior_text_margin">16dp</dimen>
     <dimen name="behavior_collapsed_header_height">75dp</dimen>
 
     <dimen name="behavior_init_float_offset_y">130dp</dimen>
@@ -23,7 +18,6 @@
     <dimen name="bottom_navigation_shadow_height">8dp</dimen>
     <dimen name="bottom_navigation_shadow_height_without_colored_background">4dp</dimen>
     <dimen name="bottom_navigation_min_width">104dp</dimen>
-    <dimen name="bottom_navigation_max_width">168dp</dimen>
     <dimen name="bottom_navigation_height">56dp</dimen>
     <dimen name="bottom_navigation_line_width">1dp</dimen>
     <dimen name="bottom_navigation_icon">24dp</dimen>
@@ -38,8 +32,6 @@
     <dimen name="fab_margin">8dp</dimen>
     <dimen name="fab_padding">12dp</dimen>
 
-    <dimen name="fv_activity_horizontal_margin">16dp</dimen>
-    <dimen name="fv_activity_vertical_margin">16dp</dimen>
     <dimen name="fv_status_bar_height">0dp</dimen>
     <dimen name="fv_tool_bar_height">48dp</dimen>
     <dimen name="fv_bottom_op_item_w">28dp</dimen>
@@ -62,7 +54,19 @@
     <dimen name="simpletooltip_arrow_width">30dp</dimen>
     <dimen name="simpletooltip_arrow_height">15dp</dimen>
     <dimen name="simpletooltip_animation_padding">4dp</dimen>
+    <dimen name="dp_3">3dp</dimen>
+    <dimen name="dp_4">4dp</dimen>
+    <dimen name="dp_15">15dp</dimen>
+    <dimen name="dp_6">6dp</dimen>
+    <dimen name="dp_13">13dp</dimen>
+    <dimen name="sp_14">14sp</dimen>
+    <dimen name="sp_12">12sp</dimen>
+    <dimen name="dp_22">22dp</dimen>
+    <dimen name="dp_10">10dp</dimen>
 
-    <dimen name="app_bar_height">180dp</dimen>
-    <dimen name="text_margin">16dp</dimen>
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">140dp</dimen>
+
+    <dimen name="default_label_size">26sp</dimen>
+    <dimen name="default_subtitle_size">22sp</dimen>
 </resources>

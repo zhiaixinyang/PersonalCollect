@@ -1,6 +1,7 @@
 package com.example.mbenben.studydemo;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.annotation.Nullable;
@@ -70,6 +71,7 @@ public class MainActivity extends AppCompatActivity implements Toolbar.OnMenuIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView();
+
     }
 
     private void initView() {

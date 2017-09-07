@@ -7,7 +7,6 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
 import android.content.res.Resources;
-import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Environment;
@@ -15,22 +14,15 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.ListViewCompat;
-import android.util.Log;
-import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.PopupWindow;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
 import com.example.mbenben.studydemo.R;
-import com.example.mbenben.studydemo.basenote.permission.PermissionActivity;
-import com.example.mbenben.studydemo.utils.ToastUtil;
+import com.example.mbenben.studydemo.utils.ToastUtils;
 
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -105,7 +97,7 @@ public class PluginActivity extends AppCompatActivity {
                 if (grantResults.length>0&&grantResults[0]==PackageManager.PERMISSION_GRANTED){
                     plugin();
                 }else{
-                    ToastUtil.toastShort("未授权");
+                    ToastUtils.showShort("未授权");
                 }
                 break;
         }

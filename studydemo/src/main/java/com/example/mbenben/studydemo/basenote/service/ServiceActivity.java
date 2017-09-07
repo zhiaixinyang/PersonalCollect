@@ -1,16 +1,20 @@
 package com.example.mbenben.studydemo.basenote.service;
 
 import com.example.mbenben.studydemo.R;
-import com.example.mbenben.studydemo.utils.ToastUtil;
+import com.example.mbenben.studydemo.utils.ToastUtils;
 
 import android.app.Activity;
 import android.app.Service;
 import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.IBinder;
-import android.view.Menu;
+import android.os.Message;
+import android.os.Messenger;
+import android.os.RemoteException;
 import android.view.View;
 
 /**
@@ -26,7 +30,7 @@ public class ServiceActivity extends Activity {
         //当服务跟启动源断开的时候 会自动回调
         @Override
         public void onServiceDisconnected(ComponentName name) {
-            ToastUtil.show("当前线程：" + Thread.currentThread());
+            ToastUtils.show("当前线程：" + Thread.currentThread());
         }
 
         //当服务跟启动源连接的时候 会自动回调
@@ -79,8 +83,57 @@ public class ServiceActivity extends Activity {
             case R.id.unbind:
                 unbindService(conn);
                 break;
+            case R.id.messenger:
+                Intent messenger=new Intent(this,MyMessagerService.class);
+                bindService(messenger,messengerSC, Context.BIND_AUTO_CREATE);
+                break;
+            case R.id.say_hello:
+                if (this.messengerFromService !=null){
+                    try {
+                        this.messengerFromService.send(Message.obtain(null,MyMessagerService.MESSAGE_FROM_SERVICE_TO_ACTIVITY,0,0,"我是来自Activity的囧雪!"));
+                    } catch (RemoteException e) {
+                        e.printStackTrace();
+                    }
+                }
+                break;
         }
     }
+
+    //跨进程
+    private Messenger messengerFromService;
+    private ServiceConnection messengerSC=new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            //由此可以拿到在Service端持有Handler的Messenger，这样就可以发送消息了
+            messengerFromService =new Messenger(service);
+            //在连接成功弄时，通过来自Service的Messenger，把我们Activity的Messenger发送过去
+            //这样Service就可以通过发送过去的Messenger给我们的Activity发送消息了
+            Message message=new Message();
+            message.what=6566;
+            message.obj=messengerFromActivity;
+            try {
+                messengerFromService.send(message);
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+            messengerFromService =null;
+        }
+    };
+    //接受Service发送过来的消息
+    public static final int MESSAGE_FROM_ACTIVITY_TO_SERVICE=01;
+    private Messenger messengerFromActivity=new Messenger(new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            if (msg.what==MESSAGE_FROM_ACTIVITY_TO_SERVICE){
+                ToastUtils.showShort(msg.obj.toString());
+            }
+        }
+    });
 
     private void bind() {
         if (!isBind) {
@@ -104,14 +157,10 @@ public class ServiceActivity extends Activity {
         if (conn!=null) {
             unbindService(conn);
         }
+        if (messengerSC!=null){
+            unbindService(messengerSC);
+        }
         super.onDestroy();
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.test_menu, menu);
-        return true;
     }
 
 }

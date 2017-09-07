@@ -102,7 +102,7 @@ public class ScorllLayout extends LinearLayout{
         two=getChildAt(1);
         three=getChildAt(2);
         topPanel=findViewById(R.id.topPanel);
-        iv_avatar=findViewById(R.id.iv_avatar);
+        iv_avatar=findViewById(R.id.iv_image);
     }
 
     @Override

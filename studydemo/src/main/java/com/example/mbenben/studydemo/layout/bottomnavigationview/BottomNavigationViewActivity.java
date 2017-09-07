@@ -38,7 +38,7 @@ public class BottomNavigationViewActivity extends AppCompatActivity implements B
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-         String text;
+        String text;
         switch (item.getItemId()) {
             case R.id.recents:
                 text = "这是第一个Fragment";

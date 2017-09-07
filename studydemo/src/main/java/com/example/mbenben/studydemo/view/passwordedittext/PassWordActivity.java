@@ -6,12 +6,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.example.mbenben.studydemo.R;
-import com.example.mbenben.studydemo.utils.ToastUtil;
+import com.example.mbenben.studydemo.utils.ToastUtils;
 import com.example.mbenben.studydemo.view.passwordedittext.dialog.CommonDialog;
 import com.example.mbenben.studydemo.view.passwordedittext.view.CustomerKeyboard;
 import com.example.mbenben.studydemo.view.passwordedittext.view.PasswordEditText;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -61,6 +60,6 @@ public class PassWordActivity extends AppCompatActivity implements CustomerKeybo
 
     @Override
     public void passwordFull(String password) {
-        ToastUtil.toastShort("密码填充完毕：" + password);
+        ToastUtils.showShort("密码填充完毕：" + password);
     }
 }

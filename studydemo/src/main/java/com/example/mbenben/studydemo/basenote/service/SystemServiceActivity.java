@@ -10,10 +10,9 @@ import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Toast;
 
 import com.example.mbenben.studydemo.R;
-import com.example.mbenben.studydemo.utils.ToastUtil;
+import com.example.mbenben.studydemo.utils.ToastUtils;
 
 public class SystemServiceActivity extends Activity {
 
@@ -30,19 +29,19 @@ public class SystemServiceActivity extends Activity {
 		switch (v.getId()) {
 		case R.id.network:
 			if (isNetWorkConnected(SystemServiceActivity.this)==true) {
-				ToastUtil.toastShort("网络已经打开");
+				ToastUtils.showShort("网络已经打开");
 			}else {
-				ToastUtil.toastShort("网络未连接");
+				ToastUtils.showShort("网络未连接");
 			}
 			break;
 		case R.id.enableOrDisable_WIFI:
 		WifiManager wifiManager =	(WifiManager) SystemServiceActivity.this.getSystemService(WIFI_SERVICE);
 			if (wifiManager.isWifiEnabled()) {
 				wifiManager.setWifiEnabled(false);
-				ToastUtil.toastShort("WIFI已经关闭");
+				ToastUtils.showShort("WIFI已经关闭");
 			}else {
 				wifiManager.setWifiEnabled(true);
-				ToastUtil.toastShort("WIFI已经打开");
+				ToastUtils.showShort("WIFI已经打开");
 			}
 			
 		break;
@@ -50,12 +49,12 @@ public class SystemServiceActivity extends Activity {
 			 AudioManager mAudioManager= (AudioManager) SystemServiceActivity.this.getSystemService(AUDIO_SERVICE);
 			 int max = mAudioManager.getStreamMaxVolume(AudioManager.STREAM_SYSTEM);
 			 int current = mAudioManager.getStreamVolume(AudioManager.STREAM_RING);
-			ToastUtil.toastShort( "系统的最大音量为："+max+",当前音量是："+current);
+			ToastUtils.showShort( "系统的最大音量为："+max+",当前音量是："+current);
 			 break;
 		case R.id.getPackagename:
 			ActivityManager activityManager = (ActivityManager) SystemServiceActivity.this.getSystemService(ACTIVITY_SERVICE);
 			String packageName = activityManager.getRunningTasks(1).get(0).topActivity.getPackageName();
-			ToastUtil.toastShort( "当前运行的Activity包名："+packageName);
+			ToastUtils.showShort( "当前运行的Activity包名："+packageName);
 
 			break;
 		}

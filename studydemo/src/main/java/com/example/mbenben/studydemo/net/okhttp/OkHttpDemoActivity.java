@@ -12,18 +12,15 @@ import android.os.Message;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.example.mbenben.studydemo.R;
 import com.example.mbenben.studydemo.utils.FileUtils;
 import com.example.mbenben.studydemo.utils.StringUtils;
-import com.example.mbenben.studydemo.utils.ToastUtil;
+import com.example.mbenben.studydemo.utils.ToastUtils;
 import com.google.gson.Gson;
 
 import java.io.File;
@@ -160,7 +157,7 @@ public class OkHttpDemoActivity extends AppCompatActivity{
     }
     public void postFile(View view){
         if (StringUtils.isEmpty(imagePath)){
-            ToastUtil.toastShort("请先上传图片。");
+            ToastUtils.showShort("请先上传图片。");
         }else {
             File file = new File(imagePath);
             request = new Request.Builder()

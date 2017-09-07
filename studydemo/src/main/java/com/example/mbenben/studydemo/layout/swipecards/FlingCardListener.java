@@ -36,7 +36,7 @@ public class FlingCardListener implements View.OnTouchListener {
     private float aDownTouchX;
     private float aDownTouchY;
 
-    // The active pointer is the one currently moving our object.
+    // 活动指针是当前正在移动我们的对象的指针。
     private int mActivePointerId = INVALID_POINTER_ID;
     private View frame = null;
 
@@ -65,18 +65,14 @@ public class FlingCardListener implements View.OnTouchListener {
         this.parentWidth = ((ViewGroup) frame.getParent()).getWidth();
         this.BASE_ROTATION_DEGREES = rotation_degrees;
         this.mFlingListener = flingListener;
-
     }
 
-
+    @Override
     public boolean onTouch(View view, MotionEvent event) {
 
         switch (event.getAction() & MotionEvent.ACTION_MASK) {
             case MotionEvent.ACTION_DOWN:
-
-                // from http://android-developers.blogspot.com/2010/06/making-sense-of-multitouch.html
-                // Save the ID of this pointer
-
+                //确定唯一的坐标点，避免多指操作带来的问题
                 mActivePointerId = event.getPointerId(0);
                 float x = 0;
                 float y = 0;
@@ -89,18 +85,17 @@ public class FlingCardListener implements View.OnTouchListener {
                     Log.w(TAG, "Exception in onTouch(view, event) : " + mActivePointerId, e);
                 }
                 if (success) {
-                    // Remember where we started
+                    //记住我们按下时的坐标
                     aDownTouchX = x;
                     aDownTouchY = y;
-                    //to prevent an initial jump of the magnifier, aposX and aPosY must
-                    //have the values from the magnifier frame
+                    //设置View的初始坐标是传入frame的X、Y值
                     if (aPosX == 0) {
                         aPosX = frame.getX();
                     }
                     if (aPosY == 0) {
                         aPosY = frame.getY();
                     }
-
+                    //记录按压位置状态
                     if (y < objectH / 2) {
                         touchPosition = TOUCH_ABOVE;
                     } else {
@@ -134,32 +129,38 @@ public class FlingCardListener implements View.OnTouchListener {
                 break;
             case MotionEvent.ACTION_MOVE:
 
-                // Find the index of the active pointer and fetch its position
                 final int pointerIndexMove = event.findPointerIndex(mActivePointerId);
                 final float xMove = event.getX(pointerIndexMove);
                 final float yMove = event.getY(pointerIndexMove);
 
-                //from http://android-developers.blogspot.com/2010/06/making-sense-of-multitouch.html
-                // Calculate the distance moved
                 final float dx = xMove - aDownTouchX;
                 final float dy = yMove - aDownTouchY;
 
-
-                // Move the frame
                 aPosX += dx;
                 aPosY += dy;
 
-                // calculate the rotation degrees
+                /**
+                 * objectX= frame.getX()
+                 * 此处为计算移动距离
+                  */
                 float distobjectX = aPosX - objectX;
+                /**
+                 * 如果我们仔细看Card的拖动效果可以发现，
+                 * 有一个小小的旋转效果如果我们仔细看Card的拖动效果可以发现，有一个小小的旋转效果
+                 *
+                 * 此处是计算旋转角度自定义的公式，当拖动X轴距离和parentWidth相等时，
+                 * 那么最大旋转的效果就是：BASE_ROTATION_DEGREES * 2.f
+                 */
                 float rotation = BASE_ROTATION_DEGREES * 2.f * distobjectX / parentWidth;
                 if (touchPosition == TOUCH_BELOW) {
                     rotation = -rotation;
                 }
 
-                //in this area would be code for doing something with the view as the frame moves.
+                //设置Card的位置，旋转等
                 frame.setX(aPosX);
                 frame.setY(aPosY);
                 frame.setRotation(rotation);
+                //onScroll方法调用
                 mFlingListener.onScroll(getScrollProgressPercent());
                 break;
 
@@ -185,12 +186,13 @@ public class FlingCardListener implements View.OnTouchListener {
     }
 
     private boolean resetCardViewOnStack() {
+        //如果超出左边界限
         if (movedBeyondLeftBorder()) {
-            // Left Swipe
+            // 执行左划出效果
             onSelected(true, getExitPoint(-objectW), 100);
             mFlingListener.onScroll(-1.0f);
         } else if (movedBeyondRightBorder()) {
-            // Right Swipe
+            // 执行右划出效果
             onSelected(false, getExitPoint(parentWidth), 100);
             mFlingListener.onScroll(1.0f);
         } else {
@@ -214,10 +216,12 @@ public class FlingCardListener implements View.OnTouchListener {
     }
 
     private boolean movedBeyondLeftBorder() {
+        // leftBorder()：返回的是parentWidth / 4.f
         return aPosX + halfWidth < leftBorder();
     }
 
     private boolean movedBeyondRightBorder() {
+        // rightBorder()：3 * parentWidth / 4.f
         return aPosX + halfWidth > rightBorder();
     }
 
@@ -231,17 +235,22 @@ public class FlingCardListener implements View.OnTouchListener {
     }
 
 
-    public void onSelected(final boolean isLeft,
-                           float exitY, long duration) {
-
+    public void onSelected(final boolean isLeft,float exitY, long duration) {
         isAnimationRunning = true;
         float exitX;
         if (isLeft) {
+            /**
+             * 计算离开点的X坐标（左移动为减，右移动为加）
+             * getRotationWidthOffset()：
+             *         objectW / MAX_COS - objectW（计算旋转的宽度偏移量）
+             *         MAX_COS=cos45
+             */
             exitX = -objectW - getRotationWidthOffset();
         } else {
             exitX = parentWidth + getRotationWidthOffset();
         }
 
+        //弹出Card的代码实现
         this.frame.animate()
                 .setDuration(duration)
                 .setInterpolator(new AccelerateInterpolator())
@@ -251,9 +260,11 @@ public class FlingCardListener implements View.OnTouchListener {
                     @Override
                     public void onAnimationEnd(Animator animation) {
                         if (isLeft) {
+                            //左边移出回调
                             mFlingListener.onCardExited();
                             mFlingListener.leftExit(dataObject);
                         } else {
+                            //右边移出回调
                             mFlingListener.onCardExited();
                             mFlingListener.rightExit(dataObject);
                         }
@@ -292,7 +303,7 @@ public class FlingCardListener implements View.OnTouchListener {
 
         LinearRegression regression = new LinearRegression(x, y);
 
-        //Your typical y = ax+b linear regression
+        //这个返回值是一个线性方程： y = ax+b
         return (float) regression.slope() * exitXPoint + (float) regression.intercept();
     }
 

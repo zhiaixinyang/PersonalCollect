@@ -5,7 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 import com.example.mbenben.studydemo.R;
-import com.example.mbenben.studydemo.utils.ToastUtil;
+import com.example.mbenben.studydemo.utils.ToastUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -25,12 +25,12 @@ public class ViscosityActivity extends AppCompatActivity{
         viscosityView.setOnReleaseListener(new ViscosityView.OnReleaseListener() {
             @Override
             public void onDisappear() {
-                ToastUtil.toastShort( "消失了..");
+                ToastUtils.showShort( "消失了..");
             }
 
             @Override
             public void onReset(boolean isOutOfRange) {
-                ToastUtil.toastShort( "返回原地.." + isOutOfRange);
+                ToastUtils.showShort( "返回原地.." + isOutOfRange);
             }
         });
     }

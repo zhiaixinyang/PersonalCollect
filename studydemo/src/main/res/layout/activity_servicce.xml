@@ -19,84 +19,117 @@
                 android:layout_height="wrap_content" />
         </android.support.v7.widget.Toolbar>
     </android.support.design.widget.AppBarLayout>
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Start:"
-        android:textAllCaps="false" />
-
-    <Button
-        android:id="@+id/start"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="doClick"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="startService方式:"
+                android:textAllCaps="false" />
 
-        android:text="StartService"
-        android:textAllCaps="false" />
+            <Button
+                android:id="@+id/start"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="doClick"
 
-    <Button
-        android:id="@+id/stop"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="doClick"
+                android:text="StartService"
+                android:textAllCaps="false" />
 
-        android:text="StopService"
-        android:textAllCaps="false" />
+            <Button
+                android:id="@+id/stop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="doClick"
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Bind："
+                android:text="StopService"
+                android:textAllCaps="false" />
 
-        android:textAllCaps="false" />
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="bindService方式："
 
-    <Button
-        android:id="@+id/bind"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="doClick"
+                android:textAllCaps="false" />
 
-        android:text="BindService"
-        android:textAllCaps="false" />
+            <Button
+                android:id="@+id/bind"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="doClick"
 
-    <Button
-        android:id="@+id/play"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="doClick"
-        android:text="播放" />
+                android:text="BindService"
+                android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/pause"
-        android:layout_width="match_parent"
+            <Button
+                android:id="@+id/play"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="doClick"
+                android:text="播放" />
 
-        android:layout_height="wrap_content"
-        android:onClick="doClick"
-        android:text="暂停" />
+            <Button
+                android:id="@+id/pause"
+                android:layout_width="match_parent"
 
-    <Button
-        android:id="@+id/next"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="doClick"
-        android:text="下一首" />
+                android:layout_height="wrap_content"
+                android:onClick="doClick"
+                android:text="暂停" />
 
-    <Button
-        android:id="@+id/pervious"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="doClick"
-        android:text="上一首" />
+            <Button
+                android:id="@+id/next"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="doClick"
+                android:text="下一首" />
 
-    <Button
-        android:id="@+id/unbind"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+            <Button
+                android:id="@+id/pervious"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="doClick"
+                android:text="上一首" />
 
-        android:onClick="doClick"
-        android:text="UnBindService"
-        android:textAllCaps="false" />
+            <Button
+                android:id="@+id/unbind"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:onClick="doClick"
+                android:text="UnBindService"
+                android:textAllCaps="false" />
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="使用Messenger通讯："
+
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/messenger"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="doClick"
+
+                android:text="绑定Messenger通讯Service"
+                android:textAllCaps="false" />
+            <Button
+                android:id="@+id/say_hello"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="doClick"
+
+                android:text="向Service发送消息"
+                android:textAllCaps="false" />
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

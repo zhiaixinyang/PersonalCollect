@@ -1,4 +1,4 @@
-<com.example.mbenben.studydemo.layout.nav.StickyNavLayout xmlns:tools="http://schemas.android.com/tools"
+<com.example.mbenben.studydemo.layout.nav.StickyNavLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"

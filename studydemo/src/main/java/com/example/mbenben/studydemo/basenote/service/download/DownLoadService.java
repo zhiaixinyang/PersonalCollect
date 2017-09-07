@@ -8,7 +8,7 @@ import android.os.Message;
 import android.support.annotation.Nullable;
 
 import com.example.mbenben.studydemo.utils.SDCardUtils;
-import com.example.mbenben.studydemo.utils.ToastUtil;
+import com.example.mbenben.studydemo.utils.ToastUtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -37,7 +37,7 @@ public class DownLoadService extends Service {
             switch (msg.what){
                 case MSG_INIT:
                     FileBean fileBean= (FileBean) msg.obj;
-                    ToastUtil.toastShort("开始后台下载");
+                    ToastUtils.showShort("开始后台下载");
                     downLoadTask=new DownLoadTask(DownLoadService.this,fileBean);
                     downLoadTask.download();
                     break;
@@ -88,7 +88,7 @@ public class DownLoadService extends Service {
                 }
                 if (fileLength<-1){
                     //获取文件长度失败
-                    ToastUtil.toastShort("获取文件内容失败。");
+                    ToastUtils.showShort("获取文件内容失败。");
                     return;
                 }
                 //创建本地存放文件夹

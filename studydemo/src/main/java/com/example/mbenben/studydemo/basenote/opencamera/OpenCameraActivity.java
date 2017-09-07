@@ -19,7 +19,7 @@ import android.widget.ImageView;
 
 import com.example.mbenben.studydemo.App;
 import com.example.mbenben.studydemo.R;
-import com.example.mbenben.studydemo.utils.ToastUtil;
+import com.example.mbenben.studydemo.utils.ToastUtils;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -157,7 +157,7 @@ public class OpenCameraActivity extends AppCompatActivity {
             Bitmap bp=BitmapFactory.decodeFile(imagePath);
             ivPhoto.setImageBitmap(bp);
         }else{
-            ToastUtil.toastShort("照获取失败");
+            ToastUtils.showShort("照获取失败");
         }
     }
 }

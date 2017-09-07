@@ -14,7 +14,6 @@ import android.widget.TextView;
 import com.example.mbenben.studydemo.App;
 import com.example.mbenben.studydemo.MainActivity;
 import com.example.mbenben.studydemo.R;
-import com.example.mbenben.studydemo.anim.circularanim.CircleAnimActivity;
 import com.example.mbenben.studydemo.base.CommonAdapter;
 import com.example.mbenben.studydemo.base.OnItemClickListener;
 import com.example.mbenben.studydemo.base.ViewHolder;
@@ -23,16 +22,17 @@ import com.example.mbenben.studydemo.db.SearchDBManager;
 import com.example.mbenben.studydemo.layout.arclayout.ArcLayoutActivity;
 import com.example.mbenben.studydemo.layout.bottomnavigationview.BottomNavigationViewActivity;
 import com.example.mbenben.studydemo.layout.drawerlayout.my.SlidingActivity;
-import com.example.mbenben.studydemo.layout.ele.EleViewPagerActivity;
 import com.example.mbenben.studydemo.layout.esaysidebar.EasySideBarBuilder;
+import com.example.mbenben.studydemo.layout.esaysidebar.SortCityActivity;
 import com.example.mbenben.studydemo.layout.expandableviewpager.ExpandableViewPagerActivity;
 import com.example.mbenben.studydemo.layout.fragmenttabhost.TabActivity;
 import com.example.mbenben.studydemo.layout.graffiti.DrawingBoardActvity;
 import com.example.mbenben.studydemo.layout.horizontalscrollview.HorizontalScrollActivity;
 import com.example.mbenben.studydemo.layout.intercepttouchevent.InterceptActivity;
-import com.example.mbenben.studydemo.layout.materialdesign.coordinatorlayouttest.ScrollingActivity;
+import com.example.mbenben.studydemo.layout.materialdesign.coordinatorlayouttest.UCActivity;
 import com.example.mbenben.studydemo.layout.newbottomnav.BottomNavMainActivity;
 import com.example.mbenben.studydemo.layout.materialdesign.MaterialDesignActivity;
+import com.example.mbenben.studydemo.layout.overscroll.activity.OverScrollDemoActivity;
 import com.example.mbenben.studydemo.layout.pickerview.PickerActivity;
 import com.example.mbenben.studydemo.layout.swipmenu.SwipMenuActivity;
 import com.example.mbenben.studydemo.layout.videoplayer.VideoPlayerActivity;
@@ -48,35 +48,41 @@ import com.example.mbenben.studydemo.layout.ricktext.RickTextActivity;
 import com.example.mbenben.studydemo.layout.swipecards.SwipeCardsActivity;
 import com.example.mbenben.studydemo.layout.viewpager.ViewPagerActivity;
 import com.example.mbenben.studydemo.layout.gradationtitle.QQTitleActivity;
+import com.example.mbenben.studydemo.layout.viewpager.ali.activity.AliUPVDemoActivity;
 import com.example.mbenben.studydemo.model.HashSetSearchBean;
 import com.example.mbenben.studydemo.view.pintu.PinTuActivity;
 import com.example.mbenben.studydemo.view.select.SelectActivity;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by MBENBEN on 2017/1/17.
+ * Created by Mdove on 2017/1/17.
  */
 
-public class LayoutFragment extends Fragment{
-    @BindView(R.id.rlv_main) RecyclerView rlvMain;
-    @BindView(R.id.tv_desc) TextView tvDesc;
+public class LayoutFragment extends Fragment {
+    @BindView(R.id.rlv_main)
+    RecyclerView rlvMain;
+    @BindView(R.id.tv_desc)
+    TextView tvDesc;
 
-    private static final String KEY="layout";
+    private static final String KEY = "layout";
     private List<String> datas;
-    private Map<String,String> mapTitle;
+    private Map<String, String> mapTitle;
 
     private SearchDBManager manager;
 
     private CommonAdapter<String> adapter;
+
     public static LayoutFragment newInstance(String desc) {
-        
+
         Bundle args = new Bundle();
-        args.putString(KEY,desc);
+        args.putString(KEY, desc);
         LayoutFragment fragment = new LayoutFragment();
         fragment.setArguments(args);
         return fragment;
@@ -85,8 +91,8 @@ public class LayoutFragment extends Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.frag_main_layout,container,false);
-        manager=new SearchDBManager();
+        View view = inflater.inflate(R.layout.frag_main_layout, container, false);
+        manager = new SearchDBManager();
         initView(view);
         initRlv();
         addDB();
@@ -94,7 +100,7 @@ public class LayoutFragment extends Fragment{
     }
 
     private void initRlv() {
-        adapter=new CommonAdapter<String>(App.getInstance().getContext(),R.layout.item_info,datas) {
+        adapter = new CommonAdapter<String>(App.getInstance().getContext(), R.layout.item_info, datas) {
             @Override
             public void convert(ViewHolder holder, String s) {
                 holder.setText(R.id.id_info, mapTitle.get(s));
@@ -103,45 +109,45 @@ public class LayoutFragment extends Fragment{
         adapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(ViewGroup parent, View view, Object o, int position) {
-                switch (o.toString()){
+                switch (o.toString()) {
                     case "NavActivity":
-                        Intent intentNav=new Intent(App.getInstance().getContext(), NavActivity.class);
+                        Intent intentNav = new Intent(App.getInstance().getContext(), NavActivity.class);
                         startActivity(intentNav);
                         break;
                     case "NestedScrollActivity":
-                        Intent intentNestedScroll=new Intent(App.getInstance().getContext(), NestedScrollActivity.class);
+                        Intent intentNestedScroll = new Intent(App.getInstance().getContext(), NestedScrollActivity.class);
                         startActivity(intentNestedScroll);
                         break;
                     case "Puzzle":
-                        Intent intentPuzzle=new Intent(App.getInstance().getContext(), PinTuActivity.class);
+                        Intent intentPuzzle = new Intent(App.getInstance().getContext(), PinTuActivity.class);
                         startActivity(intentPuzzle);
                         break;
                     case "IndicatorActivity":
-                        Intent intentIndicator=new Intent(App.getInstance().getContext(), IndicatorActivity.class);
+                        Intent intentIndicator = new Intent(App.getInstance().getContext(), IndicatorActivity.class);
                         startActivity(intentIndicator);
                         break;
                     case "DrawerLayoutActivity":
-                        Intent intentDrawerLayout=new Intent(App.getInstance().getContext(), DrawerLayoutActivity.class);
+                        Intent intentDrawerLayout = new Intent(App.getInstance().getContext(), DrawerLayoutActivity.class);
                         startActivity(intentDrawerLayout);
                         break;
                     case "RecyclerActivity":
-                        Intent intentRecycler=new Intent(App.getInstance().getContext(), RecyclerActivity.class);
+                        Intent intentRecycler = new Intent(App.getInstance().getContext(), RecyclerActivity.class);
                         startActivity(intentRecycler);
                         break;
                     case "ViewPagerActivity":
-                        Intent intentViewPager=new Intent(App.getInstance().getContext(), ViewPagerActivity.class);
+                        Intent intentViewPager = new Intent(App.getInstance().getContext(), ViewPagerActivity.class);
                         startActivity(intentViewPager);
                         break;
                     case "SwipeCardsActivity":
-                        Intent intentSwipeCards=new Intent(App.getInstance().getContext(), SwipeCardsActivity.class);
+                        Intent intentSwipeCards = new Intent(App.getInstance().getContext(), SwipeCardsActivity.class);
                         startActivity(intentSwipeCards);
                         break;
                     case "EleViewPagerActivity":
-                        Intent intentEle=new Intent(App.getInstance().getContext(), EleMainActivity.class);
+                        Intent intentEle = new Intent(App.getInstance().getContext(), EleMainActivity.class);
                         startActivity(intentEle);
                         break;
                     case "SelectActivity":
-                        Intent intentSelect=new Intent(App.getInstance().getContext(), SelectActivity.class);
+                        Intent intentSelect = new Intent(App.getInstance().getContext(), SelectActivity.class);
                         startActivity(intentSelect);
                         break;
                     case "ArcLayoutActivity":
@@ -153,7 +159,7 @@ public class LayoutFragment extends Fragment{
                         startActivity(intentMultiLineChoose);
                         break;
                     case "RickTextActivity":
-                        Intent intentRickText=new Intent(App.getInstance().getContext(), RickTextActivity.class);
+                        Intent intentRickText = new Intent(App.getInstance().getContext(), RickTextActivity.class);
                         startActivity(intentRickText);
                         break;
                     case "RadarScanActivity":
@@ -177,27 +183,27 @@ public class LayoutFragment extends Fragment{
                         startActivity(intentBottomNavigationView);
                         break;
                     case "BottomNavMainActivity":
-                        Intent intentBottomNav= new Intent(App.getInstance().getContext(), BottomNavMainActivity.class);
+                        Intent intentBottomNav = new Intent(App.getInstance().getContext(), BottomNavMainActivity.class);
                         startActivity(intentBottomNav);
                         break;
                     case "MaterialDesignActivity":
-                        Intent intentMaterialDesign= new Intent(App.getInstance().getContext(), MaterialDesignActivity.class);
+                        Intent intentMaterialDesign = new Intent(App.getInstance().getContext(), MaterialDesignActivity.class);
                         startActivity(intentMaterialDesign);
                         break;
                     case "InterceptActivity":
-                        Intent intentIntercept= new Intent(App.getInstance().getContext(), InterceptActivity.class);
+                        Intent intentIntercept = new Intent(App.getInstance().getContext(), InterceptActivity.class);
                         startActivity(intentIntercept);
                         break;
                     case "ExpandableViewPagerActivity":
-                        Intent intentExpandableViewPager= new Intent(App.getInstance().getContext(), ExpandableViewPagerActivity.class);
+                        Intent intentExpandableViewPager = new Intent(App.getInstance().getContext(), ExpandableViewPagerActivity.class);
                         startActivity(intentExpandableViewPager);
                         break;
                     case "DrawingBoardActvity":
-                        Intent intentDrawingBoard= new Intent(App.getInstance().getContext(), DrawingBoardActvity.class);
+                        Intent intentDrawingBoard = new Intent(App.getInstance().getContext(), DrawingBoardActvity.class);
                         startActivity(intentDrawingBoard);
                         break;
                     case "HorizontalScrollActivity":
-                        Intent intentHorizontalScroll= new Intent(App.getInstance().getContext(), HorizontalScrollActivity.class);
+                        Intent intentHorizontalScroll = new Intent(App.getInstance().getContext(), HorizontalScrollActivity.class);
                         startActivity(intentHorizontalScroll);
                         break;
                     case "SortCityActivity":
@@ -212,7 +218,7 @@ public class LayoutFragment extends Fragment{
                         hotCityList.add("天津");
                         hotCityList.add("武汉");
                         hotCityList.add("长沙");
-                        String[] mIndexItems = {"定位","热门"};//头部额外的索引
+                        String[] mIndexItems = {"定位", "热门"};//头部额外的索引
 
                         new EasySideBarBuilder(getActivity())
                                 .setTitle("城市选择")
@@ -224,21 +230,28 @@ public class LayoutFragment extends Fragment{
                                 .start();
                         break;
                     case "PickerActivity":
-                        Intent intentPicker= new Intent(App.getInstance().getContext(), PickerActivity.class);
+                        Intent intentPicker = new Intent(App.getInstance().getContext(), PickerActivity.class);
                         startActivity(intentPicker);
                         break;
                     case "SlidingActivity":
-                        Intent intentSlidingActivity= new Intent(App.getInstance().getContext(), SlidingActivity.class);
+                        Intent intentSlidingActivity = new Intent(App.getInstance().getContext(), SlidingActivity.class);
                         startActivity(intentSlidingActivity);
                         break;
                     case "SwipMenuActivity":
-                        Intent intentSwipMenu= new Intent(App.getInstance().getContext(), SwipMenuActivity.class);
+                        Intent intentSwipMenu = new Intent(App.getInstance().getContext(), SwipMenuActivity.class);
                         startActivity(intentSwipMenu);
                         break;
-                    case "ScrollingActivity":
-                        Intent intentScrolling= new Intent(App.getInstance().getContext(), ScrollingActivity.class);
+                    case "UCActivity":
+                        Intent intentScrolling = new Intent(App.getInstance().getContext(), UCActivity.class);
                         startActivity(intentScrolling);
                         break;
+                    case "OverScrollDemoActivity":
+                        Intent intentOverScroll = new Intent(App.getInstance().getContext(), OverScrollDemoActivity.class);
+                        startActivity(intentOverScroll);
+                        break;
+                    case "AliUPVDemoActivity":
+                        Intent toAliViewPager = new Intent(App.getInstance().getContext(), AliUPVDemoActivity.class);
+                        startActivity(toAliViewPager);
                 }
             }
 
@@ -251,139 +264,148 @@ public class LayoutFragment extends Fragment{
     }
 
     private void initView(View view) {
-        ButterKnife.bind(this,view);
+        ButterKnife.bind(this, view);
 
-        rlvMain.setLayoutManager(new GridLayoutManager(App.getInstance().getContext(),2));
+        rlvMain.setLayoutManager(new GridLayoutManager(App.getInstance().getContext(), 2));
 
         Bundle bundle = getArguments();
         String string = bundle.getString(KEY);
         tvDesc.setText(string);
 
 
-        datas=new ArrayList<>();
-        mapTitle =new HashMap<>();
+        if (datas == null) {
+            datas = new ArrayList<>();
+            mapTitle = new HashMap<>();
 
-        datas.add("NavActivity");
-        mapTitle.put("NavActivity","可收缩头View（嵌套机制实现）");
-        App.addData(new HashSetSearchBean("NavActivity",NavActivity.class));
+            datas.add("NavActivity");
+            mapTitle.put("NavActivity", "可收缩头View（嵌套机制实现）");
+            App.addData(new HashSetSearchBean("NavActivity", NavActivity.class));
 
-        datas.add("NestedScrollActivity");
-        mapTitle.put("NestedScrollActivity","嵌套机制的布局实现");
-        App.addData(new HashSetSearchBean("NestedScrollActivity",NestedScrollActivity.class));
+            datas.add("NestedScrollActivity");
+            mapTitle.put("NestedScrollActivity", "嵌套机制的布局实现");
+            App.addData(new HashSetSearchBean("NestedScrollActivity", NestedScrollActivity.class));
 
-        datas.add("Puzzle");
-        mapTitle.put("Puzzle","简单的拼图效果");
-        App.addData(new HashSetSearchBean("Puzzle",PinTuActivity.class));
+            datas.add("Puzzle");
+            mapTitle.put("Puzzle", "简单的拼图效果");
+            App.addData(new HashSetSearchBean("Puzzle", PinTuActivity.class));
 
-        datas.add("IndicatorActivity");
-        mapTitle.put("IndicatorActivity","ViewPager指示器");
-        App.addData(new HashSetSearchBean("IndicatorActivity",IndicatorActivity.class));
+            datas.add("IndicatorActivity");
+            mapTitle.put("IndicatorActivity", "ViewPager指示器");
+            App.addData(new HashSetSearchBean("IndicatorActivity", IndicatorActivity.class));
 
-        datas.add("ViewPagerActivity");
-        mapTitle.put("ViewPagerActivity","ViewPager不同的转换效果");
-        App.addData(new HashSetSearchBean("ViewPagerActivity",ViewPagerActivity.class));
+            datas.add("ViewPagerActivity");
+            mapTitle.put("ViewPagerActivity", "ViewPager不同的转换效果");
+            App.addData(new HashSetSearchBean("ViewPagerActivity", ViewPagerActivity.class));
 
-        datas.add("DrawerLayoutActivity");
-        mapTitle.put("DrawerLayoutActivity","DrawerLayout抽屉菜单");
-        App.addData(new HashSetSearchBean("DrawerLayoutActivity",DrawerLayoutActivity.class));
+            datas.add("AliUPVDemoActivity");
+            mapTitle.put("AliUPVDemoActivity", "阿里开源ViewPager");
+            App.addData(new HashSetSearchBean("AliUPVDemoActivity", AliUPVDemoActivity.class));
 
-        datas.add("SlidingActivity");
-        mapTitle.put("SlidingActivity","一个不实际的侧滑的效果");
-        App.addData(new HashSetSearchBean("SlidingActivity",SlidingActivity.class));
+            datas.add("DrawerLayoutActivity");
+            mapTitle.put("DrawerLayoutActivity", "DrawerLayout抽屉菜单");
+            App.addData(new HashSetSearchBean("DrawerLayoutActivity", DrawerLayoutActivity.class));
 
-        datas.add("RecyclerActivity");
-        mapTitle.put("RecyclerActivity","RecyclerView各种使用");
-        App.addData(new HashSetSearchBean("RecyclerActivity",RecyclerActivity.class));
+            datas.add("SlidingActivity");
+            mapTitle.put("SlidingActivity", "一个不实际的侧滑的效果");
+            App.addData(new HashSetSearchBean("SlidingActivity", SlidingActivity.class));
 
-        datas.add("SwipeCardsActivity");
-        mapTitle.put("SwipeCardsActivity","仿天天美剧拖动卡片的效果");
-        App.addData(new HashSetSearchBean("SwipeCardsActivity",SwipeCardsActivity.class));
+            datas.add("RecyclerActivity");
+            mapTitle.put("RecyclerActivity", "RecyclerView各种使用");
+            App.addData(new HashSetSearchBean("RecyclerActivity", RecyclerActivity.class));
 
-        datas.add("EleViewPagerActivity");
-        mapTitle.put("EleViewPagerActivity","饿了么选单交互效果");
-        App.addData(new HashSetSearchBean("EleViewPagerActivity",EleMainActivity.class));
+            datas.add("SwipeCardsActivity");
+            mapTitle.put("SwipeCardsActivity", "仿天天美剧拖动卡片的效果");
+            App.addData(new HashSetSearchBean("SwipeCardsActivity", SwipeCardsActivity.class));
 
-        datas.add("SelectActivity");
-        mapTitle.put("SelectActivity","滑动刻度尺效果");
-        App.addData(new HashSetSearchBean("SelectActivity",SelectActivity.class));
+            datas.add("EleViewPagerActivity");
+            mapTitle.put("EleViewPagerActivity", "饿了么选单交互效果");
+            App.addData(new HashSetSearchBean("EleViewPagerActivity", EleMainActivity.class));
 
-        datas.add("ArcLayoutActivity");
-        mapTitle.put("ArcLayoutActivity","头部图片移动+弧形Layout");
-        App.addData(new HashSetSearchBean("ArcLayoutActivity",ArcLayoutActivity.class));
+            datas.add("SelectActivity");
+            mapTitle.put("SelectActivity", "滑动刻度尺效果");
+            App.addData(new HashSetSearchBean("SelectActivity", SelectActivity.class));
 
-        datas.add("MultiLineChooseActivity");
-        mapTitle.put("MultiLineChooseActivity","可点击选择Layout（流式）");
-        App.addData(new HashSetSearchBean("MultiLineChooseActivity",MultiLineChooseActivity.class));
+            datas.add("ArcLayoutActivity");
+            mapTitle.put("ArcLayoutActivity", "头部图片移动+弧形Layout");
+            App.addData(new HashSetSearchBean("ArcLayoutActivity", ArcLayoutActivity.class));
 
-        datas.add("RickTextActivity");
-        mapTitle.put("RickTextActivity","类似微博的emoji表情与@某人的EdiText");
-        App.addData(new HashSetSearchBean("RickTextActivity",RickTextActivity.class));
+            datas.add("MultiLineChooseActivity");
+            mapTitle.put("MultiLineChooseActivity", "可点击选择Layout（流式）");
+            App.addData(new HashSetSearchBean("MultiLineChooseActivity", MultiLineChooseActivity.class));
 
-        datas.add("RadarScanActivity");
-        mapTitle.put("RadarScanActivity","雷达式附近的人");
-        App.addData(new HashSetSearchBean("RadarScanActivity",RadarScanActivity.class));
+            datas.add("RickTextActivity");
+            mapTitle.put("RickTextActivity", "类似微博的emoji表情与@某人的EdiText");
+            App.addData(new HashSetSearchBean("RickTextActivity", RickTextActivity.class));
 
-        datas.add("QQTitleActivity");
-        mapTitle.put("QQTitleActivity","随页面滑动渐变的Title");
-        App.addData(new HashSetSearchBean("QQTitleActivity",QQTitleActivity.class));
+            datas.add("RadarScanActivity");
+            mapTitle.put("RadarScanActivity", "雷达式附近的人");
+            App.addData(new HashSetSearchBean("RadarScanActivity", RadarScanActivity.class));
 
-        datas.add("VideoPlayerActivity");
-        mapTitle.put("VideoPlayerActivity","原始视频播放器VideoPlayer");
-        App.addData(new HashSetSearchBean("VideoPlayerActivity",VideoPlayerActivity.class));
+            datas.add("QQTitleActivity");
+            mapTitle.put("QQTitleActivity", "随页面滑动渐变的Title");
+            App.addData(new HashSetSearchBean("QQTitleActivity", QQTitleActivity.class));
 
-        datas.add("TabActivity");
-        mapTitle.put("TabActivity","基本的TabHost的使用");
-        App.addData(new HashSetSearchBean("TabActivity",TabActivity.class));
+            datas.add("VideoPlayerActivity");
+            mapTitle.put("VideoPlayerActivity", "原始视频播放器VideoPlayer");
+            App.addData(new HashSetSearchBean("VideoPlayerActivity", VideoPlayerActivity.class));
 
-        datas.add("BottomNavigationViewActivity");
-        mapTitle.put("BottomNavigationViewActivity","官方design:25.0.0新推出的BottomNavigationView");
-        App.addData(new HashSetSearchBean("BottomNavigationViewActivity",BottomNavigationViewActivity.class));
+            datas.add("TabActivity");
+            mapTitle.put("TabActivity", "基本的TabHost的使用");
+            App.addData(new HashSetSearchBean("TabActivity", TabActivity.class));
 
-        datas.add("BottomNavMainActivity");
-        mapTitle.put("BottomNavMainActivity","GitHub上开源底部导航栏");
-        App.addData(new HashSetSearchBean("BottomNavMainActivity",BottomNavMainActivity.class));
+            datas.add("BottomNavigationViewActivity");
+            mapTitle.put("BottomNavigationViewActivity", "官方design:25.0.0新推出的BottomNavigationView");
+            App.addData(new HashSetSearchBean("BottomNavigationViewActivity", BottomNavigationViewActivity.class));
 
-        datas.add("MaterialDesignActivity");
-        mapTitle.put("MaterialDesignActivity","MaterialDesign");
-        App.addData(new HashSetSearchBean("MaterialDesignActivity",MaterialDesignActivity.class));
+            datas.add("BottomNavMainActivity");
+            mapTitle.put("BottomNavMainActivity", "GitHub上开源底部导航栏");
+            App.addData(new HashSetSearchBean("BottomNavMainActivity", BottomNavMainActivity.class));
 
-        datas.add("InterceptActivity");
-        mapTitle.put("InterceptActivity","滑动冲突解析");
-        App.addData(new HashSetSearchBean("InterceptActivity",InterceptActivity.class));
+            datas.add("MaterialDesignActivity");
+            mapTitle.put("MaterialDesignActivity", "MaterialDesign");
+            App.addData(new HashSetSearchBean("MaterialDesignActivity", MaterialDesignActivity.class));
 
-        datas.add("ExpandableViewPagerActivity");
-        mapTitle.put("ExpandableViewPagerActivity","可以缩放的ViewPager");
-        App.addData(new HashSetSearchBean("ExpandableViewPagerActivity",ExpandableViewPagerActivity.class));
+            datas.add("InterceptActivity");
+            mapTitle.put("InterceptActivity", "滑动冲突解析");
+            App.addData(new HashSetSearchBean("InterceptActivity", InterceptActivity.class));
 
-        datas.add("DrawingBoardActvity");
-        mapTitle.put("DrawingBoardActvity","涂鸦效果+刮刮卡");
-        App.addData(new HashSetSearchBean("DrawingBoardActvity",DrawingBoardActvity.class));
+            datas.add("ExpandableViewPagerActivity");
+            mapTitle.put("ExpandableViewPagerActivity", "可以缩放的ViewPager");
+            App.addData(new HashSetSearchBean("ExpandableViewPagerActivity", ExpandableViewPagerActivity.class));
 
-        datas.add("HorizontalScrollActivity");
-        mapTitle.put("HorizontalScrollActivity","画廊效果");
-        App.addData(new HashSetSearchBean("HorizontalScrollActivity",HorizontalScrollActivity.class));
+            datas.add("DrawingBoardActvity");
+            mapTitle.put("DrawingBoardActvity", "涂鸦效果+刮刮卡");
+            App.addData(new HashSetSearchBean("DrawingBoardActvity", DrawingBoardActvity.class));
 
-        datas.add("SortCityActivity");
-        mapTitle.put("SortCityActivity","3D式索引");
-        App.addData(new HashSetSearchBean("SortCityActivity",MainActivity.class));
+            datas.add("HorizontalScrollActivity");
+            mapTitle.put("HorizontalScrollActivity", "画廊效果");
+            App.addData(new HashSetSearchBean("HorizontalScrollActivity", HorizontalScrollActivity.class));
 
-        datas.add("PickerActivity");
-        mapTitle.put("PickerActivity","三级联动");
-        App.addData(new HashSetSearchBean("PickerActivity",PickerActivity.class));
+            datas.add("SortCityActivity");
+            mapTitle.put("SortCityActivity", "3D式索引");
+            App.addData(new HashSetSearchBean("SortCityActivity", SortCityActivity.class));
 
-        datas.add("SwipMenuActivity");
-        mapTitle.put("SwipMenuActivity","Item侧滑效果");
-        App.addData(new HashSetSearchBean("SwipMenuActivity",SwipMenuActivity.class));
+            datas.add("PickerActivity");
+            mapTitle.put("PickerActivity", "三级联动");
+            App.addData(new HashSetSearchBean("PickerActivity", PickerActivity.class));
 
-        datas.add("ScrollingActivity");
-        mapTitle.put("ScrollingActivity","MaterialDesign实践");
-        App.addData(new HashSetSearchBean("ScrollingActivity",ScrollingActivity.class));
+            datas.add("SwipMenuActivity");
+            mapTitle.put("SwipMenuActivity", "Item侧滑效果");
+            App.addData(new HashSetSearchBean("SwipMenuActivity", SwipMenuActivity.class));
 
+            datas.add("UCActivity");
+            mapTitle.put("UCActivity", "仿支付宝部缩放效果");
+            App.addData(new HashSetSearchBean("UCActivity", UCActivity.class));
+
+            datas.add("OverScrollDemoActivity");
+            mapTitle.put("OverScrollDemoActivity", "粘性布局");
+            App.addData(new HashSetSearchBean("OverScrollDemoActivity", OverScrollDemoActivity.class));
+        }
     }
 
     private void addDB() {
-        for (String name:datas){
-            SearchBean searchBean=new SearchBean();
+        for (String name : datas) {
+            SearchBean searchBean = new SearchBean();
             searchBean.setActivity(name);
             searchBean.setTitle(mapTitle.get(name));
             manager.insert(searchBean);

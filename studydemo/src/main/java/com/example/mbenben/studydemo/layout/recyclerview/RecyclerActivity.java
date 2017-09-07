@@ -10,10 +10,12 @@ import android.view.View;
 
 import com.example.mbenben.studydemo.R;
 import com.example.mbenben.studydemo.layout.recyclerview.adapter.RecyclerAdapter;
+import com.example.mbenben.studydemo.layout.recyclerview.changerlv.RLVChangeActivity;
 import com.example.mbenben.studydemo.layout.recyclerview.others.commonAdapterUse.CommonAdapterActivity;
 import com.example.mbenben.studydemo.layout.recyclerview.others.dragItemAnimatorUse.DragItemAnimatorActivity;
 import com.example.mbenben.studydemo.layout.recyclerview.others.headerFooterUse.HeaderFooterActivity;
 import com.example.mbenben.studydemo.layout.recyclerview.others.refreshLoad.RefreshLoadActivity;
+import com.example.mbenben.studydemo.layout.recyclerview.refresh2.RefreshLoad2Activity;
 import com.example.mbenben.studydemo.layout.recyclerview.sticky.view.MainStickyActivity;
 
 import java.util.ArrayList;
@@ -21,6 +23,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import rx.Observable;
 
 /**
  * Created by MBENBEN on 2017/1/13.
@@ -50,8 +53,11 @@ public class RecyclerActivity extends AppCompatActivity {
         data.add("万能Adapter展示");
         data.add("可拖动的Item+动画");
         data.add("封装后的Footer和Header展示");
-        data.add("下拉刷新+上拉加载");
+        data.add("下拉刷新+上拉加载:1");
+        data.add("下拉刷新+上拉加载:2");
         data.add("悬浮固定头部Item");
+        data.add("右侧索引导航");
+
 
         rlvMain.setLayoutManager(new LinearLayoutManager(this));
         adapter = new RecyclerAdapter(data);
@@ -88,13 +94,21 @@ public class RecyclerActivity extends AppCompatActivity {
                         Intent intentHeaderFooter = new Intent(RecyclerActivity.this, HeaderFooterActivity.class);
                         startActivity(intentHeaderFooter);
                         break;
-                    case "下拉刷新+上拉加载":
-                        Intent intentRefreshLoad = new Intent(RecyclerActivity.this, RefreshLoadActivity.class);
-                        startActivity(intentRefreshLoad);
+                    case "下拉刷新+上拉加载:1":
+                        Intent intentRefreshLoad_1 = new Intent(RecyclerActivity.this, RefreshLoadActivity.class);
+                        startActivity(intentRefreshLoad_1);
+                        break;
+                    case "下拉刷新+上拉加载:2":
+                        Intent intentRefreshLoad_2 = new Intent(RecyclerActivity.this, RefreshLoad2Activity.class);
+                        startActivity(intentRefreshLoad_2);
                         break;
                     case "悬浮固定头部Item":
                         Intent intentSticky = new Intent(RecyclerActivity.this, MainStickyActivity.class);
                         startActivity(intentSticky);
+                        break;
+                    case "右侧索引导航":
+                        Intent intentRLVChange = new Intent(RecyclerActivity.this, RLVChangeActivity.class);
+                        startActivity(intentRLVChange);
                         break;
                 }
             }

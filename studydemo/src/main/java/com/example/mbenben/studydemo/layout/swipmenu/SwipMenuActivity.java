@@ -1,18 +1,16 @@
 package com.example.mbenben.studydemo.layout.swipmenu;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Toast;
 
 import com.example.mbenben.studydemo.R;
 import com.example.mbenben.studydemo.layout.swipmenu.view.SwipeMenuLayout;
-import com.example.mbenben.studydemo.utils.ToastUtil;
+import com.example.mbenben.studydemo.utils.ToastUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,7 +38,7 @@ public class SwipMenuActivity extends AppCompatActivity {
             @Override
             public void onDel(int pos) {
                 if (pos >= 0 && pos < mDatas.size()) {
-                    ToastUtil.toastShort("删除");
+                    ToastUtils.showShort("删除");
                     mDatas.remove(pos);
                     mAdapter.notifyItemRemoved(pos);//推荐用这个
                     //如果删除时，不使用mAdapter.notifyItemRemoved(pos)，则删除没有动画效果，

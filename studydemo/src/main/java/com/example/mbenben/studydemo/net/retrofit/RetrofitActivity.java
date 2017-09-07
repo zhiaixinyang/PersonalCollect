@@ -16,14 +16,12 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.example.mbenben.studydemo.R;
-import com.example.mbenben.studydemo.base.CommonAdapter;
-import com.example.mbenben.studydemo.base.ViewHolder;
 import com.example.mbenben.studydemo.net.retrofit.model.bean.RetrofitBean;
 import com.example.mbenben.studydemo.net.retrofit.presenter.RetrofitPresenter;
 import com.example.mbenben.studydemo.net.retrofit.presenter.RetrofitPresenterImpl;
 import com.example.mbenben.studydemo.net.retrofit.view.RetrofitView;
 import com.example.mbenben.studydemo.utils.FileUtils;
-import com.example.mbenben.studydemo.utils.ToastUtil;
+import com.example.mbenben.studydemo.utils.ToastUtils;
 
 import java.io.File;
 import java.util.List;
@@ -69,19 +67,19 @@ public class RetrofitActivity extends AppCompatActivity implements RetrofitView,
 
     @Override
     public void initError(String error) {
-        ToastUtil.toastShort("加载数据失败:"+error);
+        ToastUtils.showShort("加载数据失败:"+error);
     }
 
     @Override
     public void postSuccess(String success) {
         srfMain.setRefreshing(false);
-        ToastUtil.toastShort(success);
+        ToastUtils.showShort(success);
     }
 
     @Override
     public void postError(String error) {
         srfMain.setRefreshing(false);
-        ToastUtil.toastShort("上传失败："+error.toString());
+        ToastUtils.showShort("上传失败："+error.toString());
     }
 
     @Override

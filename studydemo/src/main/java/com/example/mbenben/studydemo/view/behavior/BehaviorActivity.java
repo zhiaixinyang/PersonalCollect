@@ -29,7 +29,7 @@ public class BehaviorActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         StatusBarUtil.setImgTransparent(this);
-        setContentView(R.layout.activity_behavior);
+        setContentView(R.layout.activity_view_behavior);
         initViewAndDatas();
 
 

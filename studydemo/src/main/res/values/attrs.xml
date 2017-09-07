@@ -3,49 +3,60 @@
 
     <!-- 浮动式View -->
     <declare-styleable name="CouponView">
-        <attr name="cv_semicircle_gap" format="dimension|reference"/>
-        <attr name="cv_semicircle_radius" format="dimension|reference"/>
-        <attr name="cv_semicircle_color" format="color|reference"/>
-        <attr name="cv_dash_line_length" format="dimension|reference"/>
-        <attr name="cv_dash_line_gap" format="dimension|reference"/>
-        <attr name="cv_dash_line_height" format="dimension|reference"/>
-        <attr name="cv_dash_line_color" format="color|reference"/>
-        <attr name="cv_is_semicircle_top" format="boolean|reference"/>
-        <attr name="cv_is_semicircle_bottom" format="boolean|reference"/>
-        <attr name="cv_is_semicircle_left" format="boolean|reference"/>
-        <attr name="cv_is_semicircle_right" format="boolean|reference"/>
-        <attr name="cv_is_dash_line_top" format="boolean|reference"/>
-        <attr name="cv_is_dash_line_bottom" format="boolean|reference"/>
-        <attr name="cv_is_dash_line_left" format="boolean|reference"/>
-        <attr name="cv_is_dash_line_right" format="boolean|reference"/>
-        <attr name="cv_dash_line_margin_top" format="dimension|reference"/>
-        <attr name="cv_dash_line_margin_bottom" format="dimension|reference"/>
-        <attr name="cv_dash_line_margin_left" format="dimension|reference"/>
-        <attr name="cv_dash_line_margin_right" format="dimension|reference"/>
+        <attr name="cv_semicircle_gap" format="dimension|reference" />
+        <attr name="cv_semicircle_radius" format="dimension|reference" />
+        <attr name="cv_semicircle_color" format="color|reference" />
+        <attr name="cv_dash_line_length" format="dimension|reference" />
+        <attr name="cv_dash_line_gap" format="dimension|reference" />
+        <attr name="cv_dash_line_height" format="dimension|reference" />
+        <attr name="cv_dash_line_color" format="color|reference" />
+        <attr name="cv_is_semicircle_top" format="boolean|reference" />
+        <attr name="cv_is_semicircle_bottom" format="boolean|reference" />
+        <attr name="cv_is_semicircle_left" format="boolean|reference" />
+        <attr name="cv_is_semicircle_right" format="boolean|reference" />
+        <attr name="cv_is_dash_line_top" format="boolean|reference" />
+        <attr name="cv_is_dash_line_bottom" format="boolean|reference" />
+        <attr name="cv_is_dash_line_left" format="boolean|reference" />
+        <attr name="cv_is_dash_line_right" format="boolean|reference" />
+        <attr name="cv_dash_line_margin_top" format="dimension|reference" />
+        <attr name="cv_dash_line_margin_bottom" format="dimension|reference" />
+        <attr name="cv_dash_line_margin_left" format="dimension|reference" />
+        <attr name="cv_dash_line_margin_right" format="dimension|reference" />
     </declare-styleable>
 
 
     <!-- ViewPager轮播 -->
     <declare-styleable name="BannerView">
         <!-- 点的选中的颜色值 -->
-        <attr name="dotIndicatorFocus"  format="color|reference"/>
+        <attr name="dotIndicatorFocus" format="color|reference" />
         <!-- 点的默认的颜色值 -->
-        <attr name="dotIndicatorNormal"  format="color|reference"/>
+        <attr name="dotIndicatorNormal" format="color|reference" />
         <!-- 点的大小 -->
-        <attr name="dotSize" format="dimension"/>
+        <attr name="dotSize" format="dimension" />
         <!-- 点的间距 -->
-        <attr name="dotDistance" format="dimension"/>
+        <attr name="dotDistance" format="dimension" />
         <!-- 点的位置 -->
         <attr name="dotGravity" format="enum">
-            <enum name="center" value="0"/>
-            <enum name="right" value="1"/>
-            <enum name="left" value="-1"/>
+            <enum name="center" value="0" />
+            <enum name="right" value="1" />
+            <enum name="left" value="-1" />
         </attr>
         <!-- 底部的颜色 -->
-        <attr name="bottomColor" format="color"/>
+        <attr name="bottomColor" format="color" />
         <!-- 定义宽高比 -->
-        <attr name="withProportion" format="float"/>
-        <attr name="heightProportion" format="float"/>
+        <attr name="withProportion" format="float" />
+        <attr name="heightProportion" format="float" />
+    </declare-styleable>
+
+    <!-- ViewPager轮播 -->
+    <declare-styleable name="ElasticCardView">
+        <attr name="ratio" format="float" />
+    </declare-styleable>
+    <declare-styleable name="CardViewPager">
+        <attr name="card_padding" format="dimension" />
+        <attr name="card_margin" format="dimension" />
+        <attr name="card_loop" format="boolean" />
+        <attr name="card_max_offset" format="dimension" />
     </declare-styleable>
 
     <!-- 滑动变色的Title-->
@@ -79,12 +90,15 @@
             <enum name="cropOutside" value="1" />
         </attr>
     </declare-styleable>
-
+    <!-- 圆角 -->
     <declare-styleable name="CircleImageView">
         <attr name="civ_border_width" format="dimension" />
         <attr name="civ_border_color" format="color" />
         <attr name="civ_border_overlay" format="boolean" />
         <attr name="civ_fill_color" format="color" />
+    </declare-styleable>
+    <declare-styleable name="RoundImageView">
+        <attr name="roundimageview_radius" format="reference|dimension" />
     </declare-styleable>
 
     <declare-styleable name="SwipeFlingAdapterView">
@@ -182,12 +196,12 @@
 
         <!--单位dp,为了适应wrap_content用integer-->
         <attr name="item_width" format="integer|enum">
-            <enum name="wrap_content" value="-2"/>
-            <enum name="match_parent" value="-1"/>
+            <enum name="wrap_content" value="-2" />
+            <enum name="match_parent" value="-1" />
         </attr>
         <attr name="item_height" format="integer|enum">
-            <enum name="wrap_content" value="-2"/>
-            <enum name="match_parent" value="-1"/>
+            <enum name="wrap_content" value="-2" />
+            <enum name="match_parent" value="-1" />
         </attr>
         <attr name="item_maxEms" format="integer" />
     </declare-styleable>
@@ -242,42 +256,42 @@
 
     <!-- 自定义进度条 -->
     <declare-styleable name="FlikerProgressBar">
-        <attr name="progressbar_textSize" format="dimension"/>
-        <attr name="progressbar_loadingColor" format="color"/>
-        <attr name="progressbar_stopColor" format="color"/>
-        <attr name="progressbar_radius" format="dimension"/>
-        <attr name="progressbar_borderWidth" format="dimension"/>
+        <attr name="progressbar_textSize" format="dimension" />
+        <attr name="progressbar_loadingColor" format="color" />
+        <attr name="progressbar_stopColor" format="color" />
+        <attr name="progressbar_radius" format="dimension" />
+        <attr name="progressbar_borderWidth" format="dimension" />
     </declare-styleable>
     <!-- 另一个自定义进度条 -->
     <declare-styleable name="ProgressPieView">
-        <attr name="android:text"/>
-        <attr name="android:textSize"/>
-        <attr name="android:textColor"/>
-        <attr name="ppvProgress" format="integer"/>
-        <attr name="ppvMax" format="integer"/>
-        <attr name="ppvStartAngle" format="integer"/>
-        <attr name="ppvInverted" format="boolean"/>
-        <attr name="ppvCounterclockwise" format="boolean"/>
-        <attr name="ppvStrokeWidth" format="dimension"/>
-        <attr name="ppvBackgroundColor" format="reference|color"/>
-        <attr name="ppvProgressColor" format="reference|color"/>
-        <attr name="ppvStrokeColor" format="reference|color"/>
-        <attr name="ppvShowStroke" format="boolean"/>
-        <attr name="ppvShowText" format="boolean"/>
-        <attr name="ppvTypeface" format="string"/>
-        <attr name="ppvImage" format="reference"/>
-        <attr name="ppvProgressFillType" format="enum" >
-            <enum name="radial" value="0"/>
-            <enum name="center" value="1"/>
+        <attr name="android:text" />
+        <attr name="android:textSize" />
+        <attr name="android:textColor" />
+        <attr name="ppvProgress" format="integer" />
+        <attr name="ppvMax" format="integer" />
+        <attr name="ppvStartAngle" format="integer" />
+        <attr name="ppvInverted" format="boolean" />
+        <attr name="ppvCounterclockwise" format="boolean" />
+        <attr name="ppvStrokeWidth" format="dimension" />
+        <attr name="ppvBackgroundColor" format="reference|color" />
+        <attr name="ppvProgressColor" format="reference|color" />
+        <attr name="ppvStrokeColor" format="reference|color" />
+        <attr name="ppvShowStroke" format="boolean" />
+        <attr name="ppvShowText" format="boolean" />
+        <attr name="ppvTypeface" format="string" />
+        <attr name="ppvImage" format="reference" />
+        <attr name="ppvProgressFillType" format="enum">
+            <enum name="radial" value="0" />
+            <enum name="center" value="1" />
         </attr>
     </declare-styleable>
 
     <!-- 大照片操作 -->
     <declare-styleable name="BigImageView">
-        <attr format="enum" name="initScaleType">
-            <enum name="centerInside" value="1"/>
-            <enum name="centerCrop" value="2"/>
-            <enum name="auto" value="3"/>
+        <attr name="initScaleType" format="enum">
+            <enum name="centerInside" value="1" />
+            <enum name="centerCrop" value="2" />
+            <enum name="auto" value="3" />
         </attr>
     </declare-styleable>
 
@@ -303,7 +317,7 @@
     <!-- 自定义密码EditText -->
     <declare-styleable name="PasswordEditText">
         <!-- 密码的个数 -->
-        <attr name="passwordNumber" format="integer"/>
+        <attr name="passwordNumber" format="integer" />
         <!-- 密码圆点的半径 -->
         <attr name="passwordRadius" format="dimension" />
         <!-- 密码圆点的颜色 -->
@@ -317,21 +331,21 @@
         <!-- 背景边框的大小 -->
         <attr name="passwordBgSize" format="dimension" />
         <!-- 背景边框的圆角大小 -->
-        <attr name="passwordBgCorner" format="dimension"/>
+        <attr name="passwordBgCorner" format="dimension" />
     </declare-styleable>
 
     <!-- 三级联动 -->
     <declare-styleable name="pickerview">
         <attr name="pickerview_gravity">
-            <enum name="center" value="17"/>
-            <enum name="left" value="3"/>
-            <enum name="right" value="5"/>
+            <enum name="center" value="17" />
+            <enum name="left" value="3" />
+            <enum name="right" value="5" />
         </attr>
-        <attr name="pickerview_textSize" format="dimension"/>
-        <attr name="pickerview_textColorOut" format="color"/>
-        <attr name="pickerview_textColorCenter" format="color"/>
-        <attr name="pickerview_dividerColor" format="color"/>
-        <attr name="pickerview_lineSpacingMultiplier" format="float"/>
+        <attr name="pickerview_textSize" format="dimension" />
+        <attr name="pickerview_textColorOut" format="color" />
+        <attr name="pickerview_textColorCenter" format="color" />
+        <attr name="pickerview_dividerColor" format="color" />
+        <attr name="pickerview_lineSpacingMultiplier" format="float" />
     </declare-styleable>
 
     <!-- 雷达效果 -->
@@ -345,9 +359,9 @@
 
     <!-- Item侧滑删除效果 -->
     <declare-styleable name="SwipeMenuLayout">
-        <attr name="swipeEnable" format="boolean"/>
-        <attr name="ios" format="boolean"/>
-        <attr name="leftSwipe" format="boolean"/>
+        <attr name="swipeEnable" format="boolean" />
+        <attr name="ios" format="boolean" />
+        <attr name="leftSwipe" format="boolean" />
     </declare-styleable>
 
 
@@ -370,6 +384,95 @@
             <enum name="left" value="0" />
             <enum name="right" value="1" />
         </attr>
+    </declare-styleable>
 
+    <!-- 水平滑动式View -->
+    <declare-styleable name="HorizontalselectedView">
+        <!--可见数目-->
+        <attr name="horizontalselectedview_see_size" format="integer"></attr>
+        <!--被选择文字的大小和颜色-->
+        <attr name="horizontalselectedview_selected_textsize" format="float"></attr>
+        <attr name="horizontalselectedview_selected_textcolor" format="color|reference"></attr>
+
+
+        <!--未被被选择文字的大小和颜色-->
+        <attr name="horizontalselectedview_textsize" format="float"></attr>
+        <attr name="horizontalselectedview_textcolor" format="color|reference"></attr>
+    </declare-styleable>
+
+    <declare-styleable name="ColorTrackView">
+        <attr name="colortrackview_text" format="string" />
+        <attr name="colortrackview_text_size" format="dimension" />
+        <attr name="colortrackview_text_origin_color" format="color|reference" />
+        <attr name="colortrackview_text_change_color" format="color|reference" />
+        <attr name="colortrackview_progress" format="float" />
+        <attr name="colortrackview_direction">
+            <enum name="left" value="0" />
+            <enum name="right" value="1" />
+            <enum name="top" value="2" />
+            <enum name="bottom" value="3" />
+        </attr>
+    </declare-styleable>
+
+    <!--阿里开源的ViewPager-->
+    <declare-styleable name="UltraViewPager">
+        <attr name="upv_autoscroll" format="integer" />
+        <attr name="upv_infiniteloop" format="boolean" />
+        <attr name="upv_ratio" format="float" />
+        <attr name="upv_scrollmode" format="enum">
+            <enum name="horizontal" value="0" />
+            <enum name="vertical" value="1" />
+        </attr>
+        <attr name="upv_disablescroll" format="enum">
+            <enum name="none" value="0" />
+            <enum name="backward" value="1" />
+            <enum name="forward" value="2" />
+        </attr>
+        <attr name="upv_multiscreen" format="boolean" />
+        <attr name="upv_automeasure" format="boolean" />
+        <attr name="upv_itemratio" format="float" />
+    </declare-styleable>
+
+    <!-- 自定义评分栏 -->
+    <declare-styleable name="BubbleSeekBar">
+        <attr name="bsb_min" format="float|reference" /> <!--min < max, default: 0.0f-->
+        <attr name="bsb_max" format="float|reference" /> <!--min < max, default: 100.0f-->
+        <attr name="bsb_progress" format="float|reference" /> <!--real time progress value, default: min-->
+        <attr name="bsb_is_float_type" format="boolean" /> <!--support for float type-->
+        <attr name="bsb_track_size" format="dimension|reference" /> <!--height of right-track(on the right of thumb), default: 2dp-->
+        <!--height of left-track(on the left of thumb), default: 2dp higher than right-track's height-->
+        <attr name="bsb_second_track_size" format="dimension|reference" />
+        <attr name="bsb_thumb_radius" format="dimension|reference" /> <!--radius of thumb, default: 2dp higher than left-track's height-->
+        <!--radius of thumb when be dragging, default: 2 times of left-track's height-->
+        <attr name="bsb_thumb_radius_on_dragging" format="dimension|reference" />
+        <attr name="bsb_track_color" format="color|reference" /> <!--color of right-track, default: R.color.colorPrimary-->
+        <attr name="bsb_second_track_color" format="color|reference" /> <!--color of left-track, default: R.color.colorAccent-->
+        <attr name="bsb_thumb_color" format="color|reference" /> <!--color of thumb, default: same as left-track's color-->
+        <attr name="bsb_section_count" format="integer|reference" /> <!--shares of whole progress(max - min), default: 10-->
+        <attr name="bsb_show_section_mark" format="boolean" /> <!--show demarcation points or not, default: false-->
+        <attr name="bsb_auto_adjust_section_mark" format="boolean" /> <!--auto scroll to the nearest section_mark or not, default: false-->
+        <attr name="bsb_show_section_text" format="boolean" /> <!--show section-text or not, default: false-->
+        <attr name="bsb_section_text_size" format="dimension|reference" /> <!--text size of section-text, default: 14sp-->
+        <attr name="bsb_section_text_color" format="color|reference" /> <!--text color of section-text, default: same as right-track's color-->
+        <!--text position of section-text relative to track, sides, bottom_sides, below_section_mark, default: sides-->
+        <attr name="bsb_section_text_position">
+            <enum name="sides" value="0" />
+            <enum name="bottom_sides" value="1" />
+            <enum name="below_section_mark" value="2" />
+        </attr>
+        <attr name="bsb_section_text_interval" format="integer" /> <!--the interval of two section-text, default: 1-->
+        <attr name="bsb_show_thumb_text" format="boolean" /> <!--show real time progress-text under thumb or not, default: false-->
+        <attr name="bsb_thumb_text_size" format="dimension|reference" /> <!--text size of progress-text, default: 14sp-->
+        <attr name="bsb_thumb_text_color" format="color|reference" /> <!--text color of progress-text, default: same as left-track's color-->
+        <attr name="bsb_show_progress_in_float" format="boolean" /> <!--show bubble-progress in float or not, default: false-->
+        <attr name="bsb_touch_to_seek" format="boolean" /> <!--touch anywhere on track to quickly seek, default: false-->
+        <attr name="bsb_seek_by_section" format="boolean" /> <!--seek by section, the progress may not be linear, default: false-->
+        <attr name="bsb_bubble_color" format="color|reference" /> <!--color of bubble, default: same as left-track's color-->
+        <attr name="bsb_bubble_text_size" format="dimension|reference" /> <!--text size of bubble-progress, default: 14sp-->
+        <attr name="bsb_bubble_text_color" format="color|reference" /> <!--text color of bubble-progress, default: #ffffffff-->
+        <attr name="bsb_anim_duration" format="integer" /> <!--duration of animation, default: 200ms-->
+        <attr name="bsb_always_show_bubble" format="boolean" /> <!--bubble shows all time, default: false-->
+        <attr name="bsb_always_show_bubble_delay" format="integer" /> <!--the delay duration before bubble shows all the time, default: 200ms-->
+        <attr name="bsb_hide_bubble" format="boolean" /> <!--hide bubble, default: false-->
     </declare-styleable>
 </resources>

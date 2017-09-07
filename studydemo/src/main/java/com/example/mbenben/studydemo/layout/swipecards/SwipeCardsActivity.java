@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 
 import com.example.mbenben.studydemo.R;
-import com.example.mbenben.studydemo.utils.ToastUtil;
+import com.example.mbenben.studydemo.utils.ToastUtils;
 
 import java.util.ArrayList;
 
@@ -39,12 +39,12 @@ public class SwipeCardsActivity extends AppCompatActivity{
 
             @Override
             public void onLeftCardExit(Object dataObject) {
-                ToastUtil.toastShort( "Left!");
+                ToastUtils.showShort( "Left!");
             }
 
             @Override
             public void onRightCardExit(Object dataObject) {
-                ToastUtil.toastShort( "Right!");
+                ToastUtils.showShort( "Right!");
             }
 
             @Override
@@ -67,7 +67,7 @@ public class SwipeCardsActivity extends AppCompatActivity{
         swipeCard.setOnItemClickListener(new SwipeFlingAdapterView.OnItemClickListener() {
             @Override
             public void onItemClicked(int itemPosition, Object dataObject) {
-                ToastUtil.toastShort( "Clicked!");
+                ToastUtils.showShort( "Clicked!");
             }
         });
 

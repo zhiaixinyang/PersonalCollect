@@ -3,4 +3,8 @@
     <item name="id_scan_circle" type="id"/>
 
     <item type="id" name="floating_decor" />
+
+    <!--阿里ViewPager-->
+    <item name="ultraviewpager_page_container" type="id" />
+    <item name="item_id" type="id" />
 </resources>

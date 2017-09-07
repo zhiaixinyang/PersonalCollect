@@ -22,7 +22,9 @@ import butterknife.ButterKnife;
 public class IndicatorActivity extends AppCompatActivity {
     @BindView(R.id.indicator) MyViewPagerIndicator myViewPagerIndicator;
     @BindView(R.id.viewPager) ViewPager viewPager;
-    private List<String> titles=new ArrayList<String>();
+    private List<String> titles=new ArrayList<>();
+
+    private List<ColorTrackView> tabs = new ArrayList<>();
     private List<MyTestFragment> fragments=new ArrayList<>();
 
     @Override
@@ -30,6 +32,7 @@ public class IndicatorActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_indicator);
         initViewAndDatas();
+        initEvents();
 
         myViewPagerIndicator.setTitles(titles);
         viewPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
@@ -47,6 +50,34 @@ public class IndicatorActivity extends AppCompatActivity {
         myViewPagerIndicator.setViewPager(viewPager);
     }
 
+    private void initEvents() {
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageSelected(int position) {
+            }
+
+            @Override
+            public void onPageScrolled(int position, float positionOffset,
+                                       int positionOffsetPixels) {
+                if (positionOffset > 0) {
+                    ColorTrackView left = tabs.get(position);
+                    ColorTrackView right = tabs.get(position + 1);
+
+                    left.setDirection(1);
+                    right.setDirection(0);
+
+                    left.setProgress( 1-positionOffset);
+                    right.setProgress(positionOffset);
+                }
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+    }
+
     private void initViewAndDatas() {
         ButterKnife.bind(this);
 
@@ -57,6 +88,10 @@ public class IndicatorActivity extends AppCompatActivity {
         for (String title:titles){
             fragments.add(MyTestFragment.newInstance(title));
         }
+
+        tabs.add((ColorTrackView) findViewById(R.id.id_tab_01));
+        tabs.add((ColorTrackView) findViewById(R.id.id_tab_02));
+        tabs.add((ColorTrackView) findViewById(R.id.id_tab_03));
     }
 
 }

@@ -8,7 +8,7 @@ import android.widget.MediaController;
 import android.widget.VideoView;
 
 import com.example.mbenben.studydemo.R;
-import com.example.mbenben.studydemo.utils.ToastUtil;
+import com.example.mbenben.studydemo.utils.ToastUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -32,7 +32,7 @@ public class VideoPlayerActivity extends AppCompatActivity{
             videoView.setMediaController(mediaController);
             mediaController.setMediaPlayer(videoView);
         }else{
-            ToastUtil.toastShort("服务器视频资源暂时被删除");
+            ToastUtils.showShort("服务器视频资源暂时被删除");
         }
     }
 }

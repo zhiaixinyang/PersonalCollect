@@ -13,7 +13,7 @@ import android.widget.TextView;
 import com.example.mbenben.studydemo.R;
 import com.example.mbenben.studydemo.utils.SmileUtils;
 import com.example.mbenben.studydemo.utils.TextCommonUtils;
-import com.example.mbenben.studydemo.utils.ToastUtil;
+import com.example.mbenben.studydemo.utils.ToastUtils;
 import com.example.mbenben.studydemo.layout.ricktext.emoji.view.EditTextAtUtils;
 import com.example.mbenben.studydemo.layout.ricktext.emoji.view.EditTextEmoji;
 import com.example.mbenben.studydemo.layout.ricktext.emoji.view.EmojiLayout;
@@ -116,19 +116,19 @@ public class RickTextActivity extends AppCompatActivity{
         SpanUrlCallBack spanUrlCallBack = new SpanUrlCallBack() {
             @Override
             public void phone(String phone) {
-                ToastUtil.toastShort(phone+ " 被点击了");
+                ToastUtils.showShort(phone+ " 被点击了");
             }
 
             @Override
             public void url(String url) {
-                ToastUtil.toastShort(url+ " 被点击了");
+                ToastUtils.showShort(url+ " 被点击了");
             }
         };
 
         SpanAtUserCallBack spanAtUserCallBack = new SpanAtUserCallBack() {
             @Override
             public void onClick(UserModel userModel1) {
-                ToastUtil.toastShort(userModel1.getUser_name() + " 被点击了");
+                ToastUtils.showShort(userModel1.getUser_name() + " 被点击了");
             }
         };
 

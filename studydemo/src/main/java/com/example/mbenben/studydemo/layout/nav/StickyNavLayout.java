@@ -19,15 +19,12 @@ import android.widget.OverScroller;
 
 public class StickyNavLayout extends LinearLayout implements NestedScrollingParent {
 
-    private static final String TAG = "aaa";
-
     /**
      * 该方法决定了当前控件是否能接收到其内部View滑动时的参数；
      * 假设你只涉及到纵向滑动，这里可以根据nestedScrollAxes这个参数，进行纵向判断。
      */
     @Override
     public boolean onStartNestedScroll(View child, View target, int nestedScrollAxes) {
-        Log.d(TAG, "onStartNestedScroll");
         return true;
     }
 
@@ -67,13 +64,11 @@ public class StickyNavLayout extends LinearLayout implements NestedScrollingPare
     //惯性滑动时调用一次
     @Override
     public boolean onNestedFling(View target, float velocityX, float velocityY, boolean consumed) {
-        Log.d(TAG, "onNestedFling");
         return false;
     }
     //惯性滑动时调用一次，先于onNestedFling()被调用，如果返回false，此方法不会回调
     @Override
     public boolean onNestedPreFling(View target, float velocityX, float velocityY) {
-        Log.d(TAG, "onNestedPreFling："+velocityY+"getScrollY:"+getScrollY());
         //down - //up+
         if (getScrollY() >= mTopViewHeight){
             return false;
@@ -120,7 +115,6 @@ public class StickyNavLayout extends LinearLayout implements NestedScrollingPare
         ViewGroup.LayoutParams params = mViewPager.getLayoutParams();
         params.height = getMeasuredHeight() - mNav.getMeasuredHeight();
         setMeasuredDimension(getMeasuredWidth(), mTop.getMeasuredHeight() + mNav.getMeasuredHeight() + mViewPager.getMeasuredHeight());
-
     }
 
     @Override
@@ -131,14 +125,12 @@ public class StickyNavLayout extends LinearLayout implements NestedScrollingPare
 
 
     public void fling(int velocityY) {
-        Log.d(TAG,"fling");
         mScroller.fling(0, getScrollY(), 0, velocityY, 0, 0, 0, mTopViewHeight);
         invalidate();
     }
 
     @Override
     public void scrollTo(int x, int y) {
-        Log.d(TAG,"scrollTo");
         if (y < 0) {
             y = 0;
         }
@@ -153,7 +145,6 @@ public class StickyNavLayout extends LinearLayout implements NestedScrollingPare
     @Override
     public void computeScroll() {
         if (mScroller.computeScrollOffset()) {
-            Log.d(TAG,"computeScroll");
             scrollTo(0, mScroller.getCurrY());
             invalidate();
         }
