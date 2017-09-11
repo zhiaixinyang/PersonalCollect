@@ -6,8 +6,9 @@
 
 如果需要查看对应的源码，在项目的源码中的解释中也添加了原作者的项目GitHub地址。
 
-### fragment包下对应了主页的各个Fragment，每个Fragment内部，包含各个开源库的Activity。
-### 感觉某个效果有用，可以直接在Framgment中找到对应的Activity，就可以定位到这个库的源码了。
+### 使用指南
+fragment包下对应了主页的各个Fragment，每个Fragment内部，包含各个开源库的Activity。
+感觉某个效果有用，可以直接在Framgment中找到对应的Activity，就可以定位到这个库的源码了。
 
 简单的演示效果：
 
