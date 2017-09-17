@@ -23,7 +23,7 @@ public class HorizontalOverScrollBounceEffectDecorator extends OverScrollBounceE
                 return false;
             }
 
-            // Allow for counter-orientation-direction operations (e.g. item swiping) to run fluently.
+            // Allow for counter-orientation-direction operations (e.g. item_guide_view swiping) to run fluently.
             final float dy = event.getY(0) - event.getHistoricalY(0, 0);
             final float dx = event.getX(0) - event.getHistoricalX(0, 0);
             if (Math.abs(dx) < Math.abs(dy)) {

@@ -88,7 +88,7 @@ public class RecycleViewDivider extends RecyclerView.ItemDecoration {
         }
     }
 
-    //绘制横向 item 分割线
+    //绘制横向 item_guide_view 分割线
     private void drawHorizontal(Canvas canvas, RecyclerView parent) {
         final int left = parent.getPaddingLeft();
         final int right = parent.getMeasuredWidth() - parent.getPaddingRight();
@@ -108,7 +108,7 @@ public class RecycleViewDivider extends RecyclerView.ItemDecoration {
         }
     }
 
-    //绘制纵向 item 分割线
+    //绘制纵向 item_guide_view 分割线
     private void drawVertical(Canvas canvas, RecyclerView parent) {
         final int top = parent.getPaddingTop();
         final int bottom = parent.getMeasuredHeight() - parent.getPaddingBottom();

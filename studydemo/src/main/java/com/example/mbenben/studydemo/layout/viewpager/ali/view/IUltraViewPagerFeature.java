@@ -44,7 +44,7 @@ interface IUltraViewPagerFeature {
      *
      * @param focusColor    defines the color when indicator is focused.
      * @param normalColor   defines the color when indicator is in the default state (not focused).
-     * @param radiusInPixel defines the radius of indicator item.
+     * @param radiusInPixel defines the radius of indicator item_guide_view.
      * @param gravity       specifies how to align the indicator. for example, using Gravity.BOTTOM | Gravity.RIGHT
      */
     IUltraIndicatorBuilder initIndicator(int focusColor, int normalColor, int radiusInPixel, int gravity);
@@ -56,7 +56,7 @@ interface IUltraViewPagerFeature {
      * @param normalColor   defines the color when indicator is in the default state (not focused).
      * @param strokeColor   stroke color
      * @param strokeWidth   stroke width
-     * @param radiusInPixel the radius of indicator item.
+     * @param radiusInPixel the radius of indicator item_guide_view.
      * @param gravity       specifies how to align the indicator. for example, using Gravity.BOTTOM | Gravity.RIGHT
      */
     IUltraIndicatorBuilder initIndicator(int focusColor, int normalColor, int strokeColor, int strokeWidth, int radiusInPixel, int gravity);
@@ -160,7 +160,7 @@ interface IUltraViewPagerFeature {
     void setAutoMeasureHeight(boolean status);
 
     /**
-     * Adjust the height of child item view with aspect ratio.
+     * Adjust the height of child item_guide_view view with aspect ratio.
      *
      * @param ratio aspect ratio
      */
@@ -174,7 +174,7 @@ interface IUltraViewPagerFeature {
     void setHGap(int pixel);
 
     /**
-     * Set item margin
+     * Set item_guide_view margin
      *
      * @param left   the left margin in pixels
      * @param top    the top margin in pixels
@@ -192,7 +192,7 @@ interface IUltraViewPagerFeature {
     void setScrollMargin(int left, int right);
 
     /**
-     * The items.size() would be scale to item.size()*infiniteRatio in fact
+     * The items.size() would be scale to item_guide_view.size()*infiniteRatio in fact
      *
      * @param infiniteRatio
      */

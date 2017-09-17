@@ -30,7 +30,7 @@ public class EasySideBar extends View {
     private String[] mIndexItems;
 
     /**
-     * the index in {@link #mIndexItems} of the current selected index item,
+     * the index in {@link #mIndexItems} of the current selected index item_guide_view,
      * it's reset to -1 when the finger up
      */
     private int mCurrentIndex = -1;
@@ -48,12 +48,12 @@ public class EasySideBar extends View {
     private int MaxHeight;
     private int MaxWidth;
     /**
-     * the Height of each index item
+     * the Height of each index item_guide_view
      */
     private float mIndexItemHeight;
 
     /**
-     * offset of the current selected index item
+     * offset of the current selected index item_guide_view
      */
     private float mMaxOffset;
 
@@ -101,12 +101,12 @@ public class EasySideBar extends View {
 
 
     /**
-     * observe the current selected index item
+     * observe the current selected index item_guide_view
      */
     private OnSelectIndexItemListener onSelectIndexItemListener;
 
     /**
-     * the baseline of the first index item text to draw
+     * the baseline of the first index item_guide_view text to draw
      */
     private float mFirstItemBaseLineY;
 
@@ -197,7 +197,7 @@ public class EasySideBar extends View {
                 areaRight,
                 areaBottom);
 
-        // the baseline Y of the first item' text to draw
+        // the baseline Y of the first item_guide_view' text to draw
         mFirstItemBaseLineY = (MaxHeight /2 - mIndexItems.length*mIndexItemHeight/2)
                 + (mIndexItemHeight/2 - (fontMetrics.descent-fontMetrics.ascent)/2)
                 - fontMetrics.ascent;
@@ -208,11 +208,11 @@ public class EasySideBar extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        // draw each item
+        // draw each item_guide_view
         for (int i = 0; i < mIndexItems.length; i++) {
             float baseLineY = mFirstItemBaseLineY + mIndexItemHeight*i;
 
-            // calculate the scale factor of the item to draw
+            // calculate the scale factor of the item_guide_view to draw
             float scale = getItemScale(i);
 
             int alphaScale = (i == mCurrentIndex) ? (255) : (int) (255 * (1-scale));
@@ -249,7 +249,7 @@ public class EasySideBar extends View {
 
             // draw
             canvas.drawText(
-                    mIndexItems[i], //item text to draw
+                    mIndexItems[i], //item_guide_view text to draw
                     baseLineX, //baseLine X
                     baseLineY, // baseLine Y
                     mPaint);
@@ -261,10 +261,10 @@ public class EasySideBar extends View {
     }
 
     /**
-     * calculate the scale factor of the item to draw
+     * calculate the scale factor of the item_guide_view to draw
      *
-     * @param index the index of the item in array {@link #mIndexItems}
-     * @return the scale factor of the item to draw
+     * @param index the index of the item_guide_view in array {@link #mIndexItems}
+     * @return the scale factor of the item_guide_view to draw
      */
     private float getItemScale(int index) {
         float scale = 0;

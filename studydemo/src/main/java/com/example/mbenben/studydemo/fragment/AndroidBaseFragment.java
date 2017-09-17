@@ -29,6 +29,7 @@ import com.example.mbenben.studydemo.basenote.scaniamges.imageloader.ScanImageAc
 import com.example.mbenben.studydemo.basenote.service.ServiceActivity;
 import com.example.mbenben.studydemo.basenote.service.download.DownLoadServiceActivity;
 import com.example.mbenben.studydemo.basenote.service.downloadfile.ui.DownLoadFileStartActivity;
+import com.example.mbenben.studydemo.basenote.styleimageview.StyleImageViewActivity;
 import com.example.mbenben.studydemo.db.SearchBean;
 import com.example.mbenben.studydemo.db.SearchDBManager;
 import com.example.mbenben.studydemo.model.HashSetSearchBean;
@@ -140,7 +141,10 @@ public class AndroidBaseFragment extends Fragment {
                         Intent toPattern = new Intent(App.getInstance().getContext(), PatternActivity.class);
                         startActivity(toPattern);
                         break;
-
+                    case "StyleImageViewActivity":
+                        Intent toStyleImage = new Intent(App.getInstance().getContext(), StyleImageViewActivity.class);
+                        startActivity(toStyleImage);
+                        break;
                 }
             }
 
@@ -213,6 +217,10 @@ public class AndroidBaseFragment extends Fragment {
             datas.add("PatternActivity");
             mapTitle.put("PatternActivity", "文章-点击字母匹配");
             App.addData(new HashSetSearchBean("PatternActivity", PatternActivity.class));
+
+            datas.add("StyleImageViewActivity");
+            mapTitle.put("StyleImageViewActivity", "PS / 修图 功能");
+            App.addData(new HashSetSearchBean("StyleImageViewActivity", StyleImageViewActivity.class));
         }
     }
 

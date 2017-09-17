@@ -30,6 +30,9 @@
     <color name="color_blue">#03A9F4</color>
     <color name="color_gray_light">#F5F5F5</color>
 
+    <color name="background">#1d1f2f</color>
+    <color name="btnColor">#30354b</color>
+
     <color name="lol_one">#c3e3e5</color>
     <color name="lol_two">#85cdd4</color>
     <color name="lol_three">#48afb6</color>

@@ -78,7 +78,10 @@ public class RefreshLoadActivity extends AppCompatActivity implements RefreshRec
     }
 
     protected void initData() {
-        for (int i = 'A'; i < 'z'; i++) {
+//        for (int i = 'A'; i < 'z'; i++) {
+//            mDatas.add("" + (char) i);
+//        }
+        for (int i = 1; i < 9; i++) {
             mDatas.add("" + (char) i);
         }
     }

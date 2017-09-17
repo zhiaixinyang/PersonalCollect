@@ -61,14 +61,14 @@ public interface IUltraIndicatorBuilder {
     IUltraIndicatorBuilder setStrokeWidth(int strokeWidth);
 
     /**
-     * Set spacing between indicator item ，the default value is item's height.
+     * Set spacing between indicator item_guide_view ，the default value is item_guide_view's height.
      * @param indicatorPadding
      * @return
      */
     IUltraIndicatorBuilder setIndicatorPadding(int indicatorPadding);
 
     /**
-     * Set the corner radius of the indicator item.
+     * Set the corner radius of the indicator item_guide_view.
      * @param radius
      * @return
      */

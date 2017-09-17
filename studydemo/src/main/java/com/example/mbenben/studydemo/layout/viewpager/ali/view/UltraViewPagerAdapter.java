@@ -54,7 +54,7 @@ class UltraViewPagerAdapter extends PagerAdapter {
     private PagerAdapter adapter;
     private boolean enableLoop;
     private float multiScrRatio = Float.NaN;
-    private boolean hasCentered; //ensure that the first item is in the middle when enabling loop-mode
+    private boolean hasCentered; //ensure that the first item_guide_view is in the middle when enabling loop-mode
     private int scrWidth;
     private int infiniteRatio;
     private UltraViewPagerCenterListener centerListener;

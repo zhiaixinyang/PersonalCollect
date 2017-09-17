@@ -27,6 +27,7 @@ import com.example.mbenben.studydemo.view.bigimage.GlideLoaderActivity;
 import com.example.mbenben.studydemo.view.canvasapi.CanvasApiActivity;
 import com.example.mbenben.studydemo.view.chart.ChartActivity;
 import com.example.mbenben.studydemo.view.circle.CircleActivity;
+import com.example.mbenben.studydemo.view.colorpickerView.ColorPickerActivity;
 import com.example.mbenben.studydemo.view.couponview.CouponViewActivity;
 import com.example.mbenben.studydemo.view.credit.CreditActivity;
 import com.example.mbenben.studydemo.view.enviews.ENViewsActivity;
@@ -248,6 +249,9 @@ public class ViewsFragment extends Fragment {
                         Intent intentRenkStar = new Intent(App.getInstance().getContext(), RenkStarActivity.class);
                         startActivity(intentRenkStar);
                         break;
+                    case "ColorPickerActivity":
+                        Intent intentColorPicker=new Intent(App.getInstance().getContext(),ColorPickerActivity.class);
+                        startActivity(intentColorPicker);
                 }
             }
 
@@ -403,6 +407,10 @@ public class ViewsFragment extends Fragment {
             datas.add("RenkStarActivity");
             mapTitle.put("RenkStarActivity", "自定义评分条");
             App.addData(new HashSetSearchBean("RenkStarActivity", RenkStarActivity.class));
+
+            datas.add("ColorPickerActivity");
+            mapTitle.put("ColorPickerActivity", "取色器 / 选色器");
+            App.addData(new HashSetSearchBean("ColorPickerActivity", ColorPickerActivity.class));
         }
     }
 

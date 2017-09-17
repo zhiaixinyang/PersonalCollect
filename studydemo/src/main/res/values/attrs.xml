@@ -433,6 +433,34 @@
         <attr name="upv_itemratio" format="float" />
     </declare-styleable>
 
+    <!-- PS / 修图功能 -->
+    <declare-styleable name="StyleImageView">
+        <attr name="style">
+            <enum name="none" value="-1"/>
+            <enum name="saturation" value="0"/>
+            <enum name="grey_scale" value="1"/>
+            <enum name="invert" value="2"/>
+            <enum name="rgb_to_bgr" value="3"/>
+            <enum name="sepia" value="4"/>
+            <enum name="black_and_white" value="5"/>
+            <enum name="bright" value="6"/>
+            <enum name="vintage_pinhole" value="7"/>
+            <enum name="kodachrome" value="8"/>
+            <enum name="technicolor" value="9"/>
+        </attr>
+        <attr name="brightness" format="integer"/>
+        <attr name="contrast" format="float"/>
+        <attr name="saturation" format="float"/>
+        <attr name="enable_animation" format="boolean"/>
+        <attr name="animation_duration" format="integer"/>
+    </declare-styleable>
+
+    <!-- 颜色选择器 -->
+    <declare-styleable name="colorpicker">
+        <attr name="cp_src" format="reference"/>
+        <attr name="cp_selector" format="reference"/>
+    </declare-styleable>
+
     <!-- 自定义评分栏 -->
     <declare-styleable name="BubbleSeekBar">
         <attr name="bsb_min" format="float|reference" /> <!--min < max, default: 0.0f-->

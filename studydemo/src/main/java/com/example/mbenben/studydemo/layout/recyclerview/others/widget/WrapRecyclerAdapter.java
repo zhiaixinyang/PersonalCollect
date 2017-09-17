@@ -2,6 +2,7 @@ package com.example.mbenben.studydemo.layout.recyclerview.others.widget;
 
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.util.SparseArray;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +14,7 @@ import com.example.mbenben.studydemo.layout.recyclerview.others.adapter.OnLongCl
  * Created by Darren on 2016/12/29.
  * Email: 240336124@qq.com
  * Description: 可以添加头部和底部的Adapter
- *
+ * <p>
  * 原作者项目GitHub:https://github.com/Shenmowen/RecyclerAnalysis
  */
 public class WrapRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
@@ -73,7 +74,6 @@ public class WrapRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
      */
     private RecyclerView.ViewHolder createHeaderFooterViewHolder(View view) {
         return new RecyclerView.ViewHolder(view) {
-
         };
     }
 
@@ -146,7 +146,11 @@ public class WrapRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     @Override
     public int getItemCount() {
         // 条数三者相加 = 底部条数 + 头部条数 + Adapter的条数
-        return mAdapter.getItemCount() + mHeaderViews.size() + mFooterViews.size();
+        if (mAdapter.getItemCount()>=10) {
+            return mAdapter.getItemCount() + mHeaderViews.size() + mFooterViews.size();
+        }else{
+            return mAdapter.getItemCount() + mHeaderViews.size();
+        }
     }
 
     /**

@@ -11,6 +11,15 @@
     <string name="pickerview_minutes">分</string>
     <string name="pickerview_seconds">秒</string>
 
+    <string name="clickme">Click Me!</string>
+    <string name="action_settings">Settings</string>
+    <string name="add_friend">添加好友在这里哦</string>
+    <string name="nearby">查看附近的人</string>
+    <string name="title_activity_simple_guide_view">SimpleGuideViewActivity</string>
+    <string name="title_activity_muti_guide_view">MutiGuideViewActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="picker_time">时间选择器</string>
     <string name="picker_province">条件选择器</string>

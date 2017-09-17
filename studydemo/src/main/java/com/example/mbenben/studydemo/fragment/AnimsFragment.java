@@ -15,10 +15,10 @@ import com.example.mbenben.studydemo.App;
 import com.example.mbenben.studydemo.R;
 import com.example.mbenben.studydemo.anim.ValueAnimActivity;
 import com.example.mbenben.studydemo.anim.circularanim.CircleAnimActivity;
+import com.example.mbenben.studydemo.anim.swipbackhelper.activity.SwipeBackActivity;
 import com.example.mbenben.studydemo.base.CommonAdapter;
 import com.example.mbenben.studydemo.base.OnItemClickListener;
 import com.example.mbenben.studydemo.base.ViewHolder;
-import com.example.mbenben.studydemo.basenote.scaniamges.imageloader.ScanImageActivity;
 import com.example.mbenben.studydemo.db.SearchBean;
 import com.example.mbenben.studydemo.db.SearchDBManager;
 import com.example.mbenben.studydemo.model.HashSetSearchBean;
@@ -34,7 +34,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by MBENBEN on 2017/1/17.
+ * Created by MDove on 2017/1/17.
  */
 
 public class AnimsFragment extends Fragment {
@@ -97,6 +97,10 @@ public class AnimsFragment extends Fragment {
                         Intent intentCircleAnim = new Intent(App.getInstance().getContext(), CircleAnimActivity.class);
                         startActivity(intentCircleAnim);
                         break;
+                    case "SwipeBackActivity":
+                        Intent intentSwipeBack = new Intent(App.getInstance().getContext(), SwipeBackActivity.class);
+                        startActivity(intentSwipeBack);
+                        break;
                 }
             }
 
@@ -136,6 +140,10 @@ public class AnimsFragment extends Fragment {
             datas.add("CircleAnimActivity");
             mapTitle.put("CircleAnimActivity", "圆形扩散是动画效果");
             App.addData(new HashSetSearchBean("CircleAnimActivity", CircleAnimActivity.class));
+
+            datas.add("SwipeBackActivity");
+            mapTitle.put("SwipeBackActivity", "滑动退出Activity");
+            App.addData(new HashSetSearchBean("SwipeBackActivity", SwipeBackActivity.class));
         }
     }
 

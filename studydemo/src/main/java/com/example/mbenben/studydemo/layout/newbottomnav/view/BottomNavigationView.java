@@ -162,7 +162,7 @@ public class BottomNavigationView extends RelativeLayout {
                     : "Position must be less or equivalent than items size, items size is " + (bottomNavigationItems.size() - 1) + " current is " + currentItem);
         }
         if (bottomNavigationItems.size() == 0) {
-            throw new NullPointerException("You need at least one item");
+            throw new NullPointerException("You need at least one item_guide_view");
         }
         LayoutParams containerParams, params, lineParams;
         int white = ContextCompat.getColor(context,R.color.white);
@@ -376,8 +376,8 @@ public class BottomNavigationView extends RelativeLayout {
      * Creates a connection between this navigation view and a ViewPager
      *
      * @param pager          pager to connect to
-     * @param colorResources color resources for every item in the ViewPager adapter
-     * @param imageResources images resources for every item in the ViewPager adapter
+     * @param colorResources color resources for every item_guide_view in the ViewPager adapter
+     * @param imageResources images resources for every item_guide_view in the ViewPager adapter
      */
 
     public void setUpWithViewPager(ViewPager pager, int[] colorResources, int[] imageResources) {
@@ -390,9 +390,9 @@ public class BottomNavigationView extends RelativeLayout {
     }
 
     /**
-     * Add item for BottomNavigation
+     * Add item_guide_view for BottomNavigation
      *
-     * @param item item to add
+     * @param item item_guide_view to add
      */
     public void addTab(BottomNavigationItem item) {
         bottomNavigationItems.add(item);
@@ -408,7 +408,7 @@ public class BottomNavigationView extends RelativeLayout {
     /**
      * Change text visibility
      *
-     * @param withText disable or enable item text
+     * @param withText disable or enable item_guide_view text
      */
     public void isWithText(boolean withText) {
         this.withText = withText;
@@ -417,7 +417,7 @@ public class BottomNavigationView extends RelativeLayout {
     /**
      * Item Active Color if isColoredBackground(false)
      *
-     * @param itemActiveColorWithoutColoredBackground active item color
+     * @param itemActiveColorWithoutColoredBackground active item_guide_view color
      */
     public void setItemActiveColorWithoutColoredBackground(int itemActiveColorWithoutColoredBackground) {
         this.itemActiveColorWithoutColoredBackground = itemActiveColorWithoutColoredBackground;
@@ -475,16 +475,16 @@ public class BottomNavigationView extends RelativeLayout {
     }
 
     /**
-     * Setup interface for item onClick
+     * Setup interface for item_guide_view onClick
      */
     public void setOnBottomNavigationItemClickListener(OnBottomNavigationItemClickListener onBottomNavigationItemClickListener) {
         this.onBottomNavigationItemClickListener = onBottomNavigationItemClickListener;
     }
 
     /**
-     * Returns the item that is currently selected
+     * Returns the item_guide_view that is currently selected
      *
-     * @return Currently selected item
+     * @return Currently selected item_guide_view
      */
     public int getCurrentItem() {
         return currentItem;
@@ -501,7 +501,7 @@ public class BottomNavigationView extends RelativeLayout {
     }
 
     /**
-     * set custom font for item texts
+     * set custom font for item_guide_view texts
      *
      * @param font custom font
      */
@@ -511,7 +511,7 @@ public class BottomNavigationView extends RelativeLayout {
     }
 
     /**
-     * get item text size on active status
+     * get item_guide_view text size on active status
      *
      * @return font size
      */
@@ -520,7 +520,7 @@ public class BottomNavigationView extends RelativeLayout {
     }
 
     /**
-     * get item text size on inactive status
+     * get item_guide_view text size on inactive status
      *
      * @return font size
      */

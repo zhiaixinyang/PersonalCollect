@@ -27,12 +27,14 @@ import com.example.mbenben.studydemo.layout.esaysidebar.SortCityActivity;
 import com.example.mbenben.studydemo.layout.expandableviewpager.ExpandableViewPagerActivity;
 import com.example.mbenben.studydemo.layout.fragmenttabhost.TabActivity;
 import com.example.mbenben.studydemo.layout.graffiti.DrawingBoardActvity;
+import com.example.mbenben.studydemo.layout.guideview.activity.HomeActivity;
 import com.example.mbenben.studydemo.layout.horizontalscrollview.HorizontalScrollActivity;
 import com.example.mbenben.studydemo.layout.intercepttouchevent.InterceptActivity;
 import com.example.mbenben.studydemo.layout.materialdesign.coordinatorlayouttest.UCActivity;
 import com.example.mbenben.studydemo.layout.newbottomnav.BottomNavMainActivity;
 import com.example.mbenben.studydemo.layout.materialdesign.MaterialDesignActivity;
 import com.example.mbenben.studydemo.layout.overscroll.activity.OverScrollDemoActivity;
+import com.example.mbenben.studydemo.layout.photowall.PhotoWallActivity;
 import com.example.mbenben.studydemo.layout.pickerview.PickerActivity;
 import com.example.mbenben.studydemo.layout.swipmenu.SwipMenuActivity;
 import com.example.mbenben.studydemo.layout.videoplayer.VideoPlayerActivity;
@@ -252,6 +254,16 @@ public class LayoutFragment extends Fragment {
                     case "AliUPVDemoActivity":
                         Intent toAliViewPager = new Intent(App.getInstance().getContext(), AliUPVDemoActivity.class);
                         startActivity(toAliViewPager);
+                        break;
+                    case "HomeActivity":
+                        Intent toHome = new Intent(App.getInstance().getContext(), HomeActivity.class);
+                        startActivity(toHome);
+                        break;
+
+                    case "PhotoWallActivity":
+                        Intent toPhoto = new Intent(App.getInstance().getContext(), PhotoWallActivity.class);
+                        startActivity(toPhoto);
+                        break;
                 }
             }
 
@@ -400,6 +412,14 @@ public class LayoutFragment extends Fragment {
             datas.add("OverScrollDemoActivity");
             mapTitle.put("OverScrollDemoActivity", "粘性布局");
             App.addData(new HashSetSearchBean("OverScrollDemoActivity", OverScrollDemoActivity.class));
+
+            datas.add("HomeActivity");
+            mapTitle.put("HomeActivity", "高亮引导页");
+            App.addData(new HashSetSearchBean("HomeActivity", HomeActivity.class));
+
+            datas.add("PhotoWallActivity");
+            mapTitle.put("PhotoWallActivity", "照片墙滑动加载");
+            App.addData(new HashSetSearchBean("PhotoWallActivity", PhotoWallActivity.class));
         }
     }
 

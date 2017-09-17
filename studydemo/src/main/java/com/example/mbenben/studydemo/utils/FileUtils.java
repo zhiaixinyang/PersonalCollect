@@ -5,12 +5,14 @@ import android.content.Context;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Environment;
 import android.provider.MediaStore;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
@@ -159,5 +161,87 @@ public class FileUtils {
         }else{
             return null;
         }
+    }
+
+    /**
+     * sd卡的根目录
+     */
+    private static String mSdRootPath = Environment.getExternalStorageDirectory().getPath();
+    /**
+     * 手机的缓存根目录
+     */
+    private static String mDataRootPath = null;
+    /**
+     * 保存Image的目录名
+     */
+    private final static String FOLDER_NAME = "/Mdove";
+
+    /**
+     * 获取储存Image的目录
+     * @return
+     */
+    private static String getStorageDirectory(){
+        return Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED) ?
+                mSdRootPath + FOLDER_NAME : mDataRootPath + FOLDER_NAME;
+    }
+
+    /**
+     * 判断文件是否存在
+     * @param fileName
+     * @return
+     */
+    public static boolean isFileExists(String fileName){
+        return new File(getStorageDirectory() + File.separator + fileName).exists();
+    }
+
+    /**
+     * 保存Image的方法，有sd卡存储到sd卡，没有就存储到手机目录
+     * @param fileName
+     * @param bitmap
+     * @throws IOException
+     */
+    public static void savaBitmap(String fileName, Bitmap bitmap) throws IOException{
+        if(bitmap == null){
+            return;
+        }
+        String path = getStorageDirectory();
+        File folderFile = new File(path);
+        if(!folderFile.exists()){
+            folderFile.mkdir();
+        }
+        File file = new File(path + File.separator + fileName);
+        file.createNewFile();
+        FileOutputStream fos = new FileOutputStream(file);
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos);
+        fos.flush();
+        fos.close();
+    }
+
+    /**
+     * 获取文件的大小
+     * @param fileName
+     * @return
+     */
+    public static long getFileSize(String fileName) {
+        return new File(getStorageDirectory() + File.separator + fileName).length();
+    }
+
+
+    /**
+     * 删除SD卡或者手机的缓存图片和目录
+     */
+    public static void deleteFile() {
+        File dirFile = new File(getStorageDirectory());
+        if(! dirFile.exists()){
+            return;
+        }
+        if (dirFile.isDirectory()) {
+            String[] children = dirFile.list();
+            for (int i = 0; i < children.length; i++) {
+                new File(dirFile, children[i]).delete();
+            }
+        }
+
+        dirFile.delete();
     }
 }

@@ -236,7 +236,7 @@ public class UltraViewPagerView extends ViewPager implements UltraViewPagerAdapt
      * Set the currently selected page.
      *
      * @param item Item index to select
-     * @param smoothScroll True to smoothly scroll to the new item, false to transition immediately
+     * @param smoothScroll True to smoothly scroll to the new item_guide_view, false to transition immediately
      */
     void setCurrentItemFake(int item, boolean smoothScroll) {
         super.setCurrentItem(item, smoothScroll);

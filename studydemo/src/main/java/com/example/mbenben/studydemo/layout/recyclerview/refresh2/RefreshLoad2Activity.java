@@ -49,7 +49,7 @@ public class RefreshLoad2Activity extends AppCompatActivity {
 
     private void initParams() {
         datas = new ArrayList<>();
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 3; i++) {
             datas.add(String.valueOf(i));
         }
 

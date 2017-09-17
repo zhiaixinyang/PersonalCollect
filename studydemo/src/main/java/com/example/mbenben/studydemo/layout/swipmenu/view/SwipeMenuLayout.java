@@ -230,7 +230,7 @@ public class SwipeMenuLayout extends ViewGroup {
                 if (measureMatchParentChildren && lp.height == LayoutParams.MATCH_PARENT) {
                     isNeedMeasureChildHeight = true;
                 }
-                if (i > 0) {//第一个布局是Left item，从第二个开始才是RightMenu
+                if (i > 0) {//第一个布局是Left item_guide_view，从第二个开始才是RightMenu
                     mRightMenuWidths += childView.getMeasuredWidth();
                 } else {
                     mContentView = childView;
