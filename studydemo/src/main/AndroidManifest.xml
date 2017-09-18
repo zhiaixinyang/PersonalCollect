@@ -179,6 +179,13 @@
             android:screenOrientation="portrait" />
 
         <activity
+            android:name=".layout.recyclerview.sticky.view.NormalActivity"
+            android:launchMode="singleTask"
+            android:hardwareAccelerated="false"
+            android:screenOrientation="portrait" />
+
+
+        <activity
             android:name=".layout.recyclerview.sticky.view.BeautifulRecyclerViewActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />

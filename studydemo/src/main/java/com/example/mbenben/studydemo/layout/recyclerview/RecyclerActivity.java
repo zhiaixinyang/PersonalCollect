@@ -26,7 +26,7 @@ import butterknife.ButterKnife;
 import rx.Observable;
 
 /**
- * Created by MBENBEN on 2017/1/13.
+ * Created by MDove on 2017/1/13.
  */
 
 public class RecyclerActivity extends AppCompatActivity {

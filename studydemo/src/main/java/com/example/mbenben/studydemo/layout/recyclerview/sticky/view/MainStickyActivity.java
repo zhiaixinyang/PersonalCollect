@@ -27,4 +27,8 @@ public class MainStickyActivity extends AppCompatActivity {
     public void toPowerfulSticky2(View view) {
         startActivity(new Intent(this, BeautifulRecyclerViewActivity.class));
     }
+
+    public void toNormal(View view){
+        startActivity(new Intent(this,NormalActivity.class));
+    }
 }
