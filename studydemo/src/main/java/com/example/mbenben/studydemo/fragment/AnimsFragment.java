@@ -14,7 +14,9 @@ import android.widget.TextView;
 import com.example.mbenben.studydemo.App;
 import com.example.mbenben.studydemo.R;
 import com.example.mbenben.studydemo.anim.ValueAnimActivity;
+import com.example.mbenben.studydemo.anim.camera.CameraAnimActivity;
 import com.example.mbenben.studydemo.anim.circularanim.CircleAnimActivity;
+import com.example.mbenben.studydemo.anim.lodinganim.LoadingAnimActivity;
 import com.example.mbenben.studydemo.anim.swipbackhelper.activity.SwipeBackActivity;
 import com.example.mbenben.studydemo.base.CommonAdapter;
 import com.example.mbenben.studydemo.base.OnItemClickListener;
@@ -101,6 +103,14 @@ public class AnimsFragment extends Fragment {
                         Intent intentSwipeBack = new Intent(App.getInstance().getContext(), SwipeBackActivity.class);
                         startActivity(intentSwipeBack);
                         break;
+                    case "LoadingAnimActivity":
+                        Intent intentLoadingAnim = new Intent(App.getInstance().getContext(), LoadingAnimActivity.class);
+                        startActivity(intentLoadingAnim);
+                        break;
+                    case "CameraAnimActivity":
+                        Intent intentCameraAnim = new Intent(App.getInstance().getContext(), CameraAnimActivity.class);
+                        startActivity(intentCameraAnim);
+                        break;
                 }
             }
 
@@ -144,6 +154,14 @@ public class AnimsFragment extends Fragment {
             datas.add("SwipeBackActivity");
             mapTitle.put("SwipeBackActivity", "滑动退出Activity");
             App.addData(new HashSetSearchBean("SwipeBackActivity", SwipeBackActivity.class));
+
+            datas.add("LoadingAnimActivity");
+            mapTitle.put("LoadingAnimActivity", "老版58动画实现Loading");
+            App.addData(new HashSetSearchBean("LoadingAnimActivity", LoadingAnimActivity.class));
+
+            datas.add("CameraAnimActivity");
+            mapTitle.put("CameraAnimActivity", "Camera+属性动画");
+            App.addData(new HashSetSearchBean("CameraAnimActivity", CameraAnimActivity.class));
         }
     }
 

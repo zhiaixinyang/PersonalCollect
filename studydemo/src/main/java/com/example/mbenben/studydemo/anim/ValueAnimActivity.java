@@ -21,7 +21,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by MBENBEN on 2017/1/12.
+ * Created by MDove on 2017/1/12.
  */
 
 public class ValueAnimActivity extends AppCompatActivity {

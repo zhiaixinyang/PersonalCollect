@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+
+    <com.example.mbenben.studydemo.anim.lodinganim.ShapeView
+        android:id="@+id/indication"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_above="@+id/shapeLoadingView"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/btn_rotate_shadow" />
+
+    <ImageView
+        android:id="@+id/shapeLoadingView"
+        android:layout_width="36dp"
+        android:layout_height="12dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/shadow_loading" />
+
+    <TextView
+        android:id="@+id/promptTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/shapeLoadingView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:text="玩命加载中..."
+        android:textColor="#757575"
+        android:textSize="14sp" />
+</RelativeLayout>

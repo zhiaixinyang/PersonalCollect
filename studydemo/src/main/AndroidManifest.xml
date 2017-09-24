@@ -47,19 +47,23 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
-        <activity android:name=".anim.swipbackhelper.activity.Swipe1Activity"
+        <activity
+            android:name=".anim.swipbackhelper.activity.Swipe1Activity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
-        <activity android:name=".anim.swipbackhelper.activity.SwipeBackActivity"
+        <activity
+            android:name=".anim.swipbackhelper.activity.SwipeBackActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
-        <activity android:name=".anim.swipbackhelper.activity.SwipeRLVActivity"
+        <activity
+            android:name=".anim.swipbackhelper.activity.SwipeRLVActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
-        <activity android:name=".anim.swipbackhelper.activity.SwipeVPActivity"
+        <activity
+            android:name=".anim.swipbackhelper.activity.SwipeVPActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
@@ -125,9 +129,10 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
-        <activity android:name=".layout.photowall.PhotoWallActivity"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTask"/>
+        <activity
+            android:name=".layout.photowall.PhotoWallActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".layout.guideview.activity.MyListActivity"
@@ -178,13 +183,19 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
+        <!--android:hardwareAccelerated="false"-->
         <activity
             android:name=".layout.recyclerview.sticky.view.NormalActivity"
             android:launchMode="singleTask"
-            android:hardwareAccelerated="false"
             android:screenOrientation="portrait" />
-
-
+        <activity
+            android:name=".anim.lodinganim.LoadingAnimActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".anim.camera.CameraAnimActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".layout.recyclerview.sticky.view.BeautifulRecyclerViewActivity"
             android:launchMode="singleTask"

@@ -46,17 +46,17 @@ public class NormalDecorration extends RecyclerView.ItemDecoration {
         int viewCount = parent.getChildCount();
         for (int i = 0; i < viewCount; i++) {
             View view = parent.getChildAt(i);
-            float right = view.getRight();
-            float left = right - DpUtils.dp2px(10);
+            float right = view.getRight()+ DpUtils.dp2px(10);
+            float left = view.getRight() ;
             float top = view.getTop();
             float bottom = view.getBottom();
-            Log.d("aaa",left+"!"+top+"!"+right+"!"+bottom);
+
             //渐变效果
             Shader shader = new LinearGradient(left, top, right, bottom, Color.parseColor("#E91E63"),
                     Color.parseColor("#2196F3"), Shader.TileMode.CLAMP);
             paintDraw.setShader(shader);
 
-            c.drawRect(0, 0, right, bottom, paintDraw);
+            c.drawRect(left,top, right, bottom, paintDraw);
         }
     }
 

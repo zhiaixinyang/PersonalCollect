@@ -11,19 +11,14 @@
             android:layout_height="wrap_content">
             <TextView
                 android:layout_width="match_parent"
-                android:text="自定义注解"
+                android:text="基础动画"
                 android:textSize="20sp"
                 android:textColor="@color/white"
                 android:gravity="center"
                 android:layout_height="wrap_content" />
         </android.support.v7.widget.Toolbar>
     </android.support.design.widget.AppBarLayout>
-    <TextView
-        android:id="@+id/text"
-        android:text="ButterKnife"
-        android:gravity="center"
-        android:textColor="@color/black"
-        android:textSize="16sp"
+    <com.example.mbenben.studydemo.anim.lodinganim.LoadingView
         android:layout_width="match_parent"
-        android:layout_height="40dp" />
+        android:layout_height="match_parent"/>
 </LinearLayout>
