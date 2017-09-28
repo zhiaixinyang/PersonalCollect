@@ -21,6 +21,7 @@ import com.example.mbenben.studydemo.db.SearchBean;
 import com.example.mbenben.studydemo.db.SearchDBManager;
 import com.example.mbenben.studydemo.layout.arclayout.ArcLayoutActivity;
 import com.example.mbenben.studydemo.layout.bottomnavigationview.BottomNavigationViewActivity;
+import com.example.mbenben.studydemo.layout.chanelview.ChanelActivity;
 import com.example.mbenben.studydemo.layout.drawerlayout.my.SlidingActivity;
 import com.example.mbenben.studydemo.layout.esaysidebar.EasySideBarBuilder;
 import com.example.mbenben.studydemo.layout.esaysidebar.SortCityActivity;
@@ -264,6 +265,10 @@ public class LayoutFragment extends Fragment {
                         Intent toPhoto = new Intent(App.getInstance().getContext(), PhotoWallActivity.class);
                         startActivity(toPhoto);
                         break;
+                    case "ChanelActivity":
+                        Intent toChanel = new Intent(App.getInstance().getContext(), ChanelActivity.class);
+                        startActivity(toChanel);
+                        break;
                 }
             }
 
@@ -420,6 +425,10 @@ public class LayoutFragment extends Fragment {
             datas.add("PhotoWallActivity");
             mapTitle.put("PhotoWallActivity", "照片墙滑动加载");
             App.addData(new HashSetSearchBean("PhotoWallActivity", PhotoWallActivity.class));
+
+            datas.add("ChanelActivity");
+            mapTitle.put("ChanelActivity", "堆叠式ViewPager（不是ViewPager的实现）");
+            App.addData(new HashSetSearchBean("ChanelActivity", ChanelActivity.class));
         }
     }
 

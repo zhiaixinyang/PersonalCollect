@@ -206,6 +206,10 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
+        <activity android:name=".layout.chanelview.ChanelActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+
         <activity
             android:name=".layout.recyclerview.sticky.view.StickyRecyclerViewActivity"
             android:launchMode="singleTask"

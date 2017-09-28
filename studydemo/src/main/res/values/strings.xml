@@ -127,4 +127,8 @@ demonstrating that you can also justify the content of an editable EditText.</st
         <item>Bottom</item>
         <item>Center</item>
     </string-array>
+
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+
 </resources>

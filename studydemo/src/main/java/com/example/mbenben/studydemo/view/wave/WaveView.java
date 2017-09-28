@@ -30,12 +30,12 @@ public class WaveView extends View {
         mAboveWavePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mAboveWavePaint.setAntiAlias(true);
         mAboveWavePaint.setStyle(Paint.Style.FILL);
-        mAboveWavePaint.setColor(Color.WHITE);
+        mAboveWavePaint.setColor(Color.BLUE);
         //初始化下面的画笔
         mBelowWavePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mBelowWavePaint.setAntiAlias(true);
         mBelowWavePaint.setStyle(Paint.Style.FILL);
-        mBelowWavePaint.setColor(Color.WHITE);
+        mBelowWavePaint.setColor(Color.BLUE);
         mBelowWavePaint.setAlpha(80);
         //画布抗锯齿
         mDrawFilter = new PaintFlagsDrawFilter(0, Paint.ANTI_ALIAS_FLAG | Paint.FILTER_BITMAP_FLAG);
