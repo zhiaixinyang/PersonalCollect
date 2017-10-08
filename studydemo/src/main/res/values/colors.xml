@@ -11,6 +11,7 @@
 
     <color name="blue_light">#6acfed</color>
     <color name="blue_dark">#008fff</color>
+    <color name="blue">#008fff</color>
 
     <color name="trans_gray">#519f9e9e</color>
     <color name="trans_blue_dark">#7d008fff</color>

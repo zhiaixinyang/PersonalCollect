@@ -269,6 +269,8 @@ public class LayoutFragment extends Fragment {
                         Intent toChanel = new Intent(App.getInstance().getContext(), ChanelActivity.class);
                         startActivity(toChanel);
                         break;
+                    default:
+                        break;
                 }
             }
 

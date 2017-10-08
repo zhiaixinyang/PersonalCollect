@@ -21,6 +21,14 @@ public class CityUtil {
      */
     public static List<City> getCityList() {
         List<City> dataList = new ArrayList<>();
+        final String SHAN_DONG = "山东省";
+        final int SHAN_DONG_ICON = R.drawable.city1;
+        dataList.add(new City("济南", SHAN_DONG, SHAN_DONG_ICON));
+        dataList.add(new City("枣庄", SHAN_DONG, SHAN_DONG_ICON));
+        dataList.add(new City("青岛", SHAN_DONG, SHAN_DONG_ICON));
+        dataList.add(new City("济宁", SHAN_DONG, SHAN_DONG_ICON));
+        dataList.add(new City("淄博", SHAN_DONG, SHAN_DONG_ICON));
+        dataList.add(new City("德州", SHAN_DONG, SHAN_DONG_ICON));
         final String FU_JIAN = "福建省";
         final int FU_JIAN_ICON = R.drawable.city1;
         dataList.add(new City("福州", FU_JIAN, FU_JIAN_ICON));

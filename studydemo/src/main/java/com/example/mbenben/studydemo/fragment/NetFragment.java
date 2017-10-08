@@ -98,6 +98,8 @@ public class NetFragment extends Fragment {
                         Intent intentRxJava = new Intent(App.getInstance().getContext(), RxJavaActivity.class);
                         startActivity(intentRxJava);
                         break;
+                    default:
+                        break;
                 }
             }
 

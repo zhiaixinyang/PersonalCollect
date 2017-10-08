@@ -111,6 +111,8 @@ public class AnimsFragment extends Fragment {
                         Intent intentCameraAnim = new Intent(App.getInstance().getContext(), CameraAnimActivity.class);
                         startActivity(intentCameraAnim);
                         break;
+                    default:
+                        break;
                 }
             }
 

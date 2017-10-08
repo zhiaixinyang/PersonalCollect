@@ -18,8 +18,8 @@ import com.example.mbenben.studydemo.base.OnItemClickListener;
 import com.example.mbenben.studydemo.base.ViewHolder;
 import com.example.mbenben.studydemo.db.SearchBean;
 import com.example.mbenben.studydemo.db.SearchDBManager;
+import com.example.mbenben.studydemo.layout.gradationtitle.QQTitleActivity;
 import com.example.mbenben.studydemo.model.HashSetSearchBean;
-import com.example.mbenben.studydemo.net.httpurl.HttpUrlAcitvity;
 import com.example.mbenben.studydemo.view.behavior.BehaviorActivity;
 import com.example.mbenben.studydemo.view.bezier.ClearBezierActivity;
 import com.example.mbenben.studydemo.view.bezier.GiftBezierActivity;
@@ -32,7 +32,6 @@ import com.example.mbenben.studydemo.view.couponview.CouponViewActivity;
 import com.example.mbenben.studydemo.view.credit.CreditActivity;
 import com.example.mbenben.studydemo.view.enviews.ENViewsActivity;
 import com.example.mbenben.studydemo.view.expandabletextview.ExpandableActivity;
-import com.example.mbenben.studydemo.layout.gradationtitle.QQTitleActivity;
 import com.example.mbenben.studydemo.view.fanmenu.FanMenuActivity;
 import com.example.mbenben.studydemo.view.floatingview.FloatViewActivity;
 import com.example.mbenben.studydemo.view.healthytables.HealthyTablesActivity;
@@ -50,6 +49,8 @@ import com.example.mbenben.studydemo.view.shader.ShaderActivity;
 import com.example.mbenben.studydemo.view.switchbutton.SwitchButtonActivity;
 import com.example.mbenben.studydemo.view.tantan.TantanActivity;
 import com.example.mbenben.studydemo.view.timelytext.TimelyTextActivity;
+import com.example.mbenben.studydemo.view.timer.CountDownActivity;
+import com.example.mbenben.studydemo.view.timer.TimerActivity;
 import com.example.mbenben.studydemo.view.toast.NewToastActivity;
 import com.example.mbenben.studydemo.view.verifycode.VerifyCodeActivity;
 import com.example.mbenben.studydemo.view.viscosity.ViscosityActivity;
@@ -65,7 +66,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by MBENBEN on 2017/1/17.
+ * Created by MDove on 2017/1/17.
  */
 
 public class ViewsFragment extends Fragment {
@@ -250,8 +251,20 @@ public class ViewsFragment extends Fragment {
                         startActivity(intentRenkStar);
                         break;
                     case "ColorPickerActivity":
-                        Intent intentColorPicker=new Intent(App.getInstance().getContext(),ColorPickerActivity.class);
+                        Intent intentColorPicker = new Intent(App.getInstance().getContext(), ColorPickerActivity.class);
                         startActivity(intentColorPicker);
+                        break;
+                    case "CountDownActivity":
+                        Intent intentCountDown = new Intent(App.getInstance().getContext(), CountDownActivity.class);
+                        startActivity(intentCountDown);
+                        break;
+
+//                    case "TimerActivity":
+//                        Intent intentTimer = new Intent(App.getInstance().getContext(), TimerActivity.class);
+//                        startActivity(intentTimer);
+//                        break;
+                    default:
+                        break;
                 }
             }
 
@@ -272,7 +285,7 @@ public class ViewsFragment extends Fragment {
         String string = bundle.getString(KEY);
         tvDesc.setText(string);
 
-        if (datas==null) {
+        if (datas == null) {
             datas = new ArrayList<>();
             mapTitle = new HashMap<>();
 
@@ -411,6 +424,14 @@ public class ViewsFragment extends Fragment {
             datas.add("ColorPickerActivity");
             mapTitle.put("ColorPickerActivity", "取色器 / 选色器");
             App.addData(new HashSetSearchBean("ColorPickerActivity", ColorPickerActivity.class));
+
+            datas.add("CountDownActivity");
+            mapTitle.put("CountDownActivity", "广告计时效果");
+            App.addData(new HashSetSearchBean("CountDownActivity", CountDownActivity.class));
+
+//            datas.add("TimerActivity");
+//            mapTitle.put("TimerActivity", "广告计时效果");
+//            App.addData(new HashSetSearchBean("TimerActivity", TimerActivity.class));
         }
     }
 

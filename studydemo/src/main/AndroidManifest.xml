@@ -216,6 +216,16 @@
             android:screenOrientation="portrait" />
 
         <activity
+            android:name=".view.timer.CountDownActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".view.timer.TimerActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <activity
             android:name=".layout.drawerlayout.DrawerLayoutActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />

@@ -8,6 +8,7 @@ import android.support.annotation.ColorInt;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextPaint;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 
 import com.example.mbenben.studydemo.layout.recyclerview.sticky.util.listener.GroupListener;
@@ -65,26 +66,34 @@ public class StickyDecoration extends RecyclerView.ItemDecoration {
         final int childCount = parent.getChildCount();
         final int left = parent.getLeft() + parent.getPaddingLeft();
         final int right = parent.getRight() - parent.getPaddingRight();
-        String preGroupName;      //标记上一个item对应的Group
-        String currentGroupName = null;       //当前item对应的Group
+        //标记上一个item对应的Group
+        String preGroupName;
+        //当前item对应的Group
+        String currentGroupName = null;
+        //遍历所有的子View（所有的Item）
         for (int i = 0; i < childCount; i++) {
             View view = parent.getChildAt(i);
             int position = parent.getChildAdapterPosition(view);
             preGroupName = currentGroupName;
+            //如果拿不到我们想要绘制的XX省的名字，跳过遍历过程。也就是正常的Item不做处理（这不是废话么- -！）
             currentGroupName = getGroupName(position);
             if (currentGroupName == null || TextUtils.equals(currentGroupName, preGroupName))
                 continue;
+            //获取需要操作的ItemDecoration的底部距离屏幕顶部的高度
             int viewBottom = view.getBottom();
-            float bottom = Math.max(mGroupHeight, view.getTop());//决定当前顶部第一个悬浮Group的bottom
+            //决定当前顶部第一个悬浮ItemDecoration的bottom
+            float bottom = Math.max(mGroupHeight, view.getTop());
+            //下一XX省的ItemDecoration一步步逼近我们的首部的悬浮ItemDecoration
             if (position + 1 < itemCount) {
-                //获取下个GroupName
+                //获取下个GroupName（下一个XX省）
                 String nextGroupName = getGroupName(position + 1);
-                //下一组的第一个View接近头部
+                //下一组的第一个View（ItemDecoration）接近头部
                 if (!currentGroupName.equals(nextGroupName) && viewBottom < bottom) {
+                    //bottom最小等于mGroupHeight，而当viewBottom（view.getBottom()）小于bottom时，说明当前首都悬浮的ItemDecoration已经被挤压。不断更新bottom值。（因为我们绘制它时需要坐标信息，也就是这个bottom）
                     bottom = viewBottom;
                 }
             }
-            //根据top绘制group
+            //根据bottom绘制ItemDecoration
             c.drawRect(left, bottom - mGroupHeight, right, bottom, mGroutPaint);
             Paint.FontMetrics fm = mTextPaint.getFontMetrics();
             //文字竖直居中显示
@@ -92,7 +101,6 @@ public class StickyDecoration extends RecyclerView.ItemDecoration {
             c.drawText(currentGroupName, left + mLeftMargin, baseLine, mTextPaint);
         }
     }
-
 
     /**
      * 判断是不是组中的第一个位置

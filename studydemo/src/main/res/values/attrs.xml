@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- 跳过广告效果 -->
+    <declare-styleable name="CountDownView">
+        <attr name="cdv_background_color" format="color"/>
+        <attr name="cdv_border_width" format="dimension"/>
+        <attr name="cdv_border_color" format="color"/>
+        <attr name="cdv_text" format="string"/>
+        <attr name="cdv_text_size" format="dimension"/>
+        <attr name="cdv_text_color" format="color"/>
+    </declare-styleable>
 
+    <declare-styleable name="TimerView">
+        <attr name="android:textSize"/>
+        <attr name="android:textColor"/>
+    </declare-styleable>
+    <declare-styleable name="TimerHorizontalProgressView">
+        <attr name="progress" format="integer"/>
+        <attr name="maxProgress" format="integer"/>
+        <attr name="foregroundProgressColor" format="color"/>
+        <attr name="backgroundProgressColor" format="color"/>
+        <attr name="foregroundProgressType" format="enum">
+            <enum name="rect" value="0"/>
+            <enum name="round" value="1"/>
+        </attr>
+        <attr name="backgroundProgressType" format="enum">
+            <enum name="rect" value="0"/>
+            <enum name="round" value="1"/>
+        </attr>
+    </declare-styleable>
     <!-- 浮动式View -->
     <declare-styleable name="CouponView">
         <attr name="cv_semicircle_gap" format="dimension|reference" />
