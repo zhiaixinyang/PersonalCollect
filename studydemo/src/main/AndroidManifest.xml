@@ -656,7 +656,10 @@
             android:name=".basenote.navigationbar.NavigationBarActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
+        <activity
+            android:name=".view.calendar.CalendarActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
 
         <!-- android:exported="false"禁止其他App使用这个组件 -->
         <activity
@@ -665,8 +668,8 @@
             android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="to_start_two_intent" />
-                <!-- 官方：此句话必须存在 -->
                 <category android:name="to_start_two_intent_by_category" />
+                <!-- 官方：此句话必须存在 -->
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>

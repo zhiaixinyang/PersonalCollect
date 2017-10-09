@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+    <com.example.mbenben.studydemo.view.calendar.WeekDayView
+        android:id="@+id/weekDayLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/weekDayLayout"
+        android:background="@color/gray"/>
+
+    <com.example.mbenben.studydemo.view.calendar.WrapContentHeightGridView
+        android:id="@+id/calendar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/weekDayLayout"
+        android:background="@color/white"
+        android:clickable="true"
+        android:clipChildren="true"
+        android:gravity="right|center_vertical"
+        android:horizontalSpacing="0dip"
+        android:listSelector="@null"
+        android:numColumns="7"
+        android:paddingBottom="0dip"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="0dip"/>
+
+</RelativeLayout>

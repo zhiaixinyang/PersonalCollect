@@ -42,7 +42,14 @@ public class BroadcastReceiverActivity extends Activity {
 				IntentFilter intentfilter = new IntentFilter("BC_Three");
 				BC3 bc3 = 	new BC3();
 				registerReceiver(bc3, intentfilter);
-
+				break;
+			case R.id.send4:
+				Intent sendNotOpen=new Intent();
+				sendNotOpen.setAction("TEST_NOT_OPEN");
+				sendNotOpen.addFlags(Intent.FLAG_INCLUDE_STOPPED_PACKAGES);
+				sendBroadcast(sendNotOpen);
+				break;
+			default:
 				break;
 		}
 	}

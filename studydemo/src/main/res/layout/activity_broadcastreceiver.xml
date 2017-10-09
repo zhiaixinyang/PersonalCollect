@@ -49,5 +49,13 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/send2"
         android:text="发送一条异步广播" />
-
+    <Button
+        android:id="@+id/send4"
+        android:onClick="doClick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/send3"
+        android:text="Test:静态注册无需启动App，也能接受到广播" />
 </RelativeLayout>

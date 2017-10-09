@@ -69,4 +69,9 @@
 
     <dimen name="default_label_size">26sp</dimen>
     <dimen name="default_subtitle_size">22sp</dimen>
+    <dimen name="calendar_item_height">40dp</dimen>
+    <dimen name="calendar_item_date_text_size">14sp</dimen>
+    <dimen name="calendar_item_margin_top">3dp</dimen>
+    <dimen name="calendar_item_cost_text_size">8sp</dimen>
+    <dimen name="calendar_item_margin_bottom">5dp</dimen>
 </resources>

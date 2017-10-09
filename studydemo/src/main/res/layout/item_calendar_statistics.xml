@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/content"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/calendar_item_bg">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/calendar_item_height">
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="7dp"
+            android:layout_marginTop="3dp"
+            android:text="0"
+            android:textColor="#1D1D26"
+            android:textSize="@dimen/calendar_item_date_text_size" />
+
+        <ImageView
+            android:id="@+id/calendarSelect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/date"
+            android:layout_marginRight="9dp"
+            android:layout_marginTop="2dp"
+            android:src="@drawable/calendar_select"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/income"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/calendarSelect"
+            android:layout_marginRight="7dp"
+            android:layout_marginTop="@dimen/calendar_item_margin_top"
+            android:text="0"
+            android:textColor="#0FB0A1"
+            android:textSize="@dimen/calendar_item_cost_text_size" />
+
+        <TextView
+            android:id="@+id/expense"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/income"
+            android:layout_marginBottom="@dimen/calendar_item_margin_bottom"
+            android:layout_marginRight="7dp"
+            android:text="0"
+            android:textColor="#E68F00"
+            android:textSize="@dimen/calendar_item_cost_text_size" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.3dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

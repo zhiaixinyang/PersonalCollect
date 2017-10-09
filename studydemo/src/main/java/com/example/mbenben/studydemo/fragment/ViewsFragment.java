@@ -24,6 +24,7 @@ import com.example.mbenben.studydemo.view.behavior.BehaviorActivity;
 import com.example.mbenben.studydemo.view.bezier.ClearBezierActivity;
 import com.example.mbenben.studydemo.view.bezier.GiftBezierActivity;
 import com.example.mbenben.studydemo.view.bigimage.GlideLoaderActivity;
+import com.example.mbenben.studydemo.view.calendar.CalendarActivity;
 import com.example.mbenben.studydemo.view.canvasapi.CanvasApiActivity;
 import com.example.mbenben.studydemo.view.chart.ChartActivity;
 import com.example.mbenben.studydemo.view.circle.CircleActivity;
@@ -50,7 +51,6 @@ import com.example.mbenben.studydemo.view.switchbutton.SwitchButtonActivity;
 import com.example.mbenben.studydemo.view.tantan.TantanActivity;
 import com.example.mbenben.studydemo.view.timelytext.TimelyTextActivity;
 import com.example.mbenben.studydemo.view.timer.CountDownActivity;
-import com.example.mbenben.studydemo.view.timer.TimerActivity;
 import com.example.mbenben.studydemo.view.toast.NewToastActivity;
 import com.example.mbenben.studydemo.view.verifycode.VerifyCodeActivity;
 import com.example.mbenben.studydemo.view.viscosity.ViscosityActivity;
@@ -258,6 +258,10 @@ public class ViewsFragment extends Fragment {
                         Intent intentCountDown = new Intent(App.getInstance().getContext(), CountDownActivity.class);
                         startActivity(intentCountDown);
                         break;
+                    case "CalendarActivity":
+                        Intent intentCalendar = new Intent(App.getInstance().getContext(), CalendarActivity.class);
+                        startActivity(intentCalendar);
+                        break;
 
 //                    case "TimerActivity":
 //                        Intent intentTimer = new Intent(App.getInstance().getContext(), TimerActivity.class);
@@ -428,6 +432,10 @@ public class ViewsFragment extends Fragment {
             datas.add("CountDownActivity");
             mapTitle.put("CountDownActivity", "广告计时效果");
             App.addData(new HashSetSearchBean("CountDownActivity", CountDownActivity.class));
+
+            datas.add("CalendarActivity");
+            mapTitle.put("CalendarActivity", "自定义日历");
+            App.addData(new HashSetSearchBean("CalendarActivity", CalendarActivity.class));
 
 //            datas.add("TimerActivity");
 //            mapTitle.put("TimerActivity", "广告计时效果");
