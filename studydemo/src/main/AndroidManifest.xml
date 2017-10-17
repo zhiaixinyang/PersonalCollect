@@ -25,7 +25,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -658,6 +659,10 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".view.calendar.CalendarActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".basenote.notification.NotificationActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 

@@ -11,15 +11,27 @@
             android:layout_height="wrap_content">
             <TextView
                 android:layout_width="match_parent"
-                android:text="自定义View"
+                android:text="通知"
                 android:textSize="20sp"
                 android:textColor="@color/white"
                 android:gravity="center"
                 android:layout_height="wrap_content" />
         </android.support.v7.widget.Toolbar>
     </android.support.design.widget.AppBarLayout>
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rlv_main"
+    <Button
+        android:id="@+id/btn_1"
+        android:text="普通通知"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:textSize="16sp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="40dp" />
+    <Button
+        android:id="@+id/btn_2"
+        android:text="RemoteView自定义通知"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
 </LinearLayout>

@@ -6,7 +6,6 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +22,7 @@ import com.example.mbenben.studydemo.basenote.contentprovider.ContentProviderAct
 import com.example.mbenben.studydemo.basenote.dialog.MyDialogActivity;
 import com.example.mbenben.studydemo.basenote.intent.IntentActivity;
 import com.example.mbenben.studydemo.basenote.navigationbar.NavigationBarActivity;
+import com.example.mbenben.studydemo.basenote.notification.NotificationActivity;
 import com.example.mbenben.studydemo.basenote.pattern.PatternActivity;
 import com.example.mbenben.studydemo.basenote.plugin.PluginActivity;
 import com.example.mbenben.studydemo.basenote.scaniamges.imageloader.ScanImageActivity;
@@ -145,6 +145,10 @@ public class AndroidBaseFragment extends Fragment {
                         Intent toStyleImage = new Intent(App.getInstance().getContext(), StyleImageViewActivity.class);
                         startActivity(toStyleImage);
                         break;
+                    case "NotificationActivity":
+                        Intent toNoticifacation = new Intent(App.getInstance().getContext(), NotificationActivity.class);
+                        startActivity(toNoticifacation);
+                        break;
                 }
             }
 
@@ -173,6 +177,9 @@ public class AndroidBaseFragment extends Fragment {
             mapTitle.put("ContentProviderActivity", "ContentProvider获取手机通讯录");
             App.addData(new HashSetSearchBean("ContentProviderActivity", ContentProviderActivity.class));
 
+            datas.add("NotificationActivity");
+            mapTitle.put("NotificationActivity", "Notification的基本应用");
+            App.addData(new HashSetSearchBean("NotificationActivity", NotificationActivity.class));
 
             datas.add("BroadcastReceiverActivity");
             mapTitle.put("BroadcastReceiverActivity", "BroadcastReceiver广播的基本应用");
