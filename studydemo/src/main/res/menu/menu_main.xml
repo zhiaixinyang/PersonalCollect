@@ -8,4 +8,8 @@
         android:orderInCategory="80"
         android:title="search"
         app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/btn_about_me"
+        android:title="Me"
+        app:showAsAction="ifRoom" />
 </menu>

@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-</LinearLayout>
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="@string/clickme"/>
+    <TextView
+        android:id="@+id/bottom1"
+        android:layout_above="@+id/bottom"
+        android:layout_width="match_parent"
+        android:background="@color/red"
+        android:layout_height="40dp" />
+    <TextView
+        android:id="@+id/bottom"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:background="@color/black"
+        android:layout_height="40dp" />
+</RelativeLayout>

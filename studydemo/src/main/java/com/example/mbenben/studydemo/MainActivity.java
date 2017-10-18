@@ -1,37 +1,26 @@
 package com.example.mbenben.studydemo;
 
 import android.content.Intent;
-import android.os.AsyncTask;
+import android.content.IntentFilter;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
 
-import com.example.mbenben.studydemo.base.CommonAdapter;
-import com.example.mbenben.studydemo.base.OnItemClickListener;
-import com.example.mbenben.studydemo.base.ViewHolder;
+import com.example.mbenben.studydemo.basenote.lockscreen.LockScreenBroadcastReceiver;
 import com.example.mbenben.studydemo.db.SearchBean;
 import com.example.mbenben.studydemo.db.SearchDBManager;
-import com.example.mbenben.studydemo.db.SearchListBean;
 import com.example.mbenben.studydemo.fragment.AndroidBaseFragment;
 import com.example.mbenben.studydemo.fragment.AnimsFragment;
 import com.example.mbenben.studydemo.fragment.LayoutFragment;
 import com.example.mbenben.studydemo.fragment.NetFragment;
 import com.example.mbenben.studydemo.fragment.ViewsFragment;
-import com.example.mbenben.studydemo.view.MyBottomSheetDialog;
 import com.example.mbenben.studydemo.view.adline.AdHeadline;
 import com.example.mbenben.studydemo.view.adline.HeadlineBean;
 import com.example.mbenben.studydemo.view.searchbox.SearchFragment;
@@ -45,26 +34,30 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by MBENBEN on 2017/1/17.
+ * Created by MDove on 2017/1/17.
  */
 
-public class MainActivity extends AppCompatActivity implements Toolbar.OnMenuItemClickListener,IOnSearchClickListener {
-    @BindView(R.id.viewPager) ViewPager viewPager;
-    @BindView(R.id.tabLayout) TabLayout tabLayout;
-    @BindView(R.id.toolbar) Toolbar toolbar;
-    @BindView(R.id.ad_headline) AdHeadline adHeadline;
+public class MainActivity extends AppCompatActivity implements Toolbar.OnMenuItemClickListener, IOnSearchClickListener {
+    @BindView(R.id.viewPager)
+    ViewPager viewPager;
+    @BindView(R.id.tabLayout)
+    TabLayout tabLayout;
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
+    @BindView(R.id.ad_headline)
+    AdHeadline adHeadline;
     private LayoutFragment layoutFragment;
     private NetFragment netFragment;
     private ViewsFragment viewsFragment;
     private AnimsFragment animsFragment;
     private AndroidBaseFragment androidBaseFragment;
 
-    private List<HeadlineBean> adHeadLineData =new ArrayList<>();
+    private List<HeadlineBean> adHeadLineData = new ArrayList<>();
 
     private SearchFragment searchFragment;
     private SearchDBManager manager;
 
-    private String[] titles={"Layout","Net","Anim","Views","Base"};
+    private String[] titles = {"Layout", "Net", "Anim", "Views", "Base"};
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -76,7 +69,10 @@ public class MainActivity extends AppCompatActivity implements Toolbar.OnMenuIte
 
     private void initView() {
         ButterKnife.bind(this);
-        manager=new SearchDBManager();
+
+
+
+        manager = new SearchDBManager();
 
         setSupportActionBar(toolbar);
 
@@ -86,11 +82,11 @@ public class MainActivity extends AppCompatActivity implements Toolbar.OnMenuIte
         adHeadline.setData(adHeadLineData);
 
         searchFragment = SearchFragment.newInstance();
-        layoutFragment=LayoutFragment.newInstance("和布局相关的Demo");
-        netFragment=NetFragment.newInstance("网络请求想过的Demo");
-        animsFragment=AnimsFragment.newInstance("动画相关的Demo");
-        viewsFragment=ViewsFragment.newInstance("自定义View相关的Demo");
-        androidBaseFragment=new AndroidBaseFragment().newInstance("Android的基本应用");
+        layoutFragment = LayoutFragment.newInstance("和布局相关的Demo");
+        netFragment = NetFragment.newInstance("网络请求想过的Demo");
+        animsFragment = AnimsFragment.newInstance("动画相关的Demo");
+        viewsFragment = ViewsFragment.newInstance("自定义View相关的Demo");
+        androidBaseFragment = new AndroidBaseFragment().newInstance("Android的基本应用");
 
         toolbar.setOnMenuItemClickListener(this);
         searchFragment.setOnSearchClickListener(this);
@@ -98,13 +94,13 @@ public class MainActivity extends AppCompatActivity implements Toolbar.OnMenuIte
         viewPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
             @Override
             public Fragment getItem(int position) {
-                if (position==0){
+                if (position == 0) {
                     return layoutFragment;
-                }else if(position==1){
+                } else if (position == 1) {
                     return netFragment;
-                }else if(position==2){
+                } else if (position == 2) {
                     return animsFragment;
-                }else if (position==3){
+                } else if (position == 3) {
                     return viewsFragment;
                 }
                 return androidBaseFragment;
@@ -136,6 +132,9 @@ public class MainActivity extends AppCompatActivity implements Toolbar.OnMenuIte
             case R.id.action_search://点击搜索
                 searchFragment.show(getSupportFragmentManager(), SearchFragment.TAG);
                 break;
+            case R.id.btn_about_me:
+                AboutMeActivity.start(this);
+                break;
         }
         return true;
     }
@@ -143,7 +142,7 @@ public class MainActivity extends AppCompatActivity implements Toolbar.OnMenuIte
     @Override
     public void OnSearchClick(String keyword) {
         List<SearchBean> searchList = manager.query(keyword);
-        Intent toRlv=new Intent(MainActivity.this,SearchRlvActivity.class);
+        Intent toRlv = new Intent(MainActivity.this, SearchRlvActivity.class);
         toRlv.putExtra("search_rlv", (Serializable) searchList);
         startActivity(toRlv);
     }

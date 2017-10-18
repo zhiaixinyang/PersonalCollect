@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.example.mbenben.studydemo.R;
 
 /**
- * Created by MBENBEN on 2017/7/18.
+ * Created by MDove on 2017/7/18.
  */
 
 public class VerifyCodeActivity extends AppCompatActivity {
