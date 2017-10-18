@@ -688,8 +688,8 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity android:name=".basenote.lockscreen.LockScreenActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:taskAffinity=""/>
 
         <!-- android:exported="false"禁止其他App使用这个组件 -->
         <activity

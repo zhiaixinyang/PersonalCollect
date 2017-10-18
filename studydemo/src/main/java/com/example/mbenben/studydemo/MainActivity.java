@@ -14,6 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.mbenben.studydemo.basenote.lockscreen.LockScreenBroadcastReceiver;
+import com.example.mbenben.studydemo.basenote.lockscreen.LockScreenService;
 import com.example.mbenben.studydemo.db.SearchBean;
 import com.example.mbenben.studydemo.db.SearchDBManager;
 import com.example.mbenben.studydemo.fragment.AndroidBaseFragment;
@@ -70,7 +71,9 @@ public class MainActivity extends AppCompatActivity implements Toolbar.OnMenuIte
     private void initView() {
         ButterKnife.bind(this);
 
-
+        //启动锁屏服务
+        Intent toLockScreen=new Intent(this, LockScreenService.class);
+        startService(toLockScreen);
 
         manager = new SearchDBManager();
 

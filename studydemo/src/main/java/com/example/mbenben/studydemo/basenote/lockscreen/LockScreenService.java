@@ -1,6 +1,9 @@
 package com.example.mbenben.studydemo.basenote.lockscreen;
 
+import android.app.KeyguardManager;
 import android.app.Service;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.IBinder;
@@ -21,6 +24,14 @@ public class LockScreenService extends Service {
         registerReceiver(new LockScreenBroadcastReceiver(), mScreenOffFilter);
         return Service.START_STICKY;
     }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        // 在此重新启动,使服务常驻内存
+        startService(new Intent(this, LockScreenService.class));
+    }
+
 
 
     @Nullable
