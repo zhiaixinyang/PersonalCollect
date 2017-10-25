@@ -32,7 +32,6 @@ public class BehaviorActivity extends AppCompatActivity {
         setContentView(R.layout.activity_view_behavior);
         initViewAndDatas();
 
-
         rlvMain.setAdapter(new CommonAdapter<String>(
                 App.getInstance().getContext(),
                 R.layout.item_info,

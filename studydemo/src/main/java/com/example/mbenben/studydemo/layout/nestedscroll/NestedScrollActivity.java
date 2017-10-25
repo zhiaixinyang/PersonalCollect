@@ -7,7 +7,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import com.example.mbenben.studydemo.R;
-import com.example.mbenben.studydemo.layout.indicator.MyViewPagerIndicator;
+import com.example.mbenben.studydemo.layout.indicator.view.MyViewPagerIndicator;
 import com.example.mbenben.studydemo.layout.nav.TabFragment;
 
 import java.util.ArrayList;

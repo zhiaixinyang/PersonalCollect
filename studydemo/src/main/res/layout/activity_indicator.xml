@@ -20,7 +20,7 @@
                 android:layout_height="wrap_content" />
         </android.support.v7.widget.Toolbar>
     </android.support.design.widget.AppBarLayout>
-    <com.example.mbenben.studydemo.layout.indicator.MyViewPagerIndicator
+    <com.example.mbenben.studydemo.layout.indicator.view.MyViewPagerIndicator
         android:id="@+id/indicator"
         android:orientation="horizontal"
         android:gravity="center"
@@ -32,7 +32,7 @@
         android:layout_height="50dp"
         android:orientation="horizontal" >
 
-        <com.example.mbenben.studydemo.layout.indicator.ColorTrackView
+        <com.example.mbenben.studydemo.layout.indicator.view.ColorTrackView
             android:id="@+id/id_tab_01"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -43,7 +43,7 @@
             honor:colortrackview_text_origin_color="#ff000000"
             honor:colortrackview_text_size="18sp" />
 
-        <com.example.mbenben.studydemo.layout.indicator.ColorTrackView
+        <com.example.mbenben.studydemo.layout.indicator.view.ColorTrackView
             android:id="@+id/id_tab_02"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -53,7 +53,7 @@
             honor:colortrackview_text_origin_color="#ff000000"
             honor:colortrackview_text_size="18sp" />
 
-        <com.example.mbenben.studydemo.layout.indicator.ColorTrackView
+        <com.example.mbenben.studydemo.layout.indicator.view.ColorTrackView
             android:id="@+id/id_tab_03"
             android:layout_width="0dp"
             android:layout_height="match_parent"

@@ -1,4 +1,4 @@
-package com.example.mbenben.studydemo.layout.indicator;
+package com.example.mbenben.studydemo.layout.indicator.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;

@@ -13,7 +13,7 @@
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="150dp" />
-    <com.example.mbenben.studydemo.layout.indicator.MyViewPagerIndicator
+    <com.example.mbenben.studydemo.layout.indicator.view.MyViewPagerIndicator
         android:id="@+id/indicator"
         android:layout_width="match_parent"
         android:background="@color/black"

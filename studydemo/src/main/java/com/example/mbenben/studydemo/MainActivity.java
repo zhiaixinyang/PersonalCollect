@@ -1,7 +1,6 @@
 package com.example.mbenben.studydemo;
 
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
@@ -13,8 +12,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.example.mbenben.studydemo.base.A;
-import com.example.mbenben.studydemo.basenote.lockscreen.LockScreenBroadcastReceiver;
 import com.example.mbenben.studydemo.basenote.lockscreen.LockScreenService;
 import com.example.mbenben.studydemo.db.SearchBean;
 import com.example.mbenben.studydemo.db.SearchDBManager;

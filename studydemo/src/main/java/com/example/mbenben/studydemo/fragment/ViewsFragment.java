@@ -31,6 +31,7 @@ import com.example.mbenben.studydemo.view.circle.CircleActivity;
 import com.example.mbenben.studydemo.view.colorpickerView.ColorPickerActivity;
 import com.example.mbenben.studydemo.view.couponview.CouponViewActivity;
 import com.example.mbenben.studydemo.view.credit.CreditActivity;
+import com.example.mbenben.studydemo.view.dianzan.DianZanActivity;
 import com.example.mbenben.studydemo.view.enviews.ENViewsActivity;
 import com.example.mbenben.studydemo.view.expandabletextview.ExpandableActivity;
 import com.example.mbenben.studydemo.view.fanmenu.FanMenuActivity;
@@ -267,7 +268,10 @@ public class ViewsFragment extends Fragment {
                         Intent intentMiSportView = new Intent(App.getInstance().getContext(), MiSportViewActivity.class);
                         startActivity(intentMiSportView);
                         break;
-
+                    case "DianZanActivity":
+                        Intent intentDianZan = new Intent(App.getInstance().getContext(), DianZanActivity.class);
+                        startActivity(intentDianZan);
+                        break;
 //                    case "TimerActivity":
 //                        Intent intentTimer = new Intent(App.getInstance().getContext(), TimerActivity.class);
 //                        startActivity(intentTimer);
@@ -446,6 +450,9 @@ public class ViewsFragment extends Fragment {
             mapTitle.put("MiSportViewActivity", "仿小米运动自定义View");
             App.addData(new HashSetSearchBean("MiSportViewActivity", MiSportViewActivity.class));
 
+            datas.add("DianZanActivity");
+            mapTitle.put("DianZanActivity","仿即刻点赞的效果");
+            App.addData(new HashSetSearchBean("DianZanActivity", DianZanActivity.class));
 //            datas.add("TimerActivity");
 //            mapTitle.put("TimerActivity", "广告计时效果");
 //            App.addData(new HashSetSearchBean("TimerActivity", TimerActivity.class));

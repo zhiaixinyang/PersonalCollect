@@ -10,6 +10,7 @@ import android.widget.Button;
 import com.example.mbenben.studydemo.R;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /**
  * Created by MDove on 2017/10/25.
@@ -27,6 +28,7 @@ public class MiSportViewActivity extends AppCompatActivity{
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mi_sport);
+        ButterKnife.bind(this);
 
         SportsData sportsData = new SportsData();
         sportsData.step = 2714;

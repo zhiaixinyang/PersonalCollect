@@ -1,4 +1,4 @@
-package com.example.mbenben.studydemo.layout.indicator;
+package com.example.mbenben.studydemo.layout.indicator.view;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -42,7 +42,6 @@ public class MyViewPagerIndicator extends LinearLayout{
 
     public MyViewPagerIndicator(Context context, AttributeSet attrs) {
         super(context, attrs);
-        Log.d("aaaa", "MyViewPagerIndicator:" + "getWidth:" + getWidth());
         init();
     }
 

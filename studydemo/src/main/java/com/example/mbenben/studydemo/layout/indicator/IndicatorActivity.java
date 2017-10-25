@@ -8,6 +8,8 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
 import com.example.mbenben.studydemo.R;
+import com.example.mbenben.studydemo.layout.indicator.view.ColorTrackView;
+import com.example.mbenben.studydemo.layout.indicator.view.MyViewPagerIndicator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +22,8 @@ import butterknife.ButterKnife;
  */
 
 public class IndicatorActivity extends AppCompatActivity {
-    @BindView(R.id.indicator) MyViewPagerIndicator myViewPagerIndicator;
+    @BindView(R.id.indicator)
+    MyViewPagerIndicator myViewPagerIndicator;
     @BindView(R.id.viewPager) ViewPager viewPager;
     private List<String> titles=new ArrayList<>();
 

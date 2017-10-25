@@ -684,6 +684,10 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
+        <activity android:name=".view.dianzan.DianZanActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+
         <activity android:name=".view.misportsconnectview.MiSportViewActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
