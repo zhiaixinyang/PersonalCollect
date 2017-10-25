@@ -2,30 +2,58 @@
 <resources>
     <!-- 跳过广告效果 -->
     <declare-styleable name="CountDownView">
-        <attr name="cdv_background_color" format="color"/>
-        <attr name="cdv_border_width" format="dimension"/>
-        <attr name="cdv_border_color" format="color"/>
-        <attr name="cdv_text" format="string"/>
-        <attr name="cdv_text_size" format="dimension"/>
-        <attr name="cdv_text_color" format="color"/>
+        <attr name="cdv_background_color" format="color" />
+        <attr name="cdv_border_width" format="dimension" />
+        <attr name="cdv_border_color" format="color" />
+        <attr name="cdv_text" format="string" />
+        <attr name="cdv_text_size" format="dimension" />
+        <attr name="cdv_text_color" format="color" />
+    </declare-styleable>
+
+    <!-- 滑动的尺子 -->
+    <declare-styleable name="BooheeRuler">
+        <attr name="minScale" format="integer" />
+        <attr name="maxScale" format="integer" />
+        <attr name="smallScaleLength" format="dimension" />
+        <attr name="smallScaleWidth" format="dimension" />
+        <attr name="bigScaleLength" format="dimension" />
+        <attr name="bigScaleWidth" format="dimension" />
+        <attr name="cursorHeight" format="dimension" />
+        <attr name="cursorWidth" format="dimension" />
+        <attr name="textMarginTop" format="dimension" />
+        <attr name="numberTextSize" format="dimension" />
+        <attr name="scaleInterval" format="dimension" />
+        <attr name="numberTextColor" format="color" />
+        <attr name="scaleColor" format="color" />
+        <attr name="cursorDrawable" format="dimension" />
+        <attr name="currentScale" format="float" />
+        <attr name="count" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="KgNumberLayout">
+        <attr name="scaleTextSize" format="dimension" />
+        <attr name="kgTextSize" format="dimension" />
+        <attr name="scaleTextColor" format="color" />
+        <attr name="kgTextColor" format="color" />
+        <attr name="kgUnitText" format="string" />
     </declare-styleable>
 
     <declare-styleable name="TimerView">
-        <attr name="android:textSize"/>
-        <attr name="android:textColor"/>
+        <attr name="android:textSize" />
+        <attr name="android:textColor" />
     </declare-styleable>
     <declare-styleable name="TimerHorizontalProgressView">
-        <attr name="progress" format="integer"/>
-        <attr name="maxProgress" format="integer"/>
-        <attr name="foregroundProgressColor" format="color"/>
-        <attr name="backgroundProgressColor" format="color"/>
+        <attr name="progress" format="integer" />
+        <attr name="maxProgress" format="integer" />
+        <attr name="foregroundProgressColor" format="color" />
+        <attr name="backgroundProgressColor" format="color" />
         <attr name="foregroundProgressType" format="enum">
-            <enum name="rect" value="0"/>
-            <enum name="round" value="1"/>
+            <enum name="rect" value="0" />
+            <enum name="round" value="1" />
         </attr>
         <attr name="backgroundProgressType" format="enum">
-            <enum name="rect" value="0"/>
-            <enum name="round" value="1"/>
+            <enum name="rect" value="0" />
+            <enum name="round" value="1" />
         </attr>
     </declare-styleable>
     <!-- 浮动式View -->
@@ -463,29 +491,29 @@
     <!-- PS / 修图功能 -->
     <declare-styleable name="StyleImageView">
         <attr name="style">
-            <enum name="none" value="-1"/>
-            <enum name="saturation" value="0"/>
-            <enum name="grey_scale" value="1"/>
-            <enum name="invert" value="2"/>
-            <enum name="rgb_to_bgr" value="3"/>
-            <enum name="sepia" value="4"/>
-            <enum name="black_and_white" value="5"/>
-            <enum name="bright" value="6"/>
-            <enum name="vintage_pinhole" value="7"/>
-            <enum name="kodachrome" value="8"/>
-            <enum name="technicolor" value="9"/>
+            <enum name="none" value="-1" />
+            <enum name="saturation" value="0" />
+            <enum name="grey_scale" value="1" />
+            <enum name="invert" value="2" />
+            <enum name="rgb_to_bgr" value="3" />
+            <enum name="sepia" value="4" />
+            <enum name="black_and_white" value="5" />
+            <enum name="bright" value="6" />
+            <enum name="vintage_pinhole" value="7" />
+            <enum name="kodachrome" value="8" />
+            <enum name="technicolor" value="9" />
         </attr>
-        <attr name="brightness" format="integer"/>
-        <attr name="contrast" format="float"/>
-        <attr name="saturation" format="float"/>
-        <attr name="enable_animation" format="boolean"/>
-        <attr name="animation_duration" format="integer"/>
+        <attr name="brightness" format="integer" />
+        <attr name="contrast" format="float" />
+        <attr name="saturation" format="float" />
+        <attr name="enable_animation" format="boolean" />
+        <attr name="animation_duration" format="integer" />
     </declare-styleable>
 
     <!-- 颜色选择器 -->
     <declare-styleable name="colorpicker">
-        <attr name="cp_src" format="reference"/>
-        <attr name="cp_selector" format="reference"/>
+        <attr name="cp_src" format="reference" />
+        <attr name="cp_selector" format="reference" />
     </declare-styleable>
 
     <!-- 自定义评分栏 -->

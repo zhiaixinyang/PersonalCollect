@@ -8,19 +8,23 @@ import android.widget.TextView;
 
 import com.example.mbenben.studydemo.R;
 import com.example.mbenben.studydemo.view.select.flowlayout.MyFlowLayout;
+import com.example.mbenben.studydemo.view.select.select.BooheeRuler;
+import com.example.mbenben.studydemo.view.select.select.KgNumberLayout;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by MBENBEN on 2017/1/3.
+ * Created by MDove on 2017/1/3.
  */
 
 public class SelectActivity extends AppCompatActivity implements SelectView.getNumberListener{
     private SelectView selectView;
-    private MyFlowLayout myFlowLayout;
     private List<String> stringList = new ArrayList<>();
     private TextView numberTxt;
+    private BooheeRuler mBooheeRuler;
+    private KgNumberLayout mKgNumberLayout;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,28 +39,12 @@ public class SelectActivity extends AppCompatActivity implements SelectView.getN
     }
 
     public void init() {
-
-        stringList.add("数据库");
-        stringList.add("移动开发");
-        stringList.add("前端开发");
-        stringList.add("微信小程序");
-        stringList.add("服务器开发");
-        stringList.add("PHP");
-        stringList.add("人工智能");
-        stringList.add("大数据");
         selectView = (SelectView) findViewById(R.id.my_selectview);
-        myFlowLayout = (MyFlowLayout) findViewById(R.id.my_flowlayout);
-        for (String textView : stringList) {
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
-                    LinearLayout.LayoutParams.WRAP_CONTENT);
-            params.setMargins(40, 40, 40, 40);
-            TextView showText = new TextView(this);
-            showText.setLayoutParams(params);
-            showText.setTextSize(20);
-            showText.setText(textView);
-            myFlowLayout.addView(showText);
-        }
+        mBooheeRuler = (BooheeRuler) findViewById(R.id.br);
+        mKgNumberLayout = (KgNumberLayout) findViewById(R.id.knl);
         numberTxt = (TextView) findViewById(R.id.number_txt);
+
+        mKgNumberLayout.bindRuler(mBooheeRuler);
         selectView.setListener(this);
     }
     @Override

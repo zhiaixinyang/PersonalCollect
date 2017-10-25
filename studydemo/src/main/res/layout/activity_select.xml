@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_height="match_parent">
     <com.example.mbenben.studydemo.view.select.SelectView
@@ -12,16 +12,43 @@
         app:selecttextSize="20dp"/>
     <TextView
         android:id="@+id/number_txt"
+        android:layout_below="@+id/my_selectview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="20dp"
         android:text="选择的数字为:"
         android:textSize="20dp" />
-    <com.example.mbenben.studydemo.view.select.flowlayout.MyFlowLayout
-        android:id="@+id/my_flowlayout"
+    <!--数字和单位-->
+    <com.example.mbenben.studydemo.view.select.select.KgNumberLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="50dp"
-        android:background="@color/trans_gray"/>
-</LinearLayout>
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/br"
+        app:scaleTextSize="50sp"
+        app:kgTextSize="20sp"
+        android:layout_marginBottom="20dp"
+        android:id="@+id/knl"/>
+
+    <!--尺子-->
+    <com.example.mbenben.studydemo.view.select.select.BooheeRuler
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:id="@+id/br"
+        android:background="@color/colorDirtyWithe"
+        app:minScale="464"
+        app:maxScale="2000"
+        app:numberTextSize="22sp"
+        app:textMarginTop="80dp"
+        app:cursorWidth="4dp"
+        app:cursorHeight="45dp"
+        app:smallScaleLength="20dp"
+        app:smallScaleWidth="1.5dp"
+        app:bigScaleLength="40dp"
+        app:bigScaleWidth="2.5dp"
+        app:scaleInterval="11.5dp"
+        app:currentScale="666"
+        app:count="10"
+        app:cursorDrawable="@drawable/cursor_shape"
+        android:layout_alignParentBottom="true"
+        />
+</RelativeLayout>

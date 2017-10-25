@@ -41,6 +41,7 @@ import com.example.mbenben.studydemo.view.htmltext.HtmlTextActivity;
 import com.example.mbenben.studydemo.view.justify.JustifyTextActivity;
 import com.example.mbenben.studydemo.view.loading.LoadingTextViewActivity;
 import com.example.mbenben.studydemo.view.lol.LoLActivity;
+import com.example.mbenben.studydemo.view.misportsconnectview.MiSportViewActivity;
 import com.example.mbenben.studydemo.view.passwordedittext.PassWordActivity;
 import com.example.mbenben.studydemo.view.progressbar.ProgressBarActivity;
 import com.example.mbenben.studydemo.view.qqhealth.QQHealthActivity;
@@ -262,6 +263,10 @@ public class ViewsFragment extends Fragment {
                         Intent intentCalendar = new Intent(App.getInstance().getContext(), CalendarActivity.class);
                         startActivity(intentCalendar);
                         break;
+                    case "MiSportViewActivity":
+                        Intent intentMiSportView = new Intent(App.getInstance().getContext(), MiSportViewActivity.class);
+                        startActivity(intentMiSportView);
+                        break;
 
 //                    case "TimerActivity":
 //                        Intent intentTimer = new Intent(App.getInstance().getContext(), TimerActivity.class);
@@ -436,6 +441,10 @@ public class ViewsFragment extends Fragment {
             datas.add("CalendarActivity");
             mapTitle.put("CalendarActivity", "自定义日历");
             App.addData(new HashSetSearchBean("CalendarActivity", CalendarActivity.class));
+
+            datas.add("MiSportViewActivity");
+            mapTitle.put("MiSportViewActivity", "仿小米运动自定义View");
+            App.addData(new HashSetSearchBean("MiSportViewActivity", MiSportViewActivity.class));
 
 //            datas.add("TimerActivity");
 //            mapTitle.put("TimerActivity", "广告计时效果");
