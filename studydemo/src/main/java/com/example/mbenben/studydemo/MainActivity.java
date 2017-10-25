@@ -13,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.mbenben.studydemo.base.A;
 import com.example.mbenben.studydemo.basenote.lockscreen.LockScreenBroadcastReceiver;
 import com.example.mbenben.studydemo.basenote.lockscreen.LockScreenService;
 import com.example.mbenben.studydemo.db.SearchBean;
@@ -65,7 +66,6 @@ public class MainActivity extends AppCompatActivity implements Toolbar.OnMenuIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView();
-
     }
 
     private void initView() {

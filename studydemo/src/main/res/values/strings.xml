@@ -21,6 +21,11 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <string name="sub_title_separator">|</string>
+    <string name="sub_title_format" formatted="false">%.1f km | %d kcal</string>
+    <string name="connect">CONNECT</string>
+    <string name="disconnect">DISCONNECT</string>
+
     <string name="picker_time">时间选择器</string>
     <string name="picker_province">条件选择器</string>
 
