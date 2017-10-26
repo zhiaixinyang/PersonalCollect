@@ -699,6 +699,10 @@
             android:screenOrientation="portrait"
             android:taskAffinity=""/>
 
+        <activity android:name=".view.ruffle.RuffleActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"/>
+
         <!-- android:exported="false"禁止其他App使用这个组件 -->
         <activity
             android:name=".basenote.intent.TwoIntentActivity"

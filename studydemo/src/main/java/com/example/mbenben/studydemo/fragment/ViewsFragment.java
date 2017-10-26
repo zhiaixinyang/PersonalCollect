@@ -48,6 +48,7 @@ import com.example.mbenben.studydemo.view.progressbar.ProgressBarActivity;
 import com.example.mbenben.studydemo.view.qqhealth.QQHealthActivity;
 import com.example.mbenben.studydemo.view.radar.RadarViewActivity;
 import com.example.mbenben.studydemo.view.renkstar.RenkStarActivity;
+import com.example.mbenben.studydemo.view.ruffle.RuffleActivity;
 import com.example.mbenben.studydemo.view.shader.ShaderActivity;
 import com.example.mbenben.studydemo.view.switchbutton.SwitchButtonActivity;
 import com.example.mbenben.studydemo.view.tantan.TantanActivity;
@@ -272,6 +273,10 @@ public class ViewsFragment extends Fragment {
                         Intent intentDianZan = new Intent(App.getInstance().getContext(), DianZanActivity.class);
                         startActivity(intentDianZan);
                         break;
+                    case "RuffleActivity":
+                        Intent intentRuffle = new Intent(App.getInstance().getContext(), RuffleActivity.class);
+                        startActivity(intentRuffle);
+                        break;
 //                    case "TimerActivity":
 //                        Intent intentTimer = new Intent(App.getInstance().getContext(), TimerActivity.class);
 //                        startActivity(intentTimer);
@@ -453,6 +458,10 @@ public class ViewsFragment extends Fragment {
             datas.add("DianZanActivity");
             mapTitle.put("DianZanActivity","仿即刻点赞的效果");
             App.addData(new HashSetSearchBean("DianZanActivity", DianZanActivity.class));
+
+            datas.add("RuffleActivity");
+            mapTitle.put("RuffleActivity","仿红板报翻动");
+            App.addData(new HashSetSearchBean("RuffleActivity", RuffleActivity.class));
 //            datas.add("TimerActivity");
 //            mapTitle.put("TimerActivity", "广告计时效果");
 //            App.addData(new HashSetSearchBean("TimerActivity", TimerActivity.class));

@@ -10,6 +10,11 @@
         <attr name="cdv_text_color" format="color" />
     </declare-styleable>
 
+    <!-- 红板报翻动效果 -->
+    <declare-styleable name="MapView">
+        <attr name="mv_background" format="reference" />
+    </declare-styleable>
+
     <!-- 仿即刻点赞 -->
     <declare-styleable name="ThumbUpView">
         <attr name="tuv_count" format="integer"/>
