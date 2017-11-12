@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.example.mbenben.studydemo.basenote.lockscreen.SwipeBackLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.example.mbenben.studydemo.basenote.lockscreen.HorizontalSwipeBackLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/swip_back"
+    android:background="@color/transparent"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <RelativeLayout
@@ -26,4 +28,4 @@
             android:layout_height="wrap_content" />
     </RelativeLayout>
 
-</com.example.mbenben.studydemo.basenote.lockscreen.SwipeBackLayout>
+</com.example.mbenben.studydemo.basenote.lockscreen.HorizontalSwipeBackLayout >

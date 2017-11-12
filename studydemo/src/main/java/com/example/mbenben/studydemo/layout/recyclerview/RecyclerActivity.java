@@ -58,6 +58,17 @@ public class RecyclerActivity extends AppCompatActivity {
         data.add("悬浮固定头部Item");
         data.add("右侧索引导航");
 
+        rlvMain.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+            }
+
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+            }
+        });
 
         rlvMain.setLayoutManager(new LinearLayoutManager(this));
         adapter = new RecyclerAdapter(data);

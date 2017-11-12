@@ -23,7 +23,7 @@ import butterknife.ButterKnife;
 
 public class LockScreenActivity extends AppCompatActivity {
     @BindView(R.id.swip_back)
-    SwipeBackLayout swipeBackLayout;
+    HorizontalSwipeBackLayout swipeBackLayout;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,13 +32,14 @@ public class LockScreenActivity extends AppCompatActivity {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD);
         //使Activity在锁屏时仍然能够显示
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED);
-        Log.d("aaa","?!!");
         setContentView(R.layout.activity_lock_screen);
+
         ButterKnife.bind(this);
 
+        swipeBackLayout.setOnWipeBackListener(new HorizontalSwipeBackLayout.SwipeBackFinishActivityListener(this));
 
-        swipeBackLayout.setSwipeBackListener(new SwipeBackLayout.SwipeBackFinishActivityListener(this));
     }
+
 
     private int mStartX;
     @Override
@@ -60,6 +61,7 @@ public class LockScreenActivity extends AppCompatActivity {
         return true;
     }
 
+    @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         int key = event.getKeyCode();
         switch (key) {

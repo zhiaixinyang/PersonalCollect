@@ -697,6 +697,7 @@
             android:screenOrientation="portrait" />
         <activity android:name=".basenote.lockscreen.LockScreenActivity"
             android:screenOrientation="portrait"
+            android:theme="@style/LockScreenTheme"
             android:taskAffinity=""/>
 
         <activity android:name=".view.ruffle.RuffleActivity"
