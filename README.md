@@ -2,9 +2,12 @@
 
 > 增加了最新的Apk文件
 
-> 如果您需要导入工程到AndroidStudio当中，请注意：
+# 如果您需要导入工程到AndroidStudio当中，请注意：
+
 > 因为历遗留原因，这个项目是一个module，需要使用import module方式在现有的project中导入
+
 > 因为使用了一些库，请在project.gradle中增加：classpath'com.neenbedankt.gradle.plugins:android-apt:1.8'
+
 > 内部使用了constraint-layout布局，请在app.gradle中改换成您本地拥有的版本
 
 这个项目包含了作者遇到的一些大神们写效果，动画等等，也包含了我自己写的一些小Demo。
