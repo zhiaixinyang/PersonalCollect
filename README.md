@@ -7,6 +7,9 @@
 > 因为历遗留原因，这个项目是一个module，需要使用import module方式在现有的project中导入
 
 > 因为使用了一些库，请在project.gradle中增加：classpath'com.neenbedankt.gradle.plugins:android-apt:1.8'
+> （AS3.0不在兼容apt，因此不需要增加这一行，只需要把app.gradle的相关apt依赖换成annotationProcessor。
+    例如：apt 'com.jakewharton:butterknife-compiler:8.4.0'  换成  annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'）
+
 
 > 内部使用了constraint-layout布局，请在app.gradle中改换成您本地拥有的版本
 
