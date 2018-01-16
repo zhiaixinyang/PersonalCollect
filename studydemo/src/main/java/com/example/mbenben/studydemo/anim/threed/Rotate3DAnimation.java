@@ -1,4 +1,4 @@
-package com.example.mbenben.studydemo.anim;
+package com.example.mbenben.studydemo.anim.threed;
 
 import android.graphics.Camera;
 import android.graphics.Matrix;
@@ -6,7 +6,7 @@ import android.view.animation.Animation;
 import android.view.animation.Transformation;
 
 /**
- * Created by MBENBEN on 2016/12/8.
+ * Created by MDove on 2016/12/8.
  */
 
 public class Rotate3DAnimation extends Animation {

@@ -136,4 +136,52 @@ demonstrating that you can also justify the content of an editable EditText.</st
     <string name="open">Open</string>
     <string name="close">Close</string>
 
+    <string name="none">None</string>
+    <string name="autofix">Autofix</string>
+    <string name="bw">Min/Max Color Intensity</string>
+    <string name="brightness">Brightness</string>
+    <string name="contrast">Contrast</string>
+    <string name="crossprocess">Cross Process</string>
+    <string name="documentary">Documentary</string>
+    <string name="duotone">Duo Tone</string>
+    <string name="filllight">Fill Light</string>
+    <string name="fisheye">Fish Eye</string>
+    <string name="flipvert">Flip Vertical</string>
+    <string name="fliphor">Flip Horizontal</string>
+    <string name="grain">Grain</string>
+    <string name="grayscale">Grayscale</string>
+    <string name="lomoish">Lomoish</string>
+    <string name="negative">Negative</string>
+    <string name="posterize">Posterize</string>
+    <string name="rotate">Rotate</string>
+    <string name="saturate">Saturate</string>
+    <string name="sepia">Sepia</string>
+    <string name="sharpen">Sharpen</string>
+    <string name="temperature">Temperature</string>
+    <string name="tint">Tint</string>
+    <string name="vignette">Vignette</string>
+
+    <string name="intro_message">
+        <![CDATA[
+
+
+            This sample shows how to use the Media Effects APIs that were introduced in Android 4.0.
+            These APIs let you apply effects to image frames represented as OpenGL ES 2.0 textures.
+            Image frames can be images loaded from disk, frames from the device\'s camera, or other
+            video streams.
+
+
+        ]]>
+    </string>
+
+    <string name="sample_show_log">Show Log</string>
+    <string name="sample_hide_log">Hide Log</string>
+
+    <string name="current_mplitude">Modify amplitude, current: %1$s</string>
+    <string name="current_Disparity">Modify amplitude gap, current: %1$s</string>
+    <string name="current_float_time">Modify movement speed, current: %1$s</string>
+    <string name="current_rotate_time">Modify rotation speed, current: %1$s</string>
+    <string name="delete_progress_btn_text">Clean up progress</string>
+    <string name="increase_the_progress_btn_text">Increase the progress： </string>
+
 </resources>

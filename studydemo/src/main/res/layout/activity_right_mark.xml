@@ -11,23 +11,15 @@
             android:layout_height="wrap_content">
             <TextView
                 android:layout_width="match_parent"
-                android:text="自定义View"
+                android:text="自定义动画"
                 android:textSize="20sp"
                 android:textColor="@color/white"
                 android:gravity="center"
                 android:layout_height="wrap_content" />
         </android.support.v7.widget.Toolbar>
     </android.support.design.widget.AppBarLayout>
-    <Button
-        android:id="@+id/btn_my_love"
+    <com.example.mbenben.studydemo.anim.path.RightMarkView
+        android:id="@+id/right_mark"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="心形SurfaceView"
-        android:textAllCaps="false"/>
-    <Button
-        android:id="@+id/btn_my_customs"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="自定义SurfaceView"
-        android:textAllCaps="false"/>
+        android:layout_height="match_parent" />
 </LinearLayout>

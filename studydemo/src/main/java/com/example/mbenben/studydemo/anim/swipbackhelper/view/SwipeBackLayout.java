@@ -139,7 +139,7 @@ public class SwipeBackLayout extends FrameLayout {
 
     /**
      * Set a color to use for the scrim that obscures primary content while a
-     * drawer is open.
+     * drawer is double_pull_open.
      *
      * @param color Color to use in 0xAARRGGBB format.
      */

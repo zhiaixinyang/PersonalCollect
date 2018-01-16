@@ -22,6 +22,7 @@ import com.example.mbenben.studydemo.db.SearchDBManager;
 import com.example.mbenben.studydemo.layout.arclayout.ArcLayoutActivity;
 import com.example.mbenben.studydemo.layout.bottomnavigationview.BottomNavigationViewActivity;
 import com.example.mbenben.studydemo.layout.chanelview.ChanelActivity;
+import com.example.mbenben.studydemo.layout.doublepull.DoublePullActivity;
 import com.example.mbenben.studydemo.layout.drawerlayout.my.SlidingActivity;
 import com.example.mbenben.studydemo.layout.esaysidebar.EasySideBarBuilder;
 import com.example.mbenben.studydemo.layout.esaysidebar.SortCityActivity;
@@ -269,6 +270,10 @@ public class LayoutFragment extends Fragment {
                         Intent toChanel = new Intent(App.getInstance().getContext(), ChanelActivity.class);
                         startActivity(toChanel);
                         break;
+                    case "DoublePullActivity":
+                        Intent toDoublePull = new Intent(App.getInstance().getContext(), DoublePullActivity.class);
+                        startActivity(toDoublePull);
+                        break;
                     default:
                         break;
                 }
@@ -431,6 +436,10 @@ public class LayoutFragment extends Fragment {
             datas.add("ChanelActivity");
             mapTitle.put("ChanelActivity", "堆叠式ViewPager（不是ViewPager的实现）");
             App.addData(new HashSetSearchBean("ChanelActivity", ChanelActivity.class));
+
+            datas.add("DoublePullActivity");
+            mapTitle.put("DoublePullActivity", "上滑式拉动布局");
+            App.addData(new HashSetSearchBean("DoublePullActivity", DoublePullActivity.class));
         }
     }
 

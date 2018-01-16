@@ -18,6 +18,7 @@ import com.example.mbenben.studydemo.anim.ValueAnimActivity;
 import com.example.mbenben.studydemo.anim.camera.CameraAnimActivity;
 import com.example.mbenben.studydemo.anim.circularanim.CircleAnimActivity;
 import com.example.mbenben.studydemo.anim.lodinganim.LoadingAnimActivity;
+import com.example.mbenben.studydemo.anim.path.RightMarkActivity;
 import com.example.mbenben.studydemo.anim.swipbackhelper.activity.SwipeBackActivity;
 import com.example.mbenben.studydemo.base.CommonAdapter;
 import com.example.mbenben.studydemo.base.OnItemClickListener;
@@ -116,6 +117,10 @@ public class AnimsFragment extends Fragment {
                         Intent intentAnimator = new Intent(App.getInstance().getContext(), AnimatorActivity.class);
                         startActivity(intentAnimator);
                         break;
+                    case "RightMarkActivity":
+                        Intent intentRightMark = new Intent(App.getInstance().getContext(), RightMarkActivity.class);
+                        startActivity(intentRightMark);
+                        break;
                     default:
                         break;
                 }
@@ -173,6 +178,10 @@ public class AnimsFragment extends Fragment {
             datas.add("AnimatorActivity");
             mapTitle.put("AnimatorActivity", "属性的各种基础用法动画");
             App.addData(new HashSetSearchBean("AnimatorActivity", AnimatorActivity.class));
+
+            datas.add("RightMarkActivity");
+            mapTitle.put("RightMarkActivity", "Path对号动画");
+            App.addData(new HashSetSearchBean("RightMarkActivity", RightMarkActivity.class));
         }
     }
 

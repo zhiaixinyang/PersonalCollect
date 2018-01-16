@@ -43,6 +43,7 @@ import com.example.mbenben.studydemo.view.justify.JustifyTextActivity;
 import com.example.mbenben.studydemo.view.loading.LoadingTextViewActivity;
 import com.example.mbenben.studydemo.view.lol.LoLActivity;
 import com.example.mbenben.studydemo.view.misportsconnectview.MiSportViewActivity;
+import com.example.mbenben.studydemo.view.opengl.OpenGLActivity;
 import com.example.mbenben.studydemo.view.passwordedittext.PassWordActivity;
 import com.example.mbenben.studydemo.view.progressbar.ProgressBarActivity;
 import com.example.mbenben.studydemo.view.qqhealth.QQHealthActivity;
@@ -282,6 +283,10 @@ public class ViewsFragment extends Fragment {
                         Intent intentSurface = new Intent(App.getInstance().getContext(), SurfaceViewActivity.class);
                         startActivity(intentSurface);
                         break;
+                    case "OpenGLActivity":
+                        Intent intentOpenGL = new Intent(App.getInstance().getContext(), OpenGLActivity.class);
+                        startActivity(intentOpenGL);
+                        break;
 //                    case "TimerActivity":
 //                        Intent intentTimer = new Intent(App.getInstance().getContext(), TimerActivity.class);
 //                        startActivity(intentTimer);
@@ -471,6 +476,10 @@ public class ViewsFragment extends Fragment {
             datas.add("SurfaceViewActivity");
             mapTitle.put("SurfaceViewActivity","SurfaceView相关");
             App.addData(new HashSetSearchBean("SurfaceViewActivity", SurfaceViewActivity.class));
+
+            datas.add("OpenGLActivity");
+            mapTitle.put("OpenGLActivity","OpenGL相关");
+            App.addData(new HashSetSearchBean("OpenGLActivity", OpenGLActivity.class));
 //            datas.add("TimerActivity");
 //            mapTitle.put("TimerActivity", "广告计时效果");
 //            App.addData(new HashSetSearchBean("TimerActivity", TimerActivity.class));
