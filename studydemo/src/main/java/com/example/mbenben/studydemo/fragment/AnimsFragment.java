@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.example.mbenben.studydemo.App;
 import com.example.mbenben.studydemo.R;
+import com.example.mbenben.studydemo.anim.AnimatorActivity;
 import com.example.mbenben.studydemo.anim.ValueAnimActivity;
 import com.example.mbenben.studydemo.anim.camera.CameraAnimActivity;
 import com.example.mbenben.studydemo.anim.circularanim.CircleAnimActivity;
@@ -111,6 +112,10 @@ public class AnimsFragment extends Fragment {
                         Intent intentCameraAnim = new Intent(App.getInstance().getContext(), CameraAnimActivity.class);
                         startActivity(intentCameraAnim);
                         break;
+                    case "AnimatorActivity":
+                        Intent intentAnimator = new Intent(App.getInstance().getContext(), AnimatorActivity.class);
+                        startActivity(intentAnimator);
+                        break;
                     default:
                         break;
                 }
@@ -164,6 +169,10 @@ public class AnimsFragment extends Fragment {
             datas.add("CameraAnimActivity");
             mapTitle.put("CameraAnimActivity", "Camera+属性动画");
             App.addData(new HashSetSearchBean("CameraAnimActivity", CameraAnimActivity.class));
+
+            datas.add("AnimatorActivity");
+            mapTitle.put("AnimatorActivity", "属性的各种基础用法动画");
+            App.addData(new HashSetSearchBean("AnimatorActivity", AnimatorActivity.class));
         }
     }
 

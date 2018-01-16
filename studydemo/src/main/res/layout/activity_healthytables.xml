@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:healthy="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/activity_main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-
+    android:orientation="vertical"
+    android:layout_height="match_parent">
     <android.support.design.widget.AppBarLayout
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
@@ -22,272 +21,278 @@
                 android:layout_height="wrap_content" />
         </android.support.v7.widget.Toolbar>
     </android.support.design.widget.AppBarLayout>
-
-    <LinearLayout
+    <ScrollView
+        android:id="@+id/activity_main"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:background="@color/white"
-            android:orientation="horizontal"
-            android:paddingLeft="16dp">
-
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center"
-                android:src="@mipmap/heartbreak" />
-
-            <TextView
-                style="@style/healthy_report_textstyle"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="一周心率数据" />
-        </LinearLayout>
-
-        <com.example.mbenben.studydemo.view.healthytables.HealthyTablesView
-            style="@style/healthyview_style"
-            healthy:tableType="heartrate" />
-
-        <TextView
-            android:id="@+id/textView"
-            style="@style/healthy_notify_texstyle"
-            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="大事不妙,掐指一算你这心率快挂了。心似双丝网,中有千千结。" />
+            android:layout_marginTop="12dp"
+            android:orientation="vertical">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:paddingLeft="16dp">
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="16dp"
-            android:background="#dbdbdb" />
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/heartbreak" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:background="@color/white"
-            android:orientation="horizontal"
-            android:paddingLeft="16dp">
+                <TextView
+                    style="@style/healthy_report_textstyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="一周心率数据" />
+            </LinearLayout>
 
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center"
-                android:src="@mipmap/blood_oxygen" />
-
-            <TextView
-                style="@style/healthy_report_textstyle"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="一周血氧数据" />
-        </LinearLayout>
-
-        <com.example.mbenben.studydemo.view.healthytables.HealthyTablesView
-            style="@style/healthyview_style"
-            healthy:tableType="blood_oxygen" />
-
-        <TextView
-            style="@style/healthy_notify_texstyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="血氧饱和度欠佳,晚上少撸。有道是:小撸怡情,大撸伤身,强橹飞灰湮灭!" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="16dp"
-            android:background="#dbdbdb" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:background="@color/white"
-            android:orientation="horizontal"
-            android:paddingLeft="16dp">
-
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center"
-                android:src="@mipmap/activity" />
+            <com.example.mbenben.studydemo.view.healthytables.HealthyTablesView
+                style="@style/healthyview_style"
+                healthy:tableType="heartrate" />
 
             <TextView
-                style="@style/healthy_report_textstyle"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="一周步行数据" />
-        </LinearLayout>
+                android:id="@+id/textView"
+                style="@style/healthy_notify_texstyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="大事不妙,掐指一算你这心率快挂了。心似双丝网,中有千千结。" />
 
-        <com.example.mbenben.studydemo.view.healthytables.HealthyTablesView
-            style="@style/healthyview_style"
-            healthy:tableType="activity" />
 
-        <TextView
-            style="@style/healthy_notify_texstyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="神行太保戴宗,人称戴院长。因他有道术，一日能行八百里，人都唤他神行太保。十分仗义疏财。" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:background="#dbdbdb" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="16dp"
-            android:background="#dbdbdb" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:paddingLeft="16dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@color/white"
-            android:orientation="horizontal"
-            android:paddingLeft="16dp">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/blood_oxygen" />
 
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center"
-                android:src="@mipmap/sleep" />
+                <TextView
+                    style="@style/healthy_report_textstyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="一周血氧数据" />
+            </LinearLayout>
+
+            <com.example.mbenben.studydemo.view.healthytables.HealthyTablesView
+                style="@style/healthyview_style"
+                healthy:tableType="blood_oxygen" />
 
             <TextView
-                android:id="@+id/textView3"
-                style="@style/healthy_report_textstyle"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="一周睡眠数据" />
+                style="@style/healthy_notify_texstyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="血氧饱和度欠佳,晚上少撸。有道是:小撸怡情,大撸伤身,强橹飞灰湮灭!" />
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:background="#dbdbdb" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:paddingLeft="16dp">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/activity" />
+
+                <TextView
+                    style="@style/healthy_report_textstyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="一周步行数据" />
+            </LinearLayout>
+
+            <com.example.mbenben.studydemo.view.healthytables.HealthyTablesView
+                style="@style/healthyview_style"
+                healthy:tableType="activity" />
+
+            <TextView
+                style="@style/healthy_notify_texstyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="神行太保戴宗,人称戴院长。因他有道术，一日能行八百里，人都唤他神行太保。十分仗义疏财。" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:background="#dbdbdb" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@color/white"
-                android:orientation="vertical">
+                android:orientation="horizontal"
+                android:paddingLeft="16dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/sleep" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    style="@style/healthy_report_textstyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="一周睡眠数据" />
+
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="25dp"
-                    android:layout_gravity="center|right"
-                    android:orientation="horizontal">
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@color/white"
+                    android:orientation="vertical">
 
-                    <View
-                        android:layout_width="60dp"
-                        android:layout_height="2dp"
-                        android:layout_gravity="center"
-                        android:background="@color/blue_dark" />
-
-                    <TextView
+                    <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="6dp"
-                        android:layout_marginRight="16dp"
-                        android:gravity="center"
-                        android:text="深睡眠"
-                        android:textSize="11sp" />
-                </LinearLayout>
+                        android:layout_height="25dp"
+                        android:layout_gravity="center|right"
+                        android:orientation="horizontal">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="25dp"
-                    android:layout_gravity="center|right"
-                    android:orientation="horizontal">
+                        <View
+                            android:layout_width="60dp"
+                            android:layout_height="2dp"
+                            android:layout_gravity="center"
+                            android:background="@color/blue_dark" />
 
-                    <View
-                        android:layout_width="60dp"
-                        android:layout_height="2dp"
-                        android:layout_gravity="center"
-                        android:background="@color/blue_light" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="6dp"
+                            android:layout_marginRight="16dp"
+                            android:gravity="center"
+                            android:text="深睡眠"
+                            android:textSize="11sp" />
+                    </LinearLayout>
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="6dp"
-                        android:layout_marginRight="16dp"
-                        android:gravity="center"
-                        android:text="总睡眠"
-                        android:textSize="11sp" />
+                        android:layout_height="25dp"
+                        android:layout_gravity="center|right"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="60dp"
+                            android:layout_height="2dp"
+                            android:layout_gravity="center"
+                            android:background="@color/blue_light" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="6dp"
+                            android:layout_marginRight="16dp"
+                            android:gravity="center"
+                            android:text="总睡眠"
+                            android:textSize="11sp" />
+                    </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
 
-        <com.example.mbenben.studydemo.view.healthytables.HealthyTablesView
-            style="@style/healthyview_style"
-            healthy:tableType="sleep" />
-
-        <TextView
-            style="@style/healthy_notify_texstyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="“入房向壁上看时，有唐伯虎画的海棠春睡图，两边有宋学士秦太虚写的一副对联，其联云：嫩寒锁梦因春冷，芳气笼人是酒香。案上设着武则天当日镜室中设的宝镜，一边摆着飞燕立着舞过的金盘，盘内盛着安禄山掷过伤了太真乳的木瓜。上面设着寿昌公主于含章殿下卧的榻，悬的是同昌公主制的联珠帐。”" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="16dp"
-            android:background="#dbdbdb" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:background="@color/white"
-            android:orientation="horizontal"
-            android:paddingLeft="16dp">
-
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center"
-                android:src="@mipmap/temp" />
+            <com.example.mbenben.studydemo.view.healthytables.HealthyTablesView
+                style="@style/healthyview_style"
+                healthy:tableType="sleep" />
 
             <TextView
-                style="@style/healthy_report_textstyle"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="一周体表温度数据" />
-        </LinearLayout>
+                style="@style/healthy_notify_texstyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="“入房向壁上看时，有唐伯虎画的海棠春睡图，两边有宋学士秦太虚写的一副对联，其联云：嫩寒锁梦因春冷，芳气笼人是酒香。案上设着武则天当日镜室中设的宝镜，一边摆着飞燕立着舞过的金盘，盘内盛着安禄山掷过伤了太真乳的木瓜。上面设着寿昌公主于含章殿下卧的榻，悬的是同昌公主制的联珠帐。”" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:background="#dbdbdb" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:paddingLeft="16dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/temp" />
+
+                <TextView
+                    style="@style/healthy_report_textstyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="一周体表温度数据" />
+            </LinearLayout>
 
 
-        <com.example.mbenben.studydemo.view.healthytables.HealthyTablesView
-            style="@style/healthyview_style"
-            healthy:tableType="sinketemp" />
-
-        <TextView
-            android:id="@+id/tv_skintemp"
-            style="@style/healthy_notify_texstyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="《神照经》乃武学中的上乘内功,初级阶段不建议修炼,目前您体内郁热未散,当心周火入魔!" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:background="@color/white"
-            android:orientation="horizontal"
-            android:paddingLeft="16dp">
-
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center"
-                android:src="@mipmap/breath" />
+            <com.example.mbenben.studydemo.view.healthytables.HealthyTablesView
+                style="@style/healthyview_style"
+                healthy:tableType="sinketemp" />
 
             <TextView
-                style="@style/healthy_report_textstyle"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="一周呼吸数据" />
+                android:id="@+id/tv_skintemp"
+                style="@style/healthy_notify_texstyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="《神照经》乃武学中的上乘内功,初级阶段不建议修炼,目前您体内郁热未散,当心周火入魔!" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:paddingLeft="16dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/breath" />
+
+                <TextView
+                    style="@style/healthy_report_textstyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="一周呼吸数据" />
+            </LinearLayout>
+
+
+            <com.example.mbenben.studydemo.view.healthytables.HealthyTablesView
+                style="@style/healthyview_style"
+                healthy:tableType="breath" />
+
+            <TextView
+                style="@style/healthy_notify_texstyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="龟息功，是属于所谓仿生气功之一的吐纳气功。《脉望》载：“牛虽有耳，而息之以鼻；龟虽有鼻，而息之以耳。凡言龟息者，当以耳言也。”意思是说，龟息导引，要以听息为之。《芝田录》亦言：“睡则气以耳出，名龟息，必大龟寿。”" />
         </LinearLayout>
-
-
-        <com.example.mbenben.studydemo.view.healthytables.HealthyTablesView
-            style="@style/healthyview_style"
-            healthy:tableType="breath" />
-
-        <TextView
-            style="@style/healthy_notify_texstyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="龟息功，是属于所谓仿生气功之一的吐纳气功。《脉望》载：“牛虽有耳，而息之以鼻；龟虽有鼻，而息之以耳。凡言龟息者，当以耳言也。”意思是说，龟息导引，要以听息为之。《芝田录》亦言：“睡则气以耳出，名龟息，必大龟寿。”" />
-    </LinearLayout>
-</ScrollView>
+    </ScrollView>
+</LinearLayout>

@@ -50,6 +50,7 @@ import com.example.mbenben.studydemo.view.radar.RadarViewActivity;
 import com.example.mbenben.studydemo.view.renkstar.RenkStarActivity;
 import com.example.mbenben.studydemo.view.ruffle.RuffleActivity;
 import com.example.mbenben.studydemo.view.shader.ShaderActivity;
+import com.example.mbenben.studydemo.view.surfaceview.SurfaceViewActivity;
 import com.example.mbenben.studydemo.view.switchbutton.SwitchButtonActivity;
 import com.example.mbenben.studydemo.view.tantan.TantanActivity;
 import com.example.mbenben.studydemo.view.timelytext.TimelyTextActivity;
@@ -277,6 +278,10 @@ public class ViewsFragment extends Fragment {
                         Intent intentRuffle = new Intent(App.getInstance().getContext(), RuffleActivity.class);
                         startActivity(intentRuffle);
                         break;
+                    case "SurfaceViewActivity":
+                        Intent intentSurface = new Intent(App.getInstance().getContext(), SurfaceViewActivity.class);
+                        startActivity(intentSurface);
+                        break;
 //                    case "TimerActivity":
 //                        Intent intentTimer = new Intent(App.getInstance().getContext(), TimerActivity.class);
 //                        startActivity(intentTimer);
@@ -462,6 +467,10 @@ public class ViewsFragment extends Fragment {
             datas.add("RuffleActivity");
             mapTitle.put("RuffleActivity","仿红板报翻动");
             App.addData(new HashSetSearchBean("RuffleActivity", RuffleActivity.class));
+
+            datas.add("SurfaceViewActivity");
+            mapTitle.put("SurfaceViewActivity","SurfaceView相关");
+            App.addData(new HashSetSearchBean("SurfaceViewActivity", SurfaceViewActivity.class));
 //            datas.add("TimerActivity");
 //            mapTitle.put("TimerActivity", "广告计时效果");
 //            App.addData(new HashSetSearchBean("TimerActivity", TimerActivity.class));

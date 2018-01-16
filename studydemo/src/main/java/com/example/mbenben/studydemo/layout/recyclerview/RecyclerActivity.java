@@ -11,6 +11,9 @@ import android.view.View;
 import com.example.mbenben.studydemo.R;
 import com.example.mbenben.studydemo.layout.recyclerview.adapter.RecyclerAdapter;
 import com.example.mbenben.studydemo.layout.recyclerview.changerlv.RLVChangeActivity;
+import com.example.mbenben.studydemo.layout.recyclerview.itemdecoration.CityItemDecorationActivity;
+import com.example.mbenben.studydemo.layout.recyclerview.itemdecoration.ItemDecorationActivity;
+import com.example.mbenben.studydemo.layout.recyclerview.layoutmanager.LayoutManagerActivity;
 import com.example.mbenben.studydemo.layout.recyclerview.others.commonAdapterUse.CommonAdapterActivity;
 import com.example.mbenben.studydemo.layout.recyclerview.others.dragItemAnimatorUse.DragItemAnimatorActivity;
 import com.example.mbenben.studydemo.layout.recyclerview.others.headerFooterUse.HeaderFooterActivity;
@@ -49,6 +52,9 @@ public class RecyclerActivity extends AppCompatActivity {
         data.add("多种Item布局共存");
         data.add("官方可滑动删除Item");
         data.add("简单封装ViewHolder以及Adapter");
+        data.add("ItemDecoration");
+        data.add("MyCityItemDecoration");
+        data.add("自定义LayoutManager");
         data.add("----------");
         data.add("万能Adapter展示");
         data.add("可拖动的Item+动画");
@@ -70,7 +76,7 @@ public class RecyclerActivity extends AppCompatActivity {
             }
         });
 
-        rlvMain.setLayoutManager(new LinearLayoutManager(this));
+        rlvMain.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,true));
         adapter = new RecyclerAdapter(data);
         rlvMain.setAdapter(adapter);
         adapter.setOnItemClickListener(new RecyclerAdapter.OnItemClickListener() {
@@ -120,6 +126,18 @@ public class RecyclerActivity extends AppCompatActivity {
                     case "右侧索引导航":
                         Intent intentRLVChange = new Intent(RecyclerActivity.this, RLVChangeActivity.class);
                         startActivity(intentRLVChange);
+                        break;
+                    case "ItemDecoration":
+                        Intent intentItemDecora = new Intent(RecyclerActivity.this, ItemDecorationActivity.class);
+                        startActivity(intentItemDecora);
+                        break;
+                    case "MyCityItemDecoration":
+                        Intent intentMyCityItem = new Intent(RecyclerActivity.this, CityItemDecorationActivity.class);
+                        startActivity(intentMyCityItem);
+                        break;
+                    case "自定义LayoutManager":
+                        Intent toLayoutManager=new Intent(RecyclerActivity.this, LayoutManagerActivity.class);
+                        startActivity(toLayoutManager);
                         break;
                 }
             }
