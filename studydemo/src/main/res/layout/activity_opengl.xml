@@ -24,5 +24,11 @@
         android:textAllCaps="false"
         android:layout_width="match_parent"
         android:layout_height="50dp" />
+    <!--<Button-->
+        <!--android:id="@+id/btn_flag"-->
+        <!--android:text="飘扬的国旗OpenGL"-->
+        <!--android:textAllCaps="false"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="50dp" />-->
 
 </LinearLayout>

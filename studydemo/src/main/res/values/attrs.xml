@@ -568,4 +568,15 @@
         <attr name="bsb_always_show_bubble_delay" format="integer" /> <!--the delay duration before bubble shows all the time, default: 200ms-->
         <attr name="bsb_hide_bubble" format="boolean" /> <!--hide bubble, default: false-->
     </declare-styleable>
+
+    <!-- 涟漪式按钮 -->
+    <declare-styleable name="CuboidButton">
+        <attr name="cub_color" format="color"/>
+        <attr name="cub_hover_color" format="color"/>
+        <attr name="cub_border_color" format="color"/>
+        <attr name="cub_icon" format="integer"/>
+        <attr name="cub_border_radius" format="dimension" />
+        <attr name="cub_fontstyle" format="string"/>
+        <attr name="cub_riple_effect" format="boolean"></attr>
+    </declare-styleable>
 </resources>

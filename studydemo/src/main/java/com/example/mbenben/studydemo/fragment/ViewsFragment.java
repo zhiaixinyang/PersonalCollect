@@ -31,6 +31,7 @@ import com.example.mbenben.studydemo.view.circle.CircleActivity;
 import com.example.mbenben.studydemo.view.colorpickerView.ColorPickerActivity;
 import com.example.mbenben.studydemo.view.couponview.CouponViewActivity;
 import com.example.mbenben.studydemo.view.credit.CreditActivity;
+import com.example.mbenben.studydemo.view.cuboid.CuboidBtnActivity;
 import com.example.mbenben.studydemo.view.dianzan.DianZanActivity;
 import com.example.mbenben.studydemo.view.enviews.ENViewsActivity;
 import com.example.mbenben.studydemo.view.expandabletextview.ExpandableActivity;
@@ -291,6 +292,10 @@ public class ViewsFragment extends Fragment {
 //                        Intent intentTimer = new Intent(App.getInstance().getContext(), TimerActivity.class);
 //                        startActivity(intentTimer);
 //                        break;
+                    case "CuboidBtnActivity":
+                        Intent intentCuboidBtn = new Intent(App.getInstance().getContext(), CuboidBtnActivity.class);
+                        startActivity(intentCuboidBtn);
+                        break;
                     default:
                         break;
                 }
@@ -480,6 +485,10 @@ public class ViewsFragment extends Fragment {
             datas.add("OpenGLActivity");
             mapTitle.put("OpenGLActivity","OpenGL相关");
             App.addData(new HashSetSearchBean("OpenGLActivity", OpenGLActivity.class));
+
+            datas.add("CuboidBtnActivity");
+            mapTitle.put("CuboidBtnActivity","涟漪式按钮");
+            App.addData(new HashSetSearchBean("CuboidBtnActivity", CuboidBtnActivity.class));
 //            datas.add("TimerActivity");
 //            mapTitle.put("TimerActivity", "广告计时效果");
 //            App.addData(new HashSetSearchBean("TimerActivity", TimerActivity.class));

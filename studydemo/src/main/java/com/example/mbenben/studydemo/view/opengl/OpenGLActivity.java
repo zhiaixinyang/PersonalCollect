@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.example.mbenben.studydemo.R;
+import com.example.mbenben.studydemo.view.opengl.flag.FlagActivity;
 import com.example.mbenben.studydemo.view.opengl.google.OpenGLGoogleActivity;
 
 /**
@@ -24,5 +25,11 @@ public class OpenGLActivity extends AppCompatActivity {
                 startActivity(new Intent(OpenGLActivity.this, OpenGLGoogleActivity.class));
             }
         });
+//        findViewById(R.id.btn_flag).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(OpenGLActivity.this, FlagActivity.class));
+//            }
+//        });
     }
 }
