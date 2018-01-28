@@ -20,6 +20,7 @@ import com.example.mbenben.studydemo.fragment.AnimsFragment;
 import com.example.mbenben.studydemo.fragment.LayoutFragment;
 import com.example.mbenben.studydemo.fragment.NetFragment;
 import com.example.mbenben.studydemo.fragment.ViewsFragment;
+import com.example.mbenben.studydemo.view.AboutMeDialog;
 import com.example.mbenben.studydemo.view.adline.AdHeadline;
 import com.example.mbenben.studydemo.view.adline.HeadlineBean;
 import com.example.mbenben.studydemo.view.searchbox.SearchFragment;
@@ -133,7 +134,8 @@ public class MainActivity extends AppCompatActivity implements Toolbar.OnMenuIte
                 searchFragment.show(getSupportFragmentManager(), SearchFragment.TAG);
                 break;
             case R.id.btn_about_me:
-                AboutMeActivity.start(this);
+                AboutMeDialog aboutMeDialog = new AboutMeDialog(this);
+                aboutMeDialog.show();
                 break;
         }
         return true;

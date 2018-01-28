@@ -183,5 +183,7 @@ demonstrating that you can also justify the content of an editable EditText.</st
     <string name="current_rotate_time">Modify rotation speed, current: %1$s</string>
     <string name="delete_progress_btn_text">Clean up progress</string>
     <string name="increase_the_progress_btn_text">Increase the progress： </string>
+    <string name="about_me" >关于我</string>
+    <string name="about_me_content" >一个96后的双非Android彩笔，目前在一家创业公司做Android实习生，准正式员工。</string>
 
 </resources>

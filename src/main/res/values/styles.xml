@@ -29,6 +29,14 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="AboutMeDialog" parent="@style/Theme.AppCompat.DayNight.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:backgroundDimAmount">0.6</item>
+    </style>
+
     <style name="healthyview_style">
         <item name="android:paddingBottom">32dp</item>
         <item name="android:paddingLeft">60dp</item>
