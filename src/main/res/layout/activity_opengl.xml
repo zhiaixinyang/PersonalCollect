@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="自定义View"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+    <Button
+        android:id="@+id/btn_google"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="谷歌官方OpenGL"
+        android:textAllCaps="false" />
+    <!--<Button-->
+    <!--android:id="@+id/btn_flag"-->
+    <!--android:text="飘扬的国旗OpenGL"-->
+    <!--android:textAllCaps="false"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="50dp" />-->
+    <Button
+        android:id="@+id/btn_3d"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="OpenGL加载3D"
+        android:textAllCaps="false" />
+
+</LinearLayout>
