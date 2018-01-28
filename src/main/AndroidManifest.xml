@@ -804,6 +804,11 @@
             android:screenOrientation="portrait" />
 
         <activity
+            android:name=".view.bitmap.BitmapActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <activity
             android:name=".layout.doublepull.DoublePullActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />

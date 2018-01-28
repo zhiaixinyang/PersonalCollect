@@ -24,6 +24,7 @@ import com.example.mbenben.studydemo.view.behavior.BehaviorActivity;
 import com.example.mbenben.studydemo.view.bezier.ClearBezierActivity;
 import com.example.mbenben.studydemo.view.bezier.GiftBezierActivity;
 import com.example.mbenben.studydemo.view.bigimage.GlideLoaderActivity;
+import com.example.mbenben.studydemo.view.bitmap.BitmapActivity;
 import com.example.mbenben.studydemo.view.calendar.CalendarActivity;
 import com.example.mbenben.studydemo.view.canvasapi.CanvasApiActivity;
 import com.example.mbenben.studydemo.view.chart.ChartActivity;
@@ -494,6 +495,10 @@ public class ViewsFragment extends Fragment {
             datas.add("XiaoMiActivity");
             mapTitle.put("XiaoMiActivity","小米3D式钟表");
             App.addData(new HashSetSearchBean("XiaoMiActivity", XiaoMiActivity.class));
+
+            datas.add("BitmapActivity");
+            mapTitle.put("BitmapActivity","Bitmap小用法，四图合一");
+            App.addData(new HashSetSearchBean("BitmapActivity", BitmapActivity.class));
 //            datas.add("TimerActivity");
 //            mapTitle.put("TimerActivity", "广告计时效果");
 //            App.addData(new HashSetSearchBean("TimerActivity", TimerActivity.class));
