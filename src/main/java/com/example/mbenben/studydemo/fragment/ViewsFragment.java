@@ -62,6 +62,7 @@ import com.example.mbenben.studydemo.view.verifycode.VerifyCodeActivity;
 import com.example.mbenben.studydemo.view.viscosity.ViscosityActivity;
 import com.example.mbenben.studydemo.view.wave.WaveActivity;
 import com.example.mbenben.studydemo.view.weibosport.WeiBoSportActivity;
+import com.example.mbenben.studydemo.view.xiaomi.XiaoMiActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -489,6 +490,10 @@ public class ViewsFragment extends Fragment {
             datas.add("CuboidBtnActivity");
             mapTitle.put("CuboidBtnActivity","涟漪式按钮");
             App.addData(new HashSetSearchBean("CuboidBtnActivity", CuboidBtnActivity.class));
+
+            datas.add("XiaoMiActivity");
+            mapTitle.put("XiaoMiActivity","小米3D式钟表");
+            App.addData(new HashSetSearchBean("XiaoMiActivity", XiaoMiActivity.class));
 //            datas.add("TimerActivity");
 //            mapTitle.put("TimerActivity", "广告计时效果");
 //            App.addData(new HashSetSearchBean("TimerActivity", TimerActivity.class));

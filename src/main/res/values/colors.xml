@@ -234,4 +234,9 @@
     <color name="color_1D1D26">#1D1D26</color>
     <color name="color_959595">#959595</color>
     <color name="color_FFE6BD">#ffe6bd</color>
+
+    <color name="darkRed">#702216</color>
+    <color name="lightGray">#323232</color>
+    <color name="deepGray">#8B8B8B</color>
+    <color name="ocbg">#237EAD</color>
 </resources>

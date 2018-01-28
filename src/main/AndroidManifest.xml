@@ -799,6 +799,11 @@
             android:screenOrientation="portrait" />
 
         <activity
+            android:name=".view.xiaomi.XiaoMiActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <activity
             android:name=".layout.doublepull.DoublePullActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
