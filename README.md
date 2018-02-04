@@ -6,3 +6,5 @@
 
 目前一直在保持更新。
 
+效果简单展示：
+![](https://github.com/zhiaixinyang/PersonalCollect/blob/master/asd.gif)
