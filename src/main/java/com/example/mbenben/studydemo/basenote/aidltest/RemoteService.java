@@ -10,8 +10,10 @@ import android.os.RemoteException;
 import android.support.annotation.Nullable;
 import android.support.v4.text.TextUtilsCompat;
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.example.mbenben.studydemo.utils.ToastUtils;
+import com.example.mbenben.studydemo.utils.log.LogUtils;
 
 import java.lang.ref.WeakReference;
 
@@ -20,6 +22,7 @@ import java.lang.ref.WeakReference;
  */
 
 public class RemoteService extends Service {
+    private static final String TAG="RemoteService";
     public static final String ACTION_HANDLE_ONE = "action_handle_one";
     public static final String ACTION_HANDLE_TWO = "action_handle_two";
     private BroadcastReceiver mReceiver = new BroadcastReceiver() {
@@ -48,7 +51,7 @@ public class RemoteService extends Service {
     }
 
     public void sayData(AidlData aidlData){
-        ToastUtils.noUIToastShort(aidlData.mData);
+        LogUtils.d(TAG,aidlData.mData);
     }
 
     private void registerBroadcast() {

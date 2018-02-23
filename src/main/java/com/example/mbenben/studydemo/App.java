@@ -10,11 +10,16 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Created by MBENBEN on 2016/3/10.
+ * Created by MDove on 2016/3/10.
  */
 public class App extends Application{
     private static Context context;
     private static Set<HashSetSearchBean> data;
+
+    public static boolean isDebug() {
+        return BuildConfig.DEBUG;
+    }
+
     @Override
     public void onCreate() {
         super.onCreate();
