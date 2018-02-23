@@ -17,6 +17,7 @@ import com.example.mbenben.studydemo.annotation.MyButterKnifeActivity;
 import com.example.mbenben.studydemo.base.CommonAdapter;
 import com.example.mbenben.studydemo.base.OnItemClickListener;
 import com.example.mbenben.studydemo.base.ViewHolder;
+import com.example.mbenben.studydemo.basenote.aidltest.RemoteActivity;
 import com.example.mbenben.studydemo.basenote.broadcastreceiver.BroadcastReceiverActivity;
 import com.example.mbenben.studydemo.basenote.contentprovider.ContentProviderActivity;
 import com.example.mbenben.studydemo.basenote.dialog.MyDialogActivity;
@@ -149,6 +150,9 @@ public class AndroidBaseFragment extends Fragment {
                         Intent toNoticifacation = new Intent(App.getInstance().getContext(), NotificationActivity.class);
                         startActivity(toNoticifacation);
                         break;
+                    case "RemoteActivity":
+                        RemoteActivity.start(getActivity(), "AIDL进程通讯");
+                        break;
                 }
             }
 
@@ -228,6 +232,10 @@ public class AndroidBaseFragment extends Fragment {
             datas.add("StyleImageViewActivity");
             mapTitle.put("StyleImageViewActivity", "PS / 修图 功能");
             App.addData(new HashSetSearchBean("StyleImageViewActivity", StyleImageViewActivity.class));
+
+            datas.add("RemoteActivity");
+            mapTitle.put("RemoteActivity", "AIDL进程通讯");
+            App.addData(new HashSetSearchBean("RemoteActivity", RemoteActivity.class));
         }
     }
 

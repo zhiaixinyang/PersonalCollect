@@ -813,6 +813,10 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
+        <activity android:name=".basenote.aidltest.RemoteActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
         <receiver android:name=".basenote.broadcastreceiver.BC1">
             <intent-filter android:priority="100">
                 <action android:name="BC_One" />
@@ -824,6 +828,9 @@
             </intent-filter>
         </receiver>
 
+        <service android:name=".basenote.aidltest.RemoteService"
+            android:process=":bg"
+            android:exported="false"/>
         <service android:name=".basenote.service.MyStartService" />
         <service android:name=".basenote.service.MyBindService" />
         <service android:name=".basenote.service.download.DownLoadService" />

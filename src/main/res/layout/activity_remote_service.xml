@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:onClick="broadcastOne"
+        android:text="发送广播ONE"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:onClick="broadcastTwo"
+        android:text="发送广播TWO"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:onClick="sendRemote"
+        android:text="向另一个进程发送AidlData“Hi，我来自主进程”"
+        android:textColor="@color/black"
+        android:textSize="12sp" />
+</LinearLayout>

@@ -63,7 +63,7 @@ public class FullDelDemoAdapter extends RecyclerView.Adapter<FullDelDemoAdapter.
                 if (null != mOnSwipeListener) {
                     //如果删除时，不使用mAdapter.notifyItemRemoved(pos)，则删除没有动画效果，
                     //且如果想让侧滑菜单同时关闭，需要同时调用 ((CstSwipeDelMenu) holder.itemView).quickClose();
-                    //((CstSwipeDelMenu) holder.itemView).quickClose();
+//                    ((CstSwipeDelMenu) holder.itemView).quickClose();
                     mOnSwipeListener.onDel(holder.getAdapterPosition());
                 }
             }
