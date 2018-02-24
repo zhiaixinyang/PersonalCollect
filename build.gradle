@@ -13,6 +13,10 @@ android {
         versionName "1.0"
     }
     buildTypes {
+//        debug {
+//            buildConfigField "String", "COMPILE_SDK_VERSION", "\"${COMPILE_SDK_VERSION}\""
+//            resValue "string", "compile_sdk_version", "\"${COMPILE_SDK_VERSION}\""
+//        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
