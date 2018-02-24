@@ -813,6 +813,10 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
+        <activity android:name=".view.touchview.TouchViewActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
         <activity android:name=".basenote.aidltest.RemoteActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />

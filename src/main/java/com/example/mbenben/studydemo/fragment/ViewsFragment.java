@@ -59,6 +59,7 @@ import com.example.mbenben.studydemo.view.tantan.TantanActivity;
 import com.example.mbenben.studydemo.view.timelytext.TimelyTextActivity;
 import com.example.mbenben.studydemo.view.timer.CountDownActivity;
 import com.example.mbenben.studydemo.view.toast.NewToastActivity;
+import com.example.mbenben.studydemo.view.touchview.TouchViewActivity;
 import com.example.mbenben.studydemo.view.verifycode.VerifyCodeActivity;
 import com.example.mbenben.studydemo.view.viscosity.ViscosityActivity;
 import com.example.mbenben.studydemo.view.wave.WaveActivity;
@@ -150,7 +151,7 @@ public class ViewsFragment extends Fragment {
                         WaveActivity.start(getActivity(), "波浪动画实例");
                         break;
                     case "ViscosityActivity":
-                        ViscosityActivity.start(getActivity(),"仿QQ粘性消息拖拽效果");
+                        ViscosityActivity.start(getActivity(), "仿QQ粘性消息拖拽效果");
                         break;
                     case "ExpandableActivity":
                         Intent intentSelect = new Intent(App.getInstance().getContext(), ExpandableActivity.class);
@@ -287,6 +288,9 @@ public class ViewsFragment extends Fragment {
                     case "CuboidBtnActivity":
                         Intent intentCuboidBtn = new Intent(App.getInstance().getContext(), CuboidBtnActivity.class);
                         startActivity(intentCuboidBtn);
+                        break;
+                    case "TouchViewActivity":
+                        TouchViewActivity.start(getActivity(), "手势拖动图片效果");
                         break;
                     default:
                         break;
@@ -489,6 +493,11 @@ public class ViewsFragment extends Fragment {
             datas.add("BitmapActivity");
             mapTitle.put("BitmapActivity", "Bitmap小用法，四图合一");
             App.addData(new HashSetSearchBean("BitmapActivity", BitmapActivity.class));
+
+            datas.add("TouchViewActivity");
+            mapTitle.put("TouchViewActivity", "手势拖动图片效果");
+            App.addData(new HashSetSearchBean("TouchViewActivity", TouchViewActivity.class));
+
 //            datas.add("TimerActivity");
 //            mapTitle.put("TimerActivity", "广告计时效果");
 //            App.addData(new HashSetSearchBean("TimerActivity", TimerActivity.class));
