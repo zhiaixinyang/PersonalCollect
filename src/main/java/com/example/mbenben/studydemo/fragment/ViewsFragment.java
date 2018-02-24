@@ -123,44 +123,34 @@ public class ViewsFragment extends Fragment {
             public void onItemClick(ViewGroup parent, View view, Object o, int position) {
                 switch (o.toString()) {
                     case "ClearBezierActivity":
-                        Intent intentNav = new Intent(App.getInstance().getContext(), ClearBezierActivity.class);
-                        startActivity(intentNav);
+                        ClearBezierActivity.start(getActivity(), "贝塞尔曲线实现发生火箭的效果");
                         break;
                     case "GiftBezierActivity":
-                        Intent intentView = new Intent(App.getInstance().getContext(), GiftBezierActivity.class);
-                        startActivity(intentView);
+                        GiftBezierActivity.start(getActivity(), "贝塞尔曲线实现发生直播平台送礼物的效果");
                         break;
                     case "HealthyTablesActivity":
-                        Intent intentNestedScroll = new Intent(App.getInstance().getContext(), HealthyTablesActivity.class);
-                        startActivity(intentNestedScroll);
+                        HealthyTablesActivity.start(getActivity(), "折线图效果");
                         break;
                     case "CreditActivity":
-                        Intent intentPuzzle = new Intent(App.getInstance().getContext(), CreditActivity.class);
-                        startActivity(intentPuzzle);
+                        CreditActivity.start(getActivity(), "支付宝信用效果");
                         break;
                     case "WeiBoSportActivity":
-                        Intent intentIndicator = new Intent(App.getInstance().getContext(), WeiBoSportActivity.class);
-                        startActivity(intentIndicator);
+                        WeiBoSportActivity.start(getActivity(), "圆形评分进度效果");
                         break;
                     case "QQHealthActivity":
-                        Intent intentDrawerLayout = new Intent(App.getInstance().getContext(), QQHealthActivity.class);
-                        startActivity(intentDrawerLayout);
+                        QQHealthActivity.start(getActivity(), "QQ步数效果");
                         break;
                     case "ChartActivity":
-                        Intent intentRecycler = new Intent(App.getInstance().getContext(), ChartActivity.class);
-                        startActivity(intentRecycler);
+                        ChartActivity.start(getActivity(), "柱状图效果");
                         break;
                     case "LoLActivity":
-                        Intent intentViewPager = new Intent(App.getInstance().getContext(), LoLActivity.class);
-                        startActivity(intentViewPager);
+                        LoLActivity.start(getActivity(), "LOL能力数值分析效果");
                         break;
                     case "WaveActivity":
-                        Intent intentSwipeCards = new Intent(App.getInstance().getContext(), WaveActivity.class);
-                        startActivity(intentSwipeCards);
+                        WaveActivity.start(getActivity(), "波浪动画实例");
                         break;
                     case "ViscosityActivity":
-                        Intent intentEle = new Intent(App.getInstance().getContext(), ViscosityActivity.class);
-                        startActivity(intentEle);
+                        ViscosityActivity.start(getActivity(),"仿QQ粘性消息拖拽效果");
                         break;
                     case "ExpandableActivity":
                         Intent intentSelect = new Intent(App.getInstance().getContext(), ExpandableActivity.class);
@@ -473,31 +463,31 @@ public class ViewsFragment extends Fragment {
             App.addData(new HashSetSearchBean("MiSportViewActivity", MiSportViewActivity.class));
 
             datas.add("DianZanActivity");
-            mapTitle.put("DianZanActivity","仿即刻点赞的效果");
+            mapTitle.put("DianZanActivity", "仿即刻点赞的效果");
             App.addData(new HashSetSearchBean("DianZanActivity", DianZanActivity.class));
 
             datas.add("RuffleActivity");
-            mapTitle.put("RuffleActivity","仿红板报翻动");
+            mapTitle.put("RuffleActivity", "仿红板报翻动");
             App.addData(new HashSetSearchBean("RuffleActivity", RuffleActivity.class));
 
             datas.add("SurfaceViewActivity");
-            mapTitle.put("SurfaceViewActivity","SurfaceView相关");
+            mapTitle.put("SurfaceViewActivity", "SurfaceView相关");
             App.addData(new HashSetSearchBean("SurfaceViewActivity", SurfaceViewActivity.class));
 
             datas.add("OpenGLActivity");
-            mapTitle.put("OpenGLActivity","OpenGL相关");
+            mapTitle.put("OpenGLActivity", "OpenGL相关");
             App.addData(new HashSetSearchBean("OpenGLActivity", OpenGLActivity.class));
 
             datas.add("CuboidBtnActivity");
-            mapTitle.put("CuboidBtnActivity","涟漪式按钮");
+            mapTitle.put("CuboidBtnActivity", "涟漪式按钮");
             App.addData(new HashSetSearchBean("CuboidBtnActivity", CuboidBtnActivity.class));
 
             datas.add("XiaoMiActivity");
-            mapTitle.put("XiaoMiActivity","小米3D式钟表");
+            mapTitle.put("XiaoMiActivity", "小米3D式钟表");
             App.addData(new HashSetSearchBean("XiaoMiActivity", XiaoMiActivity.class));
 
             datas.add("BitmapActivity");
-            mapTitle.put("BitmapActivity","Bitmap小用法，四图合一");
+            mapTitle.put("BitmapActivity", "Bitmap小用法，四图合一");
             App.addData(new HashSetSearchBean("BitmapActivity", BitmapActivity.class));
 //            datas.add("TimerActivity");
 //            mapTitle.put("TimerActivity", "广告计时效果");

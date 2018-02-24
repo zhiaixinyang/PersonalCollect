@@ -1,31 +1,51 @@
 package com.example.mbenben.studydemo.view.credit;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 import com.example.mbenben.studydemo.R;
+import com.example.mbenben.studydemo.base.BaseActivity;
+import com.example.mbenben.studydemo.view.bezier.GiftBezierActivity;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
 /**
- * Created by MBENBEN on 2017/1/3.
- *
+ * Created by MDove on 2017/1/3.
+ * <p>
  * 原作者项目博客：http://blog.csdn.net/as7210636/article/details/52634769
  */
 
-public class CreditActivity extends AppCompatActivity{
+public class CreditActivity extends BaseActivity {
     private SesameCreditPanel creditView;
     private SimpleDateFormat formater = new SimpleDateFormat("yyyy.MM.dd");
+
+    private static final String ACTION_EXTRA = "action_extra";
+
+    public static void start(Context context, String title) {
+        Intent intent = new Intent(context, CreditActivity.class);
+        intent.putExtra(ACTION_EXTRA, title);
+        context.startActivity(intent);
+    }
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle(getIntent().getStringExtra(ACTION_EXTRA));
         setContentView(R.layout.activity_credit);
-        creditView= (SesameCreditPanel) findViewById(R.id.creditView);
+        creditView = (SesameCreditPanel) findViewById(R.id.creditView);
         creditView.setDataModel(getData());
     }
+
+    @Override
+    protected boolean isNeedCustomLayout() {
+        return false;
+    }
+
     private SesameModel getData() {
         SesameModel model = new SesameModel();
         model.setUserTotal(637);

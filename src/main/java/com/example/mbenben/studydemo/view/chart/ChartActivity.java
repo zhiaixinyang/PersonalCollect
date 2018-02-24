@@ -1,5 +1,7 @@
 package com.example.mbenben.studydemo.view.chart;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,26 +11,44 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.mbenben.studydemo.R;
+import com.example.mbenben.studydemo.base.BaseActivity;
+import com.example.mbenben.studydemo.view.bezier.GiftBezierActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 /**
- * Created by MBENBEN on 2017/1/3.
+ * Created by MDove on 2017/1/3.
  */
 
-public class ChartActivity extends AppCompatActivity{
+public class ChartActivity extends BaseActivity {
     private ChartView myChartView;
     private List<Integer> list = new ArrayList<>();
     private RelativeLayout relativeLayout;
     private TextView showText;
+
+    private static final String ACTION_EXTRA = "action_extra";
+
+    public static void start(Context context, String title) {
+        Intent intent = new Intent(context, ChartActivity.class);
+        intent.putExtra(ACTION_EXTRA, title);
+        context.startActivity(intent);
+    }
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle(getIntent().getStringExtra(ACTION_EXTRA));
         setContentView(R.layout.activity_chart);
         init();
     }
+
+    @Override
+    protected boolean isNeedCustomLayout() {
+        return false;
+    }
+
     private void init() {
         showText = new TextView(getApplicationContext());
 
