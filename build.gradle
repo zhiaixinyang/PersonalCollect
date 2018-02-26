@@ -49,6 +49,7 @@ dependencies {
     compile 'com.nineoldandroids:library:2.4.0'
     compile 'com.facebook.rebound:rebound:0.3.8'
     compile files('libs/pinyin4j-2.5.0.jar')
+    compile files('libs/Jbox2-2.3.jar')
 
     compile 'com.yarolegovich:mp:1.0.5'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'

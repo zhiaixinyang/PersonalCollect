@@ -7,4 +7,7 @@
     <!--阿里ViewPager-->
     <item name="ultraviewpager_page_container" type="id" />
     <item name="item_id" type="id" />
+
+    <item name="mobike_body_tag" type="id"/>
+    <item name="mobike_view_circle_tag" type="id"/>
 </resources>

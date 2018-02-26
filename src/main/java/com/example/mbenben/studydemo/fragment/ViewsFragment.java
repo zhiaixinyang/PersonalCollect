@@ -41,6 +41,7 @@ import com.example.mbenben.studydemo.view.floatingview.FloatViewActivity;
 import com.example.mbenben.studydemo.view.healthytables.HealthyTablesActivity;
 import com.example.mbenben.studydemo.view.horizontalselectedview.HorizontalselectedActivity;
 import com.example.mbenben.studydemo.view.htmltext.HtmlTextActivity;
+import com.example.mbenben.studydemo.view.jbox.JBoxDemoActivity;
 import com.example.mbenben.studydemo.view.justify.JustifyTextActivity;
 import com.example.mbenben.studydemo.view.loading.LoadingTextViewActivity;
 import com.example.mbenben.studydemo.view.lol.LoLActivity;
@@ -108,7 +109,7 @@ public class ViewsFragment extends Fragment {
         manager = new SearchDBManager();
         initView(view);
         initRlv();
-        addDB();
+//        addDB();
         return view;
     }
 
@@ -152,6 +153,9 @@ public class ViewsFragment extends Fragment {
                         break;
                     case "ViscosityActivity":
                         ViscosityActivity.start(getActivity(), "仿QQ粘性消息拖拽效果");
+                        break;
+                    case "JBoxDemoActivity":
+                        JBoxDemoActivity.start(getActivity(), "JBox物理引擎实践");
                         break;
                     case "ExpandableActivity":
                         Intent intentSelect = new Intent(App.getInstance().getContext(), ExpandableActivity.class);
@@ -497,6 +501,10 @@ public class ViewsFragment extends Fragment {
             datas.add("TouchViewActivity");
             mapTitle.put("TouchViewActivity", "手势拖动图片效果");
             App.addData(new HashSetSearchBean("TouchViewActivity", TouchViewActivity.class));
+
+            datas.add("JBoxDemoActivity");
+            mapTitle.put("JBoxDemoActivity", "JBox物理引擎实践");
+            App.addData(new HashSetSearchBean("JBoxDemoActivity", JBoxDemoActivity.class));
 
 //            datas.add("TimerActivity");
 //            mapTitle.put("TimerActivity", "广告计时效果");

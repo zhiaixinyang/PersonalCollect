@@ -78,7 +78,7 @@ public class AndroidBaseFragment extends Fragment {
         manager = new SearchDBManager();
         initView(view);
         initRlv();
-        addDB();
+//        addDB();
         return view;
     }
 

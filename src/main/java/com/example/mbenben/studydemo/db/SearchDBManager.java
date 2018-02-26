@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by MBENBEN on 2017/3/28.
+ * Created by MDove on 2017/3/28.
  */
 
 public class SearchDBManager {

@@ -70,7 +70,7 @@ public class AnimsFragment extends Fragment {
         manager = new SearchDBManager();
         initView(view);
         initRlv();
-        addDB();
+//        addDB();
         return view;
     }
 

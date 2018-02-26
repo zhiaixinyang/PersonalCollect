@@ -794,6 +794,21 @@
             android:screenOrientation="portrait" />
 
         <activity
+            android:name=".view.jbox.MobikeDemoActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".view.jbox.JBoxDemoActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".view.jbox.ParamsActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <activity
             android:name=".view.opengl.OpenGL3DActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
@@ -813,11 +828,13 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
-        <activity android:name=".view.touchview.TouchViewActivity"
+        <activity
+            android:name=".view.touchview.TouchViewActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
-        <activity android:name=".basenote.aidltest.RemoteActivity"
+        <activity
+            android:name=".basenote.aidltest.RemoteActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
@@ -832,9 +849,10 @@
             </intent-filter>
         </receiver>
 
-        <service android:name=".basenote.aidltest.RemoteService"
-            android:process=":bg"
-            android:exported="false"/>
+        <service
+            android:name=".basenote.aidltest.RemoteService"
+            android:exported="false"
+            android:process=":bg" />
         <service android:name=".basenote.service.MyStartService" />
         <service android:name=".basenote.service.MyBindService" />
         <service android:name=".basenote.service.download.DownLoadService" />
