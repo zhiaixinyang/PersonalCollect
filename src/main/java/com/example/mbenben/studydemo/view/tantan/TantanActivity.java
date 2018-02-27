@@ -1,5 +1,7 @@
 package com.example.mbenben.studydemo.view.tantan;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -13,7 +15,9 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.mbenben.studydemo.R;
+import com.example.mbenben.studydemo.base.BaseActivity;
 import com.example.mbenben.studydemo.utils.ToastUtils;
+import com.example.mbenben.studydemo.view.horizontalselectedview.HorizontalselectedActivity;
 import com.example.mbenben.studydemo.view.tantan.view.CardConfig;
 import com.example.mbenben.studydemo.view.tantan.view.CardItemTouchHelperCallback;
 import com.example.mbenben.studydemo.view.tantan.view.CardLayoutManager;
@@ -26,16 +30,25 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by MBENBEN on 2017/7/6.
+ * Created by MDove on 2017/7/6.
  */
 
-public class TantanActivity extends AppCompatActivity {
-    @BindView(R.id.tantan_recyclerview) RecyclerView recyclerView;
+public class TantanActivity extends BaseActivity {
+    @BindView(R.id.tantan_recyclerview)
+    RecyclerView recyclerView;
     private List<Integer> list = new ArrayList<>();
+    private static final String ACTION_EXTRA = "action_extra";
+
+    public static void start(Context context, String title) {
+        Intent intent = new Intent(context, TantanActivity.class);
+        intent.putExtra(ACTION_EXTRA, title);
+        context.startActivity(intent);
+    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle(getIntent().getStringExtra(ACTION_EXTRA));
         setContentView(R.layout.activity_tantan);
         ButterKnife.bind(this);
 
@@ -87,6 +100,12 @@ public class TantanActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(cardLayoutManager);
         touchHelper.attachToRecyclerView(recyclerView);
     }
+
+    @Override
+    protected boolean isNeedCustomLayout() {
+        return false;
+    }
+
     private void initData() {
         list.add(R.drawable.pintu);
         list.add(R.drawable.pintu);

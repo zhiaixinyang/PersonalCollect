@@ -162,16 +162,14 @@ public class ViewsFragment extends Fragment {
                         startActivity(intentSelect);
                         break;
                     case "ENViewsActivity":
-                        Intent intentMyButterKnife = new Intent(App.getInstance().getContext(), ENViewsActivity.class);
-                        startActivity(intentMyButterKnife);
+                        ENViewsActivity.start(getContext(), "酷炫的小动画，如：加载..");
                         break;
                     case "QQTitleActivity":
                         Intent intentQQTitle = new Intent(App.getInstance().getContext(), QQTitleActivity.class);
                         startActivity(intentQQTitle);
                         break;
                     case "ProgressBarActivity":
-                        Intent intentArcLayout = new Intent(App.getInstance().getContext(), ProgressBarActivity.class);
-                        startActivity(intentArcLayout);
+                        ProgressBarActivity.start(getActivity(), "自定义ProgressBar（下载进度条）");
                         break;
                     case "HtmlTextActivity":
                         Intent intentMultiLineChoose = new Intent(App.getInstance().getContext(), HtmlTextActivity.class);
@@ -189,26 +187,23 @@ public class ViewsFragment extends Fragment {
                         GlideLoaderActivity.start(getActivity(), "操作图片（双击扩大，移动查看等）");
                         break;
                     case "CircleActivity":
-                        CircleActivity.start(getActivity(),"自定义圆角图片");
+                        CircleActivity.start(getActivity(), "自定义圆角图片");
                         break;
                     case "CanvasApiActivity":
-                        CanvasApiActivity.start(getActivity(),"Canvas基本API展示");
+                        CanvasApiActivity.start(getActivity(), "Canvas基本API展示");
                         break;
                     case "LoadingTextViewActivity":
-                        Intent intentLoadingTextView = new Intent(App.getInstance().getContext(), LoadingTextViewActivity.class);
-                        startActivity(intentLoadingTextView);
+                        LoadingTextViewActivity.start(getActivity(), "字体式Loading");
                         break;
                     case "JustifyTextActivity":
                         Intent intentJustifyText = new Intent(App.getInstance().getContext(), JustifyTextActivity.class);
                         startActivity(intentJustifyText);
                         break;
                     case "NewToastActivity":
-                        Intent intentNewToast = new Intent(App.getInstance().getContext(), NewToastActivity.class);
-                        startActivity(intentNewToast);
+                        NewToastActivity.start(getActivity(), "酷炫的类Toast的提示View");
                         break;
                     case "TimelyTextActivity":
-                        Intent intentTimelyText = new Intent(App.getInstance().getContext(), TimelyTextActivity.class);
-                        startActivity(intentTimelyText);
+                        TimelyTextActivity.start(getActivity(), "数字Path变化");
                         break;
                     case "CouponViewActivity":
                         Intent intentCouponView = new Intent(App.getInstance().getContext(), CouponViewActivity.class);
@@ -219,8 +214,7 @@ public class ViewsFragment extends Fragment {
                         startActivity(intentFloatView);
                         break;
                     case "RadarViewActivity":
-                        Intent intentRadarView = new Intent(App.getInstance().getContext(), RadarViewActivity.class);
-                        startActivity(intentRadarView);
+                        RadarViewActivity.start(getActivity(), "雷达效果");
                         break;
                     case "ShaderActivity":
                         Intent intentShader = new Intent(App.getInstance().getContext(), ShaderActivity.class);
@@ -231,12 +225,10 @@ public class ViewsFragment extends Fragment {
                         startActivity(intentSwitchButton);
                         break;
                     case "HorizontalselectedActivity":
-                        Intent intentHorizontalselected = new Intent(App.getInstance().getContext(), HorizontalselectedActivity.class);
-                        startActivity(intentHorizontalselected);
+                        HorizontalselectedActivity.start(getActivity(), "水平滑动选择效果");
                         break;
                     case "TantanActivity":
-                        Intent intentTantan = new Intent(App.getInstance().getContext(), TantanActivity.class);
-                        startActivity(intentTantan);
+                        TantanActivity.start(getActivity(), "仿探探滑动效果");
                         break;
                     case "VerifyCodeActivity":
                         Intent intentVerifyCode = new Intent(App.getInstance().getContext(), VerifyCodeActivity.class);
@@ -396,7 +388,7 @@ public class ViewsFragment extends Fragment {
             App.addData(new HashSetSearchBean("CircleActivity", CircleActivity.class));
 
             datas.add("LoadingTextViewActivity");
-            mapTitle.put("LoadingTextViewActivity", "自定义Loading");
+            mapTitle.put("LoadingTextViewActivity", "字体式Loading");
             App.addData(new HashSetSearchBean("LoadingTextViewActivity", LoadingTextViewActivity.class));
 
             datas.add("JustifyTextActivity");
@@ -404,7 +396,7 @@ public class ViewsFragment extends Fragment {
             App.addData(new HashSetSearchBean("JustifyTextActivity", JustifyTextActivity.class));
 
             datas.add("NewToastActivity");
-            mapTitle.put("NewToastActivity", "自定义Toast");
+            mapTitle.put("NewToastActivity", "酷炫的类Toast的提示View");
             App.addData(new HashSetSearchBean("NewToastActivity", NewToastActivity.class));
 
             datas.add("TimelyTextActivity");
