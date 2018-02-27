@@ -19,57 +19,64 @@ import com.example.mbenben.studydemo.R;
  */
 public class ToastUtils {
     private static Toast toast;
-    private static  Context context= App.getInstance().getContext();
+    private static Context context = App.getInstance().getContext();
+
     //获得全局Context;
-    public static void showShort(String content){
-        if(toast==null) {
-            toast=Toast.makeText(context, content, Toast.LENGTH_SHORT);
-        }else{
-            toast.setText(content);
-        }
-        toast.show();
+    public static void showShort(String content) {
+        ToastHelper.shortToast(content);
+//        if(toast==null) {
+//            toast=Toast.makeText(context, content, Toast.LENGTH_SHORT);
+//        }else{
+//            toast.setText(content);
+//        }
+//        toast.show();
     }
-    public static void toastLong(String content){
-        if(toast==null) {
-            toast=Toast.makeText(context, content, Toast.LENGTH_LONG);
-        }else{
-            toast.setText(content);
-        }
-        toast.show();
+
+    public static void toastLong(String content) {
+        ToastHelper.longToast(content);
+//        if(toast==null) {
+//            toast=Toast.makeText(context, content, Toast.LENGTH_LONG);
+//        }else{
+//            toast.setText(content);
+//        }
+//        toast.show();
     }
 
     //非UI线程使用Toast
-    public static void noUIToastShort(String content){
+    public static void noUIToastShort(String content) {
         Looper.prepare();
-        if(toast==null) {
-            toast=Toast.makeText(context, content, Toast.LENGTH_SHORT);
-        }else{
-            toast.setText(content);
-        }
-        toast.show();
-        Looper.loop();
-    }
-    public static void noUIToastLong(String content){
-        Looper.prepare();
-        if(toast==null) {
-            toast=Toast.makeText(context, content, Toast.LENGTH_LONG);
-        }else{
+        if (toast == null) {
+            toast = Toast.makeText(context, content, Toast.LENGTH_SHORT);
+        } else {
             toast.setText(content);
         }
         toast.show();
         Looper.loop();
     }
 
-    private static Handler handler=new Handler();
-    public static void show(String msg){
+    public static void noUIToastLong(String content) {
+        Looper.prepare();
+        if (toast == null) {
+            toast = Toast.makeText(context, content, Toast.LENGTH_LONG);
+        } else {
+            toast.setText(content);
+        }
+        toast.show();
+        Looper.loop();
+    }
+
+    private static Handler handler = new Handler();
+
+    public static void show(String msg) {
         newToastShort(msg).show();
     }
-    private  static Toast newToastShort(String msg){
+
+    private static Toast newToastShort(String msg) {
 
         final View contentView = View.inflate(context, R.layout.view_dialog_toast, null);
 
-        Animation enter = AnimationUtils.loadAnimation(contentView.getContext(),R.anim.toast_scale_enter);
-        final Animation exit = AnimationUtils.loadAnimation(contentView.getContext(),R.anim.toast_scale_exit);
+        Animation enter = AnimationUtils.loadAnimation(contentView.getContext(), R.anim.toast_scale_enter);
+        final Animation exit = AnimationUtils.loadAnimation(contentView.getContext(), R.anim.toast_scale_exit);
         enter.setDuration(500);
         exit.setDuration(500);
 
@@ -77,7 +84,7 @@ public class ToastUtils {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                if(contentView != null){
+                if (contentView != null) {
                     contentView.startAnimation(exit);
                 }
             }

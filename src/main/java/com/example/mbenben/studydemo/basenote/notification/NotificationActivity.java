@@ -39,6 +39,11 @@ public class NotificationActivity extends AppCompatActivity {
     //将Manifest里管理的activity作为back的下一个Activity
     @OnClick(R.id.btn_1)
     public void onViewClicked() {
+        /**
+         * 封装后的Notification使用:
+         * NotificationHelper.sendConnectOnNotification(context)
+         * {@link com.example.mbenben.studydemo.utils.notification.NotificationHelper#sendConnectOnNotification}
+         */
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this)
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setContentTitle("My notification")

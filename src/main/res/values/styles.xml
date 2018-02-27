@@ -287,4 +287,10 @@
         <item name="android:shadowDy">-3.5</item>
         <item name="android:shadowRadius">2</item>
     </style>
+
+    <style name="TextAppearanceSmall" parent="android:TextAppearance">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+
 </resources>

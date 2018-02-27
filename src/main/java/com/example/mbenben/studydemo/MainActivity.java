@@ -1,5 +1,6 @@
 package com.example.mbenben.studydemo;
 
+import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -20,6 +21,9 @@ import com.example.mbenben.studydemo.fragment.AnimsFragment;
 import com.example.mbenben.studydemo.fragment.LayoutFragment;
 import com.example.mbenben.studydemo.fragment.NetFragment;
 import com.example.mbenben.studydemo.fragment.ViewsFragment;
+import com.example.mbenben.studydemo.utils.ToastHelper;
+import com.example.mbenben.studydemo.utils.permission.PermissionGrantCallback;
+import com.example.mbenben.studydemo.utils.permission.PermissionUtils;
 import com.example.mbenben.studydemo.view.AboutMeDialog;
 import com.example.mbenben.studydemo.view.adline.AdHeadline;
 import com.example.mbenben.studydemo.view.adline.HeadlineBean;
@@ -64,13 +68,14 @@ public class MainActivity extends AppCompatActivity implements Toolbar.OnMenuIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView();
+        checkPermission();
     }
 
     private void initView() {
         ButterKnife.bind(this);
 
         //启动锁屏服务
-        Intent toLockScreen=new Intent(this, LockScreenService.class);
+        Intent toLockScreen = new Intent(this, LockScreenService.class);
         startService(toLockScreen);
 
         manager = new SearchDBManager();
@@ -87,7 +92,7 @@ public class MainActivity extends AppCompatActivity implements Toolbar.OnMenuIte
         netFragment = NetFragment.newInstance("网络请求想过的Demo");
         animsFragment = AnimsFragment.newInstance("动画相关的Demo");
         viewsFragment = ViewsFragment.newInstance("自定义View相关的Demo");
-        androidBaseFragment = new AndroidBaseFragment().newInstance("Android的基本应用");
+        androidBaseFragment = AndroidBaseFragment.newInstance("Android的基本应用");
 
         toolbar.setOnMenuItemClickListener(this);
         searchFragment.setOnSearchClickListener(this);
@@ -143,9 +148,30 @@ public class MainActivity extends AppCompatActivity implements Toolbar.OnMenuIte
 
     @Override
     public void OnSearchClick(String keyword) {
-        List<SearchBean> searchList = manager.query(keyword);
-        Intent toRlv = new Intent(MainActivity.this, SearchRlvActivity.class);
-        toRlv.putExtra("search_rlv", (Serializable) searchList);
-        startActivity(toRlv);
+//        List<SearchBean> searchList = manager.query(keyword);
+//        Intent toRlv = new Intent(MainActivity.this, SearchRlvActivity.class);
+//        toRlv.putExtra("search_rlv", (Serializable) searchList);
+//        startActivity(toRlv);
+        ToastHelper.shortToast("搜索功能暂时关闭，需要优化");
+    }
+
+    private void checkPermission() {
+        String[] storagePermissions = new String[]{Manifest.permission.READ_EXTERNAL_STORAGE,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE};
+
+        if (!PermissionUtils.hasPermissions(this, storagePermissions)) {
+            PermissionUtils.requestPermission(this, 0, storagePermissions, new PermissionGrantCallback() {
+
+                @Override
+                public void permissionGranted(int requestCode) {
+
+                }
+
+                @Override
+                public void permissionRefused(int requestCode) {
+
+                }
+            });
+        }
     }
 }

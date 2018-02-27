@@ -37,7 +37,7 @@ public class App extends Application{
     }
 
     private static App instance;
-
+    //这种写法没必要，Application每个进程只有一个，除非多进程才会有多个
     public static synchronized App getInstance() {
         if (instance==null){
             instance=new App();

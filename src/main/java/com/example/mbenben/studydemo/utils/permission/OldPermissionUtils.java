@@ -1,4 +1,4 @@
-package com.example.mbenben.studydemo.utils;
+package com.example.mbenben.studydemo.utils.permission;
 
 import android.Manifest;
 import android.app.Activity;
@@ -10,14 +10,16 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 
+import com.example.mbenben.studydemo.utils.ToastUtils;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
- * Created by MBENBEN on 2017/6/21.
+ * Created by MDove on 2017/6/21.
  */
 
-public class PermissionUtils {
+public class OldPermissionUtils {
 
 
     /**
