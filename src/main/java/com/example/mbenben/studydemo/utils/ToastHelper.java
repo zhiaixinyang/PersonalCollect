@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.compat.BuildConfig;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Toast;
@@ -100,6 +101,18 @@ public class ToastHelper {
             } catch (Exception e) {
                 Toast.makeText(App.getInstance().getContext(), toast, length).show();
             }
+        }
+    }
+
+    public static void showToastCenter(String toast) {
+        try {
+            Toast t = getToast();
+            t.setText(toast);
+            t.setDuration(Toast.LENGTH_SHORT);
+            t.setGravity(Gravity.CENTER, 0, 0);
+            t.show();
+        } catch (Exception e) {
+            Toast.makeText(App.getInstance().getContext(), toast, Toast.LENGTH_SHORT).show();
         }
     }
 }

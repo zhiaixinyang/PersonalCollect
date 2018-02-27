@@ -24,6 +24,8 @@
 
 package com.example.mbenben.studydemo.view.bigimage;
 
+import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -32,6 +34,8 @@ import android.widget.Button;
 
 import com.example.mbenben.studydemo.App;
 import com.example.mbenben.studydemo.R;
+import com.example.mbenben.studydemo.base.BaseActivity;
+import com.example.mbenben.studydemo.view.bezier.ClearBezierActivity;
 import com.example.mbenben.studydemo.view.bigimage.bigimageviewer.BigImageViewer;
 import com.example.mbenben.studydemo.view.bigimage.bigimageviewer.indicator.ProgressPieIndicator;
 import com.example.mbenben.studydemo.view.bigimage.bigimageviewer.view.BigImageView;
@@ -41,15 +45,25 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
-public class GlideLoaderActivity extends AppCompatActivity {
-    @BindView(R.id.mBigImage) BigImageView bigImageView;
-    @BindView(R.id.mBtnLoad) Button button;
+public class GlideLoaderActivity extends BaseActivity {
+    @BindView(R.id.mBigImage)
+    BigImageView bigImageView;
+    @BindView(R.id.mBtnLoad)
+    Button button;
+    private static final String ACTION_EXTRA = "action_extra";
+
+    public static void start(Context context, String title) {
+        Intent intent = new Intent(context, GlideLoaderActivity.class);
+        intent.putExtra(ACTION_EXTRA, title);
+        context.startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //此处要先于super调用，并且GlideImageLoader.with要传入全局的context
         BigImageViewer.initialize(GlideImageLoader.with(App.getInstance().getContext()));
         super.onCreate(savedInstanceState);
+        setTitle(getIntent().getStringExtra(ACTION_EXTRA));
         setContentView(R.layout.activity_bigimage);
         ButterKnife.bind(this);
         button.setOnClickListener(new View.OnClickListener() {
@@ -62,5 +76,10 @@ public class GlideLoaderActivity extends AppCompatActivity {
                 );
             }
         });
+    }
+
+    @Override
+    protected boolean isNeedCustomLayout() {
+        return false;
     }
 }

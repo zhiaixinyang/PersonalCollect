@@ -186,16 +186,13 @@ public class ViewsFragment extends Fragment {
                         startActivity(intentBehavior);
                         break;
                     case "GlideLoaderActivity":
-                        Intent intentGlideLoader = new Intent(App.getInstance().getContext(), GlideLoaderActivity.class);
-                        startActivity(intentGlideLoader);
+                        GlideLoaderActivity.start(getActivity(), "操作图片（双击扩大，移动查看等）");
                         break;
                     case "CircleActivity":
-                        Intent intentCircle = new Intent(App.getInstance().getContext(), CircleActivity.class);
-                        startActivity(intentCircle);
+                        CircleActivity.start(getActivity(),"自定义圆角图片");
                         break;
                     case "CanvasApiActivity":
-                        Intent intentCanvasApi = new Intent(App.getInstance().getContext(), CanvasApiActivity.class);
-                        startActivity(intentCanvasApi);
+                        CanvasApiActivity.start(getActivity(),"Canvas基本API展示");
                         break;
                     case "LoadingTextViewActivity":
                         Intent intentLoadingTextView = new Intent(App.getInstance().getContext(), LoadingTextViewActivity.class);
@@ -395,7 +392,7 @@ public class ViewsFragment extends Fragment {
             App.addData(new HashSetSearchBean("GlideLoaderActivity", GlideLoaderActivity.class));
 
             datas.add("CircleActivity");
-            mapTitle.put("CircleActivity", "圆角图片");
+            mapTitle.put("CircleActivity", "自定义圆角图片");
             App.addData(new HashSetSearchBean("CircleActivity", CircleActivity.class));
 
             datas.add("LoadingTextViewActivity");

@@ -1,37 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_height="match_parent">
-
-    <android.support.design.widget.AppBarLayout
-        android:id="@+id/app_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <android.support.v7.widget.Toolbar
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_width="match_parent"
-                android:text="自定义View"
-                android:textSize="20sp"
-                android:textColor="@color/white"
-                android:gravity="center"
-                android:layout_height="wrap_content" />
-        </android.support.v7.widget.Toolbar>
-    </android.support.design.widget.AppBarLayout>
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <com.example.mbenben.studydemo.view.circle.view.MyCircleImageView
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:src="@drawable/pintu"
-        />
+        android:src="@drawable/pintu" />
+
     <com.example.mbenben.studydemo.view.circle.view.CircleImageView
         android:layout_width="80dp"
-        android:src="@drawable/pintu"
+        android:layout_height="80dp"
         android:layout_marginTop="40dp"
+        android:src="@drawable/pintu"
         app:civ_border_color="@color/blue_dark"
-        app:civ_border_width="4dp"
-        android:layout_height="80dp" />
+        app:civ_border_width="4dp" />
 
 </LinearLayout>

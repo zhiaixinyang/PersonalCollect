@@ -156,6 +156,7 @@ public class MainActivity extends AppCompatActivity implements Toolbar.OnMenuIte
     }
 
     private void checkPermission() {
+        ToastHelper.showToastCenter("部分效果需要一些权限");
         String[] storagePermissions = new String[]{Manifest.permission.READ_EXTERNAL_STORAGE,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE};
 
