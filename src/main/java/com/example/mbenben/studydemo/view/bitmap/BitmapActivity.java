@@ -1,26 +1,43 @@
 package com.example.mbenben.studydemo.view.bitmap;
 
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
 
 import com.example.mbenben.studydemo.R;
+import com.example.mbenben.studydemo.base.BaseActivity;
+import com.example.mbenben.studydemo.view.jbox.JBoxDemoActivity;
 
 /**
  * Created by MDove on 18/1/25.
  */
 
-public class BitmapActivity extends AppCompatActivity {
+public class BitmapActivity extends BaseActivity {
     private ImageView iv, iv2;
+
+    private static final String ACTION_EXTRA = "action_extra";
+    private String mTitle;
+
+    public static void start(Context context, String title) {
+        Intent intent = new Intent(context, BitmapActivity.class);
+        intent.putExtra(ACTION_EXTRA, title);
+        context.startActivity(intent);
+    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mTitle = TextUtils.isEmpty(mTitle) ? getIntent().getStringExtra(ACTION_EXTRA) : mTitle;
+        setTitle(mTitle);
+
         setContentView(R.layout.activity_bitmap);
         iv = (ImageView) findViewById(R.id.iv);
         iv2 = (ImageView) findViewById(R.id.iv2);
@@ -132,5 +149,10 @@ public class BitmapActivity extends AppCompatActivity {
 
         Bitmap realB2 = Bitmap.createBitmap(realArr2, 0, rootBWidth2 * 2, rootBWidth2 * 2, rootBHeight2 * 2, Bitmap.Config.ARGB_8888);
         iv2.setImageBitmap(realB2);
+    }
+
+    @Override
+    protected boolean isNeedCustomLayout() {
+        return false;
     }
 }

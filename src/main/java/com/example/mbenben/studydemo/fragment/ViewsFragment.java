@@ -285,6 +285,12 @@ public class ViewsFragment extends Fragment {
                     case "TouchViewActivity":
                         TouchViewActivity.start(getActivity(), "手势拖动图片效果");
                         break;
+                    case "BitmapActivity":
+                        BitmapActivity.start(getActivity(), "Bitmap小用法,四图合一");
+                        break;
+                    case "XiaoMiActivity":
+                        XiaoMiActivity.start(getActivity(), "小米3D式钟表");
+                        break;
                     default:
                         break;
                 }
@@ -484,7 +490,7 @@ public class ViewsFragment extends Fragment {
             App.addData(new HashSetSearchBean("XiaoMiActivity", XiaoMiActivity.class));
 
             datas.add("BitmapActivity");
-            mapTitle.put("BitmapActivity", "Bitmap小用法，四图合一");
+            mapTitle.put("BitmapActivity", "Bitmap小用法,四图合一");
             App.addData(new HashSetSearchBean("BitmapActivity", BitmapActivity.class));
 
             datas.add("TouchViewActivity");

@@ -54,8 +54,6 @@ public class MobikeDemoActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setTitle(getIntent().getStringExtra(ACTION_EXTRA));
         setContentView(R.layout.activity_mobike_demo);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("摩拜单车Demo");
         mobikeView = (MobikeView) findViewById(R.id.mobike_view);
 
         initViews();
