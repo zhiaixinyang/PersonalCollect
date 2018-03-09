@@ -22,6 +22,7 @@ import com.example.mbenben.studydemo.basenote.broadcastreceiver.BroadcastReceive
 import com.example.mbenben.studydemo.basenote.contentprovider.ContentProviderActivity;
 import com.example.mbenben.studydemo.basenote.dialog.MyDialogActivity;
 import com.example.mbenben.studydemo.basenote.intent.IntentActivity;
+import com.example.mbenben.studydemo.basenote.keeplive.KeepLiveActivity;
 import com.example.mbenben.studydemo.basenote.navigationbar.NavigationBarActivity;
 import com.example.mbenben.studydemo.basenote.notification.NotificationActivity;
 import com.example.mbenben.studydemo.basenote.pattern.PatternActivity;
@@ -106,8 +107,7 @@ public class AndroidBaseFragment extends Fragment {
                         startActivity(intentServiceActivity);
                         break;
                     case "DownLoadServiceActivity":
-                        Intent intentDowdLoadActivity = new Intent(App.getInstance().getContext(), DownLoadServiceActivity.class);
-                        startActivity(intentDowdLoadActivity);
+                        DownLoadServiceActivity.start(getActivity(),"断点续传效果");
                         break;
                     case "IntentActivity":
                         Intent intentActivity = new Intent(App.getInstance().getContext(), IntentActivity.class);
@@ -153,6 +153,9 @@ public class AndroidBaseFragment extends Fragment {
                     case "RemoteActivity":
                         RemoteActivity.start(getActivity(), "AIDL进程通讯");
                         break;
+                    case "KeepLiveActivity":
+                        KeepLiveActivity.start(getActivity(), "服务保活");
+                        break;
                 }
             }
 
@@ -176,6 +179,10 @@ public class AndroidBaseFragment extends Fragment {
         if (datas == null) {
             datas = new ArrayList<>();
             mapTitle = new HashMap<>();
+
+            datas.add("KeepLiveActivity");
+            mapTitle.put("KeepLiveActivity", "服务保活");
+            App.addData(new HashSetSearchBean("KeepLiveActivity", KeepLiveActivity.class));
 
             datas.add("ContentProviderActivity");
             mapTitle.put("ContentProviderActivity", "ContentProvider获取手机通讯录");

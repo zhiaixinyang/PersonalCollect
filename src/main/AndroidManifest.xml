@@ -309,6 +309,11 @@
             android:screenOrientation="portrait" />
 
         <activity
+            android:name=".basenote.aidltest.RemoteActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <activity
             android:name=".annotation.MyButterKnifeActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
@@ -861,6 +866,7 @@
         <service android:name=".basenote.service.MyMessagerService" />
 
         <service android:name=".basenote.lockscreen.LockScreenService" />
+        <service android:name=".basenote.keeplive.RemoteService" />
         <!-- 针对android7.0（24）的一些异常 -->
         <provider
             android:name="android.support.v4.content.FileProvider"
