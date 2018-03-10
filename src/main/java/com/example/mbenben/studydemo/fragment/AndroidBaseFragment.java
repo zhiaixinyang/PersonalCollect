@@ -27,6 +27,7 @@ import com.example.mbenben.studydemo.basenote.navigationbar.NavigationBarActivit
 import com.example.mbenben.studydemo.basenote.notification.NotificationActivity;
 import com.example.mbenben.studydemo.basenote.pattern.PatternActivity;
 import com.example.mbenben.studydemo.basenote.plugin.PluginActivity;
+import com.example.mbenben.studydemo.basenote.rxjava.RxJava2Activity;
 import com.example.mbenben.studydemo.basenote.scaniamges.imageloader.ScanImageActivity;
 import com.example.mbenben.studydemo.basenote.service.ServiceActivity;
 import com.example.mbenben.studydemo.basenote.service.download.DownLoadServiceActivity;
@@ -107,7 +108,7 @@ public class AndroidBaseFragment extends Fragment {
                         startActivity(intentServiceActivity);
                         break;
                     case "DownLoadServiceActivity":
-                        DownLoadServiceActivity.start(getActivity(),"断点续传效果");
+                        DownLoadServiceActivity.start(getActivity(), "断点续传效果");
                         break;
                     case "IntentActivity":
                         Intent intentActivity = new Intent(App.getInstance().getContext(), IntentActivity.class);
@@ -155,6 +156,9 @@ public class AndroidBaseFragment extends Fragment {
                         break;
                     case "KeepLiveActivity":
                         KeepLiveActivity.start(getActivity(), "服务保活");
+                        break;
+                    case "RxJava2Activity":
+                        RxJava2Activity.start(getActivity(), "RxJava2的使用");
                         break;
                 }
             }
@@ -243,6 +247,10 @@ public class AndroidBaseFragment extends Fragment {
             datas.add("RemoteActivity");
             mapTitle.put("RemoteActivity", "AIDL进程通讯");
             App.addData(new HashSetSearchBean("RemoteActivity", RemoteActivity.class));
+
+            datas.add("RxJava2Activity");
+            mapTitle.put("RxJava2Activity", "RxJava2的使用");
+            App.addData(new HashSetSearchBean("RxJava2Activity", RxJava2Activity.class));
         }
     }
 

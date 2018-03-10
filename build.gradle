@@ -1,14 +1,33 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt'
 
+def getConfigProperty(String configName) {
+    def versionPropsFile = file('config.properties')
+    def versionProps = new Properties()
+    versionProps.load(versionPropsFile.newReader())
+    return versionProps.getProperty(configName)
+}
+
+def COMPILE_SDK_VERSION = hasProperty('COMPILE_SDK_VERSION') ? property('COMPILE_SDK_VERSION') : getConfigProperty('COMPILE_SDK_VERSION')
+def BUILD_TOOLS_VERSION = hasProperty('BUILD_TOOLS_VERSION') ? property('BUILD_TOOLS_VERSION') : getConfigProperty('BUILD_TOOLS_VERSION')
+def SUPPORT_VERSION = hasProperty('SUPPORT_VERSION') ? property('SUPPORT_VERSION') : getConfigProperty('SUPPORT_VERSION')
+def MIN_SDK_VERSION = hasProperty('MIN_SDK_VERSION') ? property('MIN_SDK_VERSION') : getConfigProperty('MIN_SDK_VERSION')
+def TARGET_SDK_VERSION = hasProperty('TARGET_SDK_VERSION') ? property('TARGET_SDK_VERSION') : getConfigProperty('TARGET_SDK_VERSION')
+def RX_JAVA_2_VERSION = hasProperty('RX_JAVA_2_VERSION') ? property('RX_JAVA_2_VERSION') : getConfigProperty('RX_JAVA_2_VERSION') as String
+def RX_ANDROID_2_VERSION = hasProperty('RX_ANDROID_2_VERSION') ? property('RX_ANDROID_2_VERSION') : getConfigProperty('RX_ANDROID_2_VERSION') as String
+def RETROFIT_VERSION = hasProperty('RETROFIT_VERSION') ? property('RETROFIT_VERSION') : getConfigProperty('RETROFIT_VERSION') as String
+def OK_HTTP_VERSION = hasProperty('OK_HTTP_VERSION') ? property('OK_HTTP_VERSION') : getConfigProperty('OK_HTTP_VERSION') as String
+
+
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.3"
+    compileSdkVersion COMPILE_SDK_VERSION as int
+    buildToolsVersion BUILD_TOOLS_VERSION as String
 
     defaultConfig {
         applicationId "com.example.mbenben.studydemo"
-        minSdkVersion 16
-        targetSdkVersion 25
+        minSdkVersion MIN_SDK_VERSION as int
+        targetSdkVersion TARGET_SDK_VERSION as int
+
         versionCode 1
         versionName "1.0"
     }
@@ -28,17 +47,16 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:25.0.0'
-    compile 'com.android.support:design:25.0.0'
-    compile 'com.android.support:recyclerview-v7:25.0.0'
-    compile 'com.android.support:cardview-v7:25.0.0'
-    compile 'com.squareup.retrofit2:retrofit:2.1.0'
-    compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
-    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
-    compile 'com.squareup.retrofit2:converter-scalars:2.1.0'
-    compile 'io.reactivex:rxjava:1.1.0'
-    compile 'io.reactivex:rxandroid:1.1.0'
-    compile 'com.squareup.okhttp3:okhttp:3.5.0'
+    compile "com.android.support:appcompat-v7:$SUPPORT_VERSION"
+    compile "com.android.support:design:$SUPPORT_VERSION"
+    compile "com.android.support:recyclerview-v7:$SUPPORT_VERSION"
+    compile "com.android.support:cardview-v7:$SUPPORT_VERSION"
+    compile "io.reactivex.rxjava2:rxjava:$RX_JAVA_2_VERSION"
+    compile "io.reactivex.rxjava2:rxandroid:$RX_ANDROID_2_VERSION"
+    compile "com.squareup.okhttp3:okhttp:$OK_HTTP_VERSION"
+    compile "com.squareup.retrofit2:adapter-rxjava2:$RETROFIT_VERSION"
+    compile "com.squareup.retrofit2:retrofit:$RETROFIT_VERSION"
+    compile "com.squareup.retrofit2:converter-scalars:$RETROFIT_VERSION"
     compile 'com.google.code.gson:gson:2.8.0'
     compile 'com.jakewharton:butterknife:8.4.0'
     apt 'com.jakewharton:butterknife-compiler:8.4.0'
