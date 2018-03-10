@@ -5,7 +5,7 @@ import com.example.mbenben.studydemo.net.retrofit.model.bean.RetrofitBean;
 import java.io.File;
 
 /**
- * Created by MBENBEN on 2017/1/5.
+ * Created by MDove on 2017/1/5.
  */
 
 public interface RetrofitPresenter {

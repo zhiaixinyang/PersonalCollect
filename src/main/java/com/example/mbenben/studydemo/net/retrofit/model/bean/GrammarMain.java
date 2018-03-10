@@ -1,7 +1,7 @@
 package com.example.mbenben.studydemo.net.retrofit.model.bean;
 
 /**
- * Created by MBENBEN on 2017/1/26.
+ * Created by MDove on 2017/1/26.
  */
 
 public class GrammarMain {

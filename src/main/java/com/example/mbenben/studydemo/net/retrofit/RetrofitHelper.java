@@ -7,6 +7,7 @@ import com.example.mbenben.studydemo.net.retrofit.model.RetrofitApi;
 import com.example.mbenben.studydemo.net.retrofit.model.bean.RetrofitBean;
 import com.example.mbenben.studydemo.utils.NetUtil;
 
+import io.reactivex.Observable;
 import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
 
@@ -22,13 +23,12 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
-import rx.Observable;
 
 /**
- * Created by MBENBEN on 2017/1/5.
+ * Created by MDove on 2017/1/5.
  */
 
 public class RetrofitHelper {
@@ -96,7 +96,7 @@ public class RetrofitHelper {
                 .baseUrl(RetrofitApi.URL)
                 .client(okHttpClient)
                 .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();
         return retrofit.create(RetrofitApi.class);
     }
@@ -105,7 +105,7 @@ public class RetrofitHelper {
                 .baseUrl(RetrofitApi.URL)
                 .client(okHttpClient)
                 .addConverterFactory(ScalarsConverterFactory.create())
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();
         return retrofit.create(RetrofitApi.class);
     }

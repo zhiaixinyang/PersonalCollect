@@ -8,49 +8,42 @@ import com.example.mbenben.studydemo.net.retrofit.view.RetrofitView;
 import java.io.File;
 import java.util.List;
 
+import io.reactivex.functions.Consumer;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
-import retrofit2.Retrofit;
-import rx.Subscription;
-import rx.functions.Action1;
-import rx.subscriptions.CompositeSubscription;
 
 /**
- * Created by MBENBEN on 2017/1/5.
+ * Created by MDove on 2017/1/5.
  */
 
-public class RetrofitPresenterImpl implements RetrofitPresenter{
+public class RetrofitPresenterImpl implements RetrofitPresenter {
     private RetrofitView retrofitView;
     private RetrofitHelper retrofitHelper;
-    private CompositeSubscription compositeSubscription;
 
     public RetrofitPresenterImpl(RetrofitView retrofitView) {
         this.retrofitView = retrofitView;
-        retrofitHelper =new RetrofitHelper();
-        compositeSubscription=new CompositeSubscription();
+        retrofitHelper = new RetrofitHelper();
     }
 
     @Override
     public void getRetrofitDatas() {
         retrofitView.refreshLoading();
 
-        Subscription rxSubscription = retrofitHelper.getDetailInfo()
-                .compose(RxUtil.<List<RetrofitBean>>rxSchedulerHelper())
-                .subscribe(new Action1<List<RetrofitBean>>() {
+        RxUtil.wrapper(retrofitHelper.getDetailInfo())
+                .subscribe(new Consumer<List<RetrofitBean>>() {
                     @Override
-                    public void call(List<RetrofitBean> retrofitBeen) {
+                    public void accept(List<RetrofitBean> retrofitBeen) throws Exception {
                         retrofitView.initRetrofitDatas(retrofitBeen);
                         retrofitView.refreshSuccess();
                     }
-                }, new Action1<Throwable>() {
+                }, new Consumer<Throwable>() {
                     @Override
-                    public void call(Throwable throwable) {
+                    public void accept(Throwable throwable) throws Exception {
                         retrofitView.initError(throwable.getMessage());
                         retrofitView.refreshSuccess();
                     }
                 });
-        compositeSubscription.add(rxSubscription);
     }
 
     @Override
@@ -58,21 +51,19 @@ public class RetrofitPresenterImpl implements RetrofitPresenter{
         RequestBody photoRequestBody = RequestBody.create(MediaType.parse("image/png"), file);
         MultipartBody.Part photo = MultipartBody.Part.createFormData
                 ("photo", "icon.png", photoRequestBody);
-        Subscription subscription=retrofitHelper.postData(
-                RequestBody.create(null,retrofitBean.getName()),
-                RequestBody.create(null,retrofitBean.getContent()), photo)
-                .compose(RxUtil.<String>rxSchedulerHelper())
-                .subscribe(new Action1<String>() {
+        RxUtil.wrapper(retrofitHelper.postData(
+                RequestBody.create(null, retrofitBean.getName()),
+                RequestBody.create(null, retrofitBean.getContent()), photo))
+                .subscribe(new Consumer<String>() {
                     @Override
-                    public void call(String s) {
+                    public void accept(String s) throws Exception {
                         retrofitView.postSuccess(s);
                     }
-                }, new Action1<Throwable>() {
+                }, new Consumer<Throwable>() {
                     @Override
-                    public void call(Throwable throwable) {
+                    public void accept(Throwable throwable) throws Exception {
                         retrofitView.postError(throwable.getMessage());
                     }
                 });
-        compositeSubscription.add(subscription);
     }
 }

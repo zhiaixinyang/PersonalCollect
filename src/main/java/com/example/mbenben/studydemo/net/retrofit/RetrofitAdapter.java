@@ -18,7 +18,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by MBENBEN on 2017/1/5.
+ * Created by MDove on 2017/1/5.
  */
 
 public class RetrofitAdapter extends RecyclerView.Adapter<RetrofitAdapter.ViewHolder>{

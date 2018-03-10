@@ -12,7 +12,7 @@ import com.example.mbenben.studydemo.base.ViewHolder;
 import java.util.List;
 
 /**
- * Created by MBENBEN on 2016/12/22.
+ * Created by MDove on 2016/12/22.
  */
 
 public abstract class CommonAdapter<T> extends RecyclerView.Adapter<ViewHolder>

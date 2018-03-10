@@ -13,9 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-
 import com.example.mbenben.studydemo.R;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;

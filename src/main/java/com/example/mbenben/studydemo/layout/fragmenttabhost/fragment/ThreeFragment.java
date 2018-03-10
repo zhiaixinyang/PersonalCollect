@@ -15,18 +15,6 @@ import android.widget.TextView;
 import com.example.mbenben.studydemo.R;
 import com.example.mbenben.studydemo.net.retrofit.model.RetrofitApi;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
-import retrofit2.converter.scalars.ScalarsConverterFactory;
-import rx.Observable;
-import rx.Subscriber;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Action1;
-import rx.schedulers.Schedulers;
-
 /**
  * Created by MBENBEN on 2016/9/26.
  */

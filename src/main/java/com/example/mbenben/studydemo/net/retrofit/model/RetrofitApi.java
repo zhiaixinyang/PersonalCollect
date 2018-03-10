@@ -6,6 +6,8 @@ import android.graphics.Bitmap;
 import com.example.mbenben.studydemo.net.retrofit.model.bean.GrammarMain;
 import com.example.mbenben.studydemo.net.retrofit.model.bean.RetrofitBean;
 import java.util.List;
+
+import io.reactivex.Observable;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import retrofit2.Call;
@@ -14,7 +16,6 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
-import rx.Observable;
 
 import retrofit2.http.GET;
 

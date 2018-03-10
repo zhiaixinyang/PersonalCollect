@@ -13,22 +13,22 @@ import android.util.TypedValue;
 import android.view.View;
 
 import com.example.mbenben.studydemo.R;
+import com.example.mbenben.studydemo.net.retrofit.RxUtil;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import rx.Observable;
-import rx.Subscriber;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
-import rx.subscriptions.CompositeSubscription;
+import io.reactivex.Observable;
+import io.reactivex.Observer;
+import io.reactivex.annotations.NonNull;
+import io.reactivex.disposables.Disposable;
 
 /**
  * date:2017/5/20
  * author:wuzhanglao
  * website:www.wuzhanglao.com
- *
+ * <p>
  * 原项目GitHub：https://github.com/Elder-Wu/Notes
  */
 
@@ -49,7 +49,6 @@ public class TimerView extends View {
     private Paint mPaint;
     private OnFinishedListener mListener;
     private List<Point> mPointList = new ArrayList<>();
-    private CompositeSubscription mCompositeSubscription = new CompositeSubscription();
 
     public TimerView(Context context) {
         this(context, null);
@@ -102,12 +101,13 @@ public class TimerView extends View {
     }
 
     public void start() {
-        mCompositeSubscription.clear();
-        mCompositeSubscription.add(Observable.interval(0, 10, TimeUnit.MILLISECONDS)
+        RxUtil.wrapper(Observable.interval(0, 10, TimeUnit.MILLISECONDS))
                 .take(mRemainedMillisecond / 10)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Subscriber<Long>() {
+                .subscribe(new Observer<Long>() {
+                    @Override
+                    public void onSubscribe(@NonNull Disposable d) {
+
+                    }
 
                     @Override
                     public void onNext(Long time) {
@@ -115,17 +115,17 @@ public class TimerView extends View {
                     }
 
                     @Override
-                    public void onCompleted() {
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
                         if (mListener != null) {
                             mListener.onFinished();
                         }
                     }
-
-                    @Override
-                    public void onError(Throwable e) {
-
-                    }
-                }));
+                });
     }
 
     private void handleTime() {
@@ -161,7 +161,6 @@ public class TimerView extends View {
     }
 
     public void stop() {
-        mCompositeSubscription.clear();
     }
 
     public void setTimerColor(int color) {
@@ -213,7 +212,8 @@ public class TimerView extends View {
     }
 
     public boolean isRunning() {
-        return mCompositeSubscription.hasSubscriptions();
+//        return mCompositeSubscription.hasSubscriptions();
+        return false;
     }
 
     public interface OnFinishedListener {
@@ -223,7 +223,7 @@ public class TimerView extends View {
     @Override
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        mCompositeSubscription.clear();
+//        mCompositeSubscription.clear();
     }
 
     private class Point {

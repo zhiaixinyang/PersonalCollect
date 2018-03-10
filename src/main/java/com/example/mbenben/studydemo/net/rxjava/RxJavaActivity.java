@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.example.mbenben.studydemo.R;
 import com.example.mbenben.studydemo.net.retrofit.RetrofitAdapter;
+import com.example.mbenben.studydemo.net.retrofit.RxUtil;
 import com.example.mbenben.studydemo.net.retrofit.model.RetrofitApi;
 import com.example.mbenben.studydemo.net.retrofit.model.bean.RetrofitBean;
 
@@ -26,34 +27,33 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
+import io.reactivex.Observable;
+import io.reactivex.ObservableEmitter;
+import io.reactivex.ObservableOnSubscribe;
+import io.reactivex.annotations.NonNull;
+import io.reactivex.functions.Consumer;
+import io.reactivex.functions.Function;
 import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
-import rx.Observable;
-import rx.Subscriber;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Action1;
-import rx.functions.Func1;
-import rx.schedulers.Schedulers;
 
 /**
- * Created by MBENBEN on 2017/1/9.
+ * Created by MDove on 2017/1/9.
  */
 
-public class RxJavaActivity extends AppCompatActivity{
-    @BindView(R.id.tv_content1) TextView tvContent1;
-    @BindView(R.id.rlv_main) RecyclerView rlvMain;
-    @BindView(R.id.iv_image) ImageView ivImage;
+public class RxJavaActivity extends AppCompatActivity {
+    @BindView(R.id.tv_content1)
+    TextView tvContent1;
+    @BindView(R.id.rlv_main)
+    RecyclerView rlvMain;
+    @BindView(R.id.iv_image)
+    ImageView ivImage;
     private String imagePath = "http://www.ohonor.xyz/image/TestImage.png";
 
 
     private List<RetrofitBean> datas;
     private RetrofitAdapter adapter;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,34 +61,37 @@ public class RxJavaActivity extends AppCompatActivity{
         ButterKnife.bind(this);
         //如果不设置操作线程问题，默认都处在同一个线程之中
         //rxjavaNetBitmap();
-        datas= new ArrayList<>();
-        adapter=new RetrofitAdapter(this,datas);
+        datas = new ArrayList<>();
+        adapter = new RetrofitAdapter(this, datas);
         rlvMain.setLayoutManager(new LinearLayoutManager(this));
         rlvMain.setAdapter(adapter);
 
     }
-    public void rxJavaChange(View view){
+
+    public void rxJavaChange(View view) {
         downloadBitmap(imagePath);
     }
-    public void recyclerView(View view){
+
+    public void recyclerView(View view) {
         getRetrofitByRxJava();
     }
+
     private void downloadBitmap(final String imagePath) {
-        Observable.just(imagePath)
-                .map(new Func1<String, Bitmap>() {
+        RxUtil.wrapper(Observable.just(imagePath))
+                .map(new Function<String, Bitmap>() {
                     @Override
-                    public Bitmap call(String s) {
-                        HttpURLConnection conn=null;
-                        InputStream is=null;
-                        Bitmap bitmap=null;
+                    public Bitmap apply(@NonNull String s) throws Exception {
+                        HttpURLConnection conn = null;
+                        InputStream is = null;
+                        Bitmap bitmap = null;
                         try {
-                            URL url=new URL(imagePath);
-                            conn= (HttpURLConnection) url.openConnection();
+                            URL url = new URL(imagePath);
+                            conn = (HttpURLConnection) url.openConnection();
                             conn.setDoInput(true);
                             conn.setRequestMethod("GET");
-                            if (conn.getResponseCode()==200){
-                                is=conn.getInputStream();
-                                bitmap=BitmapFactory.decodeStream(is);
+                            if (conn.getResponseCode() == 200) {
+                                is = conn.getInputStream();
+                                bitmap = BitmapFactory.decodeStream(is);
                                 return bitmap;
                             }
                         } catch (MalformedURLException e) {
@@ -98,67 +101,60 @@ public class RxJavaActivity extends AppCompatActivity{
                         }
                         return null;
                     }
-                }).subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Action1<Bitmap>() {
-                    @Override
-                    public void call(Bitmap bitmap) {
-                        ivImage.setImageBitmap(bitmap);
-                    }
-                });
 
-    }
-
-    private void getRetrofitByRxJava() {
-        Retrofit retrofit=new Retrofit.Builder()
-                .baseUrl(RetrofitApi.URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-                .build();
-        retrofit.create(RetrofitApi.class).getRetrofitDatasByRxJava()
-                .subscribeOn(Schedulers.io())
-                //.observeOn(AndroidSchedulers.mainThread())
-        .subscribe(new Action1<List<RetrofitBean>>() {
-
+                }).subscribe(new Consumer<Bitmap>() {
             @Override
-            public void call(List<RetrofitBean> list) {
-                datas.addAll(list);
-                adapter.notifyDataSetChanged();
+            public void accept(Bitmap bitmap) throws Exception {
+                ivImage.setImageBitmap(bitmap);
             }
         });
     }
 
-    private void rxjavaNetBitmap() {
-        Observable.create(new Observable.OnSubscribe<Bitmap>() {
-            @Override
-            public void call(Subscriber<? super Bitmap> subscriber) {
-                HttpURLConnection conn=null;
-                InputStream is=null;
-                Bitmap bitmap=null;
-                try {
-                    URL url=new URL(imagePath);
-                    conn= (HttpURLConnection) url.openConnection();
-                    conn.setDoInput(true);
-                    conn.setRequestMethod("GET");
-                    if (conn.getResponseCode()==200){
-                        is=conn.getInputStream();
-                        bitmap= BitmapFactory.decodeStream(is);
-                        //完成业务逻辑，通知观察者
-                        subscriber.onNext(bitmap);
+    private void getRetrofitByRxJava() {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(RetrofitApi.URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .build();
+        RxUtil.wrapper(retrofit.create(RetrofitApi.class).getRetrofitDatasByRxJava())
+                .subscribe(new Consumer<List<RetrofitBean>>() {
+                    @Override
+                    public void accept(List<RetrofitBean> list) throws Exception {
+                        datas.addAll(list);
+                        adapter.notifyDataSetChanged();
                     }
-                } catch (MalformedURLException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
+                });
+    }
+
+    private void rxjavaNetBitmap() {
+        RxUtil.wrapper(Observable.create(new ObservableOnSubscribe<Bitmap>() {
+            @Override
+                public void subscribe(@NonNull ObservableEmitter<Bitmap> emitter) throws Exception {
+                    HttpURLConnection conn = null;
+                    InputStream is = null;
+                    Bitmap bitmap = null;
+                    try {
+                        URL url = new URL(imagePath);
+                        conn = (HttpURLConnection) url.openConnection();
+                        conn.setDoInput(true);
+                        conn.setRequestMethod("GET");
+                        if (conn.getResponseCode() == 200) {
+                            is = conn.getInputStream();
+                            bitmap = BitmapFactory.decodeStream(is);
+                            //完成业务逻辑，通知观察者
+                            emitter.onNext(bitmap);
+                        }
+                    } catch (MalformedURLException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
-            }
-        }).subscribeOn(Schedulers.newThread())//子线程
-          .observeOn(AndroidSchedulers.mainThread())
-          .subscribe(new Action1<Bitmap>() {
-              @Override
-              public void call(Bitmap bitmap) {
-                  ivImage.setImageBitmap(bitmap);
-              }
-          });
+        })).subscribe(new Consumer<Bitmap>() {
+                    @Override
+                    public void accept(Bitmap bitmap) throws Exception {
+                        ivImage.setImageBitmap(bitmap);
+                    }
+                });
     }
 }
