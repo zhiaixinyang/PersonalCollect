@@ -120,6 +120,11 @@
             android:screenOrientation="portrait" />
 
         <activity
+            android:name=".basenote.rxjava.RxJava2Activity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <activity
             android:name=".basenote.styleimageview.StyleImageViewActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
