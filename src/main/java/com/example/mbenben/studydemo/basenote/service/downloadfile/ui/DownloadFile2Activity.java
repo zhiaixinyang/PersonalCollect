@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 
 import com.example.mbenben.studydemo.R;
+import com.example.mbenben.studydemo.base.BaseActivity;
 import com.example.mbenben.studydemo.basenote.service.downloadfile.adapter.FileListAdapter;
 import com.example.mbenben.studydemo.basenote.service.downloadfile.bean.FileInfo;
 import com.example.mbenben.studydemo.basenote.service.downloadfile.service.DownloadService2;
@@ -22,9 +23,17 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class DownloadFile2Activity extends AppCompatActivity {
+public class DownloadFile2Activity extends BaseActivity {
 
     private static final String TAG = "DownloadFile2Activity";
+
+    private static final String EXTRA_ACTION = "extra_action";
+
+    public static void start(Context context, String title) {
+        Intent intent = new Intent(context, DownloadFile2Activity.class);
+        intent.putExtra(EXTRA_ACTION, title);
+        context.startActivity(intent);
+    }
 
     @BindView(R.id.list)
     ListView list;
@@ -35,14 +44,18 @@ public class DownloadFile2Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle(getIntent().getStringExtra(EXTRA_ACTION));
         setContentView(R.layout.activity_downloadfile2);
         ButterKnife.bind(this);
 
         initData();
         initSetup();
         initRegister();
+    }
 
-
+    @Override
+    protected boolean isNeedCustomLayout() {
+        return false;
     }
 
     private void initRegister() {

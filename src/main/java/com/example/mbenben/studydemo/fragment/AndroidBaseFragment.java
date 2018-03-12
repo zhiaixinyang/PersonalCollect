@@ -124,8 +124,7 @@ public class AndroidBaseFragment extends Fragment {
                         startActivity(intentPlugin);
                         break;
                     case "DownLoadFileStartActivity":
-                        Intent intentDownLoadFileStart = new Intent(App.getInstance().getContext(), DownLoadFileStartActivity.class);
-                        startActivity(intentDownLoadFileStart);
+                        DownLoadFileStartActivity.start(getContext(),"多线程断点续传");
                         break;
                     case "MyButterKnifeActivity":
                         Intent intentMyButterKnife = new Intent(App.getInstance().getContext(), MyButterKnifeActivity.class);

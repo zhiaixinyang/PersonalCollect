@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 
 import com.example.mbenben.studydemo.R;
+import com.example.mbenben.studydemo.base.BaseActivity;
 import com.example.mbenben.studydemo.basenote.service.downloadfile.bean.FileInfo;
 import com.example.mbenben.studydemo.basenote.service.downloadfile.service.DownloadService;
 
@@ -19,19 +20,29 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class DownloadFileActivity extends AppCompatActivity {
+public class DownloadFileActivity extends BaseActivity {
+    private static final String EXTRA_ACTION = "extra_action";
 
+    public static void start(Context context, String title) {
+        Intent intent = new Intent(context, DownloadFileActivity.class);
+        intent.putExtra(EXTRA_ACTION, title);
+        context.startActivity(intent);
+    }
 
-    @BindView(R.id.name) TextView name;
-    @BindView(R.id.progressBar) ProgressBar progressBar;
+    @BindView(R.id.name)
+    TextView name;
+    @BindView(R.id.progressBar)
+    ProgressBar progressBar;
 
     String url;
     FileInfo fileInfo;
-    @BindView(R.id.pro_text) TextView proText;
+    @BindView(R.id.pro_text)
+    TextView proText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle(getIntent().getStringExtra(EXTRA_ACTION));
         setContentView(R.layout.activity_downloadfile);
         ButterKnife.bind(this);
         init();
@@ -40,6 +51,11 @@ public class DownloadFileActivity extends AppCompatActivity {
         IntentFilter filter = new IntentFilter();
         filter.addAction(DownloadService.ACTION_UPDATE);
         registerReceiver(mReceiver, filter);
+    }
+
+    @Override
+    protected boolean isNeedCustomLayout() {
+        return false;
     }
 
     private void init() {
