@@ -96,8 +96,7 @@ public class AndroidBaseFragment extends Fragment {
             public void onItemClick(ViewGroup parent, View view, Object o, int position) {
                 switch (o.toString()) {
                     case "ContentProviderActivity":
-                        Intent intentContentProvider = new Intent(App.getInstance().getContext(), ContentProviderActivity.class);
-                        startActivity(intentContentProvider);
+                        ContentProviderActivity.start(getContext(), "ContentProvider获取手机通讯录");
                         break;
                     case "BroadcastReceiverActivity":
                         Intent intentBroadcastReceiver = new Intent(App.getInstance().getContext(), BroadcastReceiverActivity.class);
@@ -124,7 +123,7 @@ public class AndroidBaseFragment extends Fragment {
                         startActivity(intentPlugin);
                         break;
                     case "DownLoadFileStartActivity":
-                        DownLoadFileStartActivity.start(getContext(),"多线程断点续传");
+                        DownLoadFileStartActivity.start(getContext(), "多线程断点续传");
                         break;
                     case "MyButterKnifeActivity":
                         Intent intentMyButterKnife = new Intent(App.getInstance().getContext(), MyButterKnifeActivity.class);

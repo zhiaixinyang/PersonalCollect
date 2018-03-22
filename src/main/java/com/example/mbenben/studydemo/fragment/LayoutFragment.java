@@ -258,8 +258,7 @@ public class LayoutFragment extends Fragment {
                         startActivity(toAliViewPager);
                         break;
                     case "HomeActivity":
-                        Intent toHome = new Intent(App.getInstance().getContext(), HomeActivity.class);
-                        startActivity(toHome);
+                        HomeActivity.start(getContext(), "高亮引导页");
                         break;
 
                     case "PhotoWallActivity":
