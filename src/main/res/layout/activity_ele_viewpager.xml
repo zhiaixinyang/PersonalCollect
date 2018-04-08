@@ -13,7 +13,7 @@
         android:background="#f1f1f1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_behavior="com.example.mbenben.studydemo.view.ele.ZoomHeaderBehavior"
+        app:layout_behavior="com.example.mbenben.studydemo.layout.ele.ZoomHeaderBehavior"
         />
 
 

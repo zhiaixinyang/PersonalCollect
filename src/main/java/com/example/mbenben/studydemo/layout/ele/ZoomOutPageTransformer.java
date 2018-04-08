@@ -4,7 +4,7 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 
 /**
- * Created by MBENBEN on 2017/1/3.
+ * Created by MDove on 2017/1/3.
  *
  * 原作者项目GitHub：https://github.com/githubwing/ZoomHeader
  */

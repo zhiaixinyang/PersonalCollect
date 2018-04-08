@@ -279,8 +279,7 @@ public class ViewsFragment extends Fragment {
 //                        startActivity(intentTimer);
 //                        break;
                     case "CuboidBtnActivity":
-                        Intent intentCuboidBtn = new Intent(App.getInstance().getContext(), CuboidBtnActivity.class);
-                        startActivity(intentCuboidBtn);
+                        CuboidBtnActivity.start(getActivity(),"涟漪式按钮");
                         break;
                     case "TouchViewActivity":
                         TouchViewActivity.start(getActivity(), "手势拖动图片效果");
