@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'kotlin-android'
 
 def getConfigProperty(String configName) {
     def versionPropsFile = file('config.properties')
@@ -73,4 +74,5 @@ dependencies {
     compile 'com.yarolegovich:mp:1.0.5'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'verifycode.com.verifycode:verifycodeview:1.0'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.2.21"
 }
