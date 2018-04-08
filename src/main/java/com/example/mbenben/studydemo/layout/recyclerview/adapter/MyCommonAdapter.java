@@ -11,7 +11,7 @@ import com.example.mbenben.studydemo.layout.recyclerview.others.adapter.ViewHold
 import java.util.List;
 
 /**
- * Created by MBENBEN on 2017/1/16.
+ * Created by MDove on 2017/1/16.
  */
 
 public abstract class MyCommonAdapter<T> extends RecyclerView.Adapter<ViewHolder> {

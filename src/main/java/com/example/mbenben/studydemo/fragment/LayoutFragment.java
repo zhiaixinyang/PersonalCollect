@@ -147,8 +147,7 @@ public class LayoutFragment extends Fragment {
                         startActivity(intentSwipeCards);
                         break;
                     case "EleViewPagerActivity":
-                        Intent intentEle = new Intent(App.getInstance().getContext(), EleMainActivity.class);
-                        startActivity(intentEle);
+                        EleMainActivity.start(App.getInstance().getContext(), "饿了么选单交互效果");
                         break;
                     case "SelectActivity":
                         Intent intentSelect = new Intent(App.getInstance().getContext(), SelectActivity.class);

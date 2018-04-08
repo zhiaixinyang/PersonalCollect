@@ -10,6 +10,7 @@ import android.view.View;
 
 import com.example.mbenben.studydemo.R;
 import com.example.mbenben.studydemo.layout.recyclerview.adapter.RecyclerAdapter;
+import com.example.mbenben.studydemo.layout.recyclerview.banner.activity.RlvBannerRlvActivity;
 import com.example.mbenben.studydemo.layout.recyclerview.changerlv.RLVChangeActivity;
 import com.example.mbenben.studydemo.layout.recyclerview.itemdecoration.CityItemDecorationActivity;
 import com.example.mbenben.studydemo.layout.recyclerview.itemdecoration.ItemDecorationActivity;
@@ -54,6 +55,7 @@ public class RecyclerActivity extends AppCompatActivity {
         data.add("ItemDecoration");
         data.add("MyCityItemDecoration");
         data.add("自定义LayoutManager");
+        data.add("基于RecyclerView的Banner");
         data.add("----------");
         data.add("万能Adapter展示");
         data.add("可拖动的Item+动画");
@@ -75,31 +77,31 @@ public class RecyclerActivity extends AppCompatActivity {
             }
         });
 
-        rlvMain.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,true));
+        rlvMain.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, true));
         adapter = new RecyclerAdapter(data);
         rlvMain.setAdapter(adapter);
         adapter.setOnItemClickListener(new RecyclerAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                switch (data.get(position)){
+                switch (data.get(position)) {
                     case "Footer和Header":
-                        Intent footerAndrHeader=new Intent(RecyclerActivity.this,RecyclerView1Activity.class);
+                        Intent footerAndrHeader = new Intent(RecyclerActivity.this, RecyclerView1Activity.class);
                         startActivity(footerAndrHeader);
                         break;
                     case "多种Item布局共存":
-                        Intent intent=new Intent(RecyclerActivity.this,RecyclerView2Activity.class);
+                        Intent intent = new Intent(RecyclerActivity.this, RecyclerView2Activity.class);
                         startActivity(intent);
                         break;
                     case "官方可滑动删除Item":
-                        Intent drag=new Intent(RecyclerActivity.this,RecyclerView3Activity.class);
+                        Intent drag = new Intent(RecyclerActivity.this, RecyclerView3Activity.class);
                         startActivity(drag);
                         break;
                     case "简单封装ViewHolder以及Adapter":
-                        Intent base=new Intent(RecyclerActivity.this,RecyclerView4Activity.class);
+                        Intent base = new Intent(RecyclerActivity.this, RecyclerView4Activity.class);
                         startActivity(base);
                         break;
                     case "万能Adapter展示":
-                        Intent commonAdapter=new Intent(RecyclerActivity.this,CommonAdapterActivity.class);
+                        Intent commonAdapter = new Intent(RecyclerActivity.this, CommonAdapterActivity.class);
                         startActivity(commonAdapter);
                         break;
                     case "可拖动的Item+动画":
@@ -135,9 +137,13 @@ public class RecyclerActivity extends AppCompatActivity {
                         startActivity(intentMyCityItem);
                         break;
                     case "自定义LayoutManager":
-                        Intent toLayoutManager=new Intent(RecyclerActivity.this, LayoutManagerActivity.class);
+                        Intent toLayoutManager = new Intent(RecyclerActivity.this, LayoutManagerActivity.class);
                         startActivity(toLayoutManager);
                         break;
+                    case "基于RecyclerView的Banner": {
+                        RlvBannerRlvActivity.start(RecyclerActivity.this, "基于RecyclerView的Banner");
+                        break;
+                    }
                 }
             }
         });
