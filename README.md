@@ -13,7 +13,7 @@
 内部以自定义View为主，也涵盖一些常用的效果，动画...
 
 目前一直在保持更新。
-新版本增加了Kotlin相关笔记，记得在根gradle下加上'classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:你的Kotlin版本"'
+新版本增加了Kotlin相关笔记，记得在根gradle下加上`classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:你的Kotlin版本"`
 
 效果简单展示：
 
