@@ -4,6 +4,8 @@
 
 > 项目使用了ButterKnife，因此需要在根gradle中加上`classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'`
 
+> 项目中使用了GreedDao，因此需要在根gradle中加上`classpath 'org.greenrobot:greendao-gradle-plugin:3.2.0'`
+
 > 如果是AndroidStudio3.0的话，可以需要花一番功夫调整一下gradle。
 
 > 祝你好运。
