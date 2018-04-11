@@ -34,9 +34,7 @@ import java.util.concurrent.TimeUnit;
  * 原项目GitHub：https://github.com/Bigkoo/Android-PickerView
  */
 public class WheelView extends View {
-
-
-
+    
     public enum ACTION {
         // 点击，滑翔(滑到尽头)，拖拽事件
         CLICK, FLING, DAGGLE

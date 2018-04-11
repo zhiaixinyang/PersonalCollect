@@ -913,6 +913,12 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
+        
+        <provider
+            android:authorities="com.mdove.content.provider"
+            android:name=".basenote.contentprovider.BookContentProvider"
+            android:permission="com.mdove.PROVIDER"
+            android:process=":mdmve"/>
 
         <provider
             android:name=".basenote.contentprovider.custom.CustomContentProvider"

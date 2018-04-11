@@ -71,6 +71,7 @@ public class MySurfaceView extends SurfaceView implements SurfaceHolder.Callback
                 }
             } finally {
                 if (mCanvas != null) {
+                    /**绘制结束后解锁显示在屏幕上**/
                     mHolder.unlockCanvasAndPost(mCanvas);
                 }
             }
