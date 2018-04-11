@@ -284,6 +284,11 @@
             android:screenOrientation="portrait" />
 
         <activity
+            android:name=".basenote.reflect.ReflectActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <activity
             android:name=".layout.recyclerview.banner.activity.RlvBannerNormalActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />

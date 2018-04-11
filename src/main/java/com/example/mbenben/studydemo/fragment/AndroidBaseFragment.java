@@ -28,6 +28,7 @@ import com.example.mbenben.studydemo.basenote.navigationbar.NavigationBarActivit
 import com.example.mbenben.studydemo.basenote.notification.NotificationActivity;
 import com.example.mbenben.studydemo.basenote.pattern.PatternActivity;
 import com.example.mbenben.studydemo.basenote.plugin.PluginActivity;
+import com.example.mbenben.studydemo.basenote.reflect.ReflectActivity;
 import com.example.mbenben.studydemo.basenote.rxjava.RxJava2Activity;
 import com.example.mbenben.studydemo.basenote.scaniamges.imageloader.ScanImageActivity;
 import com.example.mbenben.studydemo.basenote.service.ServiceActivity;
@@ -162,6 +163,9 @@ public class AndroidBaseFragment extends Fragment {
                     case "KotlinActivity":
                         KotlinActivity.Companion.start(getActivity(), "Kotlin学习笔记");
                         break;
+                    case "ReflectActivity":
+                        ReflectActivity.start(getActivity(), "反射相关笔记");
+                        break;
                 }
             }
 
@@ -257,6 +261,10 @@ public class AndroidBaseFragment extends Fragment {
             datas.add("KotlinActivity");
             mapTitle.put("KotlinActivity", "Kotlin学习笔记");
             App.addData(new HashSetSearchBean("KotlinActivity", KotlinActivity.class));
+
+            datas.add("ReflectActivity");
+            mapTitle.put("ReflectActivity", "反射相关笔记");
+            App.addData(new HashSetSearchBean("ReflectActivity", ReflectActivity.class));
         }
     }
 
