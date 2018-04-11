@@ -3,6 +3,7 @@ package com.example.mbenben.studydemo;
 import android.app.Application;
 import android.content.Context;
 
+import com.example.mbenben.studydemo.basenote.contentprovider.custom.DataInitHelper;
 import com.example.mbenben.studydemo.db.SearchBean;
 import com.example.mbenben.studydemo.greendao.DaoSession;
 import com.example.mbenben.studydemo.greendao.utils.DaoManager;
@@ -14,7 +15,7 @@ import java.util.Set;
 /**
  * Created by MDove on 2016/3/10.
  */
-public class App extends Application{
+public class App extends Application {
     private static Context context;
     private static Set<HashSetSearchBean> data;
     private static DaoSession mDaoSession;
@@ -30,8 +31,8 @@ public class App extends Application{
 
         mDaoManager = DaoManager.getInstance();
 
-        context =getApplicationContext();
-        data=new HashSet<>();
+        context = getApplicationContext();
+        data = new HashSet<>();
 
         mDaoManager.init(context);
         if (mDaoSession == null) {
@@ -41,6 +42,7 @@ public class App extends Application{
                 }
             }
         }
+        DataInitHelper.initData();
     }
 
     public static DaoSession getDaoSession() {
@@ -56,14 +58,16 @@ public class App extends Application{
     }
 
     private static App instance;
+
     //这种写法没必要，Application每个进程只有一个，除非多进程才会有多个
     public static synchronized App getInstance() {
-        if (instance==null){
-            instance=new App();
+        if (instance == null) {
+            instance = new App();
         }
         return instance;
     }
-    public Context getContext(){
+
+    public Context getContext() {
         return context;
     }
 

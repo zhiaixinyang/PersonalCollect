@@ -1,4 +1,4 @@
-package com.example.mbenben.studydemo.basenote.contentprovider;
+package com.example.mbenben.studydemo.basenote.contentprovider.custom;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
