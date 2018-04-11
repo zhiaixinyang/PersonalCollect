@@ -4,6 +4,8 @@ import android.app.Application;
 import android.content.Context;
 
 import com.example.mbenben.studydemo.db.SearchBean;
+import com.example.mbenben.studydemo.greendao.DaoSession;
+import com.example.mbenben.studydemo.greendao.utils.DaoManager;
 import com.example.mbenben.studydemo.model.HashSetSearchBean;
 
 import java.util.HashSet;
@@ -15,6 +17,8 @@ import java.util.Set;
 public class App extends Application{
     private static Context context;
     private static Set<HashSetSearchBean> data;
+    private static DaoSession mDaoSession;
+    private DaoManager mDaoManager;
 
     public static boolean isDebug() {
         return BuildConfig.DEBUG;
@@ -24,8 +28,23 @@ public class App extends Application{
     public void onCreate() {
         super.onCreate();
 
+        mDaoManager = DaoManager.getInstance();
+
         context =getApplicationContext();
         data=new HashSet<>();
+
+        mDaoManager.init(context);
+        if (mDaoSession == null) {
+            synchronized (App.class) {
+                if (null == mDaoSession) {
+                    mDaoSession = mDaoManager.getDaoMaster().newSession();
+                }
+            }
+        }
+    }
+
+    public static DaoSession getDaoSession() {
+        return mDaoSession;
     }
 
     public static Set<HashSetSearchBean> getData() {

@@ -1,7 +1,7 @@
 package com.example.mbenben.studydemo.basenote.contentprovider;
 
 /**
- * Created by MBENBEN on 2017/2/4.
+ * Created by MDove on 2017/2/4.
  */
 
 public class Contacts {

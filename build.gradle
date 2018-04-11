@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt'
 apply plugin: 'kotlin-android'
+apply plugin: 'org.greenrobot.greendao'
 
 def getConfigProperty(String configName) {
     def versionPropsFile = file('config.properties')
@@ -42,7 +43,18 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    dataBinding {
+        enabled = true
+    }
+
     sourceSets { main { assets.srcDirs = ['src/main/assets', 'src/main/assets/'] } }
+}
+
+greendao {
+    schemaVersion 1
+    daoPackage 'com.example.mbenben.studydemo.greendao'
+    targetGenDir 'src/main/java'
 }
 
 dependencies {
@@ -70,6 +82,8 @@ dependencies {
     compile 'com.facebook.rebound:rebound:0.3.8'
     compile files('libs/pinyin4j-2.5.0.jar')
     compile files('libs/Jbox2-2.3.jar')
+
+    compile 'org.greenrobot:greendao:3.2.0'
 
     compile 'com.yarolegovich:mp:1.0.5'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
