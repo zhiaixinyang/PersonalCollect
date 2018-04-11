@@ -601,4 +601,11 @@
         </attr>
         <attr name="autoPlaying" format="boolean"/>
     </declare-styleable>
+
+    <!-- 圆形path，类追逐效果的动画 -->
+    <declare-styleable name="CirclePathView">
+        <attr name="cpv_progress_color" format="color" />
+        <attr name="cpv_bg_color" format="color" />
+        <attr name="cpv_stroke_width" format="float" />
+    </declare-styleable>
 </resources>

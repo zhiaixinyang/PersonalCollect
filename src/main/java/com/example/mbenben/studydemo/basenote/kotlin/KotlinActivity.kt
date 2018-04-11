@@ -9,11 +9,13 @@ import com.example.mbenben.studydemo.R
 import com.example.mbenben.studydemo.base.BaseActivity
 import com.example.mbenben.studydemo.basenote.kotlin.note.KotlinNote
 import com.example.mbenben.studydemo.utils.log.LogUtils
+import com.github.shadowsocks.widget.CirclePathView
 
 /**
  * Created by MDove on 2018/4/8.
  */
 class KotlinActivity : BaseActivity() {
+    lateinit var cpv: CirclePathView
     override fun isNeedCustomLayout(): Boolean = false
 
     companion object {
@@ -43,5 +45,13 @@ class KotlinActivity : BaseActivity() {
         //监听事件
         findViewById(R.id.tv_title).setOnClickListener {
         }
+
+        cpv = findViewById(R.id.cpv) as CirclePathView
+        cpv.start()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        cpv.stop()
     }
 }

@@ -279,6 +279,11 @@
             android:screenOrientation="portrait" />
 
         <activity
+            android:name=".basenote.kotlin.KotlinActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <activity
             android:name=".layout.recyclerview.banner.activity.RlvBannerNormalActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />

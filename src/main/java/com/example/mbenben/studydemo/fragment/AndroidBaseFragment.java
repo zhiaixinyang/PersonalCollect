@@ -23,6 +23,7 @@ import com.example.mbenben.studydemo.basenote.contentprovider.ContentProviderAct
 import com.example.mbenben.studydemo.basenote.dialog.MyDialogActivity;
 import com.example.mbenben.studydemo.basenote.intent.IntentActivity;
 import com.example.mbenben.studydemo.basenote.keeplive.KeepLiveActivity;
+import com.example.mbenben.studydemo.basenote.kotlin.KotlinActivity;
 import com.example.mbenben.studydemo.basenote.navigationbar.NavigationBarActivity;
 import com.example.mbenben.studydemo.basenote.notification.NotificationActivity;
 import com.example.mbenben.studydemo.basenote.pattern.PatternActivity;
@@ -158,6 +159,9 @@ public class AndroidBaseFragment extends Fragment {
                     case "RxJava2Activity":
                         RxJava2Activity.start(getActivity(), "RxJava2的使用");
                         break;
+                    case "KotlinActivity":
+                        KotlinActivity.Companion.start(getActivity(), "Kotlin学习笔记");
+                        break;
                 }
             }
 
@@ -249,6 +253,10 @@ public class AndroidBaseFragment extends Fragment {
             datas.add("RxJava2Activity");
             mapTitle.put("RxJava2Activity", "RxJava2的使用");
             App.addData(new HashSetSearchBean("RxJava2Activity", RxJava2Activity.class));
+
+            datas.add("KotlinActivity");
+            mapTitle.put("KotlinActivity", "Kotlin学习笔记");
+            App.addData(new HashSetSearchBean("KotlinActivity", KotlinActivity.class));
         }
     }
 
