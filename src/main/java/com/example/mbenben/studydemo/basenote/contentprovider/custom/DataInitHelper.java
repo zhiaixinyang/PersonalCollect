@@ -17,6 +17,7 @@ public class DataInitHelper {
         if (mData == null || mData.size() <= 0) {
             for (int i = 0; i < 30; i++) {
                 ContentProviderInfo contentProviderInfo = new ContentProviderInfo();
+                contentProviderInfo.setId(Long.valueOf(i));
                 contentProviderInfo.setMContent("我是一条数据：" + i);
                 contentProviderInfo.setMName("我叫：" + i);
                 dao.insert(contentProviderInfo);

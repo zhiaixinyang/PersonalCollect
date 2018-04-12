@@ -350,6 +350,11 @@
             android:screenOrientation="portrait" />
 
         <activity
+            android:name=".basenote.contentprovider.custom.CustomProviderMainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <activity
             android:name=".net.httpurl.POSTRlvActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />

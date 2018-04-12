@@ -8,42 +8,38 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:gravity="center"
-        android:text="我是另一个进程的Activity"
+        android:text="我是运行在主进程(默认进程)的Activity"
         android:textColor="@color/black"
         android:textSize="16sp" />
+
+
     <TextView
-        android:id="@+id/btn_query"
+        android:id="@+id/btn_add"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:gravity="center"
-        android:text="查询ContentProvider中id为6的数据"
+        android:text="往数据库添加：AAA-aaa这条数据"
         android:textAllCaps="false"
         android:textColor="@color/black"
         android:textSize="16sp" />
 
     <TextView
-        android:id="@+id/btn_load"
+        android:id="@+id/btn_update"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:gravity="center"
-        android:text="获取ContentProvider中的数据"
+        android:text="更新数据0，为BBB-bbb"
         android:textAllCaps="false"
         android:textColor="@color/black"
         android:textSize="16sp" />
 
     <TextView
-        android:id="@+id/btn_to"
+        android:id="@+id/btn_delete"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:gravity="center"
-        android:text="跳转到主进程，操作数据库"
+        android:text="删除数据1"
         android:textAllCaps="false"
         android:textColor="@color/black"
         android:textSize="16sp" />
-
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rlv"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
 </LinearLayout>
