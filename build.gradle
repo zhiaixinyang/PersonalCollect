@@ -10,6 +10,20 @@ def getConfigProperty(String configName) {
     return versionProps.getProperty(configName)
 }
 
+def getVersionCodeProperty() {
+    def versionPropsFile = file('version.properties')
+    def versionProps = new Properties()
+    versionProps.load(versionPropsFile.newReader())
+    return versionProps.getProperty('VERSION_CODE').toInteger()
+}
+
+def getVersionNameProperty() {
+    def versionPropsFile = file('version.properties')
+    def versionProps = new Properties()
+    versionProps.load(versionPropsFile.newReader())
+    return versionProps.getProperty('VERSION_NAME')
+}
+
 def COMPILE_SDK_VERSION = hasProperty('COMPILE_SDK_VERSION') ? property('COMPILE_SDK_VERSION') : getConfigProperty('COMPILE_SDK_VERSION')
 def BUILD_TOOLS_VERSION = hasProperty('BUILD_TOOLS_VERSION') ? property('BUILD_TOOLS_VERSION') : getConfigProperty('BUILD_TOOLS_VERSION')
 def SUPPORT_VERSION = hasProperty('SUPPORT_VERSION') ? property('SUPPORT_VERSION') : getConfigProperty('SUPPORT_VERSION')
@@ -30,8 +44,10 @@ android {
         minSdkVersion MIN_SDK_VERSION as int
         targetSdkVersion TARGET_SDK_VERSION as int
 
-        versionCode 1
-        versionName "1.0"
+        versionCode getVersionCodeProperty()
+        versionName getVersionNameProperty()
+
+        multiDexEnabled true
     }
     buildTypes {
 //        debug {
@@ -80,6 +96,8 @@ dependencies {
     compile 'com.davemorrissey.labs:subsampling-scale-image-view:3.6.0'
     compile 'com.nineoldandroids:library:2.4.0'
     compile 'com.facebook.rebound:rebound:0.3.8'
+    compile 'com.android.support:multidex:1.0.1'
+
     compile files('libs/pinyin4j-2.5.0.jar')
     compile files('libs/Jbox2-2.3.jar')
 

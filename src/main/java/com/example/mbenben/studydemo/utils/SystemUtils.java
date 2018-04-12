@@ -28,6 +28,8 @@ import android.view.Surface;
 import android.view.ViewConfiguration;
 import android.view.WindowManager;
 
+import com.example.mbenben.studydemo.utils.io.IOUtils;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;

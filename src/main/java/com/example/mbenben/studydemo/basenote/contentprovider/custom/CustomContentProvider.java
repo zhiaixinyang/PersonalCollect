@@ -5,6 +5,8 @@ import android.content.ContentValues;
 import android.content.UriMatcher;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.Handler;
+import android.os.Looper;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
@@ -34,7 +36,12 @@ public class CustomContentProvider extends ContentProvider {
 
     @Override
     public boolean onCreate() {
-        mDao = App.getDaoSession().getContentProviderInfoDao();
+        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mDao = App.getDaoSession().getContentProviderInfoDao();
+            }
+        },1000);
         return true;
     }
 

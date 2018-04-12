@@ -1,7 +1,7 @@
-package com.example.mbenben.studydemo.utils;
+package com.example.mbenben.studydemo.utils.io;
 
-import com.suapp.common.io.output.ByteArrayOutputStream;
-import com.suapp.common.io.output.StringBuilderWriter;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -498,7 +498,13 @@ public class IOUtils {
      * @throws IOException          if an I/O error occurs
      */
     public static byte[] toByteArray(final InputStream input) throws IOException {
-        try (final ByteArrayOutputStream output = new ByteArrayOutputStream()) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            try (final ByteArrayOutputStream output = new ByteArrayOutputStream()) {
+                copy(input, output);
+                return output.toByteArray();
+            }
+        } else {
+            ByteArrayOutputStream output = new ByteArrayOutputStream();
             copy(input, output);
             return output.toByteArray();
         }
@@ -670,7 +676,12 @@ public class IOUtils {
      * @throws IOException          if an I/O exception occurs
      */
     public static byte[] toByteArray(final URLConnection urlConn) throws IOException {
-        try (InputStream inputStream = urlConn.getInputStream()) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            try (InputStream inputStream = urlConn.getInputStream()) {
+                return IOUtils.toByteArray(inputStream);
+            }
+        } else {
+            InputStream inputStream = urlConn.getInputStream();
             return IOUtils.toByteArray(inputStream);
         }
     }
@@ -840,6 +851,7 @@ public class IOUtils {
      *                                                      .UnsupportedEncodingException} in version 2.2 if the
      *                                                      encoding is not supported.
      */
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public static String toString(final URI uri, final String encoding) throws IOException {
         return toString(uri, Charsets.toCharset(encoding));
     }
@@ -866,7 +878,12 @@ public class IOUtils {
      * @throws IOException if an I/O exception occurs.
      */
     public static String toString(final URL url, final Charset encoding) throws IOException {
-        try (InputStream inputStream = url.openStream()) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            try (InputStream inputStream = url.openStream()) {
+                return toString(inputStream, encoding);
+            }
+        } else {
+            InputStream inputStream = url.openStream();
             return toString(inputStream, encoding);
         }
     }

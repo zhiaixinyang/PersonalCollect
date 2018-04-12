@@ -2,6 +2,7 @@ package com.example.mbenben.studydemo;
 
 import android.app.Application;
 import android.content.Context;
+import android.support.multidex.MultiDex;
 import android.text.TextUtils;
 
 import com.example.mbenben.studydemo.basenote.contentprovider.custom.DataInitHelper;
@@ -31,6 +32,7 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        MultiDex.install(this);
 
         mDaoManager = DaoManager.getInstance();
 
@@ -45,7 +47,9 @@ public class App extends Application {
                 }
             }
         }
-        DataInitHelper.initData();
+        if (isMainProcess()) {
+            DataInitHelper.initData();
+        }
     }
 
     /**
@@ -53,7 +57,7 @@ public class App extends Application {
      *
      * @return
      */
-    protected boolean isMainProcess() {
+    private boolean isMainProcess() {
         String processName = SystemUtils.getCurrentProcessName();
         LogUtils.d("BaseApplication", "process name:" + processName);
         if (TextUtils.isEmpty(processName)) {
