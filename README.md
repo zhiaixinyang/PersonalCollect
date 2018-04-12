@@ -21,7 +21,7 @@
 
 ![](https://github.com/zhiaixinyang/PersonalCollect/blob/master/asd.gif)
 
-###小Tips：
+### 小Tips：
 
 提高报错信息至1000行。（作用，我们在使用DataBinding的时候可能会发现，报错信息很多，但找不到问题所在。其实不是报错信息没出来，而是AS默认只打印100行错误日志。所以我们让AS多大几行，就可以看到了。）
 
