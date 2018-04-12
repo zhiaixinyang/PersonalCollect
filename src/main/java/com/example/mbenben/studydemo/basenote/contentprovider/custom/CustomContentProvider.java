@@ -12,6 +12,8 @@ import android.support.annotation.Nullable;
 
 import com.example.mbenben.studydemo.App;
 import com.example.mbenben.studydemo.greendao.ContentProviderInfoDao;
+import com.example.mbenben.studydemo.greendao.DaoSession;
+import com.example.mbenben.studydemo.greendao.utils.DaoManager;
 
 /**
  * Created by MDove on 2018/4/11.
@@ -22,8 +24,8 @@ public class CustomContentProvider extends ContentProvider {
     public static final int TABLE_ITEM = 1;
     public static final String TABLE_NAME = "CONTENT_PROVIDER_INFO";
     public static final String URI_INFO_DIR = "content://com.example.mbenben.studydemo.provider/CONTENT_PROVIDER_INFO";
-    public static final String TABLE_INFO_CONTENT = "mContent";
-    public static final String TABLE_INFO_NAME = "mName";
+    public static final String TABLE_INFO_CONTENT = "M_CONTENT";
+    public static final String TABLE_INFO_NAME = "M_NAME";
 
     private static UriMatcher sUriMatcher;
     private ContentProviderInfoDao mDao;
@@ -36,12 +38,16 @@ public class CustomContentProvider extends ContentProvider {
 
     @Override
     public boolean onCreate() {
-        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                mDao = App.getDaoSession().getContentProviderInfoDao();
-            }
-        },1000);
+        if (App.getDaoSession() == null) {
+            DaoManager daoManager = DaoManager.getInstance();
+            daoManager.init(getContext());
+            App.mDaoManager = daoManager;
+            DaoSession daoSession = daoManager.getDaoMaster().newSession();
+            App.mDaoSession = daoSession;
+            mDao = daoSession.getContentProviderInfoDao();
+        } else {
+            mDao = App.getDaoSession().getContentProviderInfoDao();
+        }
         return true;
     }
 

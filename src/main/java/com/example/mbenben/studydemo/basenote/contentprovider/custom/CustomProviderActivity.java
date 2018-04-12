@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
@@ -50,6 +51,7 @@ public class CustomProviderActivity extends BaseActivity {
         mRlv = (RecyclerView) findViewById(R.id.rlv);
 
         mData = new ArrayList<>();
+        mRlv.setLayoutManager(new LinearLayoutManager(this));
 
         mBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,15 +67,15 @@ public class CustomProviderActivity extends BaseActivity {
                     ContentProviderInfoModel model = new ContentProviderInfoModel(content, name);
                     mData.add(model);
                 }
+                mRlv.setAdapter(new CommonAdapter<ContentProviderInfoModel>(CustomProviderActivity.this, R.layout.item_custom_provider_info, mData) {
+                    @Override
+                    public void convert(ViewHolder holder, ContentProviderInfoModel model) {
+                        holder.setText(R.id.tv_content, model.mContent);
+                        holder.setText(R.id.tv_name, model.mName);
+                    }
+                });
             }
         });
 
-        mRlv.setAdapter(new CommonAdapter<ContentProviderInfoModel>(this, R.layout.item_custom_provider_info, mData) {
-            @Override
-            public void convert(ViewHolder holder, ContentProviderInfoModel model) {
-                holder.setText(R.id.tv_content, model.mContent);
-                holder.setText(R.id.tv_name, model.mName);
-            }
-        });
     }
 }

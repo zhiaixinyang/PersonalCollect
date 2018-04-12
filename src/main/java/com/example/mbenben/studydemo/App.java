@@ -22,8 +22,8 @@ import java.util.Set;
 public class App extends Application {
     private static Context context;
     private static Set<HashSetSearchBean> data;
-    private static DaoSession mDaoSession;
-    private DaoManager mDaoManager;
+    public static DaoSession mDaoSession;
+    public static DaoManager mDaoManager;
 
     public static boolean isDebug() {
         return BuildConfig.DEBUG;
@@ -34,20 +34,20 @@ public class App extends Application {
         super.onCreate();
         MultiDex.install(this);
 
-        mDaoManager = DaoManager.getInstance();
+        if (isMainProcess()) {
+            context = getApplicationContext();
+            data = new HashSet<>();
 
-        context = getApplicationContext();
-        data = new HashSet<>();
-
-        mDaoManager.init(context);
-        if (mDaoSession == null) {
-            synchronized (App.class) {
-                if (null == mDaoSession) {
-                    mDaoSession = mDaoManager.getDaoMaster().newSession();
+            mDaoManager = DaoManager.getInstance();
+            mDaoManager.init(context);
+            if (mDaoSession == null) {
+                synchronized (App.class) {
+                    if (null == mDaoSession) {
+                        mDaoSession = mDaoManager.getDaoMaster().newSession();
+                    }
                 }
             }
-        }
-        if (isMainProcess()) {
+
             DataInitHelper.initData();
         }
     }
