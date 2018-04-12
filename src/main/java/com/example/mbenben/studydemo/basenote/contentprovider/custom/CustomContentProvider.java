@@ -20,6 +20,8 @@ public class CustomContentProvider extends ContentProvider {
     public static final int TABLE_ITEM = 1;
     public static final String TABLE_NAME = "CONTENT_PROVIDER_INFO";
     public static final String URI_INFO_DIR = "content://com.example.mbenben.studydemo.provider/CONTENT_PROVIDER_INFO";
+    public static final String TABLE_INFO_CONTENT = "mContent";
+    public static final String TABLE_INFO_NAME = "mName";
 
     private static UriMatcher sUriMatcher;
     private ContentProviderInfoDao mDao;

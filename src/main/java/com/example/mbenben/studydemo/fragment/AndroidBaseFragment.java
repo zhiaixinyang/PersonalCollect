@@ -20,6 +20,7 @@ import com.example.mbenben.studydemo.base.ViewHolder;
 import com.example.mbenben.studydemo.basenote.aidltest.RemoteActivity;
 import com.example.mbenben.studydemo.basenote.broadcastreceiver.BroadcastReceiverActivity;
 import com.example.mbenben.studydemo.basenote.contentprovider.ContentProviderActivity;
+import com.example.mbenben.studydemo.basenote.contentprovider.custom.CustomProviderActivity;
 import com.example.mbenben.studydemo.basenote.dialog.MyDialogActivity;
 import com.example.mbenben.studydemo.basenote.intent.IntentActivity;
 import com.example.mbenben.studydemo.basenote.keeplive.KeepLiveActivity;
@@ -166,6 +167,9 @@ public class AndroidBaseFragment extends Fragment {
                     case "ReflectActivity":
                         ReflectActivity.start(getActivity(), "反射相关笔记");
                         break;
+                    case "CustomProviderActivity":
+                        CustomProviderActivity.start(getActivity(), "其他进程通过ContentProvider访问主进程数据库");
+                        break;
                 }
             }
 
@@ -197,6 +201,10 @@ public class AndroidBaseFragment extends Fragment {
             datas.add("ContentProviderActivity");
             mapTitle.put("ContentProviderActivity", "ContentProvider获取手机通讯录");
             App.addData(new HashSetSearchBean("ContentProviderActivity", ContentProviderActivity.class));
+
+            datas.add("CustomProviderActivity");
+            mapTitle.put("CustomProviderActivity", "其他进程通过ContentProvider访问主进程数据库");
+            App.addData(new HashSetSearchBean("CustomProviderActivity", CustomProviderActivity.class));
 
             datas.add("NotificationActivity");
             mapTitle.put("NotificationActivity", "Notification的基本应用");

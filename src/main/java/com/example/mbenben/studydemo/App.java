@@ -2,12 +2,15 @@ package com.example.mbenben.studydemo;
 
 import android.app.Application;
 import android.content.Context;
+import android.text.TextUtils;
 
 import com.example.mbenben.studydemo.basenote.contentprovider.custom.DataInitHelper;
 import com.example.mbenben.studydemo.db.SearchBean;
 import com.example.mbenben.studydemo.greendao.DaoSession;
 import com.example.mbenben.studydemo.greendao.utils.DaoManager;
 import com.example.mbenben.studydemo.model.HashSetSearchBean;
+import com.example.mbenben.studydemo.utils.SystemUtils;
+import com.example.mbenben.studydemo.utils.log.LogUtils;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -43,6 +46,20 @@ public class App extends Application {
             }
         }
         DataInitHelper.initData();
+    }
+
+    /**
+     * 判断是否当前允许在主进程
+     *
+     * @return
+     */
+    protected boolean isMainProcess() {
+        String processName = SystemUtils.getCurrentProcessName();
+        LogUtils.d("BaseApplication", "process name:" + processName);
+        if (TextUtils.isEmpty(processName)) {
+            return true;
+        }
+        return getPackageName().equals(processName);
     }
 
     public static DaoSession getDaoSession() {

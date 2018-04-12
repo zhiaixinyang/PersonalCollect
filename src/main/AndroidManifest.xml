@@ -344,6 +344,12 @@
             android:screenOrientation="portrait" />
 
         <activity
+            android:name=".basenote.contentprovider.custom.CustomProviderActivity"
+            android:launchMode="singleTask"
+            android:process=":provider.activity"
+            android:screenOrientation="portrait" />
+
+        <activity
             android:name=".net.httpurl.POSTRlvActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
@@ -902,6 +908,12 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
+
+        <provider
+            android:name=".basenote.contentprovider.custom.CustomContentProvider"
+            android:authorities="com.example.mbenben.studydemo.provider"
+            android:enabled="true"
+            android:exported="true" />
 
     </application>
 
