@@ -9,31 +9,25 @@ import android.widget.TextView;
 
 import com.example.mbenben.studydemo.R;
 
+import java.lang.ref.WeakReference;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by MBENBEN on 2017/7/13.
+ * Created by MDove on 2017/7/13.
  */
 
 public class HandlerActivity extends AppCompatActivity {
     @BindView(R.id.tv) TextView textView;
-
-    private Handler handler=new Handler(){
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-            if (msg.what==1){
-                textView.setText(msg.arg1+"");
-            }
-        }
-    };
+    private MyHandler myHandler;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_handler);
         ButterKnife.bind(this);
+        myHandler=new MyHandler(this);
 
         new Thread(new Runnable() {
             @Override
@@ -41,8 +35,24 @@ public class HandlerActivity extends AppCompatActivity {
                 Message message=new Message();
                 message.what=1;
                 message.arg1=123;
-                handler.sendMessage(message);
+                myHandler.sendMessage(message);
             }
         }).start();
+    }
+
+    private static class MyHandler extends Handler{
+        WeakReference<HandlerActivity> weakReference;
+
+        public MyHandler(HandlerActivity activity){
+            weakReference=new WeakReference<>(activity);
+        }
+
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            if (msg.what==1){
+                weakReference.get().textView.setText(msg.arg1+"");
+            }
+        }
     }
 }
