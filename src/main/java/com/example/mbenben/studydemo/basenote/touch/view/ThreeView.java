@@ -12,7 +12,7 @@ import com.example.mbenben.studydemo.utils.log.LogUtils;
  */
 
 public class ThreeView extends View {
-    private static final String TAG = "OneViewGroup";
+    private static final String TAG = "TouchActivity";
 
     public ThreeView(Context context) {
         super(context);
@@ -27,7 +27,18 @@ public class ThreeView extends View {
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         LogUtils.d(TAG, "ThreeView -> onTouchEvent");
-        return super.onTouchEvent(event);
+        int type=event.getAction();
+        switch (type){
+            case MotionEvent.ACTION_DOWN:{
+                LogUtils.d(TAG, "ThreeView -> ACTION_DOWN");
+                return true;
+            }
+            case MotionEvent.ACTION_MOVE:{
+                LogUtils.d(TAG, "ThreeView -> ACTION_MOVE");
+                return false;
+            }
+        }
+        return true;
     }
 
     public ThreeView(Context context, AttributeSet attrs) {
@@ -36,17 +47,6 @@ public class ThreeView extends View {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 LogUtils.d(TAG, "ThreeView -> onTouch");
-                int type=event.getAction();
-                switch (type){
-                    case MotionEvent.ACTION_DOWN:{
-                        LogUtils.d(TAG, "ThreeView -> ACTION_DOWN");
-                        return true;
-                    }
-                    case MotionEvent.ACTION_MOVE:{
-                        LogUtils.d(TAG, "ThreeView -> ACTION_MOVE");
-                        return false;
-                    }
-                }
                 return false;
             }
         });

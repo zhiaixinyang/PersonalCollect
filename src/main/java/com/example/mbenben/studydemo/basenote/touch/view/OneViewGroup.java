@@ -3,6 +3,7 @@ package com.example.mbenben.studydemo.basenote.touch.view;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
 import com.example.mbenben.studydemo.utils.log.LogUtils;
@@ -11,8 +12,8 @@ import com.example.mbenben.studydemo.utils.log.LogUtils;
  * Created by MDove on 2018/4/13.
  */
 
-public class OneViewGroup extends LinearLayout {
-    private static final String TAG="OneViewGroup";
+public class OneViewGroup extends FrameLayout {
+    private static final String TAG="TouchActivity";
 
     public OneViewGroup(Context context) {
         super(context);
@@ -38,10 +39,5 @@ public class OneViewGroup extends LinearLayout {
 
     public OneViewGroup(Context context, AttributeSet attrs) {
         super(context, attrs);
-    }
-
-    @Override
-    protected void onLayout(boolean changed, int l, int t, int r, int b) {
-
     }
 }
