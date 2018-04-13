@@ -870,6 +870,11 @@
             android:screenOrientation="portrait" />
 
         <activity
+            android:name=".basenote.touch.TouchActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <activity
             android:name=".view.touchview.TouchViewActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />

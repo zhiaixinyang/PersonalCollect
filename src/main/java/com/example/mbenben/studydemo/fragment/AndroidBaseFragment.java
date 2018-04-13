@@ -36,6 +36,7 @@ import com.example.mbenben.studydemo.basenote.service.ServiceActivity;
 import com.example.mbenben.studydemo.basenote.service.download.DownLoadServiceActivity;
 import com.example.mbenben.studydemo.basenote.service.downloadfile.ui.DownLoadFileStartActivity;
 import com.example.mbenben.studydemo.basenote.styleimageview.StyleImageViewActivity;
+import com.example.mbenben.studydemo.basenote.touch.TouchActivity;
 import com.example.mbenben.studydemo.db.SearchBean;
 import com.example.mbenben.studydemo.db.SearchDBManager;
 import com.example.mbenben.studydemo.model.HashSetSearchBean;
@@ -170,6 +171,10 @@ public class AndroidBaseFragment extends Fragment {
                     case "CustomProviderActivity":
                         CustomProviderActivity.start(getActivity(), "其他进程通过ContentProvider访问主进程数据库");
                         break;
+                    case "TouchActivity":{
+                        TouchActivity.start(getActivity(), "事件分发实践");
+                        break;
+                    }
                 }
             }
 
@@ -273,6 +278,10 @@ public class AndroidBaseFragment extends Fragment {
             datas.add("ReflectActivity");
             mapTitle.put("ReflectActivity", "反射相关笔记");
             App.addData(new HashSetSearchBean("ReflectActivity", ReflectActivity.class));
+
+            datas.add("TouchActivity");
+            mapTitle.put("TouchActivity", "事件分发实践");
+            App.addData(new HashSetSearchBean("TouchActivity", TouchActivity.class));
         }
     }
 
