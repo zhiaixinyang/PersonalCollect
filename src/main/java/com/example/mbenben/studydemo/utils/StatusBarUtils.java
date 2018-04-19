@@ -18,7 +18,7 @@ import android.widget.LinearLayout;
  * Email: chjie.jaeger@gamil.com
  * GitHub: https://github.com/laobie
  */
-public class StatusBarUtil {
+public class StatusBarUtils {
 
     public static final int DEFAULT_STATUS_BAR_ALPHA = 112;
 

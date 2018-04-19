@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/ball_widget_width"
+    android:layout_height="@dimen/ball_widget_width"
+    android:background="@drawable/bg_ball_widget">
+
+    <ImageView
+        android:id="@+id/weather_icon"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_margin="12dp"
+        android:scaleType="fitCenter"
+        android:tint="@color/white"
+        tools:src="@android:drawable/sym_def_app_icon" />
+</FrameLayout>

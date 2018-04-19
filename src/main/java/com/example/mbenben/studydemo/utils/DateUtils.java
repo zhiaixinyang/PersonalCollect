@@ -8,6 +8,11 @@ import java.util.Date;
  * Created by MDove on 2017/10/9.
  */
 public class DateUtils {
+    public static final long SECOND_IN_MILLIS = 1000;
+    public static final long MINUTE_IN_MILLIS = SECOND_IN_MILLIS * 60;
+    public static final long HOUR_IN_MILLIS = MINUTE_IN_MILLIS * 60;
+    public static final long DAY_IN_MILLIS = HOUR_IN_MILLIS * 24;
+    public static final long WEEK_IN_MILLIS = DAY_IN_MILLIS * 7;
 
     public static String getDate(long time) {
         SimpleDateFormat format = new SimpleDateFormat("yyyy.MM.dd ");
@@ -47,6 +52,14 @@ public class DateUtils {
         Date date = new Date(time);
         return format.format(date);
 
+    }
+
+    public static boolean isInDay(long time) {
+        long current = System.currentTimeMillis();
+        if (current - time <= DAY_IN_MILLIS && current - time > 0) {
+            return true;
+        }
+        return false;
     }
 
     static SimpleDateFormat formatHM = new SimpleDateFormat("HH:mm");

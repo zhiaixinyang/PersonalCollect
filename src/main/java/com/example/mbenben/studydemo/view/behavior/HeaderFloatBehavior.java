@@ -6,13 +6,12 @@ import android.content.res.Resources;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 
 
 import com.example.mbenben.studydemo.App;
 import com.example.mbenben.studydemo.R;
-import com.example.mbenben.studydemo.utils.StatusBarUtil;
+import com.example.mbenben.studydemo.utils.StatusBarUtils;
 
 import java.lang.ref.WeakReference;
 
@@ -51,7 +50,7 @@ public class HeaderFloatBehavior extends CoordinatorLayout.Behavior<View> {
         //marginTop=130dp+状态栏高度
         final float initOffset = resources.getDimension(R.dimen.behavior_init_float_offset_y);
         final float translateY = collapsedOffset + (initOffset - collapsedOffset) * progress
-                + StatusBarUtil.getStatusBarHeight(App.getInstance().getContext());
+                + StatusBarUtils.getStatusBarHeight(App.getInstance().getContext());
         child.setTranslationY(translateY);
 
         // EditText从后面参数的颜色变到前面参数

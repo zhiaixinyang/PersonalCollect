@@ -6,14 +6,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.ViewTreeObserver;
 import android.view.Window;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.mbenben.studydemo.App;
 import com.example.mbenben.studydemo.R;
-import com.example.mbenben.studydemo.utils.StatusBarUtil;
+import com.example.mbenben.studydemo.utils.StatusBarUtils;
 import com.example.mbenben.studydemo.layout.gradationtitle.view.GradationScrollView;
 
 import java.util.ArrayList;
@@ -41,7 +40,7 @@ public class QQTitleActivity extends AppCompatActivity implements GradationScrol
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().requestFeature(Window.FEATURE_NO_TITLE);
-        StatusBarUtil.setImgTransparent(this);
+        StatusBarUtils.setImgTransparent(this);
         setContentView(R.layout.activity_qqtitle);
 
         ButterKnife.bind(this);

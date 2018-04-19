@@ -41,6 +41,9 @@
     <color name="background">#1d1f2f</color>
     <color name="btnColor">#30354b</color>
 
+    <color name="cross_default">#ffffff</color>
+    <color name="cross_overlapped">#ffffff</color>
+
     <color name="lol_one">#c3e3e5</color>
     <color name="lol_two">#85cdd4</color>
     <color name="lol_three">#48afb6</color>

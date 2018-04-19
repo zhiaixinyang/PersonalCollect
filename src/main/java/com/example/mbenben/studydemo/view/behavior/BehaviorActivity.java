@@ -9,7 +9,7 @@ import com.example.mbenben.studydemo.App;
 import com.example.mbenben.studydemo.R;
 import com.example.mbenben.studydemo.base.CommonAdapter;
 import com.example.mbenben.studydemo.base.ViewHolder;
-import com.example.mbenben.studydemo.utils.StatusBarUtil;
+import com.example.mbenben.studydemo.utils.StatusBarUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +28,7 @@ public class BehaviorActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        StatusBarUtil.setImgTransparent(this);
+        StatusBarUtils.setImgTransparent(this);
         setContentView(R.layout.activity_view_behavior);
         initViewAndDatas();
 

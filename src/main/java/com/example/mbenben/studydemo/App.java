@@ -33,9 +33,9 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         MultiDex.install(this);
+        context = getApplicationContext();
 
         if (isMainProcess()) {
-            context = getApplicationContext();
             data = new HashSet<>();
 
             mDaoManager = DaoManager.getInstance();
@@ -89,6 +89,10 @@ public class App extends Application {
     }
 
     public Context getContext() {
+        return context;
+    }
+
+    public static Context getAllContext() {
         return context;
     }
 

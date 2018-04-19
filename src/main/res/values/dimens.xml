@@ -93,4 +93,6 @@
     <dimen name="WheelMargins">8dp</dimen>
     <dimen name="WheelItemHeightSpace">16dp</dimen>
     <dimen name="WheelItemWidthSpace">32dp</dimen>
+
+    <dimen name="ball_widget_width">48dp</dimen>
 </resources>

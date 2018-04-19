@@ -18,6 +18,7 @@ import com.example.mbenben.studydemo.base.CommonAdapter;
 import com.example.mbenben.studydemo.base.OnItemClickListener;
 import com.example.mbenben.studydemo.base.ViewHolder;
 import com.example.mbenben.studydemo.basenote.aidltest.RemoteActivity;
+import com.example.mbenben.studydemo.basenote.ballwidget.WidgetBallActivity;
 import com.example.mbenben.studydemo.basenote.broadcastreceiver.BroadcastReceiverActivity;
 import com.example.mbenben.studydemo.basenote.contentprovider.ContentProviderActivity;
 import com.example.mbenben.studydemo.basenote.contentprovider.custom.CustomProviderActivity;
@@ -171,8 +172,12 @@ public class AndroidBaseFragment extends Fragment {
                     case "CustomProviderActivity":
                         CustomProviderActivity.start(getActivity(), "其他进程通过ContentProvider访问主进程数据库");
                         break;
-                    case "TouchActivity":{
+                    case "TouchActivity": {
                         TouchActivity.start(getActivity(), "事件分发实践");
+                        break;
+                    }
+                    case "WidgetBallActivity": {
+                        WidgetBallActivity.start(getActivity(), "悬浮球+进程间双向AIDL");
                         break;
                     }
                 }
@@ -282,6 +287,10 @@ public class AndroidBaseFragment extends Fragment {
             datas.add("TouchActivity");
             mapTitle.put("TouchActivity", "事件分发实践");
             App.addData(new HashSetSearchBean("TouchActivity", TouchActivity.class));
+
+            datas.add("WidgetBallActivity");
+            mapTitle.put("WidgetBallActivity", "悬浮球+进程间双向AIDL");
+            App.addData(new HashSetSearchBean("WidgetBallActivity", WidgetBallActivity.class));
         }
     }
 
