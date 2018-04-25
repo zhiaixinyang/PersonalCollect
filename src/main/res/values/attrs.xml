@@ -690,4 +690,17 @@
         <attr name="wheelCurtainBorder" />
         <attr name="wheelCurtainBorderColor" />
     </declare-styleable>
+
+    <!-- 数字雨：黑客帝国 -->
+    <declare-styleable name="NumberRain">
+        <attr name="nr_textSize" format="dimension" />
+        <attr name="nr_highLightColor" format="color" />
+        <attr name="nr_normalColor" format="color" />
+    </declare-styleable>
+    <declare-styleable name="NumberRainItem">
+        <attr name="nri_startOffset" format="integer" />
+        <attr name="nri_textSize" format="dimension" />
+        <attr name="nri_highLightColor" format="color" />
+        <attr name="nri_normalColor" format="color" />
+    </declare-styleable>
 </resources>

@@ -15,13 +15,15 @@ import android.support.annotation.Nullable;
  */
 
 public class LockScreenService extends Service {
+    private LockScreenBroadcastReceiver mLockScreenBroadcastReceiver;
 
     @Override
-    public int onStartCommand(Intent intent,int flags, int startId) {
+    public int onStartCommand(Intent intent, int flags, int startId) {
         //监听关屏广播必须使用动态注册
         IntentFilter mScreenOffFilter = new IntentFilter();
         mScreenOffFilter.addAction(Intent.ACTION_SCREEN_OFF);
-        registerReceiver(new LockScreenBroadcastReceiver(), mScreenOffFilter);
+        mLockScreenBroadcastReceiver = new LockScreenBroadcastReceiver();
+        registerReceiver(mLockScreenBroadcastReceiver, mScreenOffFilter);
         return Service.START_STICKY;
     }
 
@@ -30,8 +32,8 @@ public class LockScreenService extends Service {
         super.onDestroy();
         // 在此重新启动,使服务常驻内存
         startService(new Intent(this, LockScreenService.class));
+        unregisterReceiver(mLockScreenBroadcastReceiver);
     }
-
 
 
     @Nullable

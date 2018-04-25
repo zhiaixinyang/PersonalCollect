@@ -42,12 +42,10 @@
             android:name=".layout.nav.NavActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".net.okhttp.OkHttpDemoActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".AboutMeActivity"
             android:launchMode="singleTask"
@@ -56,39 +54,37 @@
             android:name=".view.canvasapi.CanvasApiActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".anim.swipbackhelper.activity.Swipe1Activity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".anim.swipbackhelper.activity.SwipeBackActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".anim.swipbackhelper.activity.SwipeRLVActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".anim.swipbackhelper.activity.SwipeVPActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.recyclerview.changerlv.RLVChangeActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.nav.scroller.ScrollActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".net.httpurl.HttpUrlAcitvity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".basenote.kotlin.numberrain.NumberRainActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
@@ -96,42 +92,34 @@
             android:name=".net.retrofit.RetrofitActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.nestedscroll.NestedScrollActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".basenote.pattern.PatternActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.fanmenu.FanMenuActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".basenote.ballwidget.WidgetBallActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.renkstar.RenkStarActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.colorpickerView.ColorPickerActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".basenote.rxjava.RxJava2Activity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".basenote.styleimageview.StyleImageViewActivity"
             android:launchMode="singleTask"
@@ -148,12 +136,10 @@
             android:name=".layout.guideview.activity.FullActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.photowall.PhotoWallActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.guideview.activity.MyListActivity"
             android:launchMode="singleTask"
@@ -182,28 +168,24 @@
             android:name=".view.pintu.PinTuActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.switchbutton.SwitchButtonActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".basenote.plugin.PluginActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.indicator.IndicatorActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.recyclerview.sticky.view.MainStickyActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
-        <!--android:hardwareAccelerated="false"-->
+        <!-- android:hardwareAccelerated="false" -->
         <activity
             android:name=".layout.recyclerview.sticky.view.NormalActivity"
             android:launchMode="singleTask"
@@ -215,403 +197,324 @@
         <activity
             android:name=".anim.camera.CameraAnimActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".layout.recyclerview.sticky.view.BeautifulRecyclerViewActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.recyclerview.sticky.view.PowerfulStickyRecyclerViewActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.chanelview.ChanelActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.recyclerview.sticky.view.StickyRecyclerViewActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.timer.CountDownActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.timer.TimerActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.drawerlayout.DrawerLayoutActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.recyclerview.RecyclerView2Activity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.bezier.ClearBezierActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.viewpager.ViewPagerActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.swipecards.SwipeCardsActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.healthytables.HealthyTablesActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.ele.EleViewPagerActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.ele.EleMainActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".basenote.kotlin.KotlinActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".basenote.reflect.ReflectActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.recyclerview.banner.activity.RlvBannerNormalActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.recyclerview.banner.activity.RlvBannerRlvActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.credit.CreditActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.weibosport.WeiBoSportActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.qqhealth.QQHealthActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.select.SelectActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.chart.ChartActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.lol.LoLActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.pathview.PathViewActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".basenote.aidltest.RemoteActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".annotation.MyButterKnifeActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".basenote.contentprovider.custom.CustomProviderActivity"
             android:launchMode="singleTask"
             android:process=":provider.activity"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".basenote.contentprovider.custom.CustomProviderMainActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".net.httpurl.POSTRlvActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".net.retrofit.RetrofitPostActiviy"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".net.rxjava.RxJavaActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.bezier.GiftBezierActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".anim.ValueAnimActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.pathview.svgpath.SVGPathActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.wave.WaveActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.recyclerview.RecyclerView1Activity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.recyclerview.RecyclerActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.recyclerview.RecyclerView3Activity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.gradationtitle.QQTitleActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.viscosity.ViscosityActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.expandabletextview.ExpandableActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.arclayout.ArcLayoutActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.flowlayout.MultiLineChooseActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.ricktext.NewEmojiActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.ricktext.RickTextActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.ricktext.UserListActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.enviews.ENViewsActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.progressbar.ProgressBarActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.htmltext.HtmlTextActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.bigimage.GlideLoaderActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.recyclerview.RecyclerView4Activity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.passwordedittext.PassWordActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.radarscan.RadarScanActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.recyclerview.others.refreshLoad.RefreshLoadActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.recyclerview.others.commonAdapterUse.CommonAdapterActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.recyclerview.others.headerFooterUse.HeaderFooterActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.recyclerview.others.dragItemAnimatorUse.DragItemAnimatorActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.behavior.BehaviorActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.videoplayer.VideoPlayerActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.circle.CircleActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.fragmenttabhost.TabActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".basenote.contentprovider.ContentProviderActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".basenote.broadcastreceiver.BroadcastReceiverActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.bottomnavigationview.BottomNavigationViewActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.newbottomnav.BottomNavMainActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.materialdesign.MaterialDesignActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.loading.LoadingTextViewActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.justify.JustifyTextActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.toast.NewToastActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.timelytext.TimelyTextActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.intercepttouchevent.InterceptActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".basenote.service.ServiceActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".basenote.service.download.DownLoadServiceActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.expandableviewpager.ExpandableViewPagerActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.graffiti.DrawingBoardActvity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".anim.circularanim.CircleAnimActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".anim.circularanim.CircleAnimListActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.couponview.CouponViewActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.floatingview.FloatViewActivity"
             android:launchMode="singleTask"
@@ -620,52 +523,42 @@
             android:name=".layout.horizontalscrollview.HorizontalScrollActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".basenote.permission.PermissionActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".basenote.opencamera.OpenCameraActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".basenote.intent.IntentActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.esaysidebar.SortCityActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.pickerview.PickerActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.pickerview.JsonDataActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".basenote.scaniamges.imageloader.ScanImageActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".SearchRlvActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.drawerlayout.my.SlidingActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.radar.RadarViewActivity"
             android:launchMode="singleTask"
@@ -673,44 +566,36 @@
         <activity
             android:name=".view.shader.ShaderActivity"
             android:launchMode="singleTask" />
-
         <activity
             android:name=".layout.swipmenu.SwipMenuActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.materialdesign.coordinatorlayouttest.UCActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.horizontalselectedview.HorizontalselectedActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.recyclerview.refresh2.RefreshLoad2Activity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.tantan.TantanActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.verifycode.VerifyCodeActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".basenote.notification.NoBackStackActivity"
             android:excludeFromRecents="true"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:taskAffinity="" />
-
         <activity
             android:name=".basenote.notification.BackStackActivity"
             android:parentActivityName=".MainActivity"
@@ -719,12 +604,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-
         <activity
             android:name=".basenote.dialog.MyDialogActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".basenote.navigationbar.NavigationBarActivity"
             android:launchMode="singleTask"
@@ -733,22 +616,18 @@
             android:name=".view.calendar.CalendarActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.dianzan.DianZanActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.misportsconnectview.MiSportViewActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".anim.AnimatorActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".basenote.notification.NotificationActivity"
             android:launchMode="singleTask"
@@ -758,22 +637,18 @@
             android:screenOrientation="portrait"
             android:taskAffinity=""
             android:theme="@style/LockScreenTheme" />
-
         <activity
             android:name=".view.ruffle.RuffleActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.recyclerview.itemdecoration.ItemDecorationActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.recyclerview.itemdecoration.CityItemDecorationActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.recyclerview.layoutmanager.LayoutManagerActivity"
             android:launchMode="singleTask"
@@ -786,6 +661,7 @@
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="to_start_two_intent" />
+
                 <category android:name="to_start_two_intent_by_category" />
                 <!-- 官方：此句话必须存在 -->
                 <category android:name="android.intent.category.DEFAULT" />
@@ -803,7 +679,6 @@
             android:name=".basenote.service.downloadfile.ui.DownloadFileActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.surfaceview.activity.MyCustomsActivity"
             android:launchMode="singleTask"
@@ -816,72 +691,58 @@
             android:name=".view.surfaceview.SurfaceViewActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".anim.path.RightMarkActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.opengl.OpenGLActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.opengl.flag.FlagActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.cuboid.CuboidBtnActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.opengl.google.OpenGLGoogleActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.jbox.MobikeDemoActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.jbox.JBoxDemoActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.jbox.ParamsActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.opengl.OpenGL3DActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.xiaomi.XiaoMiActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.bitmap.BitmapActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".layout.doublepull.DoublePullActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".basenote.touch.TouchActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".view.touchview.TouchViewActivity"
             android:launchMode="singleTask"
@@ -902,19 +763,16 @@
             android:name=".basenote.aidltest.RemoteService"
             android:exported="false"
             android:process=":bg" />
-
         <service
             android:name=".basenote.ballwidget.service.BallWidgetService"
             android:exported="false"
             android:process="com.mdove.ball.service" />
-
         <service android:name=".basenote.service.MyStartService" />
         <service android:name=".basenote.service.MyBindService" />
         <service android:name=".basenote.service.download.DownLoadService" />
         <service android:name=".basenote.service.downloadfile.service.DownloadService" />
         <service android:name=".basenote.service.downloadfile.service.DownloadService2" />
         <service android:name=".basenote.service.MyMessagerService" />
-
         <service android:name=".basenote.lockscreen.LockScreenService" />
         <service android:name=".basenote.keeplive.RemoteService" />
         <!-- 针对android7.0（24）的一些异常 -->
@@ -927,13 +785,11 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
-
         <provider
             android:name=".basenote.contentprovider.BookContentProvider"
             android:authorities="com.mdove.content.provider"
             android:permission="com.mdove.PROVIDER"
             android:process=":mdmve" />
-
         <provider
             android:name=".basenote.contentprovider.custom.CustomContentProvider"
             android:authorities="com.example.mbenben.studydemo.provider"

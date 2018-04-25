@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_bottom_center"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:background="@color/black"
+        android:gravity="center"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:text="底部居中"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_center"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:background="@color/black"
+        android:gravity="center"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:text="整体居中"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_match"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:background="@color/black"
+        android:gravity="center"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:text="match并局中"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_center" />
+
+    <TextView
+        android:id="@+id/tv_center_left"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:background="@color/black"
+        android:gravity="center"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:text="各自居中平均分在左边"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_center"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/tv_center_right" />
+
+    <TextView
+        android:id="@+id/tv_center_right"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:background="@color/black"
+        android:gravity="center"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:text="各自居中平均分在右边"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_center"
+        app:layout_constraintLeft_toRightOf="@+id/tv_center_left"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_all_center_left"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:background="@color/black"
+        android:gravity="center"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:text="在Guideline左边"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:layout_marginLeft="-8dp"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline3"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_all_center_right"
+        android:layout_marginBottom="0dp" />
+
+    <TextView
+        android:id="@+id/tv_all_center_right"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:background="@color/black"
+        android:gravity="center"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:text="在Guideline右边"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintRight_toLeftOf="@+id/guideline3"
+        />
+
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline3"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="192dp" />
+
+
+</android.support.constraint.ConstraintLayout>

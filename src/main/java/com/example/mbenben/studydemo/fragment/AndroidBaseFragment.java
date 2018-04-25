@@ -26,6 +26,7 @@ import com.example.mbenben.studydemo.basenote.dialog.MyDialogActivity;
 import com.example.mbenben.studydemo.basenote.intent.IntentActivity;
 import com.example.mbenben.studydemo.basenote.keeplive.KeepLiveActivity;
 import com.example.mbenben.studydemo.basenote.kotlin.KotlinActivity;
+import com.example.mbenben.studydemo.basenote.kotlin.numberrain.NumberRainActivity;
 import com.example.mbenben.studydemo.basenote.navigationbar.NavigationBarActivity;
 import com.example.mbenben.studydemo.basenote.notification.NotificationActivity;
 import com.example.mbenben.studydemo.basenote.pattern.PatternActivity;
@@ -180,6 +181,10 @@ public class AndroidBaseFragment extends Fragment {
                         WidgetBallActivity.start(getActivity(), "悬浮球+进程间双向AIDL");
                         break;
                     }
+                    case "NumberRainActivity": {
+                        NumberRainActivity.Companion.start(getActivity(), "黑客帝国中数字雨的效果");
+                        break;
+                    }
                 }
             }
 
@@ -291,6 +296,10 @@ public class AndroidBaseFragment extends Fragment {
             datas.add("WidgetBallActivity");
             mapTitle.put("WidgetBallActivity", "悬浮球+进程间双向AIDL");
             App.addData(new HashSetSearchBean("WidgetBallActivity", WidgetBallActivity.class));
+
+            datas.add("NumberRainActivity");
+            mapTitle.put("NumberRainActivity", "黑客帝国中数字雨的效果");
+            App.addData(new HashSetSearchBean("NumberRainActivity", NumberRainActivity.class));
         }
     }
 

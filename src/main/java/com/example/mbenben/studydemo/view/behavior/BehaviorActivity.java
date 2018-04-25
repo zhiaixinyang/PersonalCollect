@@ -30,7 +30,7 @@ public class BehaviorActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         StatusBarUtils.setImgTransparent(this);
         setContentView(R.layout.activity_view_behavior);
-        initViewAndDatas();
+        initViewAndData();
 
         rlvMain.setAdapter(new CommonAdapter<String>(
                 App.getInstance().getContext(),
@@ -43,7 +43,7 @@ public class BehaviorActivity extends AppCompatActivity {
         });
     }
 
-    private void initViewAndDatas() {
+    private void initViewAndData() {
         ButterKnife.bind(this);
 
         datas=new ArrayList<>();
