@@ -187,4 +187,9 @@ demonstrating that you can also justify the content of an editable EditText.</st
     <string name="about_me_content">一个96后的双非Android彩笔，目前在一家创业公司做Android实习生，好好学习，天天向上。</string>
 
     <string name="toast_copy_success">复制完成</string>
+
+    <string name="ycuwq_datepicker_cancel">Cancel</string>
+    <string name="ycuwq_datepicker_decide">Decide</string>
+    <string name="ycuwq_datepicker_hour">H</string>
+    <string name="ycuwq_datepicker_minute">m</string>
 </resources>

@@ -58,6 +58,17 @@
         <item name="coordinatesTextColor">#808080</item>
     </style>
 
+    <style name="DatePickerBottomDialog" parent="android:Theme.Light">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+    <style name="DatePickerDialogAnim" mce_bogus="1" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/com_ycuwq_datepicker_dialog_in</item>
+        <item name="android:windowExitAnimation">@anim/com_ycuwq_datepicker_dialog_out</item>
+    </style>
+
     <style name="healthy_notify_texstyle">
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">16sp</item>

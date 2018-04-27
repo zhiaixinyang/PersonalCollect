@@ -2,11 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <com.example.mbenben.studydemo.view.xiaomi.select.WheelPicker
+    <com.example.mbenben.studydemo.view.xiaomi.select.time.HourAndMinutePicker
         android:id="@+id/whell_picker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <com.example.mbenben.studydemo.layout.pickerview.lib.WheelView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 </LinearLayout>

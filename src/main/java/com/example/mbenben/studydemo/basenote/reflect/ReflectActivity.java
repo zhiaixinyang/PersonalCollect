@@ -72,7 +72,7 @@ public class ReflectActivity extends BaseActivity {
                 LogUtils.d(TAG, "当前获取的构造方法：" + constructor);
             }
 
-            Object object = null;
+          Object object = null;
             try {
                 // 获取共有无参构造函数
                 Constructor con = modelClass3.getConstructor(null);

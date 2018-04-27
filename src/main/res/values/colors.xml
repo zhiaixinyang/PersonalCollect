@@ -69,6 +69,9 @@
     <color name="thirdColor">#FF5722</color>
     <color name="fourthColor">#4CAF50</color>
 
+    <color name="com_ycuwq_datepicker_selectedTextColor">#33aaff</color>
+    <color name="com_ycuwq_datepicker_divider">#cccccc</color>
+
     <color name="toast_color_success">#3CCD88</color>
     <color name="toast_color_error">#f44336</color>
 

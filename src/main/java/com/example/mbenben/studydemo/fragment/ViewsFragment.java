@@ -66,6 +66,7 @@ import com.example.mbenben.studydemo.view.viscosity.ViscosityActivity;
 import com.example.mbenben.studydemo.view.wave.WaveActivity;
 import com.example.mbenben.studydemo.view.weibosport.WeiBoSportActivity;
 import com.example.mbenben.studydemo.view.xiaomi.XiaoMiActivity;
+import com.example.mbenben.studydemo.view.xiaomi.select.SelecterActvity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -290,6 +291,9 @@ public class ViewsFragment extends Fragment {
                     case "XiaoMiActivity":
                         XiaoMiActivity.start(getActivity(), "小米3D式钟表");
                         break;
+                    case "SelecterActvity":
+                        SelecterActvity.start(getActivity(), "小米式联动选择");
+                        break;
                     default:
                         break;
                 }
@@ -499,6 +503,10 @@ public class ViewsFragment extends Fragment {
             datas.add("JBoxDemoActivity");
             mapTitle.put("JBoxDemoActivity", "JBox物理引擎实践");
             App.addData(new HashSetSearchBean("JBoxDemoActivity", JBoxDemoActivity.class));
+
+            datas.add("SelecterActvity");
+            mapTitle.put("SelecterActvity", "小米式联动选择");
+            App.addData(new HashSetSearchBean("SelecterActvity", SelecterActvity.class));
 
 //            datas.add("TimerActivity");
 //            mapTitle.put("TimerActivity", "广告计时效果");

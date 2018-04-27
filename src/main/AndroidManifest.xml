@@ -739,6 +739,11 @@
             android:name=".layout.doublepull.DoublePullActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
+
+        <activity android:name=".view.xiaomi.select.SelecterActvity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".basenote.touch.TouchActivity"
             android:launchMode="singleTask"
