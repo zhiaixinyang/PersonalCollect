@@ -54,6 +54,7 @@ import com.example.mbenben.studydemo.view.radar.RadarViewActivity;
 import com.example.mbenben.studydemo.view.renkstar.RenkStarActivity;
 import com.example.mbenben.studydemo.view.ruffle.RuffleActivity;
 import com.example.mbenben.studydemo.view.shader.ShaderActivity;
+import com.example.mbenben.studydemo.view.suitlines.SuitLinesActivity;
 import com.example.mbenben.studydemo.view.surfaceview.SurfaceViewActivity;
 import com.example.mbenben.studydemo.view.switchbutton.SwitchButtonActivity;
 import com.example.mbenben.studydemo.view.tantan.TantanActivity;
@@ -145,6 +146,9 @@ public class ViewsFragment extends Fragment {
                         break;
                     case "ChartActivity":
                         ChartActivity.start(getActivity(), "柱状图效果");
+                        break;
+                    case "SuitLinesActivity":
+                        SuitLinesActivity.start(getActivity(), "条形图效果");
                         break;
                     case "LoLActivity":
                         LoLActivity.start(getActivity(), "LOL能力数值分析效果");

@@ -531,6 +531,11 @@
             android:name=".basenote.opencamera.OpenCameraActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".view.suitlines.SuitLinesActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".basenote.intent.IntentActivity"
             android:launchMode="singleTask"
