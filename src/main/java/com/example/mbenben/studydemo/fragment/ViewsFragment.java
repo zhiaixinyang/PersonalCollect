@@ -23,6 +23,8 @@ import com.example.mbenben.studydemo.model.HashSetSearchBean;
 import com.example.mbenben.studydemo.view.behavior.BehaviorActivity;
 import com.example.mbenben.studydemo.view.bezier.ClearBezierActivity;
 import com.example.mbenben.studydemo.view.bezier.GiftBezierActivity;
+import com.example.mbenben.studydemo.view.bezier.magiccircle.MagicCircleActivity;
+import com.example.mbenben.studydemo.view.bezier.water.WaterActivity;
 import com.example.mbenben.studydemo.view.bigimage.GlideLoaderActivity;
 import com.example.mbenben.studydemo.view.bitmap.BitmapActivity;
 import com.example.mbenben.studydemo.view.calendar.CalendarActivity;
@@ -131,6 +133,12 @@ public class ViewsFragment extends Fragment {
                         break;
                     case "GiftBezierActivity":
                         GiftBezierActivity.start(getActivity(), "贝塞尔曲线实现发生直播平台送礼物的效果");
+                        break;
+                    case "WaterActivity":
+                        WaterActivity.start(getActivity(), "三阶贝塞尔画圆");
+                        break;
+                    case "MagicCircleActivity":
+                        MagicCircleActivity.start(getActivity(), "贝塞尔：弹性小球");
                         break;
                     case "HealthyTablesActivity":
                         HealthyTablesActivity.start(getActivity(), "折线图效果");
@@ -331,6 +339,14 @@ public class ViewsFragment extends Fragment {
             datas.add("ClearBezierActivity");
             mapTitle.put("ClearBezierActivity", "贝塞尔曲线实现发生火箭的效果");
             App.addData(new HashSetSearchBean("ClearBezierActivity", ClearBezierActivity.class));
+
+            datas.add("WaterActivity");
+            mapTitle.put("WaterActivity", "三阶贝塞尔画圆");
+            App.addData(new HashSetSearchBean("WaterActivity", WaterActivity.class));
+
+            datas.add("MagicCircleActivity");
+            mapTitle.put("MagicCircleActivity", "贝塞尔：弹性小球");
+            App.addData(new HashSetSearchBean("MagicCircleActivity", MagicCircleActivity.class));
 
             datas.add("GiftBezierActivity");
             mapTitle.put("GiftBezierActivity", "贝塞尔曲线实现发生直播平台送礼物的效果");

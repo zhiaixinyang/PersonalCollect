@@ -560,6 +560,17 @@
             android:name=".SearchRlvActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".view.bezier.water.WaterActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".view.bezier.magiccircle.MagicCircleActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".layout.drawerlayout.my.SlidingActivity"
             android:launchMode="singleTask"

@@ -46,7 +46,7 @@ public class SuitLinesActivity extends BaseActivity {
         final List<Unit> lines = new ArrayList<>();
         lines.add(new Unit(0, "时间"));
         for (int i = 0; i < 5; i++) {
-            lines.add(new Unit(new Random().nextInt(100), (i + 1) + "");
+            lines.add(new Unit(new Random().nextInt(100), (i + 1) + ""));
         }
         new Handler().postDelayed(new Runnable() {
             @Override
