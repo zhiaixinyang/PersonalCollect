@@ -47,6 +47,8 @@
     <!-- 选项文字大小 需要配合 bools.xml 的 pickerview_customTextSize 为 true 才有效果-->
     <dimen name="pickerview_textsize">20sp</dimen>
 
+    <dimen name="size_example_image">300dp</dimen>
+    <dimen name="default_stroke_width">5dp</dimen>
 
     <dimen name="simpletooltip_overlay_circle_offset">10dp</dimen>
     <dimen name="simpletooltip_margin">10dp</dimen>

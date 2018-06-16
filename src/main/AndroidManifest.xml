@@ -575,6 +575,12 @@
             android:name=".layout.drawerlayout.my.SlidingActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".view.circle.rclayout.RCLayoutActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".view.radar.RadarViewActivity"
             android:launchMode="singleTask"

@@ -150,6 +150,9 @@
     <color name="pickerview_topbar_title">#000000</color>
     <color name="bgColor_overlay">#60000000</color>
 
+    <color name="colorPressedColor">#A97661</color>
+    <color name="colorCheckedColor">#48B7FD</color>
+    <color name="colorPressedCheckedColor">#3993cc</color>
 
     <array name="colors">
         <item>@color/colorBluePrimary</item>

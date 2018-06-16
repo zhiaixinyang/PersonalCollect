@@ -31,6 +31,7 @@ import com.example.mbenben.studydemo.view.calendar.CalendarActivity;
 import com.example.mbenben.studydemo.view.canvasapi.CanvasApiActivity;
 import com.example.mbenben.studydemo.view.chart.ChartActivity;
 import com.example.mbenben.studydemo.view.circle.CircleActivity;
+import com.example.mbenben.studydemo.view.circle.rclayout.RCLayoutActivity;
 import com.example.mbenben.studydemo.view.colorpickerView.ColorPickerActivity;
 import com.example.mbenben.studydemo.view.couponview.CouponViewActivity;
 import com.example.mbenben.studydemo.view.credit.CreditActivity;
@@ -294,6 +295,9 @@ public class ViewsFragment extends Fragment {
                     case "CuboidBtnActivity":
                         CuboidBtnActivity.start(getActivity(),"涟漪式按钮");
                         break;
+                    case "RCLayoutActivity":
+                        RCLayoutActivity.start(getActivity(),"比较吊的第三方圆角布局RCLayout");
+                        break;
                     case "TouchViewActivity":
                         TouchViewActivity.start(getActivity(), "手势拖动图片效果");
                         break;
@@ -415,6 +419,10 @@ public class ViewsFragment extends Fragment {
             datas.add("CircleActivity");
             mapTitle.put("CircleActivity", "自定义圆角图片");
             App.addData(new HashSetSearchBean("CircleActivity", CircleActivity.class));
+
+            datas.add("RCLayoutActivity");
+            mapTitle.put("RCLayoutActivity", "比较吊的第三方圆角布局RCLayout");
+            App.addData(new HashSetSearchBean("RCLayoutActivity", RCLayoutActivity.class));
 
             datas.add("LoadingTextViewActivity");
             mapTitle.put("LoadingTextViewActivity", "字体式Loading");
