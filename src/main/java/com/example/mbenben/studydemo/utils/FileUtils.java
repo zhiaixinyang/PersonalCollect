@@ -25,9 +25,15 @@ import java.util.Random;
 import java.util.Set;
 
 /**
- * Created by MBENBEN on 2016/4/3.
+ * Created by MDove on 2016/4/3.
  */
 public class FileUtils {
+
+    public static void setPermissions(String path, int permissions) {
+        ReflectUtils.callStaticMethod("android.os.FileUtils", "setPermissions", path, permissions, -1,
+                -1);
+    }
+
     public static String getFileName(String url) {
         String filename = "";
         boolean isok = false;

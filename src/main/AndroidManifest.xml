@@ -582,6 +582,11 @@
             android:screenOrientation="portrait" />
 
         <activity
+            android:name=".basenote.tetsjni.JniActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <activity
             android:name=".view.radar.RadarViewActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />

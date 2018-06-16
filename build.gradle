@@ -48,6 +48,10 @@ android {
         versionName getVersionNameProperty()
 
         multiDexEnabled true
+
+        ndk {
+            moduleName 'mdove'//自定义名称
+        }
     }
     buildTypes {
 //        debug {
@@ -64,7 +68,13 @@ android {
         enabled = true
     }
 
-    sourceSets { main { assets.srcDirs = ['src/main/assets', 'src/main/assets/'] } }
+    sourceSets {
+        main {
+            assets.srcDirs = ['src/main/assets', 'src/main/assets/']
+            jni.srcDir "src/main/jni"
+            jniLibs.srcDir "src/main/jniLibs"
+        }
+    }
 }
 
 greendao {

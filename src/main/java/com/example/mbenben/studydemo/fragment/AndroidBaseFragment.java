@@ -38,6 +38,7 @@ import com.example.mbenben.studydemo.basenote.service.ServiceActivity;
 import com.example.mbenben.studydemo.basenote.service.download.DownLoadServiceActivity;
 import com.example.mbenben.studydemo.basenote.service.downloadfile.ui.DownLoadFileStartActivity;
 import com.example.mbenben.studydemo.basenote.styleimageview.StyleImageViewActivity;
+import com.example.mbenben.studydemo.basenote.tetsjni.JniActivity;
 import com.example.mbenben.studydemo.basenote.touch.TouchActivity;
 import com.example.mbenben.studydemo.db.SearchBean;
 import com.example.mbenben.studydemo.db.SearchDBManager;
@@ -181,6 +182,10 @@ public class AndroidBaseFragment extends Fragment {
                         WidgetBallActivity.start(getActivity(), "悬浮球+进程间双向AIDL");
                         break;
                     }
+                    case "JniActivity": {
+                        JniActivity.start(getActivity(), "JNI学习");
+                        break;
+                    }
                     case "NumberRainActivity": {
                         NumberRainActivity.Companion.start(getActivity(), "黑客帝国中数字雨的效果");
                         break;
@@ -300,6 +305,10 @@ public class AndroidBaseFragment extends Fragment {
             datas.add("NumberRainActivity");
             mapTitle.put("NumberRainActivity", "黑客帝国中数字雨的效果");
             App.addData(new HashSetSearchBean("NumberRainActivity", NumberRainActivity.class));
+
+            datas.add("JniActivity");
+            mapTitle.put("JniActivity", "JNI学习");
+            App.addData(new HashSetSearchBean("JniActivity", JniActivity.class));
         }
     }
 

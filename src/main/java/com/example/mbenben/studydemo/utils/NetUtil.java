@@ -10,7 +10,7 @@ import com.example.mbenben.studydemo.App;
 
 
 /**
- * Created by MBENBEN on 2016/2/17.
+ * Created by MDove on 2016/2/17.
  */
 public class NetUtil {
     /** 检查是否有网络 */
