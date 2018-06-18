@@ -31,6 +31,10 @@
     <color name="left">#fc6a7b</color>
     <color name="right">#2aad95</color>
 
+    <color name="normal">#EEEEEE</color>
+    <color name="select">#FF5C5C</color>
+    <color name="empty">#FAF9F9</color>
+
     <color name="color_gray">#B4B4B4</color>
     <color name="color_green">#00b4aa</color>
     <color name="color_red">#FF6A6E</color>

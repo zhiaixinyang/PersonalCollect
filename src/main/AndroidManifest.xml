@@ -70,6 +70,12 @@
             android:name=".anim.swipbackhelper.activity.SwipeVPActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".layout.titlelayout.ui.activity.ShoppingGoodsActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".layout.recyclerview.changerlv.RLVChangeActivity"
             android:launchMode="singleTask"

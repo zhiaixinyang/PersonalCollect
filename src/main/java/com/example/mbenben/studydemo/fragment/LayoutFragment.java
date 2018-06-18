@@ -39,6 +39,7 @@ import com.example.mbenben.studydemo.layout.overscroll.activity.OverScrollDemoAc
 import com.example.mbenben.studydemo.layout.photowall.PhotoWallActivity;
 import com.example.mbenben.studydemo.layout.pickerview.PickerActivity;
 import com.example.mbenben.studydemo.layout.swipmenu.SwipMenuActivity;
+import com.example.mbenben.studydemo.layout.titlelayout.ui.activity.ShoppingGoodsActivity;
 import com.example.mbenben.studydemo.layout.videoplayer.VideoPlayerActivity;
 import com.example.mbenben.studydemo.layout.drawerlayout.DrawerLayoutActivity;
 import com.example.mbenben.studydemo.layout.ele.EleMainActivity;
@@ -259,7 +260,9 @@ public class LayoutFragment extends Fragment {
                     case "HomeActivity":
                         HomeActivity.start(getContext(), "高亮引导页");
                         break;
-
+                    case "ShoppingGoodsActivity":
+                        ShoppingGoodsActivity.start(getContext(), "仿饿了么购买页");
+                        break;
                     case "PhotoWallActivity":
                         Intent toPhoto = new Intent(App.getInstance().getContext(), PhotoWallActivity.class);
                         startActivity(toPhoto);
@@ -430,6 +433,10 @@ public class LayoutFragment extends Fragment {
             datas.add("PhotoWallActivity");
             mapTitle.put("PhotoWallActivity", "照片墙滑动加载");
             App.addData(new HashSetSearchBean("PhotoWallActivity", PhotoWallActivity.class));
+
+            datas.add("ShoppingGoodsActivity");
+            mapTitle.put("ShoppingGoodsActivity", "仿饿了么购买页");
+            App.addData(new HashSetSearchBean("ShoppingGoodsActivity", ShoppingGoodsActivity.class));
 
             datas.add("ChanelActivity");
             mapTitle.put("ChanelActivity", "堆叠式ViewPager（不是ViewPager的实现）");
