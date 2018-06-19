@@ -38,6 +38,7 @@ import com.example.mbenben.studydemo.layout.materialdesign.MaterialDesignActivit
 import com.example.mbenben.studydemo.layout.overscroll.activity.OverScrollDemoActivity;
 import com.example.mbenben.studydemo.layout.photowall.PhotoWallActivity;
 import com.example.mbenben.studydemo.layout.pickerview.PickerActivity;
+import com.example.mbenben.studydemo.layout.shrinklayout.ShrinkLayoutActivity;
 import com.example.mbenben.studydemo.layout.swipmenu.SwipMenuActivity;
 import com.example.mbenben.studydemo.layout.titlelayout.ui.activity.ShoppingGoodsActivity;
 import com.example.mbenben.studydemo.layout.videoplayer.VideoPlayerActivity;
@@ -263,6 +264,9 @@ public class LayoutFragment extends Fragment {
                     case "ShoppingGoodsActivity":
                         ShoppingGoodsActivity.start(getContext(), "仿饿了么购买页");
                         break;
+                    case "ShrinkLayoutActivity":
+                        ShrinkLayoutActivity.start(getContext(), "可收缩的Layout");
+                        break;
                     case "PhotoWallActivity":
                         Intent toPhoto = new Intent(App.getInstance().getContext(), PhotoWallActivity.class);
                         startActivity(toPhoto);
@@ -445,6 +449,10 @@ public class LayoutFragment extends Fragment {
             datas.add("DoublePullActivity");
             mapTitle.put("DoublePullActivity", "上滑式拉动布局");
             App.addData(new HashSetSearchBean("DoublePullActivity", DoublePullActivity.class));
+
+            datas.add("ShrinkLayoutActivity");
+            mapTitle.put("ShrinkLayoutActivity", "可收缩的Layout");
+            App.addData(new HashSetSearchBean("ShrinkLayoutActivity", ShrinkLayoutActivity.class));
         }
     }
 

@@ -14,7 +14,7 @@
         android:textSize="16sp"
         tools:text="标题"/>
 
-    <com.gwb.superrecycleview.ui.wedgit.FlowLayout
+    <com.example.mbenben.studydemo.layout.titlelayout.ui.wedgit.FlowLayout
         android:id="@+id/flowLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>

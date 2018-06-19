@@ -37,6 +37,7 @@
 -keep public class * extends android.preference.Preference
 -keep public class com.android.vending.licensing.ILicensingService
 
+#保持native方法不被混淆
 -keepclasseswithmembernames class * {
     native <methods>;
 }
@@ -79,5 +80,11 @@
 -keep class com.google.gson.**
 -keep interface com.google.gson.**
 -keep class android.os.**{*;}
+
+-keep class * implements Android.os.Parcelable {
+      # 保持Parcelable不被混淆（$内部类不被混淆）
+      public static final Android.os.Parcelable$Creator *;
+}
+
 
 #如果开启混淆，model下的类，我们肯定也要keep，不然混淆之后gson之类的框架是没办法解析到的

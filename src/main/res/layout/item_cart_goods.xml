@@ -38,7 +38,7 @@
         android:layout_width="34dp"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_toLeftOf="@id/iv_cart_goods_add"
+        android:layout_toLeftOf="@+id/iv_cart_goods_add"
         android:gravity="center"
         android:text="3"
         android:textColor="#333333"
@@ -49,7 +49,7 @@
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:layout_centerVertical="true"
-        android:layout_toLeftOf="@id/tv_cart_goods_count"
+        android:layout_toLeftOf="@+id/tv_cart_goods_count"
         android:src="@mipmap/icon_goods_reduce"/>
 
     <View

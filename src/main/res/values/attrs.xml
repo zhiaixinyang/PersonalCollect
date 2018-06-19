@@ -780,4 +780,16 @@
         <attr name="stroke_width" />
         <attr name="clip_background" />
     </declare-styleable>
+
+    <!-- 收缩式Layout -->
+    <declare-styleable name="EggacheDisplayView">
+        <!--收起按钮布局-->
+        <attr name="collapse_layout" format="reference" />
+        <!--展开按钮布局-->
+        <attr name="expand_layout" format="reference" />
+        <!--子布局之间的距离-->
+        <attr name="btn_spacing" format="dimension" />
+        <!--在 loop 模式下点击 view 直接展开，List 模式下响应子 view 点击-->
+        <attr name="click_loop_to_expand" format="boolean" />
+    </declare-styleable>
 </resources>

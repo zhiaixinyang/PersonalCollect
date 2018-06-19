@@ -77,6 +77,12 @@
             android:screenOrientation="portrait" />
 
         <activity
+            android:name=".layout.shrinklayout.ShrinkLayoutActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+
+        <activity
             android:name=".layout.recyclerview.changerlv.RLVChangeActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
