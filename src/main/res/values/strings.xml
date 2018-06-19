@@ -192,4 +192,8 @@ demonstrating that you can also justify the content of an editable EditText.</st
     <string name="ycuwq_datepicker_decide">Decide</string>
     <string name="ycuwq_datepicker_hour">H</string>
     <string name="ycuwq_datepicker_minute">m</string>
+
+    <string name="skid_activty_2_text">Do one thing at a time, and do well.Keep on going never give up.
+        Whatever is worth doing is worth doing well.I can because i think i can.Jack of all trades and master of none.
+    Whatever is worth doing is worth doing well.Keep on going never give up.</string>
 </resources>

@@ -81,6 +81,30 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name=".layout.recyclerview.layoutmanager.group.GitHubLayoutManagerActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".layout.recyclerview.layoutmanager.group.activity.BannerActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".layout.recyclerview.layoutmanager.group.activity.SkidRightActivity_1"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".layout.recyclerview.layoutmanager.group.activity.SkidRightActivity_2"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".layout.recyclerview.layoutmanager.group.activity.ViewPagerLayoutManagerActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".layout.recyclerview.changerlv.RLVChangeActivity"

@@ -15,6 +15,7 @@ import com.example.mbenben.studydemo.layout.recyclerview.changerlv.RLVChangeActi
 import com.example.mbenben.studydemo.layout.recyclerview.itemdecoration.CityItemDecorationActivity;
 import com.example.mbenben.studydemo.layout.recyclerview.itemdecoration.ItemDecorationActivity;
 import com.example.mbenben.studydemo.layout.recyclerview.layoutmanager.LayoutManagerActivity;
+import com.example.mbenben.studydemo.layout.recyclerview.layoutmanager.group.GitHubLayoutManagerActivity;
 import com.example.mbenben.studydemo.layout.recyclerview.others.commonAdapterUse.CommonAdapterActivity;
 import com.example.mbenben.studydemo.layout.recyclerview.others.dragItemAnimatorUse.DragItemAnimatorActivity;
 import com.example.mbenben.studydemo.layout.recyclerview.others.headerFooterUse.HeaderFooterActivity;
@@ -64,6 +65,7 @@ public class RecyclerActivity extends AppCompatActivity {
         data.add("下拉刷新+上拉加载:2");
         data.add("悬浮固定头部Item");
         data.add("右侧索引导航");
+        data.add("多种自定义LayoutManager");
 
         rlvMain.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
@@ -142,6 +144,10 @@ public class RecyclerActivity extends AppCompatActivity {
                         break;
                     case "基于RecyclerView的Banner": {
                         RlvBannerRlvActivity.start(RecyclerActivity.this, "基于RecyclerView的Banner");
+                        break;
+                    }
+                    case "多种自定义LayoutManager": {
+                        GitHubLayoutManagerActivity.start(RecyclerActivity.this, "多种自定义LayoutManager");
                         break;
                     }
                 }

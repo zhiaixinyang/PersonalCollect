@@ -149,7 +149,7 @@ public class MainActivity extends AppCompatActivity implements Toolbar.OnMenuIte
     @Override
     public void OnSearchClick(String keyword) {
 //        List<SearchBean> searchList = manager.query(keyword);
-//        Intent toRlv = new Intent(MainActivity.this, SearchRlvActivity.class);
+//        Intent toRlv = new Intent(GitHubLayoutManagerActivity.this, SearchRlvActivity.class);
 //        toRlv.putExtra("search_rlv", (Serializable) searchList);
 //        startActivity(toRlv);
         ToastHelper.shortToast("搜索功能暂时关闭，需要优化");
