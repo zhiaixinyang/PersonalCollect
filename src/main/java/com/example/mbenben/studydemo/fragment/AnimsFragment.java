@@ -20,6 +20,7 @@ import com.example.mbenben.studydemo.anim.circularanim.CircleAnimActivity;
 import com.example.mbenben.studydemo.anim.lodinganim.LoadingAnimActivity;
 import com.example.mbenben.studydemo.anim.path.RightMarkActivity;
 import com.example.mbenben.studydemo.anim.swipbackhelper.activity.SwipeBackActivity;
+import com.example.mbenben.studydemo.anim.voiceAnim.VoiceAnimActivity;
 import com.example.mbenben.studydemo.base.CommonAdapter;
 import com.example.mbenben.studydemo.base.OnItemClickListener;
 import com.example.mbenben.studydemo.base.ViewHolder;
@@ -86,41 +87,44 @@ public class AnimsFragment extends Fragment {
             public void onItemClick(ViewGroup parent, View view, Object o, int position) {
                 switch (o.toString()) {
                     case "PathViewActivity":
-                        Intent intentNav = new Intent(App.getInstance().getContext(), PathViewActivity.class);
+                        Intent intentNav = new Intent(getActivity(), PathViewActivity.class);
                         startActivity(intentNav);
                         break;
                     case "ValueAnimActivity":
-                        Intent intentView = new Intent(App.getInstance().getContext(), ValueAnimActivity.class);
+                        Intent intentView = new Intent(getActivity(), ValueAnimActivity.class);
                         startActivity(intentView);
                         break;
                     case "SVGPathActivity":
-                        Intent intentNestedScroll = new Intent(App.getInstance().getContext(), SVGPathActivity.class);
+                        Intent intentNestedScroll = new Intent(getActivity(), SVGPathActivity.class);
                         startActivity(intentNestedScroll);
                         break;
                     case "CircleAnimActivity":
-                        Intent intentCircleAnim = new Intent(App.getInstance().getContext(), CircleAnimActivity.class);
+                        Intent intentCircleAnim = new Intent(getActivity(), CircleAnimActivity.class);
                         startActivity(intentCircleAnim);
                         break;
                     case "SwipeBackActivity":
-                        Intent intentSwipeBack = new Intent(App.getInstance().getContext(), SwipeBackActivity.class);
+                        Intent intentSwipeBack = new Intent(getActivity(), SwipeBackActivity.class);
                         startActivity(intentSwipeBack);
                         break;
                     case "LoadingAnimActivity":
-                        Intent intentLoadingAnim = new Intent(App.getInstance().getContext(), LoadingAnimActivity.class);
+                        Intent intentLoadingAnim = new Intent(getActivity(), LoadingAnimActivity.class);
                         startActivity(intentLoadingAnim);
                         break;
                     case "CameraAnimActivity":
-                        Intent intentCameraAnim = new Intent(App.getInstance().getContext(), CameraAnimActivity.class);
+                        Intent intentCameraAnim = new Intent(getActivity(), CameraAnimActivity.class);
                         startActivity(intentCameraAnim);
                         break;
                     case "AnimatorActivity":
-                        Intent intentAnimator = new Intent(App.getInstance().getContext(), AnimatorActivity.class);
+                        Intent intentAnimator = new Intent(getActivity(), AnimatorActivity.class);
                         startActivity(intentAnimator);
                         break;
                     case "RightMarkActivity":
-                        Intent intentRightMark = new Intent(App.getInstance().getContext(), RightMarkActivity.class);
+                        Intent intentRightMark = new Intent(getActivity(), RightMarkActivity.class);
                         startActivity(intentRightMark);
                         break;
+                    case "VoiceAnimActivity": {
+                        VoiceAnimActivity.start(getActivity(), "声波规律缩放式动画");
+                    }
                     default:
                         break;
                 }
@@ -182,6 +186,10 @@ public class AnimsFragment extends Fragment {
             datas.add("RightMarkActivity");
             mapTitle.put("RightMarkActivity", "Path对号动画");
             App.addData(new HashSetSearchBean("RightMarkActivity", RightMarkActivity.class));
+
+            datas.add("VoiceAnimActivity");
+            mapTitle.put("VoiceAnimActivity", "声波规律缩放式动画");
+            App.addData(new HashSetSearchBean("VoiceAnimActivity", VoiceAnimActivity.class));
         }
     }
 

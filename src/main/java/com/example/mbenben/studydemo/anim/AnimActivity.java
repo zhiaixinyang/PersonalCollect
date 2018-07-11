@@ -10,7 +10,7 @@ import com.example.mbenben.studydemo.R;
 import com.example.mbenben.studydemo.view.tempview.TempControlView;
 
 /**
- * Created by MBENBEN on 2016/12/8.
+ * Created by MDove on 2016/12/8.
  */
 
 public class AnimActivity extends AppCompatActivity{
