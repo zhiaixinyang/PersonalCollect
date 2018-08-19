@@ -46,6 +46,11 @@
             android:name=".net.okhttp.OkHttpDemoActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".basenote.proxy.DynamicProxyActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".AboutMeActivity"
             android:launchMode="singleTask"
