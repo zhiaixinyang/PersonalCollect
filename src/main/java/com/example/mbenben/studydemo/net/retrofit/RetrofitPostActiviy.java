@@ -19,7 +19,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 /**
- * Created by MDOve on 2017/1/9.
+ * Created by MDove on 2017/1/9.
  */
 public class RetrofitPostActiviy extends AppCompatActivity{
     @BindView(R.id.et_username) EditText etUsername;
