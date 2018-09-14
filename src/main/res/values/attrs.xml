@@ -588,6 +588,19 @@
         <attr name="bsb_hide_bubble" format="boolean" /> <!--hide bubble, default: false-->
     </declare-styleable>
 
+    <!-- Clap Fab -->
+    <declare-styleable name="clap_fab">
+        <attr name="cf_max_clap_count" format="integer"/>
+        <attr name="cf_default_icon" format="reference"/>
+        <attr name="cf_filled_icon" format="reference"/>
+        <attr name="cf_default_icon_color" format="reference"/>
+        <attr name="cf_filled_icon_color" format="reference"/>
+        <attr name="cf_count_circle_color" format="reference"/>
+        <attr name="cf_count_text_color" format="reference"/>
+        <attr name="cf_dots_1_color" format="reference"/>
+        <attr name="cf_dots_2_color" format="reference"/>
+    </declare-styleable>
+
     <!-- 涟漪式按钮 -->
     <declare-styleable name="CuboidButton">
         <attr name="cub_color" format="color" />

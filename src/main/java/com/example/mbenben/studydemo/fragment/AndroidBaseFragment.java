@@ -31,6 +31,7 @@ import com.example.mbenben.studydemo.basenote.navigationbar.NavigationBarActivit
 import com.example.mbenben.studydemo.basenote.notification.NotificationActivity;
 import com.example.mbenben.studydemo.basenote.pattern.PatternActivity;
 import com.example.mbenben.studydemo.basenote.plugin.PluginActivity;
+import com.example.mbenben.studydemo.basenote.proxy.DynamicProxyActivity;
 import com.example.mbenben.studydemo.basenote.reflect.ReflectActivity;
 import com.example.mbenben.studydemo.basenote.rxjava.RxJava2Activity;
 import com.example.mbenben.studydemo.basenote.scaniamges.imageloader.ScanImageActivity;
@@ -190,6 +191,10 @@ public class AndroidBaseFragment extends Fragment {
                         NumberRainActivity.Companion.start(getActivity(), "黑客帝国中数字雨的效果");
                         break;
                     }
+                    case "DynamicProxyActivity": {
+                        DynamicProxyActivity.start(getActivity(), "动态代理相关Demo");
+                        break;
+                    }
                 }
             }
 
@@ -293,6 +298,10 @@ public class AndroidBaseFragment extends Fragment {
             datas.add("ReflectActivity");
             mapTitle.put("ReflectActivity", "反射相关笔记");
             App.addData(new HashSetSearchBean("ReflectActivity", ReflectActivity.class));
+
+            datas.add("DynamicProxyActivity");
+            mapTitle.put("DynamicProxyActivity", "动态代理相关Demo");
+            App.addData(new HashSetSearchBean("DynamicProxyActivity", DynamicProxyActivity.class));
 
             datas.add("TouchActivity");
             mapTitle.put("TouchActivity", "事件分发实践");

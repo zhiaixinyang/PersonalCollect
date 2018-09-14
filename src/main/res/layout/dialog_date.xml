@@ -2,11 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="wrap_content">
-    <com.ycuwq.datepicker.date.DatePicker
+    <com.example.mbenben.studydemo.view.xiaomi.select.date.DatePicker
         android:id="@+id/dayPicker_dialog"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-    </com.ycuwq.datepicker.date.DatePicker>
+    </com.example.mbenben.studydemo.view.xiaomi.select.date.DatePicker>
 
     <LinearLayout
         android:orientation="horizontal"
