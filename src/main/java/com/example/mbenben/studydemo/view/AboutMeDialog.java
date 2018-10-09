@@ -13,7 +13,6 @@ import com.example.mbenben.studydemo.R;
  * @author MDove on 2018/1/28.
  */
 public class AboutMeDialog extends BottomSheetDialog {
-
     private Context mCxt;
 
     public AboutMeDialog(@NonNull Context context) {
