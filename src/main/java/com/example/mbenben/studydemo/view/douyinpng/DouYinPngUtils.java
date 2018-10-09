@@ -39,6 +39,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 /**
  * Created by MDove on 2018/10/9.
+ *
+ * 原项目GitHub：https://github.com/meiniepan/Pic2Ascii
  */
 
 public class DouYinPngUtils {

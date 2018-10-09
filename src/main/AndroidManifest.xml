@@ -75,7 +75,8 @@
             android:name=".anim.swipbackhelper.activity.SwipeVPActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-        <activity android:name=".anim.voiceAnim.VoiceAnimActivity"
+        <activity
+            android:name=".anim.voiceAnim.VoiceAnimActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
@@ -810,8 +811,16 @@
             android:name=".layout.doublepull.DoublePullActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
-        <activity android:name=".view.xiaomi.select.SelecterActvity"
+        <activity
+            android:name=".view.bubbleView.BubbleViewActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.douyinpng.DouYinPngActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.xiaomi.select.SelecterActvity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 

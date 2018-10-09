@@ -27,6 +27,7 @@ import com.example.mbenben.studydemo.view.bezier.magiccircle.MagicCircleActivity
 import com.example.mbenben.studydemo.view.bezier.water.WaterActivity;
 import com.example.mbenben.studydemo.view.bigimage.GlideLoaderActivity;
 import com.example.mbenben.studydemo.view.bitmap.BitmapActivity;
+import com.example.mbenben.studydemo.view.bubbleView.BubbleViewActivity;
 import com.example.mbenben.studydemo.view.calendar.CalendarActivity;
 import com.example.mbenben.studydemo.view.canvasapi.CanvasApiActivity;
 import com.example.mbenben.studydemo.view.chart.ChartActivity;
@@ -37,6 +38,7 @@ import com.example.mbenben.studydemo.view.couponview.CouponViewActivity;
 import com.example.mbenben.studydemo.view.credit.CreditActivity;
 import com.example.mbenben.studydemo.view.cuboid.CuboidBtnActivity;
 import com.example.mbenben.studydemo.view.dianzan.DianZanActivity;
+import com.example.mbenben.studydemo.view.douyinpng.DouYinPngActivity;
 import com.example.mbenben.studydemo.view.enviews.ENViewsActivity;
 import com.example.mbenben.studydemo.view.expandabletextview.ExpandableActivity;
 import com.example.mbenben.studydemo.view.fanmenu.FanMenuActivity;
@@ -309,6 +311,12 @@ public class ViewsFragment extends Fragment {
                         break;
                     case "SelecterActvity":
                         SelecterActvity.start(getActivity(), "小米式联动选择");
+                        break;
+                    case "DouYinPngActivity":
+                        DouYinPngActivity.start(getActivity(), "把图片中像素转成字符串");
+                        break;
+                    case "BubbleViewActivity":
+                        BubbleViewActivity.start(getActivity(), "气泡上浮效果");
                         break;
                     default:
                         break;
