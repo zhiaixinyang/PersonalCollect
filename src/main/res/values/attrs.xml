@@ -805,4 +805,15 @@
         <!--在 loop 模式下点击 view 直接展开，List 模式下响应子 view 点击-->
         <attr name="click_loop_to_expand" format="boolean" />
     </declare-styleable>
+
+    <!-- 不同分辨率下的图片适配 -->
+    <declare-styleable name="ResizeImageView">
+        <attr name="width_scale" format="integer"></attr>
+        <attr name="height_scale" format="integer"></attr>
+        <attr name="ifResize" format="boolean"/>
+        <attr name="resizeType" format="enum">
+            <enum name="baseWidth" value="0"/>
+            <enum name="baseHeight" value="1"/>
+        </attr>
+    </declare-styleable>
 </resources>
