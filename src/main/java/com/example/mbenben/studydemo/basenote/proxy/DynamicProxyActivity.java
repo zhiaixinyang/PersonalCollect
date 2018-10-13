@@ -1,13 +1,16 @@
 package com.example.mbenben.studydemo.basenote.proxy;
 
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
+import android.widget.EditText;
 
 import com.example.mbenben.studydemo.R;
 import com.example.mbenben.studydemo.base.BaseActivity;
+import com.example.mbenben.studydemo.basenote.proxy.hook.ClipboardHook;
 import com.example.mbenben.studydemo.utils.log.LogUtils;
 
 import java.lang.reflect.Proxy;
@@ -19,6 +22,8 @@ import java.lang.reflect.Proxy;
 public class DynamicProxyActivity extends BaseActivity {
     public static final String TAG = "DynamicProxyActivity";
     private static final String EXTRA_ACTION = "extra_action";
+    EditText mEt;
+    ClipboardManager clipboard;
 
     public static void start(Context context, String title) {
         Intent intent = new Intent(context, DynamicProxyActivity.class);
@@ -36,7 +41,14 @@ public class DynamicProxyActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setTitle(getIntent().getStringExtra(EXTRA_ACTION));
         setContentView(R.layout.activity_dynamic_proxy);
+        mEt= (EditText) findViewById(R.id.et_content);
+        hookService();
         fun();
+    }
+
+    private void hookService() {
+        ClipboardHook.hookService(this);
+        clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
     }
 
     public void fun() {
@@ -60,5 +72,4 @@ public class DynamicProxyActivity extends BaseActivity {
     private void printClass(Class clazzProxy) {
         LogUtils.d(TAG, "$Proxy0.class全名: " + clazzProxy.getName());
     }
-
 }

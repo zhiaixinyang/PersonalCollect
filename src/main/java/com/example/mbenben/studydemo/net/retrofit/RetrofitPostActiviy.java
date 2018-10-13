@@ -12,6 +12,7 @@ import com.example.mbenben.studydemo.net.retrofit.model.RetrofitApi;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -19,39 +20,45 @@ import retrofit2.Retrofit;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 /**
- * Created by MDOve on 2017/1/9.
+ * Created by MDove on 2017/1/9.
  */
-public class RetrofitPostActiviy extends AppCompatActivity{
-    @BindView(R.id.et_username) EditText etUsername;
-    @BindView(R.id.et_password) EditText etPassWord;
-    @BindView(R.id.tv_content) TextView tvContent;
+public class RetrofitPostActiviy extends AppCompatActivity {
+    @BindView(R.id.et_username)
+    EditText etUsername;
+    @BindView(R.id.et_password)
+    EditText etPassWord;
+    @BindView(R.id.tv_content)
+    TextView tvContent;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.acitivty_retrofitpost);
         ButterKnife.bind(this);
     }
-    public void postRetrofit(View view){
-        Retrofit retrofit=new Retrofit.Builder()
+
+    public void postRetrofit(View view) {
+        Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(RetrofitApi.URL)
                 .addConverterFactory(ScalarsConverterFactory.create())
                 .build();
-        RetrofitApi retrofitApi=retrofit.create(RetrofitApi.class);
-        Call<String> call = retrofitApi.postRetrofit(etUsername.getText().toString(),
-                etPassWord.getText().toString());
-        call.enqueue(new Callback<String>() {
+        String userName = etUsername.getText().toString();
+        String passWord = etPassWord.getText().toString();
+        RetrofitApi retrofitApi = retrofit.create(RetrofitApi.class);
+        Call<ResponseBody> call = retrofitApi.postRetrofit(userName, passWord);
+        call.enqueue(new Callback<ResponseBody>() {
             @Override
-            public void onResponse(Call<String> call, final Response<String> response) {
+            public void onResponse(Call<ResponseBody> call, final Response<ResponseBody> response) {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        tvContent.setText(response.body());
+                        tvContent.setText(response.message());
                     }
                 });
             }
 
             @Override
-            public void onFailure(Call<String> call, Throwable t) {
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
 
             }
         });
