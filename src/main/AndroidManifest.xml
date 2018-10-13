@@ -63,6 +63,11 @@
             android:name=".anim.swipbackhelper.activity.Swipe1Activity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
+
+        <activity android:name=".view.rainyview.RainyViewActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".anim.swipbackhelper.activity.SwipeBackActivity"
             android:launchMode="singleTask"

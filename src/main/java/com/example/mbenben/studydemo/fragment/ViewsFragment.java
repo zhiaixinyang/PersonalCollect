@@ -56,6 +56,7 @@ import com.example.mbenben.studydemo.view.passwordedittext.PassWordActivity;
 import com.example.mbenben.studydemo.view.progressbar.ProgressBarActivity;
 import com.example.mbenben.studydemo.view.qqhealth.QQHealthActivity;
 import com.example.mbenben.studydemo.view.radar.RadarViewActivity;
+import com.example.mbenben.studydemo.view.rainyview.RainyViewActivity;
 import com.example.mbenben.studydemo.view.renkstar.RenkStarActivity;
 import com.example.mbenben.studydemo.view.ruffle.RuffleActivity;
 import com.example.mbenben.studydemo.view.shader.ShaderActivity;
@@ -318,6 +319,9 @@ public class ViewsFragment extends Fragment {
                     case "BubbleViewActivity":
                         BubbleViewActivity.start(getActivity(), "气泡上浮效果");
                         break;
+                    case "RainyViewActivity":
+                        RainyViewActivity.start(getActivity(), "阴天下雨小动画");
+                        break;
                     default:
                         break;
                 }
@@ -544,6 +548,9 @@ public class ViewsFragment extends Fragment {
             mapTitle.put("SelecterActvity", "小米式联动选择");
             App.addData(new HashSetSearchBean("SelecterActvity", SelecterActvity.class));
 
+            datas.add("RainyViewActivity");
+            mapTitle.put("RainyViewActivity", "阴天下雨小动画");
+            App.addData(new HashSetSearchBean("RainyViewActivity", RainyViewActivity.class));
 //            datas.add("TimerActivity");
 //            mapTitle.put("TimerActivity", "广告计时效果");
 //            App.addData(new HashSetSearchBean("TimerActivity", TimerActivity.class));

@@ -816,4 +816,19 @@
             <enum name="baseHeight" value="1"/>
         </attr>
     </declare-styleable>
+
+    <!-- 类似天气预报的雨滴 -->
+    <declare-styleable name="RainyView">
+        <attr name="raindrop_color" format="color"></attr>
+        <attr name="left_cloud_color" format="color"></attr>
+        <attr name="right_cloud_color" format="color"></attr>
+        <attr name="raindrop_max_number" format="integer"></attr>
+        <attr name="raindrop_creation_interval" format="integer"></attr>
+        <attr name="raindrop_min_length" format="integer"></attr>
+        <attr name="raindrop_max_length" format="integer"></attr>
+        <attr name="raindrop_size" format="integer"></attr>
+        <attr name="raindrop_min_speed" format="float"></attr>
+        <attr name="raindrop_max_speed" format="float"></attr>
+        <attr name="raindrop_slope" format="float"></attr>
+    </declare-styleable>
 </resources>
