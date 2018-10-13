@@ -314,7 +314,7 @@ public class ViewsFragment extends Fragment {
                         SelecterActvity.start(getActivity(), "小米式联动选择");
                         break;
                     case "DouYinPngActivity":
-                        DouYinPngActivity.start(getActivity(), "把图片中像素转成字符串");
+                        DouYinPngActivity.start(getActivity(), "特殊图片效果：字符代替像素");
                         break;
                     case "BubbleViewActivity":
                         BubbleViewActivity.start(getActivity(), "气泡上浮效果");
@@ -551,6 +551,14 @@ public class ViewsFragment extends Fragment {
             datas.add("RainyViewActivity");
             mapTitle.put("RainyViewActivity", "阴天下雨小动画");
             App.addData(new HashSetSearchBean("RainyViewActivity", RainyViewActivity.class));
+
+            datas.add("DouYinPngActivity");
+            mapTitle.put("DouYinPngActivity", "特殊图片效果：字符代替像素");
+            App.addData(new HashSetSearchBean("DouYinPngActivity", DouYinPngActivity.class));
+
+            datas.add("BubbleViewActivity");
+            mapTitle.put("BubbleViewActivity", "气泡上浮效果");
+            App.addData(new HashSetSearchBean("BubbleViewActivity", BubbleViewActivity.class));
 //            datas.add("TimerActivity");
 //            mapTitle.put("TimerActivity", "广告计时效果");
 //            App.addData(new HashSetSearchBean("TimerActivity", TimerActivity.class));
