@@ -165,6 +165,7 @@ public class BallWidgetService extends Service {
         }
     }
 
+
     private void notifyBallClicked() {
         int N = mCallbacks.beginBroadcast();
         for (int i = 0; i < N; i++) {
