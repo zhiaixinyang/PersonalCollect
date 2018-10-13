@@ -64,7 +64,8 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
-        <activity android:name=".view.rainyview.RainyViewActivity"
+        <activity
+            android:name=".view.rainyview.RainyViewActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
@@ -418,12 +419,18 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
-        <activity android:name=".view.douyinpng.DouYinPngActivity"
+        <activity
+            android:name=".view.douyinpng.DouYinPngActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
         <activity
             android:name=".layout.arclayout.ArcLayoutActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".view.qqspacead.QQSpaceAdActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity

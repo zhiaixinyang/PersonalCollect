@@ -55,6 +55,7 @@ import com.example.mbenben.studydemo.view.opengl.OpenGLActivity;
 import com.example.mbenben.studydemo.view.passwordedittext.PassWordActivity;
 import com.example.mbenben.studydemo.view.progressbar.ProgressBarActivity;
 import com.example.mbenben.studydemo.view.qqhealth.QQHealthActivity;
+import com.example.mbenben.studydemo.view.qqspacead.QQSpaceAdActivity;
 import com.example.mbenben.studydemo.view.radar.RadarViewActivity;
 import com.example.mbenben.studydemo.view.rainyview.RainyViewActivity;
 import com.example.mbenben.studydemo.view.renkstar.RenkStarActivity;
@@ -322,6 +323,9 @@ public class ViewsFragment extends Fragment {
                     case "RainyViewActivity":
                         RainyViewActivity.start(getActivity(), "阴天下雨小动画");
                         break;
+                    case "QQSpaceAdActivity":
+                        QQSpaceAdActivity.start(getActivity(), "QQ空间广告涟漪效果");
+                        break;
                     default:
                         break;
                 }
@@ -559,6 +563,10 @@ public class ViewsFragment extends Fragment {
             datas.add("BubbleViewActivity");
             mapTitle.put("BubbleViewActivity", "气泡上浮效果");
             App.addData(new HashSetSearchBean("BubbleViewActivity", BubbleViewActivity.class));
+
+            datas.add("QQSpaceAdActivity");
+            mapTitle.put("QQSpaceAdActivity", "QQ空间广告涟漪效果");
+            App.addData(new HashSetSearchBean("QQSpaceAdActivity", QQSpaceAdActivity.class));
 //            datas.add("TimerActivity");
 //            mapTitle.put("TimerActivity", "广告计时效果");
 //            App.addData(new HashSetSearchBean("TimerActivity", TimerActivity.class));
