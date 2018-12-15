@@ -76,6 +76,7 @@ import com.example.mbenben.studydemo.view.wave.WaveActivity;
 import com.example.mbenben.studydemo.view.weibosport.WeiBoSportActivity;
 import com.example.mbenben.studydemo.view.xiaomi.XiaoMiActivity;
 import com.example.mbenben.studydemo.view.xiaomi.select.SelecterActvity;
+import com.iyao.sample.EasyAtActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -303,6 +304,9 @@ public class ViewsFragment extends Fragment {
                     case "RCLayoutActivity":
                         RCLayoutActivity.start(getActivity(),"比较吊的第三方圆角布局RCLayout");
                         break;
+                    case "EasyAtActivity":
+                        EasyAtActivity.Companion.start(getActivity(),"@人的效果");
+                        break;
                     case "TouchViewActivity":
                         TouchViewActivity.start(getActivity(), "手势拖动图片效果");
                         break;
@@ -399,6 +403,10 @@ public class ViewsFragment extends Fragment {
             datas.add("StepsViewActivity");
             mapTitle.put("StepsViewActivity", "日常签到效果");
             App.addData(new HashSetSearchBean("StepsViewActivity", StepsViewActivity.class));
+
+            datas.add("EasyAtActivity");
+            mapTitle.put("EasyAtActivity", "@人的效果");
+            App.addData(new HashSetSearchBean("EasyAtActivity", EasyAtActivity.class));
 
             datas.add("LoLActivity");
             mapTitle.put("LoLActivity", "LOL能力数值分析效果");

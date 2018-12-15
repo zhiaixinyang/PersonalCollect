@@ -37,6 +37,10 @@
     <dimen name="fv_bottom_op_item_w">28dp</dimen>
     <dimen name="fv_bottom_op_item_h">28dp</dimen>
 
+    <dimen name="content_padding">14dp</dimen>
+    <dimen name="normal_stroke_width">1dp</dimen>
+    <dimen name="log_line_space">5sp</dimen>
+
     <!-- 顶部按钮栏高度 -->
     <dimen name="pickerview_topbar_height">44dp</dimen>
     <!-- 顶部按钮padding -->

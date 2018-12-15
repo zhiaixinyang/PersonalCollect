@@ -84,6 +84,11 @@
             android:screenOrientation="portrait" />
 
         <activity
+            android:name="com.iyao.sample.EasyAtActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <activity
             android:name=".anim.swipbackhelper.activity.SwipeVPActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />

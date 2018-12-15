@@ -101,6 +101,12 @@ demonstrating that you can also justify the content of an editable EditText.</st
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
+    <string name="append">Append</string>
+    <string name="print">Print</string>
+    <string name="show_logs_when_print_pressed">show logs when \'Print\' pressed</string>
+    <string name="switch1">Switch</string>
+    <string name="hint">\@同学</string>
+
     <string name="grid_view_demo_title">GridView Over-Scroll Demo</string>
     <string name="list_view_demo_title">ListView Over-Scroll Demo</string>
     <string name="recycler_view_demo_title">RecyclerView Over-Scroll Demo</string>
