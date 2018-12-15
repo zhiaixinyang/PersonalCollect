@@ -62,6 +62,13 @@
     <color name="purple">#ffaa66cc</color>
     <color name="trans">#00ffffff</color>
 
+    <color name="c_white">#ffffff</color>
+
+    <color name="c_999999">#999999</color>
+    <color name="c_cccccc">#cccccc</color>
+    <color name="c_f7b93c">#f7b93c</color>
+    <color name="c_41c961">#41c961</color>
+
     <color name="default_background_color">@android:color/transparent</color>
     <color name="default_progress_color">#33b5e5</color>
     <color name="default_stroke_color">#33b5e5</color>

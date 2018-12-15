@@ -77,6 +77,12 @@
             android:name=".anim.swipbackhelper.activity.SwipeRLVActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".view.steps.StepsViewActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".anim.swipbackhelper.activity.SwipeVPActivity"
             android:launchMode="singleTask"

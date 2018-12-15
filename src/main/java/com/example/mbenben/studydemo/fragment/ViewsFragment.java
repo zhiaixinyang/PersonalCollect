@@ -61,6 +61,7 @@ import com.example.mbenben.studydemo.view.rainyview.RainyViewActivity;
 import com.example.mbenben.studydemo.view.renkstar.RenkStarActivity;
 import com.example.mbenben.studydemo.view.ruffle.RuffleActivity;
 import com.example.mbenben.studydemo.view.shader.ShaderActivity;
+import com.example.mbenben.studydemo.view.steps.StepsViewActivity;
 import com.example.mbenben.studydemo.view.suitlines.SuitLinesActivity;
 import com.example.mbenben.studydemo.view.surfaceview.SurfaceViewActivity;
 import com.example.mbenben.studydemo.view.switchbutton.SwitchButtonActivity;
@@ -326,6 +327,9 @@ public class ViewsFragment extends Fragment {
                     case "QQSpaceAdActivity":
                         QQSpaceAdActivity.start(getActivity(), "QQ空间广告涟漪效果");
                         break;
+                    case "StepsViewActivity":
+                        StepsViewActivity.start(getActivity(), "日常签到效果");
+                        break;
                     default:
                         break;
                 }
@@ -391,6 +395,10 @@ public class ViewsFragment extends Fragment {
             datas.add("ChartActivity");
             mapTitle.put("ChartActivity", "柱状图效果");
             App.addData(new HashSetSearchBean("ChartActivity", ChartActivity.class));
+
+            datas.add("StepsViewActivity");
+            mapTitle.put("StepsViewActivity", "日常签到效果");
+            App.addData(new HashSetSearchBean("StepsViewActivity", StepsViewActivity.class));
 
             datas.add("LoLActivity");
             mapTitle.put("LoLActivity", "LOL能力数值分析效果");
